@@ -26,6 +26,10 @@ TagManager:
   - Interactable
   - Deathball
   - Dart
+  - Ground
+  - timedShooter
+  - exitArea
+  - relicArea
   layers:
   - Default
   - TransparentFX

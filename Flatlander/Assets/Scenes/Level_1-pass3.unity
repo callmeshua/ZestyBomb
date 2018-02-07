@@ -1347,6 +1347,31 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114839312871671698, guid: 51d2e99deb4c1b44bafe374c05b96bb7,
+        type: 2}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5653ca35a6e71c24bbe5c98df735d394, type: 3}
+    - target: {fileID: 114839312871671698, guid: 51d2e99deb4c1b44bafe374c05b96bb7,
+        type: 2}
+      propertyPath: power
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114839312871671698, guid: 51d2e99deb4c1b44bafe374c05b96bb7,
+        type: 2}
+      propertyPath: dartLifetime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114839312871671698, guid: 51d2e99deb4c1b44bafe374c05b96bb7,
+        type: 2}
+      propertyPath: LimitLifetime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114839312871671698, guid: 51d2e99deb4c1b44bafe374c05b96bb7,
+        type: 2}
+      propertyPath: DelayBetweenShots
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51d2e99deb4c1b44bafe374c05b96bb7, type: 2}
   m_IsPrefabParent: 0
@@ -1368,6 +1393,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 448519787}
     m_Modifications:
+    - target: {fileID: 114128457423066118, guid: c79cc614ffc6772488372ab51fc201df,
+        type: 2}
+      propertyPath: traps.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4284916844191808, guid: c79cc614ffc6772488372ab51fc201df, type: 2}
       propertyPath: m_LocalPosition.x
       value: -5.2591515
@@ -1403,6 +1433,11 @@ Prefab:
     - target: {fileID: 114128457423066118, guid: c79cc614ffc6772488372ab51fc201df,
         type: 2}
       propertyPath: trap
+      value: 
+      objectReference: {fileID: 264740058}
+    - target: {fileID: 114128457423066118, guid: c79cc614ffc6772488372ab51fc201df,
+        type: 2}
+      propertyPath: traps.Array.data[0]
       value: 
       objectReference: {fileID: 264740058}
     m_RemovedComponents: []
@@ -5530,6 +5565,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 448519787}
     m_Modifications:
+    - target: {fileID: 114265531643229818, guid: e662e3cb6ec1fff47847d7184247fa58,
+        type: 2}
+      propertyPath: traps.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4703346532989170, guid: e662e3cb6ec1fff47847d7184247fa58, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.31
@@ -5567,6 +5607,16 @@ Prefab:
       propertyPath: trap
       value: 
       objectReference: {fileID: 264740058}
+    - target: {fileID: 114265531643229818, guid: e662e3cb6ec1fff47847d7184247fa58,
+        type: 2}
+      propertyPath: traps.Array.data[0]
+      value: 
+      objectReference: {fileID: 264740058}
+    - target: {fileID: 114265531643229818, guid: e662e3cb6ec1fff47847d7184247fa58,
+        type: 2}
+      propertyPath: traps.Array.data[1]
+      value: 
+      objectReference: {fileID: 508884064}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e662e3cb6ec1fff47847d7184247fa58, type: 2}
   m_IsPrefabParent: 0
@@ -10305,6 +10355,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 448519787}
     m_Modifications:
+    - target: {fileID: 114332619947724026, guid: 42116ea2136471d4e81d3d58c662340e,
+        type: 2}
+      propertyPath: traps.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4863588228160116, guid: 42116ea2136471d4e81d3d58c662340e, type: 2}
       propertyPath: m_LocalPosition.x
       value: -5.2591515
@@ -10342,6 +10397,16 @@ Prefab:
       propertyPath: trap
       value: 
       objectReference: {fileID: 264740058}
+    - target: {fileID: 114332619947724026, guid: 42116ea2136471d4e81d3d58c662340e,
+        type: 2}
+      propertyPath: traps.Array.data[0]
+      value: 
+      objectReference: {fileID: 264740058}
+    - target: {fileID: 114332619947724026, guid: 42116ea2136471d4e81d3d58c662340e,
+        type: 2}
+      propertyPath: traps.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42116ea2136471d4e81d3d58c662340e, type: 2}
   m_IsPrefabParent: 0
@@ -27002,6 +27067,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 448519787}
     m_Modifications:
+    - target: {fileID: 114332619947724026, guid: 42116ea2136471d4e81d3d58c662340e,
+        type: 2}
+      propertyPath: traps.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4863588228160116, guid: 42116ea2136471d4e81d3d58c662340e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 5.47
@@ -27039,6 +27109,15 @@ Prefab:
       propertyPath: trap
       value: 
       objectReference: {fileID: 508884064}
+    - target: {fileID: 114332619947724026, guid: 42116ea2136471d4e81d3d58c662340e,
+        type: 2}
+      propertyPath: traps.Array.data[0]
+      value: 
+      objectReference: {fileID: 508884064}
+    - target: {fileID: 1715601932927070, guid: 42116ea2136471d4e81d3d58c662340e, type: 2}
+      propertyPath: m_Name
+      value: FloorButton(TrapDoor)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42116ea2136471d4e81d3d58c662340e, type: 2}
   m_IsPrefabParent: 0

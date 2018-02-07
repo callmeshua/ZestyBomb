@@ -13,13 +13,14 @@ public class Dart : MonoBehaviour {
         {
             GetComponent<Rigidbody>().isKinematic = true;
         }
-        else if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }
         else
         {
             Physics.IgnoreCollision(gameObject.GetComponent<BoxCollider>(), collision.gameObject.GetComponent<BoxCollider>(), true);
+            Destroy(gameObject, 2f);
         }
         
     }

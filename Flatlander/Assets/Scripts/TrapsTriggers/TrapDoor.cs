@@ -17,12 +17,16 @@ public class TrapDoor : Trap {
     {
         GameObject other = collision.gameObject;
         if (other.tag == "Player")
+        {
             active = true;
+        }
     }
 
     public override void checkActive()
     {
         if (active)
+        {
             doorRb.isKinematic = false;
+        }
     }
 }

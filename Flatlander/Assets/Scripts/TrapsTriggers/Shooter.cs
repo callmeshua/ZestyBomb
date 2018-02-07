@@ -11,10 +11,10 @@ public class Shooter : Trap {
 
     //PUBLIC ATTRIBUTES
     public bool canShoot;
-    public float power;
+    public float power;             //meters
     public bool LimitLifetime;
-    public float dartLifetime;
-    public float DelayBetweenShots;
+    public float dartLifetime;      //seconds
+    public float framesBetweenShots;
     public float fireCount;
 
 	// Use this for initialization
@@ -22,16 +22,27 @@ public class Shooter : Trap {
         active = false;
         canShoot = true;
         fireCount = 0;
+        framesBetweenShots = 30;
+        if (LimitLifetime)
+        {
+            dartLifetime = 2f;
+        }
 	}
 
     private void FixedUpdate()
     {
+        if(tag == "timedShooter")
+        {
+            active = true;
+            framesBetweenShots = 120;
+        }
+
         //delays the rapidfire shots
-        if(canShoot == false && fireCount <= DelayBetweenShots)
+        if(canShoot == false && fireCount <= framesBetweenShots)
         {
             fireCount++;
         }
-        if(fireCount > DelayBetweenShots)
+        if(fireCount > framesBetweenShots)
         {
             canShoot = true;
 
@@ -43,13 +54,17 @@ public class Shooter : Trap {
     public void shoot()
     {
         var bullet = (GameObject)Instantiate(dart, transform.position + (transform.forward), transform.rotation);
-        SoundManager.PlaySFX(shootSound, true, .3f);
+        SoundManager.PlaySFX(shootSound, true, .03f);
 
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * power;
 
         if (LimitLifetime)
         {
             Destroy(bullet, dartLifetime);
+        }
+        else
+        {
+            Destroy(bullet, 10f);
         }
         active = false;
     }

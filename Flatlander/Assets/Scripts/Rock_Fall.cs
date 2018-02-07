@@ -14,6 +14,9 @@ using UnityEngine;
  */ 
 public class Rock_Fall : MonoBehaviour {
 
+    //PUBLIC REFERENCES
+    public GM gm;
+
 	public string collideWithTag = "Interactable";
     public bool playerColCanActivate=true;
     private Rigidbody rb;
@@ -29,9 +32,18 @@ public class Rock_Fall : MonoBehaviour {
 		rb = gameObject.GetComponent<Rigidbody>();
 
 	}
-		
+
+    //JK~~
+    public void Update()
+    {
+        if(gm.phase == GM.Phases.ESCAPE)
+        {
+            StartCoroutine(Fall());
+        }
+    }
+
     // checks for collision with hook/grapple
-	void OnCollisionEnter(Collision col)
+    void OnCollisionEnter(Collision col)
 	{
         Vector3 velocity = col.relativeVelocity;
 

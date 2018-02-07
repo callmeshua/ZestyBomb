@@ -76,13 +76,17 @@ public class HealthDepletion : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col)
 	{
+        /*
+         * DEPLETES HEALTH FROM ANYTHING THATS NOT SAFE OR INTERACTABLE
 		// needs to be changed to check for floor
         if(pCtrl.isGrounded && col.gameObject.tag != "safe" && col.gameObject.tag != "Interactable")
         {
             handleHealth(-1, true);
             SoundManager.PlaySFX(deathClip, true, 1f);
         }
+        */
 
+        //depletes health from dart
         if (col.gameObject.tag == "Dart")
         {
             SoundManager.PlaySFX(deathClip, true, 1f);

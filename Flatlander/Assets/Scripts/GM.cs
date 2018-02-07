@@ -49,6 +49,7 @@ public class GM : MonoBehaviour
     public GameObject pauseScreen;
     [HideInInspector]
     public float timer, roundedTimer;
+    public Phases phase;
 
     public float jPow;
     public float mSpeed;
@@ -80,6 +81,8 @@ public class GM : MonoBehaviour
     private float startTime;
     private float shots;
 
+    public Text phaseText;
+
     void Awake()
     {
         SoundManager.PlaySFX(sound, true, 0f);
@@ -88,6 +91,7 @@ public class GM : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        phase = Phases.EXPLORE;
 
         jPow = 12;
         mSpeed = 7;
@@ -182,6 +186,7 @@ public class GM : MonoBehaviour
         checkDead();
         handlePauses();
         resetLevel = false;
+        phaseText.text = "Phase: " + phase.ToString();
     }
 
     //increments amount of normal collectibles
@@ -414,4 +419,9 @@ public class GM : MonoBehaviour
         shotText.text = shots.ToString();
     }
 
+    //triggers escape phase
+    public void triggerEscape()
+    {
+        phase = Phases.ESCAPE;
+    }
 }
