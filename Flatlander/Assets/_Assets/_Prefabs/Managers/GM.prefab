@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1145812010659160}
+  m_IsPrefabParent: 1
+--- !u!1 &1145812010659160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4708165966055316}
+  - component: {fileID: 114704253377574780}
+  m_Layer: 0
+  m_Name: GM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4708165966055316
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145812010659160}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114704253377574780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145812010659160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b099f3bc3d7990a4993dd2989db0f83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
+  ps: {fileID: 0}
+  hd: {fileID: 0}
+  gCtrl: {fileID: 0}
+  winArea: {fileID: 0}
+  sm: {fileID: 0}
+  scoreNum: {fileID: 0}
+  goldNum: {fileID: 0}
+  shotText: {fileID: 0}
+  clock: {fileID: 0}
+  resetLevel: 0
+  colCount: 0
+  goldColCount: 0
+  totalScore: 0
+  healthVal: 0
+  touchHazard: 0
+  gameOver: 0
+  mode: 0
+  level: 0
+  ks: {fileID: 0}
+  ws: {fileID: 0}
+  pauseScreen: {fileID: 0}
+  timer: 6000
+  roundedTimer: 0
+  jPow: 0
+  mSpeed: 0
+  dist: 0
+  range: 0
+  recoil: 0
+  power: 0
