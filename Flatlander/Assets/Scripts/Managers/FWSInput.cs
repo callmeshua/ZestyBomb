@@ -15,7 +15,6 @@ using UnityEngine.UI;
 public class FWSInput : MonoBehaviour {
 
     //EXTERNAL
-    public ParameterScreen ps;
     public GameObject pauseScreen;
     public Texture2D reticle;
     public CursorMode cursorMode;
@@ -43,17 +42,13 @@ public class FWSInput : MonoBehaviour {
     public SideScrollController pCtrl;
     public GrappleController grappleCtrl;
     private Quaternion aimRotation;
-    
-    private bool isPaused;
 
 	// Use this for initialization
 	void Start ()
     {
         pCtrl = FindObjectOfType<SideScrollController>();
         grappleCtrl=FindObjectOfType<GrappleController>();
-        ps = FindObjectOfType<ParameterScreen>();
-        isPaused = ps.isPaused;
-        paused = false;
+        paused = gm.frozen;
         cursorMode = CursorMode.Auto;
         Cursor.SetCursor(reticle, new Vector2(reticle.width/2f,reticle.height/2f),CursorMode.Auto);
 	}
@@ -61,10 +56,7 @@ public class FWSInput : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        
-        isPaused = gm.paused;
-        HandlePause();
-        ToggleSnap();
+        paused = gm.frozen;
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
@@ -72,7 +64,7 @@ public class FWSInput : MonoBehaviour {
         //verticalAim = Input.GetAxisRaw("Vertical Aim");
         //horizontalAim = Input.GetAxisRaw("Horizontal Aim");
 
-        if (!isPaused)
+        if (!paused)
         {
             if (!pCtrl.isDead)
             {
@@ -100,7 +92,7 @@ public class FWSInput : MonoBehaviour {
 
         if (Input.GetButtonDown("Cancel"))
         {
-            paused = !paused;
+            HandlePause();
         }
 
         if (isUsingController)
@@ -174,32 +166,13 @@ public class FWSInput : MonoBehaviour {
     //Handles pausing the game
     void HandlePause()
     {
+        gm.handleFrozen();
+
         /*
         if (Input.GetKeyDown(KeyCode.Q))
         {
             ps.handleParamScreen();
         }
         */
-        if (Input.GetButtonDown("Cancel"))
-        {
-            ps.handlePauseScreen();
-        }
-    }
-
-    //ZAC LOPEZ
-    //Toggles environment snap
-    void ToggleSnap()
-    {
-        if (Input.GetButtonDown("Perspective Shift"))
-        {
-            if (snap == false)
-            {
-                snap = true;
-            }
-            else if (snap == true)
-            {
-                snap = false;
-            }
-        }
     }
 }

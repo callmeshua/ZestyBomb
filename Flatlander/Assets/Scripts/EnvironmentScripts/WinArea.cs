@@ -57,7 +57,7 @@ public class WinArea : MonoBehaviour {
             {
                 SoundManager.PlaySFX(winSound, false, .6f);
                 win = true;
-                gm.paused = true;
+                gm.frozen = true;
             }
         }
     }

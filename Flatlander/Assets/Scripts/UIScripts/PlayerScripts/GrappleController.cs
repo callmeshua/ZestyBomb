@@ -114,7 +114,7 @@ public class GrappleController : MonoBehaviour
 
     private void Update()
     {
-        if ((pInput.isShooting || pInput.reset && curHook != null) && (!pCtrl.isDead || ps.isPaused))
+        if ((pInput.isShooting || pInput.reset && curHook != null) && (!pCtrl.isDead || !gm.paused))
         {
             Shoot(); //shoot if input, retracts if dead/hook exists
         }

@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -362,6 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -1175,6 +1177,26 @@ Transform:
   m_PrefabParentObject: {fileID: 4964417578794688, guid: 63bc5a2cdc584b7459c7e5153c0a5bd5,
     type: 2}
   m_PrefabInternal: {fileID: 212750572}
+--- !u!1 &216179433 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1034336496214670, guid: 85f17cd307653fd4cbfb15160c7805b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 195140056}
+--- !u!114 &216179434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 216179433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47e000f81817d44ba7b919c222c82b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 2134193115}
+  ws: {fileID: 492929911}
+  ds: {fileID: 1724670698}
+  ps: {fileID: 682918168}
 --- !u!1 &222424762
 GameObject:
   m_ObjectHideFlags: 0
@@ -5216,6 +5238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -5334,6 +5357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -5452,6 +5476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -5885,6 +5910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -5993,6 +6019,11 @@ Prefab:
       propertyPath: pauseScreen
       value: 
       objectReference: {fileID: 682918168}
+    - target: {fileID: 114129262573577938, guid: 596b4c7dca76a1d4681c8edf9543f753,
+        type: 2}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 2134193115}
     - target: {fileID: 114129262573577938, guid: 596b4c7dca76a1d4681c8edf9543f753,
         type: 2}
       propertyPath: pCtrl
@@ -6480,6 +6511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -6772,6 +6804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -10469,6 +10502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -16914,6 +16948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -17032,6 +17067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -17150,6 +17186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -18057,6 +18094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -18232,6 +18270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -18336,6 +18375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -18582,6 +18622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -18902,6 +18943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -22465,6 +22507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -22751,6 +22794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -22977,6 +23021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -23366,6 +23411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -34579,6 +34625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}

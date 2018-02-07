@@ -61,7 +61,6 @@ MonoBehaviour:
   vertical: 0
   horizontalAim: 0
   verticalAim: 0
-  isSideScrolling: 1
   snap: 0
   reset: 0
   isJumping: 0

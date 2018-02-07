@@ -48,7 +48,8 @@ public class ParameterScreen : MonoBehaviour {
     public Slider camDistanceSlider;
     public Text CDNum;
     
-    public bool isPaused;
+    //public bool isPaused;
+
 	// Use this for initialization
 	void Start () {
         player = FindObjectOfType<SideScrollController>();
@@ -56,7 +57,7 @@ public class ParameterScreen : MonoBehaviour {
         gCtrl = FindObjectOfType<GrappleController>();
         cam = FindObjectOfType<CameraController>();
         gm = FindObjectOfType<GM>();
-        isPaused = false;
+        //isPaused = false;
         paramScreen.gameObject.SetActive(false);
         pauseScreen.SetActive(false);
 
@@ -77,15 +78,16 @@ public class ParameterScreen : MonoBehaviour {
         //updateScore();
         //checkPause();
 
-        handlePauseScreen();
+        //handlePauseScreen();
 
-        if (isPaused && Input.GetButtonDown("Jump"))
-        {
-            gm.ResetScene();
-            pauseScreen.gameObject.SetActive(false);
-        }
+        //if (isPaused && Input.GetButtonDown("Jump"))
+        //{
+        //    gm.ResetScene();
+        //    pauseScreen.gameObject.SetActive(false);
+        //}
     }
-		
+	
+    /*
     //Called in fInput.cs when escape is pressed
     public void handleParamScreen()
     {
@@ -102,15 +104,17 @@ public class ParameterScreen : MonoBehaviour {
             paramScreen.gameObject.SetActive(false);
         }
     }
+    */
 
+        /*
     //Calls in the pause screen
     public void handlePauseScreen()
     {
-        gm.handlePause();
+        gm.handleFrozen();
 
         if (isPaused && !gm.gameOver && !player.isDead && !gm.relic.win)
         {
-            isPaused = gm.paused;
+            isPaused = gm.frozen;
             pauseScreen.SetActive(true);
         }
         else
@@ -118,6 +122,7 @@ public class ParameterScreen : MonoBehaviour {
             pauseScreen.gameObject.SetActive(false);
         }
     }
+    */
     
     //all values are updated from the slider values
     public void updateScripts()
@@ -133,7 +138,7 @@ public class ParameterScreen : MonoBehaviour {
         gCtrl.recoilForce = hookRecoilForceSlider.value;
 
         //camera
-        cam.distance = camDistanceSlider.value;
+        //cam.distance = camDistanceSlider.value;
 
         updateSliders();
     }

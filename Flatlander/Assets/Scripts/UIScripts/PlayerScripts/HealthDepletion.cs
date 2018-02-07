@@ -90,7 +90,7 @@ public class HealthDepletion : MonoBehaviour {
         if (col.gameObject.tag == "Dart")
         {
             SoundManager.PlaySFX(deathClip, true, 1f);
-            healthVal = 0;
+            handleHealth(2, true);
         }
 
 	}

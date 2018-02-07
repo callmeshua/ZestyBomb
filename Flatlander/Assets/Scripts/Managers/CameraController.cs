@@ -78,7 +78,7 @@ public class CameraController : MonoBehaviour
         //dist multiplier based on player speed
         if (pCtrl.isDead)
         {
-            zTarget = Mathf.Lerp(zTarget, zMin*.8f, Time.deltaTime * zoomDamp*2f);
+            zTarget = Mathf.Lerp(zTarget, zMin * .8f, Time.deltaTime * zoomDamp * 2f);
         }
 
         else
@@ -90,9 +90,15 @@ public class CameraController : MonoBehaviour
         //move and look
         transform.position = Vector3.Lerp(transform.position, target.position + positionOffset, Time.deltaTime * movementDamp);
 
-        targetOtho= Mathf.Lerp(Camera.main.orthographicSize, zTarget, Time.deltaTime * zoomDamp);
+        targetOtho = Mathf.Lerp(Camera.main.orthographicSize, zTarget, Time.deltaTime * zoomDamp);
 
-        Camera.main.orthographicSize = targetOtho;
+        if (targetOtho <= 1) {
+            Camera.main.orthographicSize = targetOtho;
+        }
+        else
+        {
+            Camera.main.orthographicSize = 20;
+        }
 
         transform.LookAt((target.position + lookOffset));
     }

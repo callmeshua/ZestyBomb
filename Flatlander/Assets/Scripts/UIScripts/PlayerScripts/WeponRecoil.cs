@@ -6,7 +6,7 @@ public class WeponRecoil : MonoBehaviour {
 
     //PUBLIC SCRIPT REFERENCES
     public SideScrollController pCtrl;
-    public ParameterScreen ps;
+    public GM gm;
 
     //PUBLIC ATTRIBUTES
     public bool isShooting;
@@ -32,14 +32,13 @@ public class WeponRecoil : MonoBehaviour {
         moveToInitPosition = true;
         ShoulderPos = transform.parent;
         pCtrl = FindObjectOfType<SideScrollController>();
-        ps = FindObjectOfType<ParameterScreen>();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         HandleRecoil();
-        if (!ps.isPaused)
+        if (!gm.paused)
         {
             HandleGunSway();
         }

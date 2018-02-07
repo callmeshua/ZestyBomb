@@ -43,6 +43,7 @@ public class GM : MonoBehaviour
     public int healthVal;
     public bool touchHazard;
     public bool gameOver;
+    public bool frozen;
     public bool paused;
     public Modes mode;
     public Levels level;
@@ -95,7 +96,7 @@ public class GM : MonoBehaviour
     {
         phase = Phases.EXPLORE;
 
-        paused = false;
+        frozen = false;
 
         jPow = 12;
         mSpeed = 7;
@@ -186,9 +187,9 @@ public class GM : MonoBehaviour
         healthVal = hd.healthVal;
        // mode = SoundManager.mode;
         updateScore();
-        checkPause();
+        checkFreeze();
         checkDead();
-        handlePauses();
+        handleFreezes();
         resetLevel = false;
         phaseText.text = "Phase: " + phase.ToString();
     }
@@ -222,7 +223,7 @@ public class GM : MonoBehaviour
     }
 
     //handles each case for pausing
-    public void handlePauses()
+    public void handleFreezes()
     {
         if (gameOver)
         {
@@ -237,7 +238,7 @@ public class GM : MonoBehaviour
         else if (exitArea.win)
         {
             phaseText.text += "win";
-            paused = true;
+            frozen = true;
             ws.SetActive(true);
             gCtrl.Retract();
             if (Input.GetButtonDown("Jump"))
@@ -245,7 +246,7 @@ public class GM : MonoBehaviour
                 ResetScene();
             }
         }
-        else if (paused && !gameOver && !pCtrl.isDead)//pressing escape pause screen function
+        else if (frozen && !pCtrl.isDead)//pressing escape pause screen function
         {
             pauseScreen.SetActive(true);
             pCtrl.DisableRagdoll();
@@ -302,9 +303,9 @@ public class GM : MonoBehaviour
         timer = startTime;
         touchHazard = false;
 
-        if (paused)
+        if (frozen)
         {
-            paused = false;
+            frozen = false;
         }
 
         relic.win = false;
@@ -342,17 +343,18 @@ public class GM : MonoBehaviour
                 
     }
 
-    public void handlePause()
+    public void handleFrozen()
     {
-        paused = !paused;
-
+        frozen = !frozen;
     }
 
     //checks paused to stop the Time
-    public void checkPause()
+    //freezes for pause screen and win screen
+    //NOT death screen for ragdoll physics
+    public void checkFreeze()
     {
-        //pauses the game
-        if (paused && !pCtrl.isDead && !gameOver)
+        //checks for condition to freeze and unfreeze the game
+        if (frozen && !pCtrl.isDead && !gameOver)
         {
             Time.timeScale = 0.0f;
         }
@@ -440,5 +442,11 @@ public class GM : MonoBehaviour
     public void triggerEscape()
     {
         phase = Phases.ESCAPE;
+    }
+
+    public void handlePause()
+    {
+        handleFrozen();
+        paused = !paused;
     }
 }
