@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/blockouts-unfinished/proto.unity
+    guid: 7651b01993e70e045b6e3eb556e861f3
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2d7888dc4e601474f9073ff33548757b
+  - enabled: 0
+    path: Assets/Scenes/blockouts-unfinished/Proto2.unity
+    guid: 8c7b5af34bc37c243b100c57ad75f629
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/Level_2.unity
+    guid: 01e5345f5c7a32e4d90a10e0f7343fd5
+  - enabled: 0
+    path: 
+    guid: 1afad9532add66447b7c6a5c2efd5d79
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Tutorial-pass2.unity
+    guid: ba781f6d0fc11e1498e366ad1a4e94f5
+  - enabled: 1
+    path: Assets/Scenes/Level_1-pass3.unity
+    guid: ea9f5e8aae9bd3f4ab5c7de65bf77303
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Level_3_pass2.unity
+    guid: bd80e6f45e98f1f4696bcc948e694b68
+  - enabled: 1
+    path: Assets/Scenes/Level_2-new.unity
+    guid: 67b82eaa254019d448788d2ff8463fc7
