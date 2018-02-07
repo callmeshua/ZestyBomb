@@ -17,6 +17,7 @@ public class GM : MonoBehaviour
     //Mode enumerator
     public enum Modes { CLASSIC, ENDLESS, LIMSWINGS, SOULLESS };
     public enum Levels { TUTORIAL, LEVEL1, LEVEL2, LEVEL3 };
+    public enum Phases { EXPLORE, ESCAPE };
 
     //PUBLIC REFERENCES
     private SideScrollController pCtrl;
@@ -34,6 +35,8 @@ public class GM : MonoBehaviour
     public Text clock;
 
     //PUBLIC ATTRIBUTES
+    public Phases phase;
+
     public bool resetLevel;
     public float colCount;
     public float goldColCount;
@@ -87,6 +90,7 @@ public class GM : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        phase = Phases.EXPLORE;
 
         jPow = 12;
         mSpeed = 7;
@@ -150,6 +154,7 @@ public class GM : MonoBehaviour
         }
 
         levelName = currLevel.name;
+
 		if (levelName.Equals("Tutorial-pass2"))
         {
 			level = Levels.TUTORIAL;
@@ -175,7 +180,7 @@ public class GM : MonoBehaviour
     {
         shots = gCtrl.shots;
         healthVal = hd.healthVal;
-       // mode = SoundManager.mode;
+        //mode = SoundManager.mode;
         updateScore();
         checkPause();
         checkDead();
@@ -348,7 +353,7 @@ public class GM : MonoBehaviour
             roundedTimer = 0;
         }
 
-        totalScore = roundedTimer + (colCount * 1500) + (goldColCount * 3000) + (shots * 1000);
+        totalScore = roundedTimer + (shots * 1000); //+ (colCount * 1500) + (goldColCount * 3000)
         return totalScore;
     }
 
@@ -411,6 +416,12 @@ public class GM : MonoBehaviour
         scoreNum.text = colCount.ToString();
         goldNum.text = goldColCount.ToString();
         shotText.text = shots.ToString();
+    }
+
+    //activates when the player lands in the relic trigger area
+    public void triggerEscape()
+    {
+        phase = Phases.ESCAPE;
     }
 
 }
