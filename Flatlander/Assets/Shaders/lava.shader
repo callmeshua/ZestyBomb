@@ -23,6 +23,7 @@
 		#pragma target 3.0
 
 		sampler2D _MainTex;
+		//float4 _MainTex_ST;
 
 		struct Input {
 			float2 uv_MainTex;
@@ -33,10 +34,12 @@
 		fixed4 _Color;
 
 		sampler2D _DispMap;
+		float4 _DispMap_ST;
 		float _DispMult;
 		float2 _DispV;
 
 		sampler2D _HighMap;
+		float4 _HighMap_ST;
 		float _HighStr;
 		float2 _HighV;
 
@@ -46,7 +49,10 @@
 			//offset.x=0;
 			//offset.y=0;
 			//normalize(offset);
-			const float4 t=float4(v.texcoord.xy+_DispV*_Time.y,0,0);
+			const float2 uv=v.texcoord.xy*_DispMap_ST.xy + _DispMap_ST.zw;
+			const float4 t=float4(uv+_DispV*_Time.y,0,0);
+			//const float4 t=float4(v.texcoord.xy+_DispV*_Time.y,0,0);
+			
 			offset*=(tex2Dlod(_DispMap, t).r*2-1) * _DispMult;
 			v.vertex.xyz += offset;
 		}
@@ -59,13 +65,19 @@
 		UNITY_INSTANCING_BUFFER_END(Props)
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
+			const float2 mainUV=IN.uv_MainTex;
+			const float2 emUV=IN.uv_MainTex*_HighMap_ST.xy + _HighMap_ST.zw;
+
 			// Albedo comes from a texture tinted by color
-			fixed4 c = tex2D(_MainTex, IN.uv_MainTex+_DispV*_Time.y) * _Color;
+			fixed4 c = tex2D(_MainTex, mainUV+_DispV*_Time.y) * _Color;
+			//fixed4 c = tex2D(_MainTex, TRANSFORM_TEX((IN.uv_MainTex+_DispV*_Time.y),_MainTex)) * _Color;
+			//fixed4 c = tex2D(_MainTex, (IN.uv_MainTex+_DispV*_Time.y)*_MainTex_ST.xy + _MainTex_ST.zw) * _Color;
+			//fixed4 c=(1,1,1,1);
 			o.Albedo = c.rgb;
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
-			o.Emission=tex2D(_HighMap, IN.uv_MainTex+_HighV*_Time.y) * _HighStr;
+			o.Emission=tex2D(_HighMap, emUV+_HighV*_Time.y) * _HighStr;
 			o.Alpha = c.a;
 		}
 		ENDCG
