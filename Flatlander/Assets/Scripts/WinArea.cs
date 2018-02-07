@@ -16,8 +16,6 @@ public class WinArea : MonoBehaviour {
     public GM gm;
     public AudioClip winSound;
 
-
-    [HideInInspector]
     public bool win;
 
 	// Use this for initialization
@@ -31,13 +29,13 @@ public class WinArea : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Tab))
         {
-            SoundManager.PlaySFX(winSound, false, .6f);
-            gm.triggerEscape();
-
-            /*
-            ps.isPaused = true;
-            win = true;
-            */
+            //transitions from exploration to escape at relic area
+            if (tag == "relicArea" && gm.phase == GM.Phases.EXPLORE)
+            {
+                SoundManager.PlaySFX(winSound, false, .6f);
+                gm.triggerEscape();
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -58,8 +56,8 @@ public class WinArea : MonoBehaviour {
             if (tag == "exitArea" && gm.phase == GM.Phases.ESCAPE)
             {
                 SoundManager.PlaySFX(winSound, false, .6f);
-                ps.isPaused = true;
                 win = true;
+                gm.paused = true;
             }
         }
     }

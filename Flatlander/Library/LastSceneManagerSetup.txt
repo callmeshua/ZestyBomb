@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/New Scenes/Muerto_Level 1.unity
+- path: Assets/Scenes/Tutorial-pass2.unity
   isLoaded: 1
   isActive: 1

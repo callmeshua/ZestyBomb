@@ -54,7 +54,6 @@ public class SideScrollController : MonoBehaviour
 
     //General condition values
     [Header("Conditions and Info")]
-    public bool isSideScrolling = true; //checks persp.
     public float currentVelocity;
     public float yVelocity;
     public bool isGrounded;
@@ -151,11 +150,11 @@ public class SideScrollController : MonoBehaviour
         horizontal = inputCtrl.horizontal;
         vertical = inputCtrl.vertical;
         isJumping = inputCtrl.isJumping;
-        isSideScrolling = inputCtrl.isSideScrolling;
         groundCheckHeights = new Vector2(groundHitFront.point.y, groundHitBack.point.y); //checks slopes of surface relative to player forward
 
     }
 
+    //resetting the player position to initial
     public void resetPosition()
     {
         transform.position = initPlayerPos;
@@ -186,8 +185,6 @@ public class SideScrollController : MonoBehaviour
     //handles movement forces for top-down and sidescrolling
     void HandleMovement()
     {
-        if (isSideScrolling)
-        {
             //movement forces for while sidescrolling
             if (isGrounded)
             {
@@ -218,32 +215,13 @@ public class SideScrollController : MonoBehaviour
             {
                 isSlowing = false;
             }
-        }
-        else
-        {
-            //top-down movement
-            if (isGrounded)
-            {
-                xzForceDirection = new Vector3(horizontal, 0f, vertical).normalized;
-                //xzForceDirection = Camera.main.transform.TransformDirection(xzForceDirection);
-                xzForceDirection.y = 0.0f;
-
-                //rotation towards the target
-                //Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
-
-                if (currentVelocity < maxSpeed)
-                {
-                    playerRb.AddForce(xzForceDirection * groundAccelerationPower, ForceMode.Force);
-                }
-            }
-        }
     }
 
     //handles jump forces
     void HandleJump()
     {
         //jump
-        if (isGrounded && isJumping && isSideScrolling)
+        if (isGrounded && isJumping)
         {
             SoundManager.PlaySFX(jumpClip, true, 1f);
             
@@ -345,7 +323,7 @@ public class SideScrollController : MonoBehaviour
     {
         //sends values to animator
         anim.SetBool("OnAir", !isGrounded);
-        anim.SetBool("isSideScrolling", isSideScrolling);
+        anim.SetBool("isSideScrolling", true);
         anim.SetFloat("MovementX", localVelocity.x/maxSpeed);
         anim.SetFloat("MovementZ", localVelocity.z/maxSpeed);
         anim.SetFloat("AirMovement", playerRb.velocity.y);
@@ -459,8 +437,6 @@ public class SideScrollController : MonoBehaviour
         {
             headCheck = false;
         }
-
-
 
         Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up - (Vector3.right * 0f)) * ((playerCollider.height / 2f) + .8f)), Color.red);
         Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up - (Vector3.right * .6f)) * ((playerCollider.height / 2f) + .8f)), Color.blue);

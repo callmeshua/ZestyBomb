@@ -25,7 +25,8 @@ public class GM : MonoBehaviour
     public ParameterScreen ps;
     public HealthDepletion hd;
     public GrappleController gCtrl;
-    public WinArea winArea;
+    public WinArea relic;
+    public WinArea exitArea;
     public SoundManager sm;
 
     //the score nuber in the HUD
@@ -42,6 +43,7 @@ public class GM : MonoBehaviour
     public int healthVal;
     public bool touchHazard;
     public bool gameOver;
+    public bool paused;
     public Modes mode;
     public Levels level;
     public GameObject ks;
@@ -93,6 +95,8 @@ public class GM : MonoBehaviour
     {
         phase = Phases.EXPLORE;
 
+        paused = false;
+
         jPow = 12;
         mSpeed = 7;
         dist = 2.8f;
@@ -123,7 +127,7 @@ public class GM : MonoBehaviour
         gameOver = false;
         touchHazard = false;
 
-        winArea = FindObjectOfType<WinArea>();
+        relic = FindObjectOfType<WinArea>();
         hd = FindObjectOfType<HealthDepletion>();
         inputCtrl = FindObjectOfType<FWSInput>();
         pCtrl = FindObjectOfType<SideScrollController>();
@@ -230,8 +234,10 @@ public class GM : MonoBehaviour
                 ResetScene();
             }
         }
-        else if (winArea.win)
+        else if (exitArea.win)
         {
+            phaseText.text += "win";
+            paused = true;
             ws.SetActive(true);
             gCtrl.Retract();
             if (Input.GetButtonDown("Jump"))
@@ -239,7 +245,7 @@ public class GM : MonoBehaviour
                 ResetScene();
             }
         }
-        else if (ps.isPaused && !gameOver && !pCtrl.isDead)
+        else if (paused && !gameOver && !pCtrl.isDead)//pressing escape pause screen function
         {
             pauseScreen.SetActive(true);
             pCtrl.DisableRagdoll();
@@ -274,6 +280,7 @@ public class GM : MonoBehaviour
     //function to reset the scene
     public void ResetScene()
     {
+        phase = Phases.EXPLORE;
         resetLevel = true;
         pCtrl.isDead = false;
         pCtrl.DisableRagdoll();
@@ -294,18 +301,22 @@ public class GM : MonoBehaviour
         totalScore = 0;
         timer = startTime;
         touchHazard = false;
-        if (ps.isPaused)
+
+        if (paused)
         {
-            ps.isPaused = false;
+            paused = false;
         }
 
-        winArea.win = false;
+        relic.win = false;
+        exitArea.win = false;
 		ResetObjects (interactables, i_positions, i_rotations);
 		//Debug.Log (interactables.Length);
 		ResetObjects (hazards, h_positions, h_rotations);
 		ResetObjects (normCollectibles, nc_positions, nc_rotations);
 		ResetObjects (healCollectibles, hc_positions, hc_rotations);
 		ResetObjects (golCollectables, gc_positions, gc_rotations);
+
+        
         
     }
 
@@ -331,11 +342,17 @@ public class GM : MonoBehaviour
                 
     }
 
-    //checks isPaused to stop the Time
+    public void handlePause()
+    {
+        paused = !paused;
+
+    }
+
+    //checks paused to stop the Time
     public void checkPause()
     {
         //pauses the game
-        if (ps.isPaused && !pCtrl.isDead && !gameOver)
+        if (paused && !pCtrl.isDead && !gameOver)
         {
             Time.timeScale = 0.0f;
         }

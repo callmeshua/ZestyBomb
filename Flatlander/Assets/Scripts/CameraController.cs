@@ -24,17 +24,18 @@ public class CameraController : MonoBehaviour
     public float distance = 2.8f;                               //z distance from the player to the camera
     public float zMax;                                          //max z distance
     public float zMin;                                          //min z distance
-    public bool isZoomedOut;                                        //for cinematic effects
+    public bool isZoomedOut;                                    //for cinematic effects
     public float zoomOutDist;
     public bool startZoomed;                                    //start camera on player
-    float orthoSize;
-    float initOrthosize;
+    public float orthoSize;
+    public float initOrthosize;
+
     //PRIVATES
     private float zTarget;                  //target z position for dynamic dolly
     private Vector2 curZMinMax;             //vector of zMax and zMins
     private SideScrollController pCtrl;     //gets reference to player controller
     private PostProcessingProfile postProfile;
-    float targetOtho;
+    private float targetOtho;
 
     public GM gm;
 
@@ -43,7 +44,6 @@ public class CameraController : MonoBehaviour
     {
         pCtrl = FindObjectOfType<SideScrollController>();
         gm = FindObjectOfType<GM>();
-        //distance = gm.dist;
 
         //(good for staging starting shots)
         if (startZoomed)

@@ -19,6 +19,7 @@ public class FWSInput : MonoBehaviour {
     public GameObject pauseScreen;
     public Texture2D reticle;
     public CursorMode cursorMode;
+    public GM gm;
 
     [HideInInspector]
     public bool paused;
@@ -30,7 +31,6 @@ public class FWSInput : MonoBehaviour {
     public float verticalAim;
 
     [Header ("Conditionals")]
-    public bool isSideScrolling = true;
     public bool snap = false;
     public bool reset;
     public bool isJumping;
@@ -62,7 +62,7 @@ public class FWSInput : MonoBehaviour {
 	void Update ()
     {
         
-        isPaused = ps.isPaused;
+        isPaused = gm.paused;
         HandlePause();
         ToggleSnap();
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -87,10 +87,6 @@ public class FWSInput : MonoBehaviour {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
-
-		if (Input.GetButtonDown ("Perspective Shift")) {
-			isSideScrolling = !isSideScrolling;
-		}
 
         if(Input.GetButtonDown("Reset"))
         {

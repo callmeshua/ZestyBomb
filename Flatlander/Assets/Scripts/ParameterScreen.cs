@@ -77,6 +77,8 @@ public class ParameterScreen : MonoBehaviour {
         //updateScore();
         //checkPause();
 
+        handlePauseScreen();
+
         if (isPaused && Input.GetButtonDown("Jump"))
         {
             gm.ResetScene();
@@ -104,10 +106,11 @@ public class ParameterScreen : MonoBehaviour {
     //Calls in the pause screen
     public void handlePauseScreen()
     {
-        isPaused = !isPaused;
+        gm.handlePause();
 
-        if (isPaused && !gm.gameOver && !player.isDead)
+        if (isPaused && !gm.gameOver && !player.isDead && !gm.relic.win)
         {
+            isPaused = gm.paused;
             pauseScreen.SetActive(true);
         }
         else
