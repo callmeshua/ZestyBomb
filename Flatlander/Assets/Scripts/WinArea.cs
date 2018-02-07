@@ -42,12 +42,8 @@ public class WinArea : MonoBehaviour {
         if(other.tag == "Player")
         {
             SoundManager.PlaySFX(winSound, false, .6f);
-            gm.triggerEscape();
-
-            /*
             ps.isPaused = true;
             win = true;
-            */
         }
     }
 }
