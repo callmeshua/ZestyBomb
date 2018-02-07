@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class Dart : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    //darts avoid coll with other dars
+    //if collides with player, destroy
+    //ignore physics
     public void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag != "Dart")

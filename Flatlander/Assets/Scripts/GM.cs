@@ -17,6 +17,7 @@ public class GM : MonoBehaviour
     //Mode enumerator
     public enum Modes { CLASSIC, ENDLESS, LIMSWINGS, SOULLESS };
     public enum Levels { TUTORIAL, LEVEL1, LEVEL2, LEVEL3 };
+    public enum Phases { EXPLORE, ESCAPE };
 
     //PUBLIC REFERENCES
     private SideScrollController pCtrl;

@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Toggle : Trigger {
 
+    //initial position
     protected Vector3 pos;
+    
+    //model of the toggle
     public GameObject buttonModel;
 
     // Use this for initialization
@@ -13,6 +16,7 @@ public class Toggle : Trigger {
         pos = buttonModel.transform.position;
     }
 
+    //at collision w/ player, triggers and model moves down
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Player")
@@ -22,6 +26,7 @@ public class Toggle : Trigger {
         }
     }
 
+    //player leaves collider, button goes back up
     public void OnTriggerExit(Collider other)
     {
         if (other.gameObject.name == "Player")

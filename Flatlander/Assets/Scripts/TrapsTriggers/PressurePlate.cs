@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//inherits from Toggle
 public class PressurePlate : Toggle {
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
+    //as long as player is in collider, is triggered and model is down
     public void OnTriggerStay(Collider other)
     {
         if (other.gameObject.name == "Player")

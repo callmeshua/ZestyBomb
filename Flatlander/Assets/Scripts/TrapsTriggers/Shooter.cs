@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//inherits from Trap class
 public class Shooter : Trap {
 
+    //PUBLIC REFERENCES
     public GameObject dart;
-    public bool canShoot;
     public AudioClip shootSound;
+
+    //PUBLIC ATTRIBUTES
+    public bool canShoot;
     public float power;
     public bool LimitLifetime;
     public float dartLifetime;
@@ -22,6 +26,7 @@ public class Shooter : Trap {
 
     private void FixedUpdate()
     {
+        //delays the rapidfire shots
         if(canShoot == false && fireCount <= DelayBetweenShots)
         {
             fireCount++;
@@ -34,6 +39,7 @@ public class Shooter : Trap {
 
     }
 
+    //instantiates dart prefab to shoot
     public void shoot()
     {
         var bullet = (GameObject)Instantiate(dart, transform.position + (transform.forward), transform.rotation);
@@ -48,6 +54,7 @@ public class Shooter : Trap {
         active = false;
     }
 
+    //if active and can shoot, shoot, then reset rof
     public override void checkActive()
     {
         if (active && canShoot)
