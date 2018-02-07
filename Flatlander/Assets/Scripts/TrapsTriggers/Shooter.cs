@@ -6,24 +6,27 @@ public class Shooter : Trap {
 
     public GameObject dart;
     public bool canShoot;
-    public float rateOfFire;
+    public AudioClip shootSound;
+    public float power;
+    public bool LimitLifetime;
+    public float dartLifetime;
+    public float DelayBetweenShots;
     public float fireCount;
 
 	// Use this for initialization
 	void Start () {
         active = false;
         canShoot = true;
-        rateOfFire = 30;
         fireCount = 0;
 	}
 
     private void FixedUpdate()
     {
-        if(canShoot == false && fireCount <= rateOfFire)
+        if(canShoot == false && fireCount <= DelayBetweenShots)
         {
             fireCount++;
         }
-        if(fireCount > rateOfFire)
+        if(fireCount > DelayBetweenShots)
         {
             canShoot = true;
 
@@ -34,10 +37,14 @@ public class Shooter : Trap {
     public void shoot()
     {
         var bullet = (GameObject)Instantiate(dart, transform.position + (transform.forward), transform.rotation);
+        SoundManager.PlaySFX(shootSound, true, .3f);
 
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 5;
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * power;
 
-        Destroy(bullet, 2.0f);
+        if (LimitLifetime)
+        {
+            Destroy(bullet, dartLifetime);
+        }
         active = false;
     }
 
