@@ -57,9 +57,12 @@ public class HealthDepletion : MonoBehaviour {
     //healthMod: + for healing, - for damage. If useChunks, healthmod = # of chunks
     public void handleHealth(int healthMod, bool useChunks)
     {
-        if (useChunks && healthVal < maxHealth)
+        if (useChunks)
         {
-            healthVal += (maxHealth / healthChunks) * healthMod;
+            if ((healthMod > 0 && healthVal <= maxHealth) || healthMod < 0)
+            {
+                healthVal += (maxHealth / healthChunks) * healthMod;
+            }
         }
         else
         {

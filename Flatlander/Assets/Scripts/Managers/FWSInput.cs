@@ -166,7 +166,7 @@ public class FWSInput : MonoBehaviour {
     //Handles pausing the game
     void HandlePause()
     {
-        gm.handleFrozen();
+        gm.handlePause();
 
         /*
         if (Input.GetKeyDown(KeyCode.Q))

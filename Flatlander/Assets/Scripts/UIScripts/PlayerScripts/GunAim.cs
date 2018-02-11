@@ -8,8 +8,7 @@ public class GunAim : MonoBehaviour
     private SideScrollController pCtrl;
     public Vector2 minMaxAim;
     private Transform rightShoulder;
-    public ParameterScreen ps;
-    public GameObject reticle;
+    public GM gm;
 
     // Use this for initialization
     void Start()
@@ -24,7 +23,10 @@ public class GunAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleShoulder();
+        if (!gm.frozen && !gm.paused)
+        {
+            HandleShoulder();
+        }
 	}
 
 

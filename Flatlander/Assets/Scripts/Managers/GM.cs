@@ -22,10 +22,9 @@ public class GM : MonoBehaviour
     //PUBLIC REFERENCES
     private SideScrollController pCtrl;
     private FWSInput inputCtrl;
-    public ParameterScreen ps;
     public HealthDepletion hd;
     public GrappleController gCtrl;
-    public WinArea relic;
+    public GameObject relic;
     public WinArea exitArea;
     public SoundManager sm;
 
@@ -47,9 +46,6 @@ public class GM : MonoBehaviour
     public bool paused;
     public Modes mode;
     public Levels level;
-    public GameObject ks;
-    public GameObject ws;
-    public GameObject pauseScreen;
     [HideInInspector]
     public float timer, roundedTimer;
     public Phases phase;
@@ -107,9 +103,6 @@ public class GM : MonoBehaviour
 
         //init GO's
         currLevel = SceneManager.GetActiveScene();
-        ks.SetActive(false);
-        ws.SetActive(false);
-        pauseScreen.SetActive(false);
 
         //for restart array
         interactables = GameObject.FindGameObjectsWithTag("Interactable");
@@ -127,8 +120,9 @@ public class GM : MonoBehaviour
         resetLevel = false;
         gameOver = false;
         touchHazard = false;
+        
+        relic.SetActive(true);
 
-        relic = FindObjectOfType<WinArea>();
         hd = FindObjectOfType<HealthDepletion>();
         inputCtrl = FindObjectOfType<FWSInput>();
         pCtrl = FindObjectOfType<SideScrollController>();
@@ -189,7 +183,7 @@ public class GM : MonoBehaviour
         updateScore();
         checkFreeze();
         checkDead();
-        handleFreezes();
+        updateClock();
         resetLevel = false;
         phaseText.text = "Phase: " + phase.ToString();
     }
@@ -222,47 +216,34 @@ public class GM : MonoBehaviour
         }
     }
 
-    //handles each case for pausing
-    public void handleFreezes()
+    public void handlePauseScreen()
     {
-        if (gameOver)
+        pCtrl.DisableRagdoll();
+        gCtrl.Retract();
+        if (Input.GetButtonDown("Jump"))
         {
-            ks.SetActive(true);
-            pCtrl.isDead = true;
-            gCtrl.Retract();
-            if (Input.GetButtonDown("Jump"))
-            {
-                ResetScene();
-            }
+            ResetScene();
         }
-        else if (exitArea.win)
+    }
+
+    public void handleDeath()
+    {
+        pCtrl.isDead = true;
+        gCtrl.Retract();
+        if (Input.GetButtonDown("Jump"))
         {
-            phaseText.text += "win";
-            frozen = true;
-            ws.SetActive(true);
-            gCtrl.Retract();
-            if (Input.GetButtonDown("Jump"))
-            {
-                ResetScene();
-            }
+            ResetScene();
         }
-        else if (frozen && !pCtrl.isDead)//pressing escape pause screen function
+    }
+
+    public void handleWin()
+    {
+        phaseText.text += "win";
+        frozen = true;
+        gCtrl.Retract();
+        if (Input.GetButtonDown("Jump"))
         {
-            pauseScreen.SetActive(true);
-            pCtrl.DisableRagdoll();
-            gCtrl.Retract();
-            if (Input.GetButtonDown("Jump"))
-            {
-                ResetScene();
-            }
-        }
-        else
-        {
-			ks.SetActive (false);
-			ws.SetActive (false);
-            pauseScreen.SetActive(false);
-            pCtrl.isDead = false;
-            updateClock();
+            ResetScene();
         }
     }
     
@@ -308,22 +289,23 @@ public class GM : MonoBehaviour
             frozen = false;
         }
 
-        relic.win = false;
+        paused = false;
+        
         exitArea.win = false;
+
+        relic.SetActive(true);
+
 		ResetObjects (interactables, i_positions, i_rotations);
 		//Debug.Log (interactables.Length);
 		ResetObjects (hazards, h_positions, h_rotations);
 		ResetObjects (normCollectibles, nc_positions, nc_rotations);
 		ResetObjects (healCollectibles, hc_positions, hc_rotations);
 		ResetObjects (golCollectables, gc_positions, gc_rotations);
-
-        
-        
     }
 
     public void updateClock()
     {
-        if ((mode == Modes.CLASSIC || mode == Modes.LIMSWINGS) && timer > -5)
+        if ((mode == Modes.CLASSIC || mode == Modes.LIMSWINGS) && timer > -5 && !gameOver)
         {
             timer -= Time.deltaTime * 12f;
             roundedTimer = Mathf.RoundToInt(timer);
@@ -405,11 +387,12 @@ public class GM : MonoBehaviour
 
     public void ResetObjects(GameObject[] objects, List<float> positions, List<float> rotations)
     {
+        /*
         if (objects[0].gameObject.CompareTag("normieCollectible") || objects[0].gameObject.CompareTag("healCollectible") || objects[0].gameObject.CompareTag("scoreCollectible"))
         {
             colCount = 0;
             goldColCount = 0;
-        }
+        }*/
         for (int i = 0; i < objects.Length; i++)
         {
             GameObject clone = Instantiate(objects[i], new Vector3(positions[i * 3], positions[i * 3 + 1], positions[i * 3 + 2]), Quaternion.Euler(new Vector3(rotations[i * 3], rotations[i * 3 + 1], rotations[i * 3 + 2])));

@@ -26,18 +26,48 @@ public class CanvasManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        checkPause();
+        checkDead();
+        checkWin();
 	}
 
     //checks if game is paused for pause screen
     public void checkPause()
     {
-        if (gm.paused)
+        if (gm.paused && !gm.gameOver && gm.frozen)
         {
             ps.SetActive(true);
+            gm.handlePauseScreen();
         }
         else
         {
             ps.SetActive(false);
+        }
+    }
+
+    public void checkDead()
+    {
+        if (gm.gameOver && !gm.paused && !gm.exitArea.win)
+        {
+            ds.SetActive(true);
+            gm.handleDeath();
+        }
+        else
+        {
+            ds.SetActive(false);
+        }
+    }
+
+    public void checkWin()
+    {
+        if (gm.exitArea.win && !gm.gameOver && !gm.paused)
+        {
+            ws.SetActive(true);
+            gm.handleWin();
+        }
+        else
+        {
+            ws.SetActive(false);
         }
     }
 }

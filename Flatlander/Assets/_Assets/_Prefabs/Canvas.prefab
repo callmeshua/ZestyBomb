@@ -824,7 +824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1273230077411182
 GameObject:
   m_ObjectHideFlags: 1
@@ -1017,7 +1017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1328420405769868
 GameObject:
   m_ObjectHideFlags: 1
@@ -3806,7 +3806,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
-  ps: {fileID: 114489230117095578}
   reset: {fileID: 114619554737212284}
   menu: {fileID: 114641101501727318}
   targetPos: {fileID: 1234509908525948}
@@ -5887,7 +5886,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1034336496214670}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f06e8091767620e40994433d7f1a8892, type: 3}
   m_Name: 
@@ -5912,7 +5911,6 @@ MonoBehaviour:
   HRFNum: {fileID: 114855451876776684}
   camDistanceSlider: {fileID: 114952792453716328}
   CDNum: {fileID: 114399426791422704}
-  isPaused: 0
 --- !u!114 &114493516572337530
 MonoBehaviour:
   m_ObjectHideFlags: 1

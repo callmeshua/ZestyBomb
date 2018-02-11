@@ -32,16 +32,14 @@ public class WeponRecoil : MonoBehaviour {
         moveToInitPosition = true;
         ShoulderPos = transform.parent;
         pCtrl = FindObjectOfType<SideScrollController>();
+
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         HandleRecoil();
-        if (!gm.paused)
-        {
-            HandleGunSway();
-        }
+        HandleGunSway();
 
         if (pCtrl.yVelocity > 0f && !pCtrl.isGrounded && !pCtrl.isAnchored)
         {
@@ -96,14 +94,17 @@ public class WeponRecoil : MonoBehaviour {
 
     void HandleGunSway()
     {
-        if (pCtrl.horizontal != 0f && pCtrl.isGrounded)
+        if (!pCtrl.isDead && !gm.frozen && !gm.paused)
         {
-            float ratio = pCtrl.currentVelocity / pCtrl.maxSpeed;
-            transform.position = transform.position + Vector3.up * Mathf.Sin(Time.time * animBobbingSpeed) * animBobbingMagnitude * ratio;
-        }
-        else if (pCtrl.horizontal == 0f && pCtrl.isGrounded)
-        {
-            transform.position = transform.position + Vector3.up * Mathf.Sin(Time.time * animBobbingSpeed * .2f) * animBobbingMagnitude * .3f;
+            if (pCtrl.horizontal != 0f && pCtrl.isGrounded)
+            {
+                float ratio = pCtrl.currentVelocity / pCtrl.maxSpeed;
+                transform.position = transform.position + Vector3.up * Mathf.Sin(Time.time * animBobbingSpeed) * animBobbingMagnitude * ratio;
+            }
+            else if (pCtrl.horizontal == 0f && pCtrl.isGrounded)
+            {
+                transform.position = transform.position + Vector3.up * Mathf.Sin(Time.time * animBobbingSpeed * .2f) * animBobbingMagnitude * .3f;
+            }
         }
     }
 }

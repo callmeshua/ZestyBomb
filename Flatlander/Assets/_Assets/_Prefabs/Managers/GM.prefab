@@ -52,10 +52,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
-  ps: {fileID: 0}
   hd: {fileID: 0}
   gCtrl: {fileID: 0}
-  winArea: {fileID: 0}
+  relic: {fileID: 0}
+  exitArea: {fileID: 0}
   sm: {fileID: 0}
   scoreNum: {fileID: 0}
   goldNum: {fileID: 0}
@@ -68,16 +68,17 @@ MonoBehaviour:
   healthVal: 0
   touchHazard: 0
   gameOver: 0
+  frozen: 0
+  paused: 0
   mode: 0
   level: 0
-  ks: {fileID: 0}
-  ws: {fileID: 0}
-  pauseScreen: {fileID: 0}
   timer: 6000
   roundedTimer: 0
+  phase: 0
   jPow: 0
   mSpeed: 0
   dist: 0
   range: 0
   recoil: 0
   power: 0
+  phaseText: {fileID: 0}

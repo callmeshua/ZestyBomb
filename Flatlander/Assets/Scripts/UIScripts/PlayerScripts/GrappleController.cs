@@ -20,7 +20,6 @@ public class GrappleController : MonoBehaviour
     public GameObject barrel;
     public GameObject gunshotParticlePrefab;
     public GameObject dashParticlePrefab;
-    public ParameterScreen ps;
     public GM gm;
     private FWSInput pInput;
     public AudioClip shootSound;
@@ -33,7 +32,7 @@ public class GrappleController : MonoBehaviour
     public float fallPower;//while swinging
     public float effectiveSwingAngle = 5f;//hanging straight down = 0 degrees
 
-    
+
     public float ropeJumpPower = 15f;
     public float jumpThreshold = 2f; //distance from anchor before player can jump up from rope;
 
@@ -42,9 +41,9 @@ public class GrappleController : MonoBehaviour
     public float massInfluence = 1f;
     [Header("Rope Attributes")]
 
-    public float climbSpeed=.2f;
-    public float maxRopeRange=15f;
-    public float minRopeRange=1f;
+    public float climbSpeed = .2f;
+    public float maxRopeRange = 15f;
+    public float minRopeRange = 1f;
     public float curRopeLength;
 
     public float ropeLengthCorrectionSpeed = .3f; //speed at which rope shortens if beyond max range
@@ -65,12 +64,12 @@ public class GrappleController : MonoBehaviour
     public bool unWrapCurrentAnchor;
 
     //INTERNALS
-    
+
     private GameObject staticHook;
     public SideScrollController pCtrl;
     private WeponRecoil recoil;
     private LineRenderer line;
-    
+
 
     public List<Vector3> anchors = new List<Vector3>();
 
@@ -95,7 +94,6 @@ public class GrappleController : MonoBehaviour
     void Start()
     {
         gm = FindObjectOfType<GM>();
-        ps = FindObjectOfType<ParameterScreen>();
         recoil = FindObjectOfType<WeponRecoil>();
         line = gameObject.GetComponent<LineRenderer>();
         pInput = FindObjectOfType<FWSInput>();
@@ -109,15 +107,20 @@ public class GrappleController : MonoBehaviour
         power = gm.power;
 
         Retract();
-        
+
     }
 
     private void Update()
     {
-        if ((pInput.isShooting || pInput.reset && curHook != null) && (!pCtrl.isDead || !gm.paused))
+        if ((pInput.isShooting || pInput.reset && curHook != null) && (!pCtrl.isDead || !gm.frozen || !gm.paused))
         {
             Shoot(); //shoot if input, retracts if dead/hook exists
         }
+
+        maxRopeRange = gm.range;
+        recoilForce = gm.recoil;
+        power = gm.power;
+
         HandleLine();
     }
 
@@ -127,7 +130,7 @@ public class GrappleController : MonoBehaviour
         //Mathf.Clamp(massInfluence, 0f, 3f);
         lineCoef = ropeDroop / 10f;
 
-        if (pCtrl.isAnchored)
+        if (pCtrl.isAnchored && (!pCtrl.isDead || !gm.frozen || !gm.paused))
         {
             RopeLength();
 

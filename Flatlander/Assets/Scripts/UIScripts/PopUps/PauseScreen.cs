@@ -8,7 +8,6 @@ public class PauseScreen : MonoBehaviour {
 
     //PUBLIC SCRIPT REFERENCES
     public GM gm;
-    public ParameterScreen ps;
 
     //public buttons
     public Button reset;
@@ -21,7 +20,6 @@ public class PauseScreen : MonoBehaviour {
     void Start () {
 
         gm = FindObjectOfType<GM>();
-        ps = FindObjectOfType<ParameterScreen>();
         reset.onClick.AddListener(buttonReset);
         menu.onClick.AddListener(buttonMenu);
         initPos = transform.position;

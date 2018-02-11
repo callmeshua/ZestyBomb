@@ -139,6 +139,8 @@ public class SideScrollController : MonoBehaviour
     //for non-phsyics physics and calculations
     private void Update()
     {
+        jumpPower = gm.jPow;
+        maxSpeed = gm.mSpeed;
 
         HandleAnimValues();
         HandleJump();

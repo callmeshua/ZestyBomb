@@ -12,7 +12,6 @@ using UnityEngine;
 public class WinArea : MonoBehaviour {
 
     //PUBLIC REFERENCED SCRIPTS
-    public ParameterScreen ps;      //to pause the game
     public GM gm;
     public AudioClip winSound;
 
@@ -20,7 +19,6 @@ public class WinArea : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        ps = FindObjectOfType<ParameterScreen>();
         gm = FindObjectOfType<GM>();
         win = false;
 	}
@@ -34,7 +32,7 @@ public class WinArea : MonoBehaviour {
             {
                 SoundManager.PlaySFX(winSound, false, .6f);
                 gm.triggerEscape();
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }
@@ -49,7 +47,7 @@ public class WinArea : MonoBehaviour {
             {
                 SoundManager.PlaySFX(winSound, false, .6f);
                 gm.triggerEscape();
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
 
             //win condition for escape area
