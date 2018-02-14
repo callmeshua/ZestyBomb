@@ -678,6 +678,11 @@ Prefab:
       propertyPath: gm
       value: 
       objectReference: {fileID: 2134193115}
+    - target: {fileID: 54571499660398434, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 58
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
   m_IsPrefabParent: 0
@@ -1485,11 +1490,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -129.9
+      value: 183.6
       objectReference: {fileID: 0}
     - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 17.7
+      value: 117.8
       objectReference: {fileID: 0}
     - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3782,12 +3787,12 @@ Prefab:
     - target: {fileID: 59377980716958922, guid: 93a3738601a152e4f85fa6a1a24d5715,
         type: 2}
       propertyPath: m_ConnectedAnchor.x
-      value: -3.9994164
+      value: -2.4622421
       objectReference: {fileID: 0}
     - target: {fileID: 59377980716958922, guid: 93a3738601a152e4f85fa6a1a24d5715,
         type: 2}
       propertyPath: m_ConnectedAnchor.y
-      value: 14.989529
+      value: 14.689529
       objectReference: {fileID: 0}
     - target: {fileID: 59377980716958922, guid: 93a3738601a152e4f85fa6a1a24d5715,
         type: 2}
@@ -6214,6 +6219,11 @@ Prefab:
       propertyPath: gm
       value: 
       objectReference: {fileID: 2134193115}
+    - target: {fileID: 54571499660398434, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 58
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
   m_IsPrefabParent: 0
@@ -6286,6 +6296,11 @@ Prefab:
       propertyPath: gm
       value: 
       objectReference: {fileID: 2134193115}
+    - target: {fileID: 54571499660398434, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 58
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
   m_IsPrefabParent: 0
