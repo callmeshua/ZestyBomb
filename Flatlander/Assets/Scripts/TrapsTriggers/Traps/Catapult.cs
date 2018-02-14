@@ -7,9 +7,6 @@ public class Catapult : MonoBehaviour
     [SerializeField]
     private Transform _bullseye;    // target transform
 
-    // Editor variables
-    [Range(1f, 6f)]
-    public float _targetRange;
     [Range(20f, 70f)]
     public float _angle;
 
@@ -22,7 +19,7 @@ public class Catapult : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	
+		Launch ();
 	}
 
 
@@ -58,5 +55,13 @@ public class Catapult : MonoBehaviour
         // after launch revert the switch
         //_targetReady = false;
     }
+
+	void OnCollisionEnter(Collision col)
+	{
+		if (col.gameObject.CompareTag("Player"))
+		{
+			Destroy (gameObject);
+		}
+	}
 }
 
