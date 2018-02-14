@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class ModeSelect : MonoBehaviour {
 	//PUBLIC SCRIPT REFERENCES
@@ -41,6 +42,7 @@ public class ModeSelect : MonoBehaviour {
         //gm.resetTimer();
         //gm.mode = GM.Modes.CLASSIC;
         SoundManager.mode = GM.Modes.CLASSIC;
+        LoadMuertoLevel();
         levelSel.SetActive (true);
 		gameObject.SetActive (false);
 	}
@@ -51,6 +53,7 @@ public class ModeSelect : MonoBehaviour {
         //gm.resetTimer();
         //gm.mode = GM.Modes.SOULLESS;
         SoundManager.mode = GM.Modes.SOULLESS;
+        LoadMuertoLevel();
         levelSel.SetActive (true);
 		gameObject.SetActive (false);
 	}
@@ -61,6 +64,7 @@ public class ModeSelect : MonoBehaviour {
         //SceneManager.LoadScene("Level_3");
         //gm.mode = GM.Modes.ENDLESS;
         SoundManager.mode = GM.Modes.ENDLESS;
+        LoadMuertoLevel();
         levelSel.SetActive (true);
 		gameObject.SetActive (false);
 	}
@@ -69,6 +73,7 @@ public class ModeSelect : MonoBehaviour {
 	{
         //gm.mode = GM.Modes.LIMSWINGS;
         SoundManager.mode = GM.Modes.LIMSWINGS;
+        LoadMuertoLevel();
         levelSel.SetActive (true);
 		gameObject.SetActive (false);
 	}
@@ -79,4 +84,9 @@ public class ModeSelect : MonoBehaviour {
 		menu.SetActive(true);
 		gameObject.SetActive(false);
 	}
+
+    void LoadMuertoLevel()
+    {
+        SceneManager.LoadScene("Muerto_Level 1");
+    }
 }
