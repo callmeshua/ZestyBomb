@@ -25,7 +25,9 @@ GameObject:
   - component: {fileID: 95731676156071460}
   - component: {fileID: 54571499660398434}
   - component: {fileID: 114494858920103362}
-  m_Layer: 0
+  - component: {fileID: 65039947452942764}
+  - component: {fileID: 65598503613236288}
+  m_Layer: 14
   m_Name: stalactite
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -39,8 +41,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1385137515271234}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9674072, y: 12.300472, z: 0}
-  m_LocalScale: {x: 2.2249298, y: 2.2249317, z: 2.2249317}
+  m_LocalPosition: {x: 141.6, y: 141.8, z: 0}
+  m_LocalScale: {x: 2.3217216, y: 2.3217232, z: 2.3217232}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -100,7 +102,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 122
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &64332572787564896
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -109,12 +111,36 @@ MeshCollider:
   m_GameObject: {fileID: 1385137515271234}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
+  m_Convex: 0
+  m_CookingOptions: -1
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 1960da37af5fc2645a9e66e42cc5b040, type: 3}
+--- !u!65 &65039947452942764
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385137515271234}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0272486, y: 2.284293, z: 1.3040644}
+  m_Center: {x: 0.000000051345214, y: -0.083847895, z: -0.00000005134517}
+--- !u!65 &65598503613236288
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385137515271234}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.68189925, y: 2.907397, z: 1.3040644}
+  m_Center: {x: 0.000000051345214, y: -2.683709, z: -0.000000051345168}
 --- !u!95 &95731676156071460
 Animator:
   serializedVersion: 3
@@ -143,8 +169,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 114704253377574780, guid: 037cfbde270fb7f488793ebcc942a7ff, type: 2}
+  gm: {fileID: 0}
+  hookToFall: 0
+  relicTriggerFall: 0
+  delaySeconds: 0
   collideWithTag: Interactable
-  playerColCanActivate: 1
+  playerColCanActivate: 0
   impactClip: {fileID: 8300000, guid: fa7e275faa6719347a6bec5d38bfdcdf, type: 3}
   boulderSoundClip: {fileID: 0}

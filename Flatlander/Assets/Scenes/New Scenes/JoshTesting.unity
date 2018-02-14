@@ -340,6 +340,16 @@ Prefab:
       propertyPath: gm
       value: 
       objectReference: {fileID: 336555109}
+    - target: {fileID: 114494858920103362, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: playerColCanActivate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54571499660398434, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 58
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
   m_IsPrefabParent: 0
@@ -2333,23 +2343,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4241589226787604, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2.3217216
-      objectReference: {fileID: 0}
-    - target: {fileID: 4241589226787604, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2.3217232
-      objectReference: {fileID: 0}
-    - target: {fileID: 4241589226787604, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2.3217232
-      objectReference: {fileID: 0}
     - target: {fileID: 114494858920103362, guid: 3fb64f5cac7324a4bbc7296681827c23,
         type: 2}
       propertyPath: gm
       value: 
       objectReference: {fileID: 336555109}
+    - target: {fileID: 54571499660398434, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 58
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
   m_IsPrefabParent: 0
@@ -3144,11 +3147,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -107.47
+      value: 122
       objectReference: {fileID: 0}
     - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 31.66
+      value: 112.2
       objectReference: {fileID: 0}
     - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3752,7 +3755,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4241589226787604, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 141.8
+      value: 142.47
       objectReference: {fileID: 0}
     - target: {fileID: 4241589226787604, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3799,6 +3802,21 @@ Prefab:
       propertyPath: gm
       value: 
       objectReference: {fileID: 336555109}
+    - target: {fileID: 114494858920103362, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: playerColCanActivate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114494858920103362, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: relicTriggerFall
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54571499660398434, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 58
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
   m_IsPrefabParent: 0
@@ -6214,6 +6232,14 @@ Prefab:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1531334687855850, guid: 752266b26cf8ac84da28d239c4ba4456, type: 2}
+      propertyPath: m_TagString
+      value: Hazard
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647984778829492, guid: 752266b26cf8ac84da28d239c4ba4456, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 752266b26cf8ac84da28d239c4ba4456, type: 2}
   m_IsPrefabParent: 0
@@ -6235,7 +6261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 336555109}
   hookToFall: 0
-  relicTriggerFall: 0
+  relicTriggerFall: 1
   delaySeconds: 0
   collideWithTag: Interactable
   playerColCanActivate: 1
