@@ -19,6 +19,7 @@ public class Shooter : Trap {
     public float framesBetweenShots;
     public float fireCount;
     public ShooterType shooterType;
+    public GameObject barrelTrans;
 
 	// Use this for initialization
 	void Start () {
@@ -56,7 +57,7 @@ public class Shooter : Trap {
     //instantiates dart prefab to shoot
     public void shoot()
     {
-        var bullet = (GameObject)Instantiate(dart, transform.position + (transform.forward * transform.localScale.x), transform.rotation);
+        var bullet = (GameObject)Instantiate(dart, barrelTrans.transform.position, barrelTrans.transform.rotation);
         SoundManager.PlaySFX(shootSound, true, .03f);
 
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * power;
