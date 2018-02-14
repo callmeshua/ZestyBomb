@@ -60,6 +60,7 @@ GameObject:
   m_Layer: 0
   m_Name: Dart Shooter
   m_TagString: shooter
+<<<<<<< HEAD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,6 +160,8 @@ GameObject:
   m_Layer: 0
   m_Name: R_Ring
   m_TagString: Untagged
+=======
+>>>>>>> 27f8cf3addf7e3002b2a3964f6b534e3027477e4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,6 +245,9 @@ Transform:
 =======
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+>>>>>>> 27f8cf3addf7e3002b2a3964f6b534e3027477e4
+=======
 >>>>>>> 27f8cf3addf7e3002b2a3964f6b534e3027477e4
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -630,6 +636,9 @@ MonoBehaviour:
   shootSound: {fileID: 0}
   canShoot: 0
   power: 0
+<<<<<<< HEAD
+>>>>>>> 27f8cf3addf7e3002b2a3964f6b534e3027477e4
+=======
 >>>>>>> 27f8cf3addf7e3002b2a3964f6b534e3027477e4
   LimitLifetime: 0
   dartLifetime: 0
