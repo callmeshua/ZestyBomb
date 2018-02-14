@@ -9,46 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1200554415553330}
+  m_RootGameObject: {fileID: 1864341256887466}
   m_IsPrefabParent: 1
---- !u!1 &1200554415553330
+--- !u!1 &1864341256887466
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4720962418670424}
-  - component: {fileID: 33468748383710510}
-  - component: {fileID: 65762203763127282}
-  - component: {fileID: 23280879353596288}
-  - component: {fileID: 114839312871671698}
+  - component: {fileID: 4399005595702068}
+  - component: {fileID: 33887311475501054}
+  - component: {fileID: 65489885760857106}
+  - component: {fileID: 23703398064044316}
+  - component: {fileID: 114210306038646900}
   m_Layer: 0
-  m_Name: Dart Shooter
+  m_Name: Timed Shooter
   m_TagString: shooter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4720962418670424
+--- !u!4 &4399005595702068
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1200554415553330}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 1864341256887466}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 20.29, y: 44.02, z: -0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23280879353596288
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!23 &23703398064044316
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1200554415553330}
+  m_GameObject: {fileID: 1864341256887466}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -77,40 +77,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33468748383710510
+--- !u!33 &33887311475501054
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1200554415553330}
+  m_GameObject: {fileID: 1864341256887466}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65762203763127282
+--- !u!65 &65489885760857106
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1200554415553330}
+  m_GameObject: {fileID: 1864341256887466}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114839312871671698
+--- !u!114 &114210306038646900
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1200554415553330}
+  m_GameObject: {fileID: 1864341256887466}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbfd09a620d21d8478608db11faab31d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dart: {fileID: 0}
-  shootSound: {fileID: 0}
+  dart: {fileID: 1596357841950962, guid: b956210c5513b194e96757477a71426a, type: 2}
+  shootSound: {fileID: 8300000, guid: f0d6174a7298c4a4db920557d515c4fa, type: 3}
   canShoot: 0
-  power: 0
+  power: 50
   LimitLifetime: 0
   dartLifetime: 0
   framesBetweenShots: 0
