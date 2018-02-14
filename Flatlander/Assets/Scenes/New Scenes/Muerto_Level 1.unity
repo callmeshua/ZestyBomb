@@ -10010,6 +10010,14 @@ Prefab:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1531334687855850, guid: 752266b26cf8ac84da28d239c4ba4456, type: 2}
+      propertyPath: m_TagString
+      value: Hazard
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647984778829492, guid: 752266b26cf8ac84da28d239c4ba4456, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 752266b26cf8ac84da28d239c4ba4456, type: 2}
   m_IsPrefabParent: 0
