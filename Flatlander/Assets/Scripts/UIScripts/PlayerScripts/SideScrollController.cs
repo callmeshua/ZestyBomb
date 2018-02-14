@@ -46,9 +46,9 @@ public class SideScrollController : MonoBehaviour
     public float groundAccelerationPower;
     public float airAccelerationPower;
     public float swingAccelerationPower;
-    public float jumpPower;
+    public float jumpPower = 12;
     public float groundCheckDistance;   //ray distance for ground check
-    public float maxSpeed;
+    public float maxSpeed = 7;
     public float slowSpeed;
     public float stickForce;            //downward grounded force
 
@@ -131,16 +131,12 @@ public class SideScrollController : MonoBehaviour
         initPlayerPos = transform.position;
         isDead = false;
         DisableRagdoll();
-
-        jumpPower = gm.jPow;
-        maxSpeed = gm.mSpeed;
+        
     }
     
     //for non-phsyics physics and calculations
     private void Update()
     {
-        jumpPower = gm.jPow;
-        maxSpeed = gm.mSpeed;
 
         HandleAnimValues();
         HandleJump();

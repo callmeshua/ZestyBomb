@@ -102,10 +102,6 @@ public class GrappleController : MonoBehaviour
         staticHook = Instantiate(HookStaticModel, barrel.transform);
         ropeLengthLimit = joint.linearLimit;
 
-        maxRopeRange = gm.range;
-        recoilForce = gm.recoil;
-        power = gm.power;
-
         Retract();
 
     }
@@ -116,10 +112,6 @@ public class GrappleController : MonoBehaviour
         {
             Shoot(); //shoot if input, retracts if dead/hook exists
         }
-
-        maxRopeRange = gm.range;
-        recoilForce = gm.recoil;
-        power = gm.power;
 
         HandleLine();
     }

@@ -40,7 +40,7 @@ public class Rock_Fall : MonoBehaviour {
     //JK~~
     public void Update()
     {
-        FuckYou();
+        checkPhase();
     }
 
     // checks for collision with hook/grapple
@@ -87,7 +87,7 @@ public class Rock_Fall : MonoBehaviour {
 	}
 
     // if phase is ESCAPE, let the bodies hits the floor.
-    void FuckYou()
+    void checkPhase()
     {
         if (gm.phase == GM.Phases.ESCAPE)
         {

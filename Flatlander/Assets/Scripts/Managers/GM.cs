@@ -50,13 +50,6 @@ public class GM : MonoBehaviour
     public float timer, roundedTimer;
     public Phases phase;
 
-    public float jPow;
-    public float mSpeed;
-    public float dist;
-    public float range;
-    public float recoil;
-    public float power;
-
     //PRIVATE ATTRIBUTES
 	private string levelName;
 	private Scene currLevel;
@@ -93,13 +86,6 @@ public class GM : MonoBehaviour
         phase = Phases.EXPLORE;
 
         frozen = false;
-
-        jPow = 12;
-        mSpeed = 7;
-        dist = 2.8f;
-        range = 15;
-        recoil = 0.3f;
-        power = 8;
 
         //init GO's
         currLevel = SceneManager.GetActiveScene();
@@ -170,8 +156,6 @@ public class GM : MonoBehaviour
         {
 			level = Levels.LEVEL3;
 		}
-			
-		Debug.Log (level);
     }
 
     // Update is called once per frame
