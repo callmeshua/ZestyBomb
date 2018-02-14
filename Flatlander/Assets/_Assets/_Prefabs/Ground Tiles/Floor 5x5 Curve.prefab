@@ -21,12 +21,13 @@ GameObject:
   - component: {fileID: 4557480425980688}
   - component: {fileID: 33364785186001562}
   - component: {fileID: 23493923678542994}
-  m_Layer: 0
+  - component: {fileID: 64951664079175456}
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1436491488912772
 GameObject:
@@ -36,12 +37,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4253349773540124}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 5x5 Curve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4253349773540124
 Transform:
@@ -49,8 +50,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1436491488912772}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -187.77, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 29.819988, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4557480425980688}
@@ -110,4 +111,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1127088007650430}
+  m_Mesh: {fileID: 4300000, guid: 4115205601c02a54bbe9e47d5d9d31ba, type: 3}
+--- !u!64 &64951664079175456
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1127088007650430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 4115205601c02a54bbe9e47d5d9d31ba, type: 3}
