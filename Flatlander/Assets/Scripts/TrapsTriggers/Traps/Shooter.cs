@@ -5,6 +5,8 @@ using UnityEngine;
 //inherits from Trap class
 public class Shooter : Trap {
 
+    public enum ShooterType {STANDARD, TIMED};
+
     //PUBLIC REFERENCES
     public GameObject dart;
     public AudioClip shootSound;
@@ -16,6 +18,7 @@ public class Shooter : Trap {
     public float dartLifetime;      //seconds
     public float framesBetweenShots;
     public float fireCount;
+    public ShooterType shooterType;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +34,7 @@ public class Shooter : Trap {
 
     private void FixedUpdate()
     {
-        if(tag == "timedShooter")
+        if(shooterType == ShooterType.TIMED)
         {
             active = true;
             framesBetweenShots = 120;
@@ -53,7 +56,7 @@ public class Shooter : Trap {
     //instantiates dart prefab to shoot
     public void shoot()
     {
-        var bullet = (GameObject)Instantiate(dart, transform.position + (transform.forward), transform.rotation);
+        var bullet = (GameObject)Instantiate(dart, transform.position + (transform.forward * transform.localScale.x), transform.rotation);
         SoundManager.PlaySFX(shootSound, true, .03f);
 
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * power;

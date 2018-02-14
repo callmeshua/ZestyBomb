@@ -9,7 +9,7 @@ public class Dart : MonoBehaviour {
     //ignore physics
     public void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag != "Dart")
+        if (collision.gameObject.tag != "Dart")
         {
             GetComponent<Rigidbody>().isKinematic = true;
         }
