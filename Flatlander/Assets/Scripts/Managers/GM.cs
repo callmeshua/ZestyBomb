@@ -27,7 +27,7 @@ public class GM : MonoBehaviour
     public GameObject relic;
     public WinArea exitArea;
     public SoundManager sm;
-
+    
     //the score nuber in the HUD
     public Text scoreNum;
     public Text goldNum;

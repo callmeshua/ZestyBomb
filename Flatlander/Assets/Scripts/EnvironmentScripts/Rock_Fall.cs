@@ -16,11 +16,15 @@ public class Rock_Fall : MonoBehaviour {
 
     //PUBLIC REFERENCES
     public GM gm;
-
-	public string collideWithTag = "Interactable";
+    // tick this inspector if you want hook to trigger Fall function
+    public bool hookToFall;
+    //tick this in inspector if you want relic pickup to trigger fall
+    public bool relicTriggerFall;
+    public float delaySeconds;
+    public string collideWithTag = "Interactable";
     public bool playerColCanActivate=true;
     private Rigidbody rb;
-    private float delaySeconds;
+    
 
     //JK~
     //SOUNDS
@@ -36,10 +40,7 @@ public class Rock_Fall : MonoBehaviour {
     //JK~~
     public void Update()
     {
-        if(gm.phase == GM.Phases.ESCAPE)
-        {
-            StartCoroutine(Fall());
-        }
+        FuckYou();
     }
 
     // checks for collision with hook/grapple
@@ -47,8 +48,7 @@ public class Rock_Fall : MonoBehaviour {
 	{
         Vector3 velocity = col.relativeVelocity;
 
-
-        if (col.gameObject.CompareTag("Hook") || col.gameObject.CompareTag(collideWithTag))
+        if ((col.gameObject.CompareTag("Hook") || col.gameObject.CompareTag(collideWithTag)) && hookToFall)
         {
             if(delaySeconds == 0f)
             {
@@ -86,5 +86,16 @@ public class Rock_Fall : MonoBehaviour {
 		//rb.AddTorque (Vector3.forward * 2, ForceMode.Impulse);
 	}
 
+    // if phase is ESCAPE, let the bodies hits the floor.
+    void FuckYou()
+    {
+        if (gm.phase == GM.Phases.ESCAPE)
+        {
+            hookToFall = true;
+            playerColCanActivate = true;
+            if (relicTriggerFall)
+                StartCoroutine(Fall());
+        }
+    }
 
 }

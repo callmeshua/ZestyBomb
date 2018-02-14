@@ -668,6 +668,16 @@ Prefab:
       propertyPath: m_Name
       value: stalactite (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114494858920103362, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: playerColCanActivate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114494858920103362, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 2134193115}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
   m_IsPrefabParent: 0
@@ -1475,11 +1485,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -127.4
+      value: -129.9
       objectReference: {fileID: 0}
     - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 20.6
+      value: 17.7
       objectReference: {fileID: 0}
     - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3868,7 +3878,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 2134193115}
+  hookToFall: 0
+  relicTriggerFall: 0
+  delaySeconds: 0
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 8300000, guid: c6800d980a3ccbe4280817ba291a8537, type: 3}
@@ -6191,6 +6204,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 2.3217232
       objectReference: {fileID: 0}
+    - target: {fileID: 114494858920103362, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: playerColCanActivate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114494858920103362, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 2134193115}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
   m_IsPrefabParent: 0
@@ -6249,6 +6272,20 @@ Prefab:
       propertyPath: m_Name
       value: stalactite (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114494858920103362, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: playerColCanActivate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385137515271234, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114494858920103362, guid: 3fb64f5cac7324a4bbc7296681827c23,
+        type: 2}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 2134193115}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fb64f5cac7324a4bbc7296681827c23, type: 2}
   m_IsPrefabParent: 0
@@ -7200,7 +7237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 2134193115}
+  hookToFall: 0
+  relicTriggerFall: 0
+  delaySeconds: 0
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 8300000, guid: c6800d980a3ccbe4280817ba291a8537, type: 3}
@@ -7692,6 +7732,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 2134193115}
+  hookToFall: 0
+  relicTriggerFall: 1
+  delaySeconds: 0
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
@@ -12364,7 +12407,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2083099318}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -135.4, y: 28, z: -1.171875}
+  m_LocalPosition: {x: -127.6, y: 28, z: -1.171875}
   m_LocalScale: {x: 6.577386, y: 25.737425, z: 11.454502}
   m_Children: []
   m_Father: {fileID: 1819441763}
