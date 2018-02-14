@@ -110,9 +110,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 8e2e6ef332b304445a1bff3e664ff3b5, type: 3}
 --- !u!114 &114193286813626436
@@ -126,6 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 114704253377574780, guid: 037cfbde270fb7f488793ebcc942a7ff, type: 2}
+  hookToFall: 0
+  relicTriggerFall: 0
+  delaySeconds: 0
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 8300000, guid: c6800d980a3ccbe4280817ba291a8537, type: 3}

@@ -42,7 +42,8 @@ public class GrappleController : MonoBehaviour
     [Header("Rope Attributes")]
 
     public float climbSpeed = .2f;
-    public float maxRopeRange = 15f;
+    public float relativeRange = 15;
+    public float maxRopeRange;
     public float minRopeRange = 1f;
     public float curRopeLength;
 
@@ -112,6 +113,8 @@ public class GrappleController : MonoBehaviour
         {
             Shoot(); //shoot if input, retracts if dead/hook exists
         }
+
+        maxRopeRange = transform.localScale.x * relativeRange;
 
         HandleLine();
     }

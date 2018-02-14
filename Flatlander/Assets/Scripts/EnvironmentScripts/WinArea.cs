@@ -25,10 +25,12 @@ public class WinArea : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Tab))
+        //transitions from exploration to escape at relic area
+        if (tag == "relicArea")
         {
-            //transitions from exploration to escape at relic area
-            if (tag == "relicArea" && gm.phase == GM.Phases.EXPLORE)
+            transform.Rotate(Vector3.up * Time.deltaTime * 60, Space.World);
+
+            if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Tab) && gm.phase == GM.Phases.EXPLORE)
             {
                 SoundManager.PlaySFX(winSound, false, .6f);
                 gm.triggerEscape();
