@@ -1,7 +1,15 @@
-﻿Shader "Custom/lava" {
+﻿﻿Shader "Custom/lava" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
-		_MainTex ("Albedo (RGB)", 2D) = "white" {}
+		_MainTex ("Diffuse", 2D) = "white" {}
+		_Color2 ("Color 2",Color)=(1,1,1,1)
+		_MainTex2 ("Diffuse 2",2D)="black"{}
+		_BlendVal("Blend Amount",Range(0,1))=0
+		_BlendSoft("Blend Softness",Range(0,1))=.05
+		_BlendEdge("Edge Color",Color)=(0,0,0,0)
+		_BlendBright("Edge Brightness",float)=1
+		_BlendTex("Blend Pattern",2D)="white"{}
+
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_Metallic ("Metallic", Range(0,1)) = 0.0
 		_DispMap("Displacement Texture",2D)="white"{}
@@ -12,17 +20,17 @@
 		_HighV("Highlight Velocity",Vector)=(0.5,0,0,0)
 	}
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { "Queue"="Transparent" "RenderType"="Transparent" }
 		LOD 200
 
 		CGPROGRAM
 		// Physically based Standard lighting model, and enable shadows on all light types
-		#pragma surface surf Standard vertex:vert fullforwardshadows
+		#pragma surface surf Standard vertex:vert fullforwardshadows alpha:fade
 
 		// Use shader model 3.0 target, to get nicer looking lighting
 		#pragma target 3.0
 
-		sampler2D _MainTex;
+		sampler2D _MainTex,_MainTex2;
 		//float4 _MainTex_ST;
 
 		struct Input {
@@ -31,7 +39,11 @@
 
 		half _Glossiness;
 		half _Metallic;
-		fixed4 _Color;
+		fixed4 _Color,_Color2,_BlendEdge;
+
+
+		sampler2D _BlendTex;
+		float _BlendVal,_BlendSoft,_BlendBright;
 
 		sampler2D _DispMap;
 		float4 _DispMap_ST;
@@ -65,19 +77,35 @@
 		UNITY_INSTANCING_BUFFER_END(Props)
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
-			const float2 mainUV=IN.uv_MainTex;
-			const float2 emUV=IN.uv_MainTex*_HighMap_ST.xy + _HighMap_ST.zw;
+			const float2 mainUV=IN.uv_MainTex+_DispV*_Time.y;
+			const float2 emUV=IN.uv_MainTex*_HighMap_ST.xy + _HighMap_ST.zw + _HighV*_Time.y;
 
-			// Albedo comes from a texture tinted by color
-			fixed4 c = tex2D(_MainTex, mainUV+_DispV*_Time.y) * _Color;
-			//fixed4 c = tex2D(_MainTex, TRANSFORM_TEX((IN.uv_MainTex+_DispV*_Time.y),_MainTex)) * _Color;
-			//fixed4 c = tex2D(_MainTex, (IN.uv_MainTex+_DispV*_Time.y)*_MainTex_ST.xy + _MainTex_ST.zw) * _Color;
-			//fixed4 c=(1,1,1,1);
+			//blend main textures together to get 
+			fixed4 diff = tex2D (_MainTex, mainUV)*_Color;
+			fixed4 diff2 = tex2D(_MainTex2,mainUV)*_Color2;
+			float val=tex2D(_BlendTex,mainUV).r;
+
+			const float d=_BlendVal-val;
+			float4 edgeCol=(0,0,0,0);
+			
+			if(_BlendVal>val){
+				if(d<_BlendSoft){
+					val=d/_BlendSoft;
+					edgeCol=_BlendEdge*val*_BlendBright;
+				}else{
+					val=1;
+				}
+			}else{
+				val=0;
+			}
+
+			fixed4 c=diff+val*(diff2-diff);
+
 			o.Albedo = c.rgb;
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
-			o.Emission=tex2D(_HighMap, emUV+_HighV*_Time.y) * _HighStr;
+			o.Emission=tex2D(_HighMap, emUV) * _HighStr+edgeCol;
 			o.Alpha = c.a;
 		}
 		ENDCG
