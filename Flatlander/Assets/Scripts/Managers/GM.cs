@@ -73,8 +73,6 @@ public class GM : MonoBehaviour
     private float startTime;
     private float shots;
 
-    public Text phaseText;
-
     void Awake()
     {
         SoundManager.PlaySFX(sound, true, 0f);
@@ -169,7 +167,6 @@ public class GM : MonoBehaviour
         checkDead();
         updateClock();
         resetLevel = false;
-        phaseText.text = "Phase: " + phase.ToString();
     }
 
     //increments amount of normal collectibles
@@ -222,7 +219,6 @@ public class GM : MonoBehaviour
 
     public void handleWin()
     {
-        phaseText.text += "win";
         frozen = true;
         gCtrl.Retract();
         if (Input.GetButtonDown("Jump"))
@@ -415,5 +411,10 @@ public class GM : MonoBehaviour
     {
         handleFrozen();
         paused = !paused;
+    }
+
+    public string getPhase()
+    {
+        return phase.ToString();
     }
 }

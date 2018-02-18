@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class CanvasManager : MonoBehaviour {
     public GameObject ws;   //win screen
     public GameObject ds;   //death screen
     public GameObject ps;   //pause screen
+    public Text phaseText;
 
     //PRIVATE BOOLEANS
     private bool pauseScreen;
@@ -69,5 +71,10 @@ public class CanvasManager : MonoBehaviour {
         {
             ws.SetActive(false);
         }
+    }
+
+    public void updatePhaseText()
+    {
+        phaseText.text = "Phase: " + gm.getPhase();
     }
 }

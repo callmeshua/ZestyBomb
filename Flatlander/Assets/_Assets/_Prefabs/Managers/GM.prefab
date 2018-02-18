@@ -75,10 +75,4 @@ MonoBehaviour:
   timer: 6000
   roundedTimer: 0
   phase: 0
-  jPow: 0
-  mSpeed: 0
-  dist: 0
-  range: 0
-  recoil: 0
-  power: 0
   phaseText: {fileID: 0}

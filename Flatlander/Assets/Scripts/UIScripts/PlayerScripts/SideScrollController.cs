@@ -23,21 +23,32 @@ using UnityEngine.SceneManagement;
 public class SideScrollController : MonoBehaviour
 {
     //PUBLICS AND DEPENDENCIES
+    [Header("Player Objects")]
     public Animator anim;
     public PhysicMaterial playerPhys;
     public GameObject characterGameObj;
     public GameObject gunObj;
     public Transform rightShoulder;
+    public GrappleController grapple;
+    public CapsuleCollider playerCollider;
+    public GameObject trailRenderer;
+
+    //PUBLIC INTERNALS
+    [Header("RB Values")]
+    public Rigidbody playerRb;
+    public Vector3 localVelocity;
+
+    //CLASS REFRENCES
+    [Header("Class References")]
+    public GM gm;
+    public HealthDepletion pHealth;
 
     //SOUNDS
+    [Header("Audio")]
     public AudioClip footstepClip;
     public AudioClip deathClip;
     public AudioClip impactClip;
     public AudioClip jumpClip;
-
-    //CLASS REFRENCES
-    GM gm;
-    HealthDepletion pHealth;
 
     //Multipliers for movement values
     [Header("Movement Modifiers")]
@@ -51,11 +62,14 @@ public class SideScrollController : MonoBehaviour
     public float maxSpeed = 7;
     public float slowSpeed;
     public float stickForce;            //downward grounded force
+    public float impactForce;
+    public float maxImpact = 40f;        //max survivable impact force
 
     //General condition values
     [Header("Conditions and Info")]
     public float currentVelocity;
     public float yVelocity;
+    public bool trailRenderOn;
     public bool isGrounded;
     public bool isAnchored;             //from GrappleController.cs
     public bool facingLeft;
@@ -65,25 +79,17 @@ public class SideScrollController : MonoBehaviour
     public bool drawDebug = false;
     public LayerMask groundMask;        //Layers the ground rays can hit
 
-    float impactForce;
-    public float maxImpact = 40f;        //max survivable impact force
-
-
-    bool flipped;
-
     //Procedural animation values
     [Header("Leaning and Rotating")]
     public float turnSpeed = 15f;
     public float leanSpeed = 1f;
     public float maxLean;
-    float turnRot;
+    [HideInInspector]
+    public float turnRot;
     public float targetLean;
-    float leanVal=0f;
+    [HideInInspector]
+    public float leanVal = 0f;
     public bool headCheck;
-    
-    //PUBLIC INTERNALS
-    public Rigidbody playerRb;
-    public Vector3 localVelocity;
 
     //handles player animation for aiming
 
@@ -92,16 +98,14 @@ public class SideScrollController : MonoBehaviour
     //PRIVATE INTERNALS
     private float look;
     //all pretty self explanatory
-    public CapsuleCollider playerCollider;
+    public Vector3 initPlayerPos;
     private RaycastHit groundHitFront;
     private RaycastHit groundHitMid;
     private RaycastHit groundHitBack;
-    private Vector3 xForceDirection;
     private Vector2 groundCheckHeights;
+    private Vector3 xForceDirection;
     private Vector3 groundNormal;
     private FWSInput inputCtrl;
-    public GrappleController grapple;
-    public Vector3 initPlayerPos;
     //player aiming
     //private GameObject rightShoulderPoint;
     private float lastRotate;
@@ -110,10 +114,10 @@ public class SideScrollController : MonoBehaviour
     public float leanAmt;
     public float horizontal;
     public float vertical;
-    private int ragdollAddVelTimer;
-    private Vector3 onDeathVel;
     private float topForceDir;
+    private int ragdollAddVelTimer;
     private bool isJumping;
+    private Vector3 onDeathVel;
     private Vector3 xzForceDirection;
     private Rigidbody[] jointRbs;
     private Collider[] jointCols;
@@ -137,7 +141,7 @@ public class SideScrollController : MonoBehaviour
     //for non-phsyics physics and calculations
     private void Update()
     {
-
+        checkVel();
         HandleAnimValues();
         HandleJump();
         lookPos = inputCtrl.lookPos;
@@ -149,7 +153,7 @@ public class SideScrollController : MonoBehaviour
         vertical = inputCtrl.vertical;
         isJumping = inputCtrl.isJumping;
         groundCheckHeights = new Vector2(groundHitFront.point.y, groundHitBack.point.y); //checks slopes of surface relative to player forward
-
+        checkTrailRender();
     }
 
     //resetting the player position to initial
@@ -353,8 +357,6 @@ public class SideScrollController : MonoBehaviour
         float curLean=0f;
         curLean = Mathf.Lerp(leanVal, Mathf.Clamp(targetLean*maxLean, 0f, 45f), Time.deltaTime * leanSpeed);
 
-
-
         if (!isAnchored)
         {
             if (lookPos.x < transform.position.x)
@@ -439,6 +441,36 @@ public class SideScrollController : MonoBehaviour
         Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up - (Vector3.right * 0f)) * ((playerCollider.height / 2f) + .8f)), Color.red);
         Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up - (Vector3.right * .6f)) * ((playerCollider.height / 2f) + .8f)), Color.blue);
         Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up + (Vector3.right * .6f)) * ((playerCollider.height / 2f) + .8f)), Color.green);
+    }
+
+    //checks the velocity of the player to turn the trail renderer on
+    public void checkVel()
+    {
+        if(currentVelocity > 15f || currentVelocity < -15f)
+        {
+            trailRenderOn = true;
+        }
+        else
+        {
+            trailRenderOn = false;
+        }
+    }
+    
+    //if trailRenderOn, then the time of the renderer is 0.5.
+    //else reduce the time of the renderer until 0
+    public void checkTrailRender()
+    {
+        if (trailRenderOn)
+        {
+            trailRenderer.GetComponent<TrailRenderer>().time = .5f;
+        }
+        else
+        {
+            if (trailRenderer.GetComponent<TrailRenderer>().time >= 0f)
+            {
+                trailRenderer.GetComponent<TrailRenderer>().time -= .025f;
+            }
+        }
     }
 
     //COLLISION CHECKS

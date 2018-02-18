@@ -225,7 +225,6 @@ public class GrappleController : MonoBehaviour
                 {
                     SoundManager.PlaySFX(swingSound, true, .1f);
                     canPlaySfx = false;
-
                 }
 
             }
@@ -237,6 +236,7 @@ public class GrappleController : MonoBehaviour
                     SoundManager.PlaySFX(swingSound, true, .3f);
                     canPlaySfx = false;
                 }
+
             }
             pCtrl.playerRb.AddForce((perpendicularDir * (horizontal * targetPower)) * normalizedPower, ForceMode.Impulse);
             //canPlaySfx = false;

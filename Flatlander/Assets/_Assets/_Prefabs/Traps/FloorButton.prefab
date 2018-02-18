@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 65672731881869652}
   - component: {fileID: 114332619947724026}
   m_Layer: 0
-  m_Name: buttonCollider
+  m_Name: buttonFunction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,9 +80,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715601932927070}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8140298, y: -0.58278406, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 125.9, y: 32.8, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4826643808349712}
   - {fileID: 4975341525454864}
@@ -179,4 +179,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trap: {fileID: 0}
+  traps:
+  - {fileID: 0}
   buttonModel: {fileID: 1022266887115178}

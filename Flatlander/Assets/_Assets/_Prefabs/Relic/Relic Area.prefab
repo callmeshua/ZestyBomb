@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114494177693376996}
   - component: {fileID: 136845271773230552}
   m_Layer: 0
-  m_Name: Relic
+  m_Name: Relic Area
   m_TagString: relicArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
