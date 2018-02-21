@@ -12373,7 +12373,7 @@ MonoBehaviour:
   recoilForce: 5
   massInfluence: 1
   climbSpeed: 0.1
-  relativeRange: 20
+  relativeRange: 22
   maxRopeRange: 60
   minRopeRange: 2.8
   curRopeLength: 0
@@ -16019,7 +16019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 191.96333, y: -55}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0.0000076293945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224388408817389948
