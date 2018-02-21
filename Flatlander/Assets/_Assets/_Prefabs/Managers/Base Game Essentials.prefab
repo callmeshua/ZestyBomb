@@ -6319,7 +6319,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 20
   m_Depth: -1
   m_CullingMask:
@@ -10942,7 +10942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4796776635539836}
-  positionOffset: {x: 0, y: 0, z: -90}
+  positionOffset: {x: 0, y: 0, z: -20}
   lookOffset: {x: 0, y: 0, z: 0}
   movementDamp: 100
   zoomDamp: 2

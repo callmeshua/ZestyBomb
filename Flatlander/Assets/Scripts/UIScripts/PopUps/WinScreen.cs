@@ -41,6 +41,11 @@ public class WinScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameObject.activeSelf)
+        {
+            gm.LerpUI(gameObject, targetPos.transform.position, 5f, true);
+        }
+
         if (gm.timer <= 0)
         {
             scoreText.text = "Ran out of time!\nLost Souls: " + gm.colCount.ToString() + "/20   Golden Souls: " + gm.goldColCount.ToString() + "/3\nTime: " + gm.roundedTimer.ToString() + "   Shots Taken: " + gCtrl.shots + "\nTotal Score: " + gm.calculateScore();
@@ -52,10 +57,6 @@ public class WinScreen : MonoBehaviour
         else
         {
             scoreText.text = "Lost Souls: " + gm.colCount.ToString() + "/20   Golden Souls: " + gm.goldColCount.ToString() + "/3\nTime: " + gm.roundedTimer.ToString() + "   Shots Taken: " + gCtrl.shots + "\nTotal Score: " + gm.calculateScore();
-        }
-        if (gameObject.activeSelf)
-        {
-            gm.LerpUI(gameObject, targetPos.transform.position, 5f, true);
         }
     }
 

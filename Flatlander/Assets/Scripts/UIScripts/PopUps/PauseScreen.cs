@@ -17,8 +17,8 @@ public class PauseScreen : MonoBehaviour {
     public Text modeText;
 
     // Use this for initialization
-    void Start () {
-
+    void Start ()
+    {
         gm = FindObjectOfType<GM>();
         reset.onClick.AddListener(buttonReset);
         menu.onClick.AddListener(buttonMenu);
@@ -59,7 +59,6 @@ public class PauseScreen : MonoBehaviour {
     {
         gm.ResetScene();
         gameObject.SetActive(false);
-
     }
 
     public void buttonMenu()

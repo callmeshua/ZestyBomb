@@ -326,7 +326,7 @@ public class GM : MonoBehaviour
         }
     }
 
-    //Time left + (Standard ColCount*1500) + (Gold ColCount*3000) + (Shots * 1000)
+    //Time left - (shots taken * 100)
     //Time is not acconted for if died
     public float calculateScore()
     {
@@ -335,7 +335,17 @@ public class GM : MonoBehaviour
             roundedTimer = 0;
         }
 
-        totalScore = roundedTimer + (colCount * 1500) + (goldColCount * 3000) + (shots * 1000);
+        totalScore = roundedTimer - (shots * 100);
+
+        if(totalScore < 0)
+        {
+            totalScore = 0;
+        }
+
+        /*
+         * SPACE FOR RANKING SYSTEM
+        */
+
         return totalScore;
     }
 
@@ -361,8 +371,6 @@ public class GM : MonoBehaviour
 			rotations.Add(objects[i].transform.eulerAngles.y);
 			rotations.Add(objects[i].transform.eulerAngles.z);
 		}
-
-	
 	}
 
     public void ResetObjects(GameObject[] objects, List<float> positions, List<float> rotations)

@@ -7,6 +7,7 @@ public class HelpDesc : MonoBehaviour {
 	public bool active;
 	public GameObject helpWindow;
     public GameObject showHelp;
+
 	// Use this for initialization
 	void Start () {
 		active = false;
@@ -21,6 +22,5 @@ public class HelpDesc : MonoBehaviour {
 			helpWindow.SetActive (active);
             showHelp.SetActive(!active);
 		}
-
 	}
 }
