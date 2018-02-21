@@ -446,7 +446,7 @@ public class SideScrollController : MonoBehaviour
     //checks the velocity of the player to turn the trail renderer on
     public void checkVel()
     {
-        if(currentVelocity > 15f || currentVelocity < -15f)
+        if(currentVelocity > 25f || currentVelocity < -25f)
         {
             trailRenderOn = true;
         }
@@ -460,7 +460,7 @@ public class SideScrollController : MonoBehaviour
     //else reduce the time of the renderer until 0
     public void checkTrailRender()
     {
-        if (trailRenderOn)
+        if (trailRenderOn && isAnchored)
         {
             trailRenderer.GetComponent<TrailRenderer>().time = .5f;
         }
