@@ -42,7 +42,7 @@ public class GrappleController : MonoBehaviour
     [Header("Rope Attributes")]
 
     public float climbSpeed = .2f;
-    public float relativeRange = 15;
+    public float relativeRange = 20;
     public float maxRopeRange;
     public float minRopeRange = 1f;
     public float curRopeLength;
@@ -70,7 +70,6 @@ public class GrappleController : MonoBehaviour
     public SideScrollController pCtrl;
     private WeponRecoil recoil;
     private LineRenderer line;
-
 
     public List<Vector3> anchors = new List<Vector3>();
 
