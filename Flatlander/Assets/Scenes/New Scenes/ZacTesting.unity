@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.45097238, g: 0.5008407, b: 0.5743855, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4525,6 +4525,7 @@ MonoBehaviour:
   power: 0
   LimitLifetime: 0
   dartLifetime: 0
+  timer: 0
   framesBetweenShots: 0
   fireCount: 0
   shooterType: 0
@@ -12581,6 +12582,23 @@ Transform:
   m_PrefabParentObject: {fileID: 4669133524681612, guid: f2ba66eba21a4054eb808d63b1243603,
     type: 2}
   m_PrefabInternal: {fileID: 2128588320}
+--- !u!1 &2128588322 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1034076567203896, guid: f2ba66eba21a4054eb808d63b1243603,
+    type: 2}
+  m_PrefabInternal: {fileID: 2128588320}
+--- !u!114 &2128588323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2128588322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 480a69b5ea0c7415bb5ce164339c134d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
 --- !u!1001 &2130370074
 Prefab:
   m_ObjectHideFlags: 0
