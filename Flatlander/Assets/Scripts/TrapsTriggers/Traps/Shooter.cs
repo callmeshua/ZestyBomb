@@ -16,6 +16,7 @@ public class Shooter : Trap {
     public float power;             //meters
     public bool LimitLifetime;
     public float dartLifetime;      //seconds
+    public float timer;
     public float framesBetweenShots;
     public float fireCount;
     public ShooterType shooterType;
@@ -38,7 +39,7 @@ public class Shooter : Trap {
         if(shooterType == ShooterType.TIMED)
         {
             active = true;
-            framesBetweenShots = 120;
+            framesBetweenShots = timer;
         }
 
         //delays the rapidfire shots
