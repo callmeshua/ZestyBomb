@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ScaleObject : MonoBehaviour {
-
+	private float x;
+	private float y;
+	private float z;
 	// Use this for initialization
 	void Start () {
 		

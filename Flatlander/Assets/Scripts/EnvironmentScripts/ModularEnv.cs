@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ModularEnv : MonoBehaviour {
+	private float x;
+	private float y;
+	private float z;
+
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +22,6 @@ public class ModularEnv : MonoBehaviour {
     {
         Gizmos.color = new Color(1, 1, 0, 0.75f);
         Gizmos.DrawSphere(transform.position, 5f);
-        
     }
 
     public static Texture2D scaled(Texture2D src, int width, int height, FilterMode mode = FilterMode.Trilinear)
