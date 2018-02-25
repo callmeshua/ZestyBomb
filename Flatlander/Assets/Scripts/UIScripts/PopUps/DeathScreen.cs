@@ -43,15 +43,15 @@ public class DeathScreen : MonoBehaviour {
 
         if (gm.timer <= 0)
         {
-            scoreText.text = "Ran out of time!\nLost Souls: " + gm.colCount.ToString() + "/20   Golden Souls: " + gm.goldColCount.ToString() + "/3\nTime Score: " + gm.roundedTimer.ToString() + "   Shots Taken: " + gCtrl.shots + "\nTotal Score: " + gm.calculateScore();
+            scoreText.text = "Ran out of time!\nTime Score: " + gm.roundedTimer.ToString() + "   Shots Taken: " + gCtrl.shots + "\nTotal Score: " + gm.calculateScore();
         }
         else if (gm.mode == GM.Modes.LIMSWINGS)
         {
-            scoreText.text = "Ran out of shots!\nLost Souls: " + gm.colCount.ToString() + "/20   Golden Souls: " + gm.goldColCount.ToString() + "/3\nTime Score: " + gm.roundedTimer.ToString() +  "   Shots Left: " + gCtrl.shots + "\nTotal Score: " + gm.calculateScore();
+            scoreText.text = "Ran out of shots!\nTime Score: " + gm.roundedTimer.ToString() +  "   Shots Left: " + gCtrl.shots + "\nTotal Score: " + gm.calculateScore();
         }
         else
         {
-            scoreText.text = "Lost Souls: " + gm.colCount.ToString() + "/20   Golden Souls: " + gm.goldColCount.ToString() + "/3\nTime Score: " + gm.roundedTimer.ToString() + "   Shots Taken: " + gCtrl.shots + "\nTotal Score: " + gm.calculateScore();
+            scoreText.text = "\nTime Score: " + gm.roundedTimer.ToString() + "   Shots Taken: " + gCtrl.shots + "\nTotal Score: " + gm.calculateScore();
         }
 	}
 
