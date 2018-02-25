@@ -13,12 +13,13 @@ using UnityEngine.SceneManagement;
 public class GM : MonoBehaviour
 {
     public AudioClip sound;
-
-    //Mode enumerator
+    
+    //Enumerator
     public enum Modes { CLASSIC, ENDLESS, LIMSWINGS, SOULLESS };
     public enum Levels { TUTORIAL, LEVEL1, LEVEL2, LEVEL3 };
     public enum Phases { EXPLORE, ESCAPE };
 
+    [Header("Script References")]
     //PUBLIC REFERENCES
     private SideScrollController pCtrl;
     private FWSInput inputCtrl;
@@ -28,30 +29,44 @@ public class GM : MonoBehaviour
     public WinArea exitArea;
     public SoundManager sm;
     
+    [Header("HUD Texts")]
     //the score nuber in the HUD
     public Text scoreNum;
     public Text goldNum;
     public Text shotText;
     public Text clock;
 
+    [Header("HUD Values")]
     //PUBLIC ATTRIBUTES
-    public bool resetLevel;
     public float colCount;
     public float goldColCount;
     public float totalScore;
+    public int scoreRank;
     public int healthVal;
+
+    [Header("Conditionals")]
+    public bool resetLevel;
     public bool touchHazard;
     public bool gameOver;
     public bool frozen;
     public bool paused;
+
+    [Header("Enums")]
     public Modes mode;
     public Levels level;
+    public Phases phase;
     [HideInInspector]
     public float timer, roundedTimer;
-    public Phases phase;
+
+    [Header("Ranking Thresholds")]
+    //Rank Threshold Variables
+    public float oneStarScore;
+    public float twoStarScore;
+    public float threeStarScore;
+
 
     //PRIVATE ATTRIBUTES
-	private string levelName;
+    private string levelName;
 	private Scene currLevel;
     private GameObject[] interactables;
     private GameObject[] hazards;
@@ -342,9 +357,25 @@ public class GM : MonoBehaviour
             totalScore = 0;
         }
 
-        /*
-         * SPACE FOR RANKING SYSTEM
-        */
+        // Rank System - Adjust Rank Thresholds in inspector
+        if (totalScore >= threeStarScore)
+        {
+            scoreRank = 3;
+        }
+        else if (totalScore >= twoStarScore)
+        {
+            scoreRank = 2;
+        }
+        else if (totalScore >= oneStarScore)
+        {
+            scoreRank = 1;
+        }
+        else
+        {
+            scoreRank = 0;
+        }
+
+
 
         return totalScore;
     }
