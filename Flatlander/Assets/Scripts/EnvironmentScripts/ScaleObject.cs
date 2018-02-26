@@ -20,6 +20,6 @@ public class ScaleObject : MonoBehaviour {
 		y = transform.position.y;
 		z = transform.position.z;
 
-		TextureScale.Bilinear()
+       // TextureScale.Bilinear();
 	}
 }
