@@ -43,6 +43,9 @@ public class GM : MonoBehaviour
     public float totalScore;
     public int scoreRank;
     public int healthVal;
+    public float startTime;
+    public float shots;
+    public float timer, roundedTimer;
 
     [Header("Conditionals")]
     public bool resetLevel;
@@ -55,8 +58,6 @@ public class GM : MonoBehaviour
     public Modes mode;
     public Levels level;
     public Phases phase;
-    [HideInInspector]
-    public float timer, roundedTimer;
 
     [Header("Ranking Thresholds")]
     //Rank Threshold Variables
@@ -84,9 +85,6 @@ public class GM : MonoBehaviour
 	private List<float> hc_rotations = new List<float> ();
 	private List<float> gc_positions = new List<float> ();
 	private List<float> gc_rotations = new List<float> ();
-   
-    private float startTime;
-    private float shots;
 
     void Awake()
     {

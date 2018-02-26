@@ -60,6 +60,8 @@ public class SideScrollController : MonoBehaviour
     public float jumpPower = 12;
     public float groundCheckDistance;   //ray distance for ground check
     public float maxSpeed = 7;
+    public float maxAirSpeed = 9;
+    public float maxSwingSpeed = 20;
     public float slowSpeed;
     public float stickForce;            //downward grounded force
     public float impactForce;
@@ -183,40 +185,33 @@ public class SideScrollController : MonoBehaviour
             onDeathVel = playerRb.velocity;
     }
 
-//HANDLERS
+    //HANDLERS
     //handles movement forces for top-down and sidescrolling
     void HandleMovement()
     {
-            //movement forces for while sidescrolling
-            if (isGrounded)
+        //movement forces for while sidescrolling
+        if (isGrounded)
+        {
+            if (currentVelocity < maxSpeed)
             {
-                if (currentVelocity < maxSpeed)
-                {
-                    playerRb.AddForce(xForceDirection * groundAccelerationPower, ForceMode.Force);
-                }
+                playerRb.AddForce(xForceDirection * groundAccelerationPower, ForceMode.Force);
             }
-            else if(isAnchored)
-            {
-                //playerRb.AddForce(xForceDirection * swingAccelerationPower, ForceMode.VelocityChange);
-            }
-            else
-            {
-                if (currentVelocity < 25f)
-                {
-                    playerRb.AddForce(xForceDirection * airAccelerationPower, ForceMode.Force);
-                }
-            }
+        }
+        else if ((isAnchored && currentVelocity < maxSwingSpeed) || (!isAnchored && currentVelocity < maxAirSpeed))
+        { 
+            playerRb.AddForce(xForceDirection * airAccelerationPower, ForceMode.Force);
+        }
 
-            //slowing forces for horizontal momentum
-            if (isGrounded && horizontal == 0f)
-            {
-                isSlowing = true;
-                playerRb.AddForce(new Vector3(-playerRb.velocity.magnitude, 0f, 0f) * slowSpeed, ForceMode.Acceleration);
-            }
-            else
-            {
-                isSlowing = false;
-            }
+        //slowing forces for horizontal momentum
+        if (isGrounded && horizontal == 0f)
+        {
+            isSlowing = true;
+            playerRb.AddForce(new Vector3(-playerRb.velocity.magnitude, 0f, 0f) * slowSpeed, ForceMode.Acceleration);
+        }
+        else
+        {
+            isSlowing = false;
+        }
     }
 
     //handles jump forces
