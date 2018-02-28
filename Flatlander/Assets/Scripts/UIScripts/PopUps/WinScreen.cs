@@ -68,26 +68,33 @@ public class WinScreen : MonoBehaviour
 
     public void buttonMenu()
     {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+		SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(0), LoadSceneMode.Single);
     }
-
+	//
 	public void buttonNext()
 	{
 		if (gm.level == GM.Levels.TUTORIAL) 
 		{
-			SceneManager.LoadScene ("Level_1-pass3", LoadSceneMode.Single);
+			SceneManager.LoadScene (SceneUtility.GetScenePathByBuildIndex (2), LoadSceneMode.Single);
+
 		} 
 		else if (gm.level == GM.Levels.LEVEL1) 
 		{
-			SceneManager.LoadScene("Level_2-new", LoadSceneMode.Single);
+			SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(3), LoadSceneMode.Single);
 		} 
 		else if (gm.level == GM.Levels.LEVEL2) 
 		{
-			SceneManager.LoadScene("Level_3_pass2", LoadSceneMode.Single);
+			SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(0), LoadSceneMode.Single);
 		} 
+		/*
 		else if (gm.level == GM.Levels.LEVEL3) 
 		{
-			SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
-		}
+			SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(0), LoadSceneMode.Single);
+		}*/
+
+		//0 Main Menu
+		//1 Tutorial
+		//2 Level1
+		//3 Level2
 	}
 }

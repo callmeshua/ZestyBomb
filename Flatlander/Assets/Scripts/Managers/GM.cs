@@ -151,22 +151,24 @@ public class GM : MonoBehaviour
         }
 
         levelName = currLevel.name;
-		if (levelName.Equals("Tutorial-pass2"))
+		if (levelName.Equals("Tutorial_Pass1"))
         {
 			level = Levels.TUTORIAL;
 		}
-        else if (levelName.Equals("Level_1-pass3"))
+        else if (levelName.Equals("Muerto_Level2_Week8"))
         {
 			level = Levels.LEVEL1;
 		}
-        else if (levelName.Equals("Level_2-new"))
+        else if (levelName.Equals("Muerto Level 3_pass2"))
         {
 			level = Levels.LEVEL2;
 		}
+		/*
         else if (levelName.Equals("Level_3_pass2"))
         {
 			level = Levels.LEVEL3;
 		}
+		*/
     }
 
     // Update is called once per frame

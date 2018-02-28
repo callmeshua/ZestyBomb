@@ -10,7 +10,7 @@ public class LavaRising : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (gm.phase == GM.Phases.ESCAPE)
+		if (gm.phase == GM.Phases.ESCAPE && !gm.gameOver)
         {
 			transform.position += transform.up * Time.deltaTime * speed;
         }

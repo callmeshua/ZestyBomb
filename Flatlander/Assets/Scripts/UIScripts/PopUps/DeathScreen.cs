@@ -63,6 +63,6 @@ public class DeathScreen : MonoBehaviour {
 
     public void buttonMenu()
     {
-		SceneManager.LoadScene ("MainMenu", LoadSceneMode.Single);
+		SceneManager.LoadScene (SceneUtility.GetScenePathByBuildIndex(0), LoadSceneMode.Single);
     }
 }
