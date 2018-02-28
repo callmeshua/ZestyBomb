@@ -5,54 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/blockouts-unfinished/proto.unity
-    guid: 7651b01993e70e045b6e3eb556e861f3
   - enabled: 1
     path: Assets/Scenes/OldScenes/MainMenu.unity
     guid: 2d7888dc4e601474f9073ff33548757b
   - enabled: 0
-    path: Assets/Scenes/blockouts-unfinished/Proto2.unity
-    guid: 8c7b5af34bc37c243b100c57ad75f629
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/OldScenes/Tutorial-pass2.unity
-    guid: ba781f6d0fc11e1498e366ad1a4e94f5
-  - enabled: 0
-    path: Assets/Scenes/OldScenes/Level_1-pass3.unity
-    guid: ea9f5e8aae9bd3f4ab5c7de65bf77303
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/OldScenes/Level_3_pass2.unity
-    guid: bd80e6f45e98f1f4696bcc948e694b68
-  - enabled: 0
-    path: Assets/Scenes/OldScenes/Level_2-new.unity
-    guid: 67b82eaa254019d448788d2ff8463fc7
-  - enabled: 1
     path: Assets/Scenes/New Scenes/Muerto_Level 1.unity
     guid: 1aceadbea8480294493bf8fe8a17a8fb
+  - enabled: 1
+    path: Assets/Scenes/New Scenes/Tutorial_Pass1.unity
+    guid: d4b28fb962decf245b825097d966d8a0
+  - enabled: 1
+    path: Assets/Scenes/New Scenes/Muerto_Level2_Week8.unity
+    guid: 15e7201b08064fd4cbb4e59491ff1d06
+  - enabled: 1
+    path: Assets/Scenes/New Scenes/Muerto Level 3_pass2.unity
+    guid: 150f3bd1fa551e0448823e423d5fd70b

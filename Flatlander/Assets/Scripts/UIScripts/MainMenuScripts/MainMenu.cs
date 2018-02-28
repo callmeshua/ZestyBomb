@@ -20,13 +20,14 @@ public class MainMenu : MonoBehaviour {
 	public Button options;
 	public Button quit;
 	public Canvas menu;
-	public GameObject mode;
+	public GameObject level;
 	public GameObject optionsScreen;
+ 
 	// Use this for initialization
 	// adding listeners to buttons
 	void Start () {
 		Button btn = start.GetComponent<Button> ();
-		btn.onClick.AddListener (ModeSelect);
+		btn.onClick.AddListener (LevelSelect);
 
 		btn = quit.GetComponent<Button> ();
 		btn.onClick.AddListener (Quit);
@@ -34,7 +35,6 @@ public class MainMenu : MonoBehaviour {
 		btn = options.GetComponent<Button> ();
 		btn.onClick.AddListener (Options);
 	}
-	// Start the game, proto scene
 	void Options()
 	{
 		gameObject.SetActive (false);
@@ -48,11 +48,12 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	//seperact scene?
-	void ModeSelect()
+	void LevelSelect()
 	{
 		gameObject.SetActive (false);
-		mode.SetActive(true);
+		level.SetActive(true);
 
 	}
+    
 		
 }
