@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4669133524681612}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Lava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 33283891635105842}
   - component: {fileID: 64410739858133246}
   - component: {fileID: 23446878739058982}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4417553768722790}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Killplane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 33092627847724786}
   - component: {fileID: 64250109812957404}
   - component: {fileID: 23497291251032810}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,8 @@ GameObject:
   - component: {fileID: 136275431502216018}
   - component: {fileID: 23681850587611270}
   - component: {fileID: 114237440784210300}
-  m_Layer: 0
+  - component: {fileID: 65739277957622186}
+  m_Layer: 17
   m_Name: capsuleL
   m_TagString: Hazard
   m_Icon: {fileID: 0}
@@ -107,7 +108,7 @@ GameObject:
   - component: {fileID: 33340688256282992}
   - component: {fileID: 64452067186693152}
   - component: {fileID: 23040303296491464}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +127,8 @@ GameObject:
   - component: {fileID: 136158897024339546}
   - component: {fileID: 23674914036501584}
   - component: {fileID: 114504456758426068}
-  m_Layer: 0
+  - component: {fileID: 65391677879699534}
+  m_Layer: 17
   m_Name: capsuleR
   m_TagString: Hazard
   m_Icon: {fileID: 0}
@@ -144,7 +146,7 @@ GameObject:
   - component: {fileID: 33020630854112804}
   - component: {fileID: 64112034373402648}
   - component: {fileID: 23014085084485676}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,8 +198,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1034076567203896}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -360.8, y: -59.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.56, y: 50.9, z: -10.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4806944806647776}
@@ -564,6 +566,30 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65391677879699534
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1947339149736292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0000004, y: 2.0000005, z: 1.0000002}
+  m_Center: {x: 0.0000001192093, y: 0, z: -0.00000008940697}
+--- !u!65 &65739277957622186
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729215187401426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0000004, y: 2.0000005, z: 1.0000002}
+  m_Center: {x: 0.0000001192093, y: 0, z: -0.00000008940697}
 --- !u!114 &114237440784210300
 MonoBehaviour:
   m_ObjectHideFlags: 1

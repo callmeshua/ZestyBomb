@@ -6826,7 +6826,7 @@ Transform:
   m_Children:
   - {fileID: 282657437}
   m_Father: {fileID: 503519462}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &451844112
 Prefab:
@@ -7874,10 +7874,10 @@ Transform:
   m_Children:
   - {fileID: 654115033}
   - {fileID: 7083745}
-  - {fileID: 448519787}
-  - {fileID: 255618587}
-  - {fileID: 293749190}
   - {fileID: 1693029318}
+  - {fileID: 293749190}
+  - {fileID: 255618587}
+  - {fileID: 448519787}
   m_Father: {fileID: 1819441763}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9996,7 +9996,6 @@ MonoBehaviour:
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 8300000, guid: c6800d980a3ccbe4280817ba291a8537, type: 3}
-  boulderSoundClip: {fileID: 0}
 --- !u!54 &641629804
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15902,7 +15901,6 @@ MonoBehaviour:
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 8300000, guid: c6800d980a3ccbe4280817ba291a8537, type: 3}
-  boulderSoundClip: {fileID: 0}
 --- !u!54 &961773967
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16729,6 +16727,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b06d11b5581c5554ca80817a366be1a5, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &996574163 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4934442125358794, guid: b06d11b5581c5554ca80817a366be1a5,
+    type: 2}
+  m_PrefabInternal: {fileID: 996574162}
 --- !u!1001 &997949561
 Prefab:
   m_ObjectHideFlags: 0
@@ -16816,7 +16819,6 @@ MonoBehaviour:
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
-  boulderSoundClip: {fileID: 0}
 --- !u!1001 &1007227279
 Prefab:
   m_ObjectHideFlags: 0
@@ -31063,6 +31065,26 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2134193114}
   m_Script: {fileID: 11500000, guid: b099f3bc3d7990a4993dd2989db0f83e, type: 3}
+--- !u!1 &2134193116 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1145812010659160, guid: 037cfbde270fb7f488793ebcc942a7ff,
+    type: 2}
+  m_PrefabInternal: {fileID: 2134193114}
+--- !u!114 &2134193117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2134193116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd6a84fb5bbf52458309e812549b902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 996574163}
+  shakeDuration: 0
+  shakeAmount: 0
+  decreaseFactor: 0
 --- !u!1001 &2145798656
 Prefab:
   m_ObjectHideFlags: 0

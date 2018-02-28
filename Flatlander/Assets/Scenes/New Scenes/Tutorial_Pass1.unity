@@ -2382,6 +2382,16 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224387920016074692, guid: 21216f7cebe868541a150f8c4f740be3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 79.863335
+      objectReference: {fileID: 0}
+    - target: {fileID: 224387920016074692, guid: 21216f7cebe868541a150f8c4f740be3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21216f7cebe868541a150f8c4f740be3, type: 2}
   m_IsPrefabParent: 0
@@ -6221,7 +6231,6 @@ MonoBehaviour:
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 0}
-  boulderSoundClip: {fileID: 0}
 --- !u!1 &1008595779
 GameObject:
   m_ObjectHideFlags: 0
@@ -9330,7 +9339,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1620782916}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 30.1, y: -16.5, z: 22.8}
+  m_LocalPosition: {x: 30.1, y: -16.5, z: 2.34}
   m_LocalScale: {x: 11, y: 11, z: 11}
   m_Children: []
   m_Father: {fileID: 0}
