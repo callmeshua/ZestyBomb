@@ -139,7 +139,7 @@ public class SideScrollController : MonoBehaviour
         DisableRagdoll();
 
         maxAirSpeed     *= transform.localScale.x;
-        maxSpeed        *= transform.localScale.x;
+        //maxSpeed        *= transform.localScale.x;
         //maxSwingSpeed   *= transform.localScale.x;
         //jumpPower       *= transform.localScale.x;
         
