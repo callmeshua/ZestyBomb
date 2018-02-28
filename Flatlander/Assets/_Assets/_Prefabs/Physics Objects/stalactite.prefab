@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 114704253377574780, guid: 037cfbde270fb7f488793ebcc942a7ff, type: 2}
   hookToFall: 0
-  relicTriggerFall: 0
+  relicTriggerFall: 1
   delaySeconds: 0
   collideWithTag: Interactable
   playerColCanActivate: 0
