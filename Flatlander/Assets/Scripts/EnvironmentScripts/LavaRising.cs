@@ -5,19 +5,17 @@ using UnityEngine;
 public class LavaRising : MonoBehaviour {
 
     public GM gm;
-    private Vector3 lavaPos;
-
+    private MeshRenderer mesh;
 	// Use this for initialization
 	void Start () {
-        lavaPos = transform.position;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        lavaPos = transform.position;
         if (gm.phase == GM.Phases.ESCAPE)
         {
-            transform.position = new Vector3(lavaPos.x, lavaPos.y + .05f, lavaPos.z);
+            transform.position += transform.up * Time.deltaTime;
         }
 	}
 }
