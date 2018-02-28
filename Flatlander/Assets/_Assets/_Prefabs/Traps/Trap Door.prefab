@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4343811501711022}
   - component: {fileID: 33034811660809250}
-  - component: {fileID: 65685114219657496}
   - component: {fileID: 23315245345258388}
   - component: {fileID: 54505733576041180}
   - component: {fileID: 59377980716958922}
   - component: {fileID: 114332991566030764}
+  - component: {fileID: 136047386540271982}
   m_Layer: 0
   m_Name: Trap Door
   m_TagString: Untagged
@@ -39,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929375082579224}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.246819, y: -0.20678711, z: -0.029296875}
-  m_LocalScale: {x: 4.5579453, y: 1, z: 1}
+  m_LocalPosition: {x: 2.037, y: 0, z: 0}
+  m_LocalScale: {x: 3.3, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -111,7 +111,7 @@ HingeJoint:
   m_Anchor: {x: 0.4, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 22.143177, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 33.663177, y: 4.1399994, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -135,18 +135,6 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!65 &65685114219657496
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1929375082579224}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114332991566030764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,3 +146,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a49e4e02ec14ac4cb000e01d302f811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &136047386540271982
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1929375082579224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 0}
