@@ -11,10 +11,10 @@ public class ScaleObject : MonoBehaviour {
 	public int zi;
 	// Use this for initialization
 	void Start () {
-		mesh = GetComponentInChildren<MeshRenderer> ();
+		mesh = GetComponent<MeshRenderer> ();
 		mat = mesh.material;
-		y = GetComponentInChildren<Transform> ().localScale.y;
-		z = GetComponentInChildren<Transform> ().localScale.y;
+		y = transform.localScale.y;
+		z = transform.localScale.y;
 		yi = Mathf.RoundToInt (y);
 		zi = Mathf.RoundToInt (z);
 		//clone.Resize (clone.width * zi, clone.height * yi);

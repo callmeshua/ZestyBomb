@@ -73,15 +73,18 @@ public class WinScreen : MonoBehaviour
 	//
 	public void buttonNext()
 	{
+		//1
 		if (gm.level == GM.Levels.TUTORIAL) 
 		{
 			SceneManager.LoadScene (SceneUtility.GetScenePathByBuildIndex (2), LoadSceneMode.Single);
 
 		} 
+		//2
 		else if (gm.level == GM.Levels.LEVEL1) 
 		{
 			SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(3), LoadSceneMode.Single);
 		} 
+		//3
 		else if (gm.level == GM.Levels.LEVEL2) 
 		{
 			SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(0), LoadSceneMode.Single);
