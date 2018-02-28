@@ -137,6 +137,11 @@ public class SideScrollController : MonoBehaviour
         initPlayerPos = transform.position;
         isDead = false;
         DisableRagdoll();
+
+        maxAirSpeed     *= transform.localScale.x;
+        maxSpeed        *= transform.localScale.x;
+        //maxSwingSpeed   *= transform.localScale.x;
+        jumpPower       *= transform.localScale.x;
         
     }
     
@@ -182,7 +187,9 @@ public class SideScrollController : MonoBehaviour
         yVelocity = playerRb.velocity.y;
 
         if (!isDead)
+        {
             onDeathVel = playerRb.velocity;
+        }
     }
 
     //HANDLERS

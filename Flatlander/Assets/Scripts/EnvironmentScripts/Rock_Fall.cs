@@ -29,7 +29,6 @@ public class Rock_Fall : MonoBehaviour {
     //JK~
     //SOUNDS
     public AudioClip impactClip;
-    public AudioClip boulderSoundClip;
 
     // Use this for initialization
     void Start () {

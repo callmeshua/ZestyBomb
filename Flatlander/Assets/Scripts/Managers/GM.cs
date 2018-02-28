@@ -296,6 +296,7 @@ public class GM : MonoBehaviour
 		ResetObjects (golCollectables, gc_positions, gc_rotations);
     }
 
+    //updates the clock depending on the mode
     public void updateClock()
     {
         if ((mode == Modes.CLASSIC || mode == Modes.LIMSWINGS) && timer > -5 && !gameOver)
@@ -314,10 +315,9 @@ public class GM : MonoBehaviour
         {
             clock.text = "∞";
         }
-
-                
     }
 
+    //freezes the game
     public void handleFrozen()
     {
         frozen = !frozen;
@@ -373,16 +373,16 @@ public class GM : MonoBehaviour
             scoreRank = 0;
         }
 
-
-
         return totalScore;
     }
 
+    //sets game over
     public void kill()
     {
         gameOver = true;
     }
 
+    //resets the timer to startTime
     public void resetTimer()
     {
         timer = startTime;
@@ -444,14 +444,21 @@ public class GM : MonoBehaviour
         phase = Phases.ESCAPE;
     }
 
+    //freezes and puts game in paused state
     public void handlePause()
     {
         handleFrozen();
         paused = !paused;
     }
-
+    
+    //returns the phase as a string
     public string getPhase()
     {
         return phase.ToString();
+    }
+
+    public void camShake(float dur)
+    {
+        GetComponent<CameraShake>().setDuration(dur);
     }
 }
