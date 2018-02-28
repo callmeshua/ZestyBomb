@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ScaleObject : MonoBehaviour {
-	private float x;
+	private MeshRenderer mesh;
+	public Material mat;
 	private float y;
 	private float z;
-
+	public int yi;
+	public int zi;
 	// Use this for initialization
 	void Start () {
-		x = transform.position.x;
-		y = transform.position.y;
-		z = transform.position.z;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		x = transform.position.x;
-		y = transform.position.y;
-		z = transform.position.z;
+		mesh = GetComponentInChildren<MeshRenderer> ();
+		mat = mesh.material;
+		y = GetComponentInChildren<Transform> ().localScale.y;
+		z = GetComponentInChildren<Transform> ().localScale.y;
+		yi = Mathf.RoundToInt (y);
+		zi = Mathf.RoundToInt (z);
+		//clone.Resize (clone.width * zi, clone.height * yi);
+		///TextureScale.Bilinear (clone, tex.width * zi, tex.height * yi);
+		mat.mainTextureScale = new Vector2 (zi, yi);
 
-       // TextureScale.Bilinear();
+
+
 	}
 }
