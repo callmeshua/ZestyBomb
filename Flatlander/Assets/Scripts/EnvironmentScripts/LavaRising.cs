@@ -17,7 +17,7 @@ public class LavaRising : MonoBehaviour {
         lavaPos = transform.position;
         if (gm.phase == GM.Phases.ESCAPE)
         {
-            transform.position = new Vector3(lavaPos.x, lavaPos.y + .05f, lavaPos.z);
+            transform.position += new Vector3(lavaPos.x, lavaPos.y + .05f, lavaPos.z);
         }
 	}
 }
