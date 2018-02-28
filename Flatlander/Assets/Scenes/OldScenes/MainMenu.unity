@@ -608,7 +608,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 38764168}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -244, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1300322343}
@@ -950,7 +950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &189994228
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1023,7 +1023,7 @@ MonoBehaviour:
   level2: {fileID: 1879457292}
   level3: {fileID: 749551830}
   back: {fileID: 473743704}
-  mode: {fileID: 138946521}
+  mode: {fileID: 1536068568}
 --- !u!224 &196541306
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2146,6 +2146,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: c99114de5b424cf4daa1fc4bf671559f,
         type: 3}
+    - target: {fileID: 1429886703579670, guid: 3f3563837a7a14798ab9e68a0fc611c9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f3563837a7a14798ab9e68a0fc611c9, type: 2}
   m_IsPrefabParent: 0
@@ -4171,7 +4175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &996442077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6011,7 +6015,7 @@ MonoBehaviour:
   options: {fileID: 2130980060}
   quit: {fileID: 2104803364}
   menu: {fileID: 2116471696}
-  mode: {fileID: 138946521}
+  mode: {fileID: 189994227}
   optionsScreen: {fileID: 1469426352}
 --- !u!1 &1554335632
 GameObject:
@@ -6202,6 +6206,10 @@ Prefab:
         type: 2}
       propertyPath: m_FontData.m_Alignment
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397426251398994, guid: 280676ff2ce93487b8d735df4aa60c44, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 280676ff2ce93487b8d735df4aa60c44, type: 2}

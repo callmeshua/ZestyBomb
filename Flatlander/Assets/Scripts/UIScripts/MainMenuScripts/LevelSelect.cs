@@ -47,17 +47,17 @@ public class LevelSelect : MonoBehaviour {
 
 	void LevelTutorial()
 	{
-		SceneManager.LoadScene ("Tutorial-pass2", LoadSceneMode.Single);
+		SceneManager.LoadScene ("Tutorial_Pass1", LoadSceneMode.Single);
 		gm.level = GM.Levels.TUTORIAL;
 	}
 	void Level1()
 	{
-		SceneManager.LoadScene ("Level_1-pass3", LoadSceneMode.Single);
+		SceneManager.LoadScene ("Muerto_Level2_week8", LoadSceneMode.Single);
 		gm.level = GM.Levels.LEVEL1;
 	}
 	void Level2()
 	{
-		SceneManager.LoadScene ("Level_2-new", LoadSceneMode.Single);
+		SceneManager.LoadScene ("Muerto Level 3_pass2", LoadSceneMode.Single);
 		gm.level = GM.Levels.LEVEL2;
 	}
 	void Level3()
