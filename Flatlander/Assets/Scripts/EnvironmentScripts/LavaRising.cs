@@ -6,16 +6,13 @@ public class LavaRising : MonoBehaviour {
 
     public GM gm;
     private MeshRenderer mesh;
-	// Use this for initialization
-	void Start () {
-
-	}
+	public float speed = 1f;
 	
 	// Update is called once per frame
 	void Update () {
         if (gm.phase == GM.Phases.ESCAPE)
         {
-            transform.position += transform.up * Time.deltaTime;
+			transform.position += transform.up * Time.deltaTime * speed;
         }
 	}
 }
