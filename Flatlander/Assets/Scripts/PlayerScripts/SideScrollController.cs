@@ -141,7 +141,7 @@ public class SideScrollController : MonoBehaviour
         maxAirSpeed     *= transform.localScale.x;
         maxSpeed        *= transform.localScale.x;
         //maxSwingSpeed   *= transform.localScale.x;
-        jumpPower       *= transform.localScale.x;
+        //jumpPower       *= transform.localScale.x;
         
     }
     

@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 114704253377574780, guid: 037cfbde270fb7f488793ebcc942a7ff, type: 2}
   hookToFall: 0
   relicTriggerFall: 0
   delaySeconds: 0
