@@ -25,7 +25,7 @@ public class LevelSelect : MonoBehaviour {
     public Button level3;
 	public Button back;
 
-	public GameObject title;
+	public GameObject mode;
 	// Use this for initialization
 	void Start () {
         gm = FindObjectOfType<GM>();
@@ -47,17 +47,17 @@ public class LevelSelect : MonoBehaviour {
 
 	void LevelTutorial()
 	{
-		SceneManager.LoadScene ("Tutorial_Pass1", LoadSceneMode.Single);
+		SceneManager.LoadScene ("Tutorial-pass2", LoadSceneMode.Single);
 		gm.level = GM.Levels.TUTORIAL;
 	}
 	void Level1()
 	{
-		SceneManager.LoadScene ("Muerto_Level2_Week8", LoadSceneMode.Single);
+		SceneManager.LoadScene ("Level_1-pass3", LoadSceneMode.Single);
 		gm.level = GM.Levels.LEVEL1;
 	}
 	void Level2()
 	{
-		SceneManager.LoadScene ("Muerto Level 3_Pass2", LoadSceneMode.Single);
+		SceneManager.LoadScene ("Level_2-new", LoadSceneMode.Single);
 		gm.level = GM.Levels.LEVEL2;
 	}
 	void Level3()
@@ -68,7 +68,7 @@ public class LevelSelect : MonoBehaviour {
 	//go back to main menu screen
 	void GoBack()
 	{
-		title.SetActive(true);
+		mode.SetActive(true);
 		gameObject.SetActive(false);
 	}
 }
