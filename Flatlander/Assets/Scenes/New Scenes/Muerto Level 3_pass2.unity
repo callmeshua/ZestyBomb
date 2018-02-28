@@ -9466,22 +9466,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 4457924928300376, guid: c4d18f8d3f1c4c348a7556fbcedbb850, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180.105
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457924928300376, guid: c4d18f8d3f1c4c348a7556fbcedbb850, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.28009313
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457924928300376, guid: c4d18f8d3f1c4c348a7556fbcedbb850, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.28009313
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457924928300376, guid: c4d18f8d3f1c4c348a7556fbcedbb850, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.28009313
-      objectReference: {fileID: 0}
+    - target: {fileID: 114203029410380556, guid: c4d18f8d3f1c4c348a7556fbcedbb850,
+        type: 2}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 2134193115}
     - target: {fileID: 1928028065415190, guid: c4d18f8d3f1c4c348a7556fbcedbb850, type: 2}
       propertyPath: m_Name
       value: Seesaw (3)

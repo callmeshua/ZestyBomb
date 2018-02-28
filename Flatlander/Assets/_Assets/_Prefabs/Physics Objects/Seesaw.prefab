@@ -259,9 +259,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1928028065415190}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.4, y: -81.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.9999996, z: -0, w: -0.0009133995}
+  m_LocalPosition: {x: 23.6, y: -13.6, z: -0.6}
+  m_LocalScale: {x: 0.28009313, y: 0.28009313, z: 0.28009313}
   m_Children:
   - {fileID: 4423051679142872}
   - {fileID: 4578512462540824}
@@ -275,7 +275,7 @@ Transform:
   - {fileID: 4266640376486238}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180.105, z: 0}
 --- !u!4 &4516364175582866
 Transform:
   m_ObjectHideFlags: 1
@@ -843,7 +843,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 114704253377574780, guid: 037cfbde270fb7f488793ebcc942a7ff, type: 2}
+  hookToFall: 0
+  relicTriggerFall: 0
+  delaySeconds: 0
   collideWithTag: Interactable
   playerColCanActivate: 1
   impactClip: {fileID: 8300000, guid: c6800d980a3ccbe4280817ba291a8537, type: 3}
-  boulderSoundClip: {fileID: 0}
