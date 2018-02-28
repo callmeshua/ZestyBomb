@@ -25,7 +25,7 @@ public class Shooter : Trap {
 	// Use this for initialization
 	void Start () {
         active = false;
-        canShoot = true;
+        canShoot = false;
         fireCount = 0;
         framesBetweenShots = 30;
         if (LimitLifetime)
