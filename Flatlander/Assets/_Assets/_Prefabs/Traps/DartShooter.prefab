@@ -592,5 +592,5 @@ MonoBehaviour:
   timer: 100
   framesBetweenShots: 30
   fireCount: 50
-  shooterType: 1
+  shooterType: 0
   barrelTrans: {fileID: 1240503520820602}
