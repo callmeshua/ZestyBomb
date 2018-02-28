@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4799180624134384}
   - component: {fileID: 33141013035593884}
   - component: {fileID: 23263877728990020}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: arrowAztecModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 23928394457133378}
   - component: {fileID: 114673083526950382}
   - component: {fileID: 54446279357888694}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Dart
   m_TagString: Dart
   m_Icon: {fileID: 0}
