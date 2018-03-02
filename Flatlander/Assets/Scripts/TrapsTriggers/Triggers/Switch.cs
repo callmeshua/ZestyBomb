@@ -31,9 +31,8 @@ public class Switch : Trigger {
             playerPos = player.transform.position;
             if (Vector3.Distance(playerPos, pos) < unit)
             {
-                
                 if (!isActive)
-                { 
+                {
                     isActive = !isActive;
                     trigger();
                 }
