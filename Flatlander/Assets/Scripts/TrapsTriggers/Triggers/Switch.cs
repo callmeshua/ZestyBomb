@@ -26,6 +26,7 @@ public class Switch : Trigger {
 	// Update is called once per frame
 	void Update () {
 
+        int i = 0;
         if (Input.GetKeyDown(key))
         {
             playerPos = player.transform.position;
@@ -33,8 +34,15 @@ public class Switch : Trigger {
             {
                 if (!isActive)
                 {
-                    isActive = !isActive;
-                    trigger();
+                    for (i = 0; i < traps.Count; i++)
+                    {
+                        if (traps[i].gameObject.active == false)
+                        {
+                            traps[i].gameObject.SetActive(true);
+                            isActive = !isActive;
+                            trigger();
+                        }
+                    }
                 }
                 else
                 {
