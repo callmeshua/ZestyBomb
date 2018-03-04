@@ -39,10 +39,12 @@ public class Switch : Trigger {
                         if (traps[i].gameObject.active == false)
                         {
                             traps[i].gameObject.SetActive(true);
-                            isActive = !isActive;
-                            trigger();
+                            
                         }
+                        
                     }
+                    isActive = !isActive;
+                    trigger();
                 }
                 else
                 {
