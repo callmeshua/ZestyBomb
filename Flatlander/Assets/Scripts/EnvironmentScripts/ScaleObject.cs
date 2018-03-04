@@ -11,7 +11,7 @@ public class ScaleObject : MonoBehaviour {
 	public int zi;
 	// Use this for initialization
 	void Start () {
-		mesh = GetComponent<MeshRenderer> ();
+		mesh = GetComponentInChildren<MeshRenderer>();
 		mat = mesh.material;
 		y = transform.localScale.y;
 		z = transform.localScale.y;
