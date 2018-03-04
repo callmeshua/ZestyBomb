@@ -32,7 +32,7 @@ public class WeponRecoil : MonoBehaviour {
         moveToInitPosition = true;
         ShoulderPos = transform.parent;
         pCtrl = FindObjectOfType<SideScrollController>();
-
+        gm = FindObjectOfType<GM>();
     }
 	
 	// Update is called once per frame

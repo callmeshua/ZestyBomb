@@ -31,6 +31,7 @@ public class HealthDepletion : MonoBehaviour {
         maxHealth = healthVal;
         pCtrl = FindObjectOfType<SideScrollController>();
         inputCtrl = FindObjectOfType<FWSInput>();
+        healthBar = GameObject.Find("health").GetComponent<Slider>();
 	}
 	
 	// Update is called once per frame

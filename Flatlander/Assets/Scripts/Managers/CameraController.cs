@@ -17,13 +17,12 @@ public class CameraController : MonoBehaviour
     public Transform target;
 
     [Header ("Modifiers")]
-    public Vector3 positionOffset = new Vector3(0f, 0f, -1f);   //position of camera relative to player (should be normalized
+    public float maxDistance;                                          //max z distance
+    public float minDistance;                                          //min z distance
     public Vector3 lookOffset;                                  //the direction the camera is looking relative to the target
     public float movementDamp = 7f;                             //speed of movement
-    public float zoomDamp = .5f;                                //speed of dolly
-    public float distance = 2.8f;                               //z distance from the player to the camera
-    public float zMax;                                          //max z distance
-    public float zMin;                                          //min z distance
+    public float zoomDamp = .5f;                                //speed of zoom
+
     public bool isZoomedOut;                                    //for cinematic effects
     public float zoomOutDist;
     public bool startZoomed;                                    //start camera on player
@@ -36,6 +35,7 @@ public class CameraController : MonoBehaviour
     private SideScrollController pCtrl;     //gets reference to player controller
     private PostProcessingProfile postProfile;
     private float targetOtho;
+    private Vector3 positionOffset = new Vector3(0f, 0f, -1f);   //position of camera relative to player (should be normalized)
 
     public GM gm;
 
@@ -48,27 +48,10 @@ public class CameraController : MonoBehaviour
         //(good for staging starting shots)
         if (startZoomed)
         {
-            transform.position = target.position + positionOffset * (zTarget * distance);
+            transform.position = target.position + positionOffset * maxDistance;
         }
         initOrthosize = Camera.main.orthographicSize;
         postProfile = Camera.main.GetComponent<PostProcessingBehaviour>().profile;
-    }
-
-    void HandlePostDOF()
-    {
-        if (postProfile != null)
-        {
-            float dist = Vector3.Distance(transform.position, target.transform.position);
-            // Get reference to the DoF settings
-            var dof = postProfile.depthOfField.settings;
-
-            // Set variables
-            dof.focusDistance = dist;
-            //dof.aperture = aperture;
-
-            // Apply settings
-            postProfile.depthOfField.settings = dof;
-        }
     }
 
     // Late Uptate called after all for no render artifacts/stuttering
@@ -78,17 +61,24 @@ public class CameraController : MonoBehaviour
         //dist multiplier based on player speed
         if (pCtrl.isDead)
         {
-            zTarget = Mathf.Lerp(zTarget, zMin * .8f, Time.deltaTime * zoomDamp * 2f);
+            zTarget = Mathf.Lerp(zTarget, minDistance * .8f, Time.deltaTime * zoomDamp * 2f);
         }
-
         else
         {
-            float targetMultiplier = Mathf.Clamp((pCtrl.currentVelocity / pCtrl.maxSpeed) * zMax, zMin, zMax);
+            float targetMultiplier = Mathf.Clamp((pCtrl.currentVelocity / pCtrl.maxSpeed) * maxDistance, minDistance, maxDistance);
 
             zTarget = Mathf.Lerp(zTarget, targetMultiplier, Time.deltaTime * zoomDamp);
         }
+
+
+
         //move and look
-        transform.position = Vector3.Lerp(transform.position, target.position + positionOffset, Time.deltaTime * movementDamp);
+
+        positionOffset = positionOffset.normalized; //pos offset must be normalized
+
+        Vector3 curPositionOffset = new Vector3(positionOffset.x, positionOffset.y, positionOffset.z * zTarget);
+
+        transform.position = Vector3.Lerp(transform.position, target.position + curPositionOffset, Time.deltaTime * movementDamp);
 
         targetOtho = Mathf.Lerp(Camera.main.orthographicSize, zTarget, Time.deltaTime * zoomDamp);
 

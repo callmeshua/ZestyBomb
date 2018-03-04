@@ -15,7 +15,7 @@ public class GunAim : MonoBehaviour
     {
         pCtrl = FindObjectOfType<SideScrollController>();
         rightShoulder = pCtrl.rightShoulder;
-
+        gm = FindObjectOfType<GM>();
         rightShoulderPoint = new GameObject();
         rightShoulderPoint.name = transform.root.name + "Right Shoulder IK Helper";
     }
