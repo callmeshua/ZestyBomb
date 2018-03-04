@@ -12,7 +12,6 @@
 		_BlendSoft("Blend Softness",Range(0,1))=.05
 		_BlendEdge("Edge Color",Color)=(0,0,0,0)
 		_BlendBright("Edge Brightness",float)=1
-		_BlendVar("Blend Variance",Range(0,1))=0
 		_BlendTex("Blend Pattern",2D)="white"{}
 
 		_DispMap("Displacement Texture",2D)="white"{}
@@ -21,6 +20,10 @@
 		_HighMap("Highlight Texture",2D)="white"{}
 		_HighStr("Highlight Strength",Range(0,1))=1
 		_HighV("Highlight Velocity",Vector)=(0.5,0,0,0)
+
+		_NoiseTex("Noise Texture",2D)="grey"{}
+		_NoiseOff("Noise Offset (instanced)",Vector)=(0,0,0,0)
+		_NoiseStr("Noise Strength",Float)=0
 	}
 	SubShader {
 		//Tags { "Queue"="Transparent" "RenderType"="Transparent" "IgnoreProjector"="True" }
@@ -67,6 +70,16 @@
 		float _HighStr;
 		float2 _HighV;
 
+		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
+		// See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
+		#pragma instancing_options assumeuniformscaling
+		UNITY_INSTANCING_BUFFER_START(Props)
+			UNITY_DEFINE_INSTANCED_PROP(float2,_NoiseOff)
+		UNITY_INSTANCING_BUFFER_END(Props)
+
+		sampler2D _NoiseTex;
+		float _NoiseStr;
+
 		void vert (inout appdata_full v) {
 			//tex2Dlod(_DispTex, float4(v.texcoord.xy,0,0)).r * _Displacement;
 			float3 offset=v.normal;
@@ -81,35 +94,19 @@
 			v.vertex.xyz += offset;
 		}
 
-		#define M_PI 3.1415926535897932384626433832795
-		float3 getRNG(float3 seed,int n){
-			float3 x=seed;
-			for(int i=0;i<n;i++){
-				x=frac(x*M_PI);
-			}
-
-			return 2*x-1;
-		}
-		float3 noisefn(float3 seed,float3 base,float strength){
-			float3 noise=getRNG(seed,5);//generate noise from -1 to 1
-			//noise needs to be actu
-			noise*=strength;
+		float4 noisefn(float2 uv,float4 base){
+			float4 noise=tex2D(_NoiseTex,uv+UNITY_ACCESS_INSTANCED_PROP(Props,_NoiseOff))*2-1;//generate noise from -1 to 1
+			//scale noise by str
+			noise*=_NoiseStr;
 
 			//input values of 0 and 1 should never change, 0.5 should have most variance
-			float3 offset=base*(1-base);
+			float4 offset=base*(1-base);
 
-			//offset by noise
+			//apply noise to our offset
 			offset*=noise;
 
 			return base+offset;
 		}
-
-		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
-		// See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
-		// #pragma instancing_options assumeuniformscaling
-		UNITY_INSTANCING_BUFFER_START(Props)
-			// put more per-instance properties here
-		UNITY_INSTANCING_BUFFER_END(Props)
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			const float2 mainUV=IN.uv_MainTex+_DispV*_Time.y;
@@ -118,23 +115,17 @@
 			//blend main textures together to get 
 			fixed4 diff = tex2D (_MainTex, mainUV)*_Color;
 			fixed4 diff2 = tex2D(_MainTex2,mainUV)*_Color2;
-			float val=tex2D(_BlendTex,mainUV).r;
-			//float val=noisefn(_Time.y+mainUV,tex2D(_BlendTex,mainUV),_BlendVar).r;
+			float4 val=tex2D(_BlendTex,mainUV);
+			val=noisefn(mainUV,val);
 
-			const float d=_BlendVal-val;
+			val.a=(val.r+val.g+val.b)/3;
+			//val.a=val.r;
+
+			const float4 d=_BlendVal-val;
 			float4 edgeCol=(0,0,0,0);
 			
-			if(d>0){//if blend amount is greater than the value of the blend texture, blend towards the 2nd texture 
-				if(d<_BlendSoft){//if we're within the edge threshold, we need an edge
-					val=d/_BlendSoft;
-					val=isfinite(val)?val:1;
-					edgeCol=_BlendEdge*val*_BlendBright;
-				}else{//otherwise, blend fully to second texture
-					val=1;
-				}
-			}else{//blend amount is less than or equal to the blend texture's val, use 1st texture fully
-				val=0;
-			}
+			val=min(max(d/_BlendSoft,0),1);
+			edgeCol=_BlendEdge*frac(val)*_BlendBright;			
 
 			fixed4 c=diff+val*(diff2-diff);
 
