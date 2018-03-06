@@ -83,7 +83,7 @@ MonoBehaviour:
   totalScore: 0
   scoreRank: 0
   healthVal: 0
-  startTime: 0
+  startTime: 6000
   shots: 0
   timer: 6000
   roundedTimer: 0

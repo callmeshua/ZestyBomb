@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Switch : Trigger {
 
+    public FWSInput fInput;
+
     protected Vector3 pos;
     protected Vector3 playerPos;
 
@@ -20,7 +22,7 @@ public class Switch : Trigger {
 
         pos = model.transform.position;
 
-        key = KeyCode.E;
+        key = fInput.use;
     }
 	
 	// Update is called once per frame
@@ -39,7 +41,6 @@ public class Switch : Trigger {
                         if (traps[i].gameObject.active == false)
                         {
                             traps[i].gameObject.SetActive(true);
-                            
                         }
                         
                     }

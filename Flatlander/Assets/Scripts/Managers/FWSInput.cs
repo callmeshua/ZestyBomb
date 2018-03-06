@@ -23,11 +23,12 @@ public class FWSInput : MonoBehaviour {
     [HideInInspector]
     public bool paused;
 
-    [Header ("Input Axis Values")]
+    [Header ("Input Values")]
     public float horizontal;
     public float vertical;
     public float horizontalAim;
     public float verticalAim;
+    public KeyCode use = KeyCode.E;
 
     [Header ("Conditionals")]
     public bool snap = false;

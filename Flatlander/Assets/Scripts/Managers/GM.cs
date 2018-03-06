@@ -236,10 +236,6 @@ public class GM : MonoBehaviour
     {
         frozen = true;
         gCtrl.Retract();
-        if (Input.GetButtonDown("Jump"))
-        {
-            ResetScene();
-        }
     }
     
     public void LerpUI(GameObject uiObject,Vector2 target, float speed, bool lerp)

@@ -3140,7 +3140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac9ec56cb8a440c398298746b06686f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthVal: 67
+  healthVal: 100
   healthChunks: 3
   baseDmg: 1
   baseHeal: 10
@@ -3169,7 +3169,8 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 5f21ec916ccfc64409c76e617aade808, type: 3}
   swingSound: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
   retractSound: {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
-  swingParticles: {fileID: 0}
+  swingParticles: {fileID: 1342183847442740, guid: 8a85782f96434424893ca7ad2e25601a,
+    type: 2}
   swingPower: 1.8
   fallPower: 25
   effectiveSwingAngle: 10
