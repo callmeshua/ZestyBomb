@@ -51,11 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6111bb51e783c48aebeed66e43a8f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: {fileID: 0}
-  pauseScreen: {fileID: 0}
+  pauseScreen: {fileID: 1579854271040056, guid: 85f17cd307653fd4cbfb15160c7805b3,
+    type: 2}
   reticle: {fileID: 2800000, guid: 6010ec86c7635d448b1af593879d43dc, type: 3}
   cursorMode: 1
-  gm: {fileID: 0}
+  gm: {fileID: 114704253377574780, guid: 037cfbde270fb7f488793ebcc942a7ff, type: 2}
   paused: 0
   horizontal: 0
   vertical: 0
@@ -67,5 +67,6 @@ MonoBehaviour:
   isUsingController: 0
   isShooting: 0
   lookPos: {x: 0, y: 0, z: 0}
-  pCtrl: {fileID: 0}
-  grappleCtrl: {fileID: 0}
+  pCtrl: {fileID: 114160651120588822, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
+  grappleCtrl: {fileID: 114631560739002636, guid: 1fb16853441064f4b90190a9c375bf9b,
+    type: 2}
