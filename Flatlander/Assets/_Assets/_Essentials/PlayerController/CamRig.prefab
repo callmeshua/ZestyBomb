@@ -95,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1553096479184976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3233609, y: -0.02487135, z: -0.05573886}
+  m_LocalPosition: {x: 0.12034514, y: -0.030895669, z: -0.13831481}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4870349597100892}
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4029395102914648}
-  maxDistance: 30
+  maxDistance: 25
   minDistance: 18
   lookOffset: {x: 0, y: 0, z: 0}
   movementDamp: 10
@@ -200,7 +200,7 @@ MonoBehaviour:
   startZoomed: 0
   orthoSize: 0
   initOrthosize: 0
-  gm: {fileID: 114704253377574780, guid: 037cfbde270fb7f488793ebcc942a7ff, type: 2}
+  gm: {fileID: 0}
 --- !u!124 &124075979403501396
 Behaviour:
   m_ObjectHideFlags: 1
