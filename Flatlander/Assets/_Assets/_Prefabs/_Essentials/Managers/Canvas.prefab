@@ -3737,7 +3737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d544ce50e7adeb142890f6ccaab2a6ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 114704253377574780, guid: 037cfbde270fb7f488793ebcc942a7ff, type: 2}
+  gm: {fileID: 0}
   reset: {fileID: 114619554737212284}
   menu: {fileID: 114641101501727318}
   targetPos: {fileID: 1234509908525948}
@@ -3922,7 +3922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea087c9450cef84eb8d709f23576f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 114704253377574780, guid: 037cfbde270fb7f488793ebcc942a7ff, type: 2}
+  gm: {fileID: 0}
   gCtrl: {fileID: 114631560739002636, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
   resetButton: {fileID: 114892651281726468}
   menuButton: {fileID: 114187383406311084}
@@ -5894,7 +5894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74fad89bb3f46574bb1f5e6aab6e7ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 114704253377574780, guid: 037cfbde270fb7f488793ebcc942a7ff, type: 2}
+  gm: {fileID: 0}
   gCtrl: {fileID: 114631560739002636, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
   reset: {fileID: 114323402115428050}
   menu: {fileID: 114728843359087674}
@@ -12035,7 +12035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 79.863335, y: 5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224816169455327778
