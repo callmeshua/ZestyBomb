@@ -38,7 +38,7 @@ public class Switch : Trigger {
                 {
                     for (i = 0; i < traps.Count; i++)
                     {
-                        if (traps[i].gameObject.active == false)
+                        if (traps[i].gameObject.activeSelf == false)
                         {
                             traps[i].gameObject.SetActive(true);
                         }
