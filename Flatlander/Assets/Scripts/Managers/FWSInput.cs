@@ -79,10 +79,12 @@ public class FWSInput : MonoBehaviour {
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            
             if (Input.GetButtonDown("Jump"))
             {
                 gm.ResetScene();
             }
+            
         }
 
         if(Input.GetButtonDown("Reset"))
