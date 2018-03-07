@@ -29,7 +29,7 @@ public class Switch : Trigger {
 	void Update () {
 
         int i = 0;
-        if (Input.GetKeyDown(key))
+        if (Input.GetButtonDown("Use"))
         {
             playerPos = player.transform.position;
             if (Vector3.Distance(playerPos, pos) < unit)
