@@ -79,6 +79,12 @@ public class FWSInput : MonoBehaviour {
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            
+            if (Input.GetButtonDown("Jump"))
+            {
+                gm.ResetScene();
+            }
+            
         }
 
         if(Input.GetButtonDown("Reset"))
@@ -93,7 +99,7 @@ public class FWSInput : MonoBehaviour {
 
         if (Input.GetButtonDown("Cancel"))
         {
-            HandlePause();
+            gm.handlePause();
         }
 
         if (isUsingController)
@@ -161,19 +167,5 @@ public class FWSInput : MonoBehaviour {
 
         //plugin degree conversion into transform
         aimRotation = Quaternion.Slerp(aimRotation, eulerRotation, Time.deltaTime * 10);
-    }
-
-    //JOSH KARMEL
-    //Handles pausing the game
-    void HandlePause()
-    {
-        gm.handlePause();
-
-        /*
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ps.handleParamScreen();
-        }
-        */
     }
 }

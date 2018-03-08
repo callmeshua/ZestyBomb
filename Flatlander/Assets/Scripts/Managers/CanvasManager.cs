@@ -66,10 +66,6 @@ public class CanvasManager : MonoBehaviour {
         {
             ws.SetActive(true);
             gm.handleWin();
-            if (Input.GetButtonDown("Jump"))
-            {
-                gm.ResetScene();
-            }
         }
         else
         {
