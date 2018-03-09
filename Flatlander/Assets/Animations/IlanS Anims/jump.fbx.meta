@@ -1,0 +1,215 @@
+fileFormatVersion: 2
+guid: fd21e5996c072b34188a5a28a9a8abd1
+timeCreated: 1520557610
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: posed:rudy_rig:Character1_Head
+    100004: posed:rudy_rig:Character1_Hips
+    100006: posed:rudy_rig:Character1_LeftArm
+    100008: posed:rudy_rig:Character1_LeftFoot
+    100010: posed:rudy_rig:Character1_LeftForeArm
+    100012: posed:rudy_rig:Character1_LeftHand
+    100014: posed:rudy_rig:Character1_LeftHandIndex1
+    100016: posed:rudy_rig:Character1_LeftHandIndex2
+    100018: posed:rudy_rig:Character1_LeftHandIndex3
+    100020: posed:rudy_rig:Character1_LeftHandIndex4
+    100022: posed:rudy_rig:Character1_LeftHandMiddle1
+    100024: posed:rudy_rig:Character1_LeftHandMiddle2
+    100026: posed:rudy_rig:Character1_LeftHandMiddle3
+    100028: posed:rudy_rig:Character1_LeftHandMiddle4
+    100030: posed:rudy_rig:Character1_LeftHandPinky1
+    100032: posed:rudy_rig:Character1_LeftHandPinky2
+    100034: posed:rudy_rig:Character1_LeftHandPinky3
+    100036: posed:rudy_rig:Character1_LeftHandPinky4
+    100038: posed:rudy_rig:Character1_LeftHandRing1
+    100040: posed:rudy_rig:Character1_LeftHandRing2
+    100042: posed:rudy_rig:Character1_LeftHandRing3
+    100044: posed:rudy_rig:Character1_LeftHandRing4
+    100046: posed:rudy_rig:Character1_LeftHandThumb1
+    100048: posed:rudy_rig:Character1_LeftHandThumb2
+    100050: posed:rudy_rig:Character1_LeftHandThumb3
+    100052: posed:rudy_rig:Character1_LeftHandThumb4
+    100054: posed:rudy_rig:Character1_LeftLeg
+    100056: posed:rudy_rig:Character1_LeftShoulder
+    100058: posed:rudy_rig:Character1_LeftToeBase
+    100060: posed:rudy_rig:Character1_LeftUpLeg
+    100062: posed:rudy_rig:Character1_Neck
+    100064: posed:rudy_rig:Character1_RightArm
+    100066: posed:rudy_rig:Character1_RightFoot
+    100068: posed:rudy_rig:Character1_RightForeArm
+    100070: posed:rudy_rig:Character1_RightHand
+    100072: posed:rudy_rig:Character1_RightHandIndex1
+    100074: posed:rudy_rig:Character1_RightHandIndex2
+    100076: posed:rudy_rig:Character1_RightHandIndex3
+    100078: posed:rudy_rig:Character1_RightHandIndex4
+    100080: posed:rudy_rig:Character1_RightHandMiddle1
+    100082: posed:rudy_rig:Character1_RightHandMiddle2
+    100084: posed:rudy_rig:Character1_RightHandMiddle3
+    100086: posed:rudy_rig:Character1_RightHandMiddle4
+    100088: posed:rudy_rig:Character1_RightHandPinky1
+    100090: posed:rudy_rig:Character1_RightHandPinky2
+    100092: posed:rudy_rig:Character1_RightHandPinky3
+    100094: posed:rudy_rig:Character1_RightHandPinky4
+    100096: posed:rudy_rig:Character1_RightHandRing1
+    100098: posed:rudy_rig:Character1_RightHandRing2
+    100100: posed:rudy_rig:Character1_RightHandRing3
+    100102: posed:rudy_rig:Character1_RightHandRing4
+    100104: posed:rudy_rig:Character1_RightHandThumb1
+    100106: posed:rudy_rig:Character1_RightHandThumb2
+    100108: posed:rudy_rig:Character1_RightHandThumb3
+    100110: posed:rudy_rig:Character1_RightHandThumb4
+    100112: posed:rudy_rig:Character1_RightLeg
+    100114: posed:rudy_rig:Character1_RightShoulder
+    100116: posed:rudy_rig:Character1_RightToeBase
+    100118: posed:rudy_rig:Character1_RightUpLeg
+    100120: posed:rudy_rig:Character1_Spine
+    100122: posed:rudy_rig:Character1_Spine1
+    100124: posed:rudy_rig:Character1_Spine2
+    400000: //RootNode
+    400002: posed:rudy_rig:Character1_Head
+    400004: posed:rudy_rig:Character1_Hips
+    400006: posed:rudy_rig:Character1_LeftArm
+    400008: posed:rudy_rig:Character1_LeftFoot
+    400010: posed:rudy_rig:Character1_LeftForeArm
+    400012: posed:rudy_rig:Character1_LeftHand
+    400014: posed:rudy_rig:Character1_LeftHandIndex1
+    400016: posed:rudy_rig:Character1_LeftHandIndex2
+    400018: posed:rudy_rig:Character1_LeftHandIndex3
+    400020: posed:rudy_rig:Character1_LeftHandIndex4
+    400022: posed:rudy_rig:Character1_LeftHandMiddle1
+    400024: posed:rudy_rig:Character1_LeftHandMiddle2
+    400026: posed:rudy_rig:Character1_LeftHandMiddle3
+    400028: posed:rudy_rig:Character1_LeftHandMiddle4
+    400030: posed:rudy_rig:Character1_LeftHandPinky1
+    400032: posed:rudy_rig:Character1_LeftHandPinky2
+    400034: posed:rudy_rig:Character1_LeftHandPinky3
+    400036: posed:rudy_rig:Character1_LeftHandPinky4
+    400038: posed:rudy_rig:Character1_LeftHandRing1
+    400040: posed:rudy_rig:Character1_LeftHandRing2
+    400042: posed:rudy_rig:Character1_LeftHandRing3
+    400044: posed:rudy_rig:Character1_LeftHandRing4
+    400046: posed:rudy_rig:Character1_LeftHandThumb1
+    400048: posed:rudy_rig:Character1_LeftHandThumb2
+    400050: posed:rudy_rig:Character1_LeftHandThumb3
+    400052: posed:rudy_rig:Character1_LeftHandThumb4
+    400054: posed:rudy_rig:Character1_LeftLeg
+    400056: posed:rudy_rig:Character1_LeftShoulder
+    400058: posed:rudy_rig:Character1_LeftToeBase
+    400060: posed:rudy_rig:Character1_LeftUpLeg
+    400062: posed:rudy_rig:Character1_Neck
+    400064: posed:rudy_rig:Character1_RightArm
+    400066: posed:rudy_rig:Character1_RightFoot
+    400068: posed:rudy_rig:Character1_RightForeArm
+    400070: posed:rudy_rig:Character1_RightHand
+    400072: posed:rudy_rig:Character1_RightHandIndex1
+    400074: posed:rudy_rig:Character1_RightHandIndex2
+    400076: posed:rudy_rig:Character1_RightHandIndex3
+    400078: posed:rudy_rig:Character1_RightHandIndex4
+    400080: posed:rudy_rig:Character1_RightHandMiddle1
+    400082: posed:rudy_rig:Character1_RightHandMiddle2
+    400084: posed:rudy_rig:Character1_RightHandMiddle3
+    400086: posed:rudy_rig:Character1_RightHandMiddle4
+    400088: posed:rudy_rig:Character1_RightHandPinky1
+    400090: posed:rudy_rig:Character1_RightHandPinky2
+    400092: posed:rudy_rig:Character1_RightHandPinky3
+    400094: posed:rudy_rig:Character1_RightHandPinky4
+    400096: posed:rudy_rig:Character1_RightHandRing1
+    400098: posed:rudy_rig:Character1_RightHandRing2
+    400100: posed:rudy_rig:Character1_RightHandRing3
+    400102: posed:rudy_rig:Character1_RightHandRing4
+    400104: posed:rudy_rig:Character1_RightHandThumb1
+    400106: posed:rudy_rig:Character1_RightHandThumb2
+    400108: posed:rudy_rig:Character1_RightHandThumb3
+    400110: posed:rudy_rig:Character1_RightHandThumb4
+    400112: posed:rudy_rig:Character1_RightLeg
+    400114: posed:rudy_rig:Character1_RightShoulder
+    400116: posed:rudy_rig:Character1_RightToeBase
+    400118: posed:rudy_rig:Character1_RightUpLeg
+    400120: posed:rudy_rig:Character1_Spine
+    400122: posed:rudy_rig:Character1_Spine1
+    400124: posed:rudy_rig:Character1_Spine2
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

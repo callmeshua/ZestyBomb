@@ -1,0 +1,215 @@
+fileFormatVersion: 2
+guid: 65b62ff36fc7db84393a0fcb39c20f1e
+timeCreated: 1520557609
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: rudy_rig:Character1_Head
+    100002: rudy_rig:Character1_Hips
+    100004: rudy_rig:Character1_LeftArm
+    100006: rudy_rig:Character1_LeftFoot
+    100008: rudy_rig:Character1_LeftForeArm
+    100010: rudy_rig:Character1_LeftHand
+    100012: rudy_rig:Character1_LeftHandIndex1
+    100014: rudy_rig:Character1_LeftHandIndex2
+    100016: rudy_rig:Character1_LeftHandIndex3
+    100018: rudy_rig:Character1_LeftHandIndex4
+    100020: rudy_rig:Character1_LeftHandMiddle1
+    100022: rudy_rig:Character1_LeftHandMiddle2
+    100024: rudy_rig:Character1_LeftHandMiddle3
+    100026: rudy_rig:Character1_LeftHandMiddle4
+    100028: rudy_rig:Character1_LeftHandPinky1
+    100030: rudy_rig:Character1_LeftHandPinky2
+    100032: rudy_rig:Character1_LeftHandPinky3
+    100034: rudy_rig:Character1_LeftHandPinky4
+    100036: rudy_rig:Character1_LeftHandRing1
+    100038: rudy_rig:Character1_LeftHandRing2
+    100040: rudy_rig:Character1_LeftHandRing3
+    100042: rudy_rig:Character1_LeftHandRing4
+    100044: rudy_rig:Character1_LeftHandThumb1
+    100046: rudy_rig:Character1_LeftHandThumb2
+    100048: rudy_rig:Character1_LeftHandThumb3
+    100050: rudy_rig:Character1_LeftHandThumb4
+    100052: rudy_rig:Character1_LeftLeg
+    100054: rudy_rig:Character1_LeftShoulder
+    100056: rudy_rig:Character1_LeftToeBase
+    100058: rudy_rig:Character1_LeftUpLeg
+    100060: rudy_rig:Character1_Neck
+    100062: rudy_rig:Character1_RightArm
+    100064: rudy_rig:Character1_RightFoot
+    100066: rudy_rig:Character1_RightForeArm
+    100068: rudy_rig:Character1_RightHand
+    100070: rudy_rig:Character1_RightHandIndex1
+    100072: rudy_rig:Character1_RightHandIndex2
+    100074: rudy_rig:Character1_RightHandIndex3
+    100076: rudy_rig:Character1_RightHandIndex4
+    100078: rudy_rig:Character1_RightHandMiddle1
+    100080: rudy_rig:Character1_RightHandMiddle2
+    100082: rudy_rig:Character1_RightHandMiddle3
+    100084: rudy_rig:Character1_RightHandMiddle4
+    100086: rudy_rig:Character1_RightHandPinky1
+    100088: rudy_rig:Character1_RightHandPinky2
+    100090: rudy_rig:Character1_RightHandPinky3
+    100092: rudy_rig:Character1_RightHandPinky4
+    100094: rudy_rig:Character1_RightHandRing1
+    100096: rudy_rig:Character1_RightHandRing2
+    100098: rudy_rig:Character1_RightHandRing3
+    100100: rudy_rig:Character1_RightHandRing4
+    100102: rudy_rig:Character1_RightHandThumb1
+    100104: rudy_rig:Character1_RightHandThumb2
+    100106: rudy_rig:Character1_RightHandThumb3
+    100108: rudy_rig:Character1_RightHandThumb4
+    100110: rudy_rig:Character1_RightLeg
+    100112: rudy_rig:Character1_RightShoulder
+    100114: rudy_rig:Character1_RightToeBase
+    100116: rudy_rig:Character1_RightUpLeg
+    100118: rudy_rig:Character1_Spine
+    100120: rudy_rig:Character1_Spine1
+    100122: rudy_rig:Character1_Spine2
+    100124: //RootNode
+    400000: rudy_rig:Character1_Head
+    400002: rudy_rig:Character1_Hips
+    400004: rudy_rig:Character1_LeftArm
+    400006: rudy_rig:Character1_LeftFoot
+    400008: rudy_rig:Character1_LeftForeArm
+    400010: rudy_rig:Character1_LeftHand
+    400012: rudy_rig:Character1_LeftHandIndex1
+    400014: rudy_rig:Character1_LeftHandIndex2
+    400016: rudy_rig:Character1_LeftHandIndex3
+    400018: rudy_rig:Character1_LeftHandIndex4
+    400020: rudy_rig:Character1_LeftHandMiddle1
+    400022: rudy_rig:Character1_LeftHandMiddle2
+    400024: rudy_rig:Character1_LeftHandMiddle3
+    400026: rudy_rig:Character1_LeftHandMiddle4
+    400028: rudy_rig:Character1_LeftHandPinky1
+    400030: rudy_rig:Character1_LeftHandPinky2
+    400032: rudy_rig:Character1_LeftHandPinky3
+    400034: rudy_rig:Character1_LeftHandPinky4
+    400036: rudy_rig:Character1_LeftHandRing1
+    400038: rudy_rig:Character1_LeftHandRing2
+    400040: rudy_rig:Character1_LeftHandRing3
+    400042: rudy_rig:Character1_LeftHandRing4
+    400044: rudy_rig:Character1_LeftHandThumb1
+    400046: rudy_rig:Character1_LeftHandThumb2
+    400048: rudy_rig:Character1_LeftHandThumb3
+    400050: rudy_rig:Character1_LeftHandThumb4
+    400052: rudy_rig:Character1_LeftLeg
+    400054: rudy_rig:Character1_LeftShoulder
+    400056: rudy_rig:Character1_LeftToeBase
+    400058: rudy_rig:Character1_LeftUpLeg
+    400060: rudy_rig:Character1_Neck
+    400062: rudy_rig:Character1_RightArm
+    400064: rudy_rig:Character1_RightFoot
+    400066: rudy_rig:Character1_RightForeArm
+    400068: rudy_rig:Character1_RightHand
+    400070: rudy_rig:Character1_RightHandIndex1
+    400072: rudy_rig:Character1_RightHandIndex2
+    400074: rudy_rig:Character1_RightHandIndex3
+    400076: rudy_rig:Character1_RightHandIndex4
+    400078: rudy_rig:Character1_RightHandMiddle1
+    400080: rudy_rig:Character1_RightHandMiddle2
+    400082: rudy_rig:Character1_RightHandMiddle3
+    400084: rudy_rig:Character1_RightHandMiddle4
+    400086: rudy_rig:Character1_RightHandPinky1
+    400088: rudy_rig:Character1_RightHandPinky2
+    400090: rudy_rig:Character1_RightHandPinky3
+    400092: rudy_rig:Character1_RightHandPinky4
+    400094: rudy_rig:Character1_RightHandRing1
+    400096: rudy_rig:Character1_RightHandRing2
+    400098: rudy_rig:Character1_RightHandRing3
+    400100: rudy_rig:Character1_RightHandRing4
+    400102: rudy_rig:Character1_RightHandThumb1
+    400104: rudy_rig:Character1_RightHandThumb2
+    400106: rudy_rig:Character1_RightHandThumb3
+    400108: rudy_rig:Character1_RightHandThumb4
+    400110: rudy_rig:Character1_RightLeg
+    400112: rudy_rig:Character1_RightShoulder
+    400114: rudy_rig:Character1_RightToeBase
+    400116: rudy_rig:Character1_RightUpLeg
+    400118: rudy_rig:Character1_Spine
+    400120: rudy_rig:Character1_Spine1
+    400122: rudy_rig:Character1_Spine2
+    400124: //RootNode
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
