@@ -108,6 +108,9 @@ public class GM : MonoBehaviour
 		healCollectibles = GameObject.FindGameObjectsWithTag ("healCollectible");
 		golCollectables = GameObject.FindGameObjectsWithTag ("scoreCollectible");
 
+        relic = GameObject.FindGameObjectWithTag("relicArea");
+        exitArea = GameObject.FindGameObjectWithTag("exitArea").GetComponent<WinArea>();
+
         GenerateObjectArrays(interactables, i_positions, i_rotations);
         GenerateObjectArrays(hazards, h_positions, h_rotations);
 		GenerateObjectArrays (normCollectibles, nc_positions, nc_rotations);

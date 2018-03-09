@@ -34,7 +34,7 @@ public class WinArea : MonoBehaviour {
             {
                 SoundManager.PlaySFX(winSound, false, .6f);
                 gm.triggerEscape();
-                gm.camShake(2);
+                gm.camShake(1.5f);
                 gameObject.SetActive(false);
                 
             }
@@ -51,7 +51,7 @@ public class WinArea : MonoBehaviour {
             {
                 SoundManager.PlaySFX(winSound, false, .6f);
                 gm.triggerEscape();
-                gm.camShake(2);
+                gm.camShake(1.5f);
                 gameObject.SetActive(false);
             }
 

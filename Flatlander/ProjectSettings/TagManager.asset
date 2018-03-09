@@ -31,6 +31,7 @@ TagManager:
   - exitArea
   - relicArea
   - shooter
+  - CamRig
   layers:
   - Default
   - TransparentFX

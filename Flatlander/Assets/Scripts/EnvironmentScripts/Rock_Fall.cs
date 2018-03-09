@@ -33,7 +33,7 @@ public class Rock_Fall : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		rb = gameObject.GetComponent<Rigidbody>();
-
+        gm = FindObjectOfType<GM>();
 	}
 
     //JK~~

@@ -20,6 +20,7 @@ public class CameraShake : MonoBehaviour {
 
     private void Start()
     {
+        camTransform = GameObject.FindGameObjectWithTag("CamRig").transform;
     }
 
     void Awake()
