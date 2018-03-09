@@ -2882,6 +2882,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 491471893}
   m_Mesh: {fileID: 4300000, guid: b336747264a76504caa1e0dbec55f013, type: 3}
+--- !u!1 &498703166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1077669133}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 498703167}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &498703167
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1077669133}
+  m_GameObject: {fileID: 498703166}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1060271915}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &499099358
 GameObject:
   m_ObjectHideFlags: 0
@@ -6022,6 +6051,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1060073210}
   m_Mesh: {fileID: 4300000, guid: b336747264a76504caa1e0dbec55f013, type: 3}
+--- !u!1 &1060271914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1077669133}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1060271915}
+  - component: {fileID: 2134193115}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1060271915
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1077669133}
+  m_GameObject: {fileID: 1060271914}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 498703167}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1077669133
 Prefab:
   m_ObjectHideFlags: 0
@@ -6563,6 +6621,7 @@ GameObject:
   - component: {fileID: 1154958927}
   - component: {fileID: 1154958926}
   - component: {fileID: 1154958925}
+  - component: {fileID: 1154958928}
   m_Layer: 9
   m_Name: default
   m_TagString: Untagged
@@ -6642,6 +6701,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1154958923}
   m_Mesh: {fileID: 4300000, guid: b336747264a76504caa1e0dbec55f013, type: 3}
+--- !u!114 &1154958928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1154958923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff83a5d478834ee3852b5236ae11cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 0}
+  yi: 0
+  zi: 0
 --- !u!1 &1159892673
 GameObject:
   m_ObjectHideFlags: 0
@@ -11902,12 +11975,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2133350295}
   m_Mesh: {fileID: 4300000, guid: b336747264a76504caa1e0dbec55f013, type: 3}
---- !u!114 &2134193115 stripped
+--- !u!114 &2134193115
 MonoBehaviour:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114106855618653236, guid: 21216f7cebe868541a150f8c4f740be3,
     type: 2}
   m_PrefabInternal: {fileID: 1077669133}
+  m_GameObject: {fileID: 1060271914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b099f3bc3d7990a4993dd2989db0f83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  hd: {fileID: 0}
+  gCtrl: {fileID: 0}
+  relic: {fileID: 0}
+  exitArea: {fileID: 0}
+  sm: {fileID: 0}
+  scoreNum: {fileID: 0}
+  goldNum: {fileID: 0}
+  shotText: {fileID: 0}
+  clock: {fileID: 0}
+  colCount: 0
+  goldColCount: 0
+  totalScore: 0
+  scoreRank: 0
+  healthVal: 0
+  startTime: 0
+  shots: 0
+  timer: 0
+  roundedTimer: 0
+  resetLevel: 0
+  touchHazard: 0
+  gameOver: 0
+  frozen: 0
+  paused: 0
+  mode: 0
+  level: 0
+  phase: 0
+  oneStarScore: 0
+  twoStarScore: 0
+  threeStarScore: 0
 --- !u!1001 &2142628300
 Prefab:
   m_ObjectHideFlags: 0

@@ -4199,15 +4199,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4934442125358794, guid: b06d11b5581c5554ca80817a366be1a5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -105.2
+      value: -36.1
       objectReference: {fileID: 0}
     - target: {fileID: 4934442125358794, guid: b06d11b5581c5554ca80817a366be1a5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -74.7
+      value: 16.7
       objectReference: {fileID: 0}
     - target: {fileID: 4934442125358794, guid: b06d11b5581c5554ca80817a366be1a5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 112.6
+      value: -22.8
       objectReference: {fileID: 0}
     - target: {fileID: 4934442125358794, guid: b06d11b5581c5554ca80817a366be1a5, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4234,14 +4234,17 @@ Prefab:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1134503084}
-    - target: {fileID: 114849276542593242, guid: b06d11b5581c5554ca80817a366be1a5,
-        type: 2}
-      propertyPath: startZoomed
+    - target: {fileID: 4870349597100892, guid: b06d11b5581c5554ca80817a366be1a5, type: 2}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1553096479184976, guid: b06d11b5581c5554ca80817a366be1a5, type: 2}
-      propertyPath: m_TagString
-      value: CamRig
+    - target: {fileID: 4870349597100892, guid: b06d11b5581c5554ca80817a366be1a5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870349597100892, guid: b06d11b5581c5554ca80817a366be1a5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b06d11b5581c5554ca80817a366be1a5, type: 2}

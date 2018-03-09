@@ -7,9 +7,14 @@ public class LavaRising : MonoBehaviour {
     public GM gm;
     private MeshRenderer mesh;
 	public float speed = 1f;
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void Start()
+    {
+        gm = FindObjectOfType<GM>();
+    }
+
+    // Update is called once per frame
+    void Update () {
 		if (gm.phase == GM.Phases.ESCAPE && !gm.gameOver)
         {
 			transform.position += transform.up * Time.deltaTime * speed;
