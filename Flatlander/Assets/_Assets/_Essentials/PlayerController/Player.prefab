@@ -3084,7 +3084,7 @@ MonoBehaviour:
   trailRenderer: {fileID: 1599652935162434}
   playerRb: {fileID: 54704302028240566}
   localVelocity: {x: 0, y: 0, z: 0}
-  gm: {fileID: 114704253377574780, guid: 037cfbde270fb7f488793ebcc942a7ff, type: 2}
+  gm: {fileID: 0}
   pHealth: {fileID: 114425535684501144}
   footstepClip: {fileID: 8300000, guid: 87eaeebc1f9677d49928a1a6cb5264d1, type: 3}
   deathClip: {fileID: 8300000, guid: 175e94a1f67300c4e8a8a0e993221a85, type: 3}
@@ -3180,7 +3180,7 @@ MonoBehaviour:
   recoilForce: 5
   massInfluence: 1
   climbSpeed: 0.1
-  relativeRange: 15
+  relativeRange: 22
   maxRopeRange: 15
   minRopeRange: 2.8
   curRopeLength: 0

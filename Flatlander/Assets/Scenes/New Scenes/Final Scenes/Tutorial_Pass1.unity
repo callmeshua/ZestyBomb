@@ -22252,6 +22252,11 @@ Prefab:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1134503084}
+    - target: {fileID: 114631560739002636, guid: 1fb16853441064f4b90190a9c375bf9b,
+        type: 2}
+      propertyPath: relativeRange
+      value: 22
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
   m_IsPrefabParent: 0
