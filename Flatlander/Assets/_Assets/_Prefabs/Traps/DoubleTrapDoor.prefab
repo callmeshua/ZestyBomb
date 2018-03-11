@@ -90,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399874572831492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.84, y: 28.74, z: 0}
+  m_LocalPosition: {x: 31.502123, y: 3.482729, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4129670126820662}
@@ -233,7 +233,7 @@ HingeJoint:
   m_Anchor: {x: 0.4, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 35.16, y: 4.1399994, z: 0}
+  m_ConnectedAnchor: {x: 34.822124, y: 3.482729, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -267,7 +267,7 @@ HingeJoint:
   m_Anchor: {x: 0.4, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 29.02, y: 4.1399994, z: 0}
+  m_ConnectedAnchor: {x: 28.682123, y: 3.482729, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -345,8 +345,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.45
+  m_Height: 0.9
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136479241474472292
@@ -358,7 +358,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.54
+  m_Height: 0.9
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
