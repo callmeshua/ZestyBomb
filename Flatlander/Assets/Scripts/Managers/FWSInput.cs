@@ -19,6 +19,9 @@ public class FWSInput : MonoBehaviour {
     public Texture2D reticle;
     public CursorMode cursorMode;
     public GM gm;
+    public GameObject aimGO;
+    public GameObject lookGo;
+
 
     [HideInInspector]
     public bool paused;
@@ -43,27 +46,39 @@ public class FWSInput : MonoBehaviour {
     public SideScrollController pCtrl;
     public GrappleController grappleCtrl;
     private Quaternion aimRotation;
-
 	// Use this for initialization
 	void Start ()
     {
+        gm = FindObjectOfType<GM>();
         pCtrl = FindObjectOfType<SideScrollController>();
         grappleCtrl=FindObjectOfType<GrappleController>();
         paused = gm.frozen;
         cursorMode = CursorMode.Auto;
         Cursor.SetCursor(reticle, new Vector2(reticle.width/2f,reticle.height/2f),CursorMode.Auto);
-	}
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
         paused = gm.frozen;
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+
 
         //ENABLE WITH CONTROLLER SUPPORT
-        //verticalAim = Input.GetAxisRaw("Vertical Aim");
-        //horizontalAim = Input.GetAxisRaw("Horizontal Aim");
+
+        if(gm.isUsingController)
+        {
+            verticalAim = Input.GetAxisRaw("Vertical Aim");
+            horizontalAim = Input.GetAxisRaw("Horizontal Aim");
+
+            horizontal = Input.GetAxis("Horizontal Controller");
+            vertical = Input.GetAxis("Vertical Controller");
+
+        }
+        else
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
+        }
 
         if (!paused)
         {
@@ -102,7 +117,7 @@ public class FWSInput : MonoBehaviour {
             gm.handlePause();
         }
 
-        if (isUsingController)
+        if (gm.isUsingController)
         {
             HandleControllerAim();
         }
@@ -121,14 +136,21 @@ public class FWSInput : MonoBehaviour {
         //Vector3 point = (ray.GetPoint(Vector3.Distance(ray.origin, grappleCtrl.barrel.transform.position))- grappleCtrl.barrel.transform.position).normalized*4f;
         Vector3 point = ray.GetPoint(Vector3.Distance(ray.origin, grappleCtrl.barrel.transform.position));
 
+
+
         if (pCtrl.isAnchored && grappleCtrl.curHook != null)
         {
-            lookPos = grappleCtrl.curHook.transform.position;
+            aimGO.transform.rotation.SetLookRotation(grappleCtrl.curHook.transform.position, Vector3.up);
+            lookGo.transform.position = grappleCtrl.curHook.transform.position;
         }
         else
         {
-            lookPos = point;
+            aimGO.transform.rotation.SetLookRotation(point, Vector3.up);
+            lookGo.transform.position = point;
         }
+
+        //lookGo.transform.position = new Vector3(lookGo.transform.position.x, lookGo.transform.position.y, 0f);
+        lookPos = lookGo.transform.position;
     }
 
     //NOT FULLY IMPLEMENTED
@@ -163,9 +185,14 @@ public class FWSInput : MonoBehaviour {
         }
 
         //convert radian to degrees
-        Quaternion eulerRotation = Quaternion.Euler(0f, playerRotate * Mathf.Rad2Deg, 0f);
+        Quaternion eulerRotation = Quaternion.Euler(playerRotate * Mathf.Rad2Deg, 90f, 0f);
 
         //plugin degree conversion into transform
         aimRotation = Quaternion.Slerp(aimRotation, eulerRotation, Time.deltaTime * 10);
+
+        aimGO.transform.rotation = aimRotation;
+
+        lookGo.transform.localPosition = new Vector3 (0f,0f, 10f);
+        lookPos = lookGo.transform.position;
     }
 }

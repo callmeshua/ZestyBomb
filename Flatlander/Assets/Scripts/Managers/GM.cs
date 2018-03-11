@@ -48,6 +48,7 @@ public class GM : MonoBehaviour
     public float timer, roundedTimer;
 
     [Header("Conditionals")]
+    public bool isUsingController;
     public bool resetLevel;
     public bool touchHazard;
     public bool gameOver;
