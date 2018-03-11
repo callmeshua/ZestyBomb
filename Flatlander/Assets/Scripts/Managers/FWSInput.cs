@@ -46,8 +46,9 @@ public class FWSInput : MonoBehaviour {
     public SideScrollController pCtrl;
     public GrappleController grappleCtrl;
     private Quaternion aimRotation;
-	// Use this for initialization
-	void Start ()
+    private bool canShoot;
+    // Use this for initialization
+    void Start ()
     {
         gm = FindObjectOfType<GM>();
         pCtrl = FindObjectOfType<SideScrollController>();
@@ -55,6 +56,7 @@ public class FWSInput : MonoBehaviour {
         paused = gm.frozen;
         cursorMode = CursorMode.Auto;
         Cursor.SetCursor(reticle, new Vector2(reticle.width/2f,reticle.height/2f),CursorMode.Auto);
+        canShoot = true;
     }
 	
 	// Update is called once per frame
@@ -87,7 +89,32 @@ public class FWSInput : MonoBehaviour {
                 //Cursor.visible = false;
                 //Cursor.lockState = CursorLockMode.Confined;
             }
-            isShooting = Input.GetButtonDown("Fire1");
+
+            if (gm.isUsingController)
+            {
+
+
+
+                if (Input.GetAxis("Controller Trigger") == 0f)
+                {
+                    canShoot = true;
+                }
+
+                if (Input.GetAxis("Controller Trigger") > 0f && canShoot && !isShooting)
+                {
+                    canShoot = false;
+                    isShooting = true;
+                }
+                else
+                {
+                    isShooting = false;
+                }
+            }
+            else
+            {
+                isShooting = Input.GetButtonDown("Fire1");
+            }
+            
             isJumping = Input.GetButtonDown("Jump");
         }
         else
@@ -168,7 +195,7 @@ public class FWSInput : MonoBehaviour {
         //combining the two radians
         playerRotate = playerRotate + camRotate;
 
-        float checkRotation = (Mathf.Abs(Mathf.Atan2(horizontalAim, verticalAim)));
+        float checkRotation = (Mathf.Abs(Mathf.Atan2(verticalAim , horizontalAim)));
 
         //store last rotation of player so it doesn't reset when there is no joystick input
         if (checkRotation > 0.2f)
@@ -190,9 +217,18 @@ public class FWSInput : MonoBehaviour {
         //plugin degree conversion into transform
         aimRotation = Quaternion.Slerp(aimRotation, eulerRotation, Time.deltaTime * 10);
 
-        aimGO.transform.rotation = aimRotation;
 
-        lookGo.transform.localPosition = new Vector3 (0f,0f, 10f);
-        lookPos = lookGo.transform.position;
+        if (pCtrl.isAnchored && grappleCtrl.curHook != null)
+        {
+            aimGO.transform.rotation.SetLookRotation(grappleCtrl.curHook.transform.position, Vector3.up);
+            lookGo.transform.position = grappleCtrl.curHook.transform.position;
+        }
+        else
+        {
+            aimGO.transform.rotation = aimRotation;
+
+            lookGo.transform.localPosition = new Vector3(0f, 0f, 50f);
+            lookPos = lookGo.transform.position;
+        }
     }
 }

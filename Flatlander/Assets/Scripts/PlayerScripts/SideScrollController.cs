@@ -483,8 +483,12 @@ public class SideScrollController : MonoBehaviour
         //checks the impact force
         impactForce = collision.impulse.magnitude;
 
-        if (collision.gameObject.tag == "Hazard" || collision.gameObject.tag == "Deathball")
+        if (collision.gameObject.tag == "Hazard" || collision.gameObject.tag == "Deathball" || collision.gameObject.tag == "Lava")
         {
+            if (collision.gameObject.tag == "Lava")
+            {
+                gm.BurnInOutShaderFX(false);
+            }
             isDead = true;
             gm.touchHazard = true;
             SoundManager.PlaySFX(deathClip, true, 1f);

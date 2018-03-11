@@ -58,7 +58,7 @@ public class BurnInOut : MonoBehaviour {
 		}
 
 		if(t>1){
-			/*production should use this, second bit is for debugging
+			//*production should use this, second bit is for debugging
 			state=Idle;
 			/*/
 			if(state==BurnIn){

@@ -87,6 +87,8 @@ public class GM : MonoBehaviour
 	private List<float> gc_positions = new List<float> ();
 	private List<float> gc_rotations = new List<float> ();
 
+    private BurnInOut[] burnShader;
+
     void Awake()
     {
         SoundManager.PlaySFX(sound, true, 0f);
@@ -95,6 +97,7 @@ public class GM : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        burnShader = FindObjectsOfType<BurnInOut>();
         phase = Phases.EXPLORE;
 
         frozen = false;
@@ -167,12 +170,14 @@ public class GM : MonoBehaviour
         {
 			level = Levels.LEVEL2;
 		}
-		/*
+        /*
         else if (levelName.Equals("Level_3_pass2"))
         {
 			level = Levels.LEVEL3;
 		}
 		*/
+
+        BurnInOutShaderFX(true);
     }
 
     // Update is called once per frame
@@ -264,6 +269,8 @@ public class GM : MonoBehaviour
         gameOver = false;
         pCtrl.transform.position = pCtrl.initPlayerPos;
         pCtrl.playerRb.velocity = Vector3.zero;
+
+
         if (mode == Modes.CLASSIC || mode == Modes.ENDLESS || mode == Modes.SOULLESS)
         {
             gCtrl.shots = 0;
@@ -296,8 +303,9 @@ public class GM : MonoBehaviour
 		ResetObjects (normCollectibles, nc_positions, nc_rotations);
 		ResetObjects (healCollectibles, hc_positions, hc_rotations);
 		ResetObjects (golCollectables, gc_positions, gc_rotations);
-    }
+        BurnInOutShaderFX(true);
 
+    }
     //updates the clock depending on the mode
     public void updateClock()
     {
@@ -324,6 +332,25 @@ public class GM : MonoBehaviour
     {
         frozen = !frozen;
     }
+
+    public void BurnInOutShaderFX(bool burnIn)
+    {
+        if(burnIn)
+        {
+            for (int i = 0; i < burnShader.Length; i++)
+            {
+                burnShader[i].fadeIn();
+            }
+        }
+        else
+        {
+            for (int i = 0; i < burnShader.Length; i++)
+            {
+                burnShader[i].fadeOut();
+            }
+        }
+    }
+
 
     //checks paused to stop the Time
     //freezes for pause screen and win screen
