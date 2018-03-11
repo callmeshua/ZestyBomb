@@ -12,7 +12,7 @@ public class LavaNoiseVary : MonoBehaviour {
 
 		Vector2 v=new Vector2(Random.Range(0,1f),Random.Range(0,1f));
 		props.SetVector("_NoiseOff",v);
-		Debug.Log(v);
+		//Debug.Log(v);
 
 		renderer = GetComponent<MeshRenderer>();
 		renderer.SetPropertyBlock(props);

@@ -2,28 +2,33 @@
 	Properties {
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_Metallic ("Metallic", Range(0,1)) = 0.0
-		_Normal ("Normal Map",2D)="green"{}
+		[NoScaleOffset] _Normal ("Normal Map",2D)="green"{}
 
 		_Color ("Color", Color) = (1,1,1,1)
-		_MainTex ("Diffuse", 2D) = "white" {}
+		_MainTexNoise("Diffuse Offset Noise",Range(0,1))=0
+		[NoScaleOffset] _MainTex ("Diffuse", 2D) = "white" {}
 		_Color2 ("Color 2",Color)=(1,1,1,1)
-		_MainTex2 ("Diffuse 2",2D)="black"{}
+		_MainTex2Noise("Diffuse 2 Offset Noise",Range(0,1))=0
+		[NoScaleOffset] _MainTex2 ("Diffuse 2",2D)="black"{}
 		_BlendVal("Blend Amount",Range(0,1))=0
 		_BlendSoft("Blend Softness",Range(0,1))=.05
 		_BlendEdge("Edge Color",Color)=(0,0,0,0)
 		_BlendBright("Edge Brightness",float)=1
-		_BlendTex("Blend Pattern",2D)="white"{}
+		_BlendTexNoise("Blend Pattern Noise",Float)=0
+		[NoScaleOffset] _BlendTex("Blend Pattern",2D)="white"{}
+		
 
 		_DispMap("Displacement Texture",2D)="white"{}
+		_DispMapNoise("Displacement Texture Noise",Float)=0
+		_DispMapOffNoise("Displacement Offset Noise",Range(0,1))=0
 		_DispMult("Displacement Multiplier",Range(0,2))=1
 		_DispV("Displacement Velocity",Vector)=(1,0,0,0)
 		_HighMap("Highlight Texture",2D)="white"{}
 		_HighStr("Highlight Strength",Range(0,1))=1
 		_HighV("Highlight Velocity",Vector)=(0.5,0,0,0)
 
-		_NoiseTex("Noise Texture",2D)="grey"{}
+		[NoScaleOffset] _NoiseTex("Noise Texture",2D)="grey"{}
 		_NoiseOff("Noise Offset (instanced)",Vector)=(0,0,0,0)
-		_NoiseStr("Noise Strength",Float)=0
 	}
 	SubShader {
 		//Tags { "Queue"="Transparent" "RenderType"="Transparent" "IgnoreProjector"="True" }
@@ -78,26 +83,16 @@
 		UNITY_INSTANCING_BUFFER_END(Props)
 
 		sampler2D _NoiseTex;
-		float _NoiseStr;
 
-		void vert (inout appdata_full v) {
-			//tex2Dlod(_DispTex, float4(v.texcoord.xy,0,0)).r * _Displacement;
-			float3 offset=v.normal;
-			//offset.x=0;
-			//offset.y=0;
-			//normalize(offset);
-			const float2 uv=v.texcoord.xy*_DispMap_ST.xy + _DispMap_ST.zw;
-			const float4 t=float4(uv+_DispV*_Time.y,0,0);
-			//const float4 t=float4(v.texcoord.xy+_DispV*_Time.y,0,0);
-			
-			offset*=(tex2Dlod(_DispMap, t).r*2-1) * _DispMult;
-			v.vertex.xyz += offset;
-		}
-
-		float4 noisefn(float2 uv,float4 base){
-			float4 noise=tex2D(_NoiseTex,uv+UNITY_ACCESS_INSTANCED_PROP(Props,_NoiseOff))*2-1;//generate noise from -1 to 1
+		float
+			_MainTexNoise,_MainTex2Noise,
+			_BlendTexNoise,
+			_DispMapNoise,_DispMapOffNoise;
+		
+		float4 noisefn(float4 base,float2 uv,float strength){
+			float4 noise=tex2D(_NoiseTex,uv)*2-1;//generate noise from -1 to 1
 			//scale noise by str
-			noise*=_NoiseStr;
+			noise*=strength;
 
 			//input values of 0 and 1 should never change, 0.5 should have most variance
 			float4 offset=base*(1-base);
@@ -108,21 +103,48 @@
 			return base+offset;
 		}
 
+		void vert (inout appdata_full v) {
+			//tex2Dlod(_DispTex, float4(v.texcoord.xy,0,0)).r * _Displacement;
+			float3 offset=v.normal;
+			//offset.x=0;
+			//offset.y=0;
+			//normalize(offset);
+			const float4 noiseOffset=float4(UNITY_ACCESS_INSTANCED_PROP(Props,_NoiseOff),0,0);
+			
+			const float2 uv=v.texcoord.xy*_DispMap_ST.xy + _DispMap_ST.zw;
+			const float4 t=float4(uv+_DispV*_Time.y+noiseOffset*_DispMapOffNoise,0,0);//offset the uv by time and by noise ammount
+			//const float4 t=float4(v.texcoord.xy+_DispV*_Time.y,0,0);
+
+			float4 offMap=tex2Dlod(_DispMap, t);//get the texture
+
+			//these two lines are a condensed version of noisefn
+			//this is done because tex2D is not useable from a vertex shader, but tex2Dlod is not what we want elsewhere
+			const float4 noise=(tex2Dlod(_NoiseTex,t)*2-1)*_DispMapNoise;//generate noise from -1 to 1
+			offMap=offMap+noise*offMap*(1-offMap);
+			//these two lines are eqivalent to this following line, but actually work
+			//offMap=noisefn(offMap,t,_DispMapNoise);//apply an amount of noise to the texture
+
+			offset*=(offMap.r*2-1) * _DispMult;
+			v.vertex.xyz += offset;
+		}
+
 		void surf (Input IN, inout SurfaceOutputStandard o) {
+			const float2 noiseOffset=UNITY_ACCESS_INSTANCED_PROP(Props,_NoiseOff);
+
 			const float2 mainUV=IN.uv_MainTex+_DispV*_Time.y;
 			const float2 emUV=IN.uv_MainTex*_HighMap_ST.xy + _HighMap_ST.zw + _HighV*_Time.y;
 
 			//blend main textures together to get 
-			fixed4 diff = tex2D (_MainTex, mainUV)*_Color;
-			fixed4 diff2 = tex2D(_MainTex2,mainUV)*_Color2;
+			fixed4 diff = tex2D(_MainTex, mainUV+noiseOffset*_MainTexNoise)*_Color;
+			fixed4 diff2 = tex2D(_MainTex2,mainUV+noiseOffset*_MainTex2Noise)*_Color2;
 			float4 val=tex2D(_BlendTex,mainUV);
-			val=noisefn(mainUV,val);
+			val=noisefn(val,mainUV+noiseOffset,_BlendTexNoise);
 
 			val.a=(val.r+val.g+val.b)/3;
 			//val.a=val.r;
 
 			const float4 d=_BlendVal-val;
-			float4 edgeCol=(0,0,0,0);
+			float4 edgeCol=float4(0,0,0,0);
 			
 			val=min(max(d/_BlendSoft,0),1);
 			edgeCol=_BlendEdge*frac(val)*_BlendBright;			
