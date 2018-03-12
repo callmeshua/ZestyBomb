@@ -42,14 +42,17 @@ public class FWSInput : MonoBehaviour {
     public Vector3 lookPos;
 
     //INTERNAL
-    private float lastRotate;       //store rotation for controller aiming
+    //private float lastRotate;       //store rotation for controller aiming
     public SideScrollController pCtrl;
     public GrappleController grappleCtrl;
     private Quaternion aimRotation;
+    private float aimAngle;
     private bool canShoot;
     // Use this for initialization
     void Start ()
     {
+        aimGO = GameObject.Find("AimObject");
+        lookGo = GameObject.Find("LookObject");
         gm = FindObjectOfType<GM>();
         pCtrl = FindObjectOfType<SideScrollController>();
         grappleCtrl=FindObjectOfType<GrappleController>();
@@ -184,39 +187,48 @@ public class FWSInput : MonoBehaviour {
     //handles the aim from the controller
     void HandleControllerAim()
     {
-        //get vector between camera and player 
-        Vector3 difference = Camera.main.transform.position - pCtrl.transform.position;
+        ////get vector between camera and player 
+        //Vector3 difference = Camera.main.transform.position - pCtrl.transform.position;
 
-        //why negative difference? idk
-        float camRotate = Mathf.Atan2(-difference.x, -difference.z);
+        ////why negative difference? idk
+        //float camRotate = Mathf.Atan2(-difference.x, -difference.z);
 
-        float playerRotate = Mathf.Atan2(horizontalAim, verticalAim);
+        //float playerRotate = Mathf.Atan2(horizontalAim, verticalAim);
 
-        //combining the two radians
-        playerRotate = playerRotate + camRotate;
+        ////combining the two radians
+        //playerRotate = playerRotate + camRotate;
 
-        float checkRotation = (Mathf.Abs(Mathf.Atan2(verticalAim , horizontalAim)));
+        //float checkRotation = (Mathf.Abs(Mathf.Atan2(verticalAim , horizontalAim)));
 
-        //store last rotation of player so it doesn't reset when there is no joystick input
-        if (checkRotation > 0.2f)
+        ////store last rotation of player so it doesn't reset when there is no joystick input
+        //if (checkRotation > 0.2f)
+        //{
+        //    lastRotate = playerRotate;
+        //}
+        //else if (checkRotation < 0.01f && verticalAim > 0)
+        //{
+        //    lastRotate = 0f;
+        //}
+        //else
+        //{
+        //    playerRotate = lastRotate;
+        //}
+
+        ////convert radian to degrees
+        //Quaternion eulerRotation = Quaternion.Euler(playerRotate * Mathf.Rad2Deg, 90f, 0f);
+
+        ////plugin degree conversion into transform
+        //aimRotation = Quaternion.Slerp(aimRotation, eulerRotation, Time.deltaTime * 10);
+
+        float x = horizontalAim;
+        float y = verticalAim;
+        if (x != 0.0f || y != 0.0f)
         {
-            lastRotate = playerRotate;
-        }
-        else if (checkRotation < 0.01f && verticalAim > 0)
-        {
-            lastRotate = 0f;
-        }
-        else
-        {
-            playerRotate = lastRotate;
+            aimAngle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
         }
 
-        //convert radian to degrees
-        Quaternion eulerRotation = Quaternion.Euler(playerRotate * Mathf.Rad2Deg, 90f, 0f);
-
-        //plugin degree conversion into transform
+        Quaternion eulerRotation = Quaternion.Euler(aimAngle, 90f, 0f);
         aimRotation = Quaternion.Slerp(aimRotation, eulerRotation, Time.deltaTime * 10);
-
 
         if (pCtrl.isAnchored && grappleCtrl.curHook != null)
         {

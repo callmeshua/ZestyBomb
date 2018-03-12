@@ -178,7 +178,7 @@ public class SideScrollController : MonoBehaviour
         localVelocity.x = transform.InverseTransformDirection(playerRb.velocity).x;
         localVelocity.x = transform.InverseTransformDirection(playerRb.velocity).y;
         localVelocity.z = transform.InverseTransformDirection(playerRb.velocity).z;
-        print(transform.InverseTransformDirection(playerRb.velocity).z);
+        //print(transform.InverseTransformDirection(playerRb.velocity).z);
         HandleGroundCheck();
         HandleMovement();
         HandleRotation();
@@ -277,16 +277,17 @@ public class SideScrollController : MonoBehaviour
         }
 
         //find tangent of ground normal for force direction
-        Vector3 tangent = Vector3.Cross(groundNormal, transform.forward);
-
-        //makes movement on slopes easier through directional forces
-        if (tangent.magnitude == 0)
-        {
-            tangent = Vector3.Cross(groundNormal, Vector3.up);
-        }
-
-        xForceDirection = new Vector3(horizontal, tangent.y, 0f);
+        float angle = Vector3.Angle(transform.forward, groundHitMid.normal);
         
+        //makes movement on slopes easier through directional forces
+        //if (tangent.magnitude == 0)
+        //{
+        //    tangent = Vector3.Cross(groundNormal, transform.forward);
+        //}
+
+        xForceDirection = new Vector3(horizontal, 0f, 0f);
+
+
         //checks if the player is on the ground
         if (Physics.Raycast(transform.position+offset + (transform.forward * .3f), Vector3.down, out groundHitFront, groundCheckDistance, groundMask) ||
             Physics.Raycast(transform.position+offset + (-transform.forward * .3f), Vector3.down, out groundHitBack, groundCheckDistance, groundMask))
@@ -299,8 +300,9 @@ public class SideScrollController : MonoBehaviour
         }
 
         //draws rays for debugging
-        if(drawDebug)
+        if (drawDebug)
         {
+            Debug.DrawRay(transform.position, xForceDirection);
             Debug.DrawRay(transform.position + offset + (transform.forward * .3f), Vector3.down * groundCheckDistance, Color.blue);
             Debug.DrawRay(transform.position + offset + (-transform.forward * .3f), Vector3.down * groundCheckDistance, Color.blue);
             Debug.DrawRay(groundHitMid.point, groundNormal, Color.red);
@@ -475,9 +477,9 @@ public class SideScrollController : MonoBehaviour
             headCheck = false;
         }
 
-        Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up - (Vector3.right * 0f)) * ((playerCollider.height / 2f) + .8f)), Color.red);
-        Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up - (Vector3.right * .6f)) * ((playerCollider.height / 2f) + .8f)), Color.blue);
-        Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up + (Vector3.right * .6f)) * ((playerCollider.height / 2f) + .8f)), Color.green);
+        //Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up - (Vector3.right * 0f)) * ((playerCollider.height / 2f) + .8f)), Color.red);
+        //Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up - (Vector3.right * .6f)) * ((playerCollider.height / 2f) + .8f)), Color.blue);
+        //Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up + (Vector3.right * .6f)) * ((playerCollider.height / 2f) + .8f)), Color.green);
     }
 
     //checks the velocity of the player to turn the trail renderer on
