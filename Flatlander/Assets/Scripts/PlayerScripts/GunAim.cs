@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunAim : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GunAim : MonoBehaviour
         gm = FindObjectOfType<GM>();
         rightShoulderPoint = new GameObject();
         rightShoulderPoint.name = transform.root.name + "Right Shoulder IK Helper";
+
     }
 
     // Update is called once per frame
@@ -27,8 +29,7 @@ public class GunAim : MonoBehaviour
         {
             HandleShoulder();
         }
-	}
-
+    }
 
     void HandleShoulder()
     {

@@ -783,7 +783,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1599652935162434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1804767192414584
 GameObject:
   m_ObjectHideFlags: 1
@@ -3183,14 +3183,14 @@ MonoBehaviour:
     m_Bits: 16897
   turnSpeed: 8
   leanSpeed: 10
-  maxLean: 20
+  maxLean: 10
   turnRot: 0
   targetLean: -0
   leanVal: 0
   headCheck: 0
   lookPos: {x: -64.81565, y: -32.174877, z: 82.69651}
   initPlayerPos: {x: -170.3, y: -41.3, z: 0}
-  leanAmt: 0
+  curLean: 0
   horizontal: 0
   vertical: 0
 --- !u!114 &114167526321335882
@@ -3292,6 +3292,8 @@ MonoBehaviour:
   swingPower: 1.8
   fallPower: 25
   effectiveSwingAngle: 10
+  ropeBendSensitivity: 0.78
+  ropeThiccness: 0.3
   ropeJumpPower: 35
   jumpThreshold: 2
   power: 8
@@ -4634,5 +4636,5 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
-  m_MassScale: 0
+  m_MassScale: 0.0001
   m_ConnectedMassScale: 1

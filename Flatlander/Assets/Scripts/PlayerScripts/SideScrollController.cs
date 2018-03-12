@@ -85,7 +85,7 @@ public class SideScrollController : MonoBehaviour
     [Header("Leaning and Rotating")]
     public float turnSpeed = 15f;
     public float leanSpeed = 1f;
-    public float maxLean;
+    public float maxLean=10f;
     [HideInInspector]
     public float turnRot;
     public float targetLean;
@@ -113,7 +113,8 @@ public class SideScrollController : MonoBehaviour
     private float lastRotate;
 
     //USER INPUT PARAMETERS
-    public float leanAmt;
+
+    public float curLean;
     public float horizontal;
     public float vertical;
     private float topForceDir;
@@ -174,8 +175,10 @@ public class SideScrollController : MonoBehaviour
     public void FixedUpdate()
     {
         currentVelocity = playerRb.velocity.magnitude;
-        localVelocity.x= transform.InverseTransformDirection(playerRb.velocity).x;
-        localVelocity.z= transform.InverseTransformDirection(playerRb.velocity).z;
+        localVelocity.x = transform.InverseTransformDirection(playerRb.velocity).x;
+        localVelocity.x = transform.InverseTransformDirection(playerRb.velocity).y;
+        localVelocity.z = transform.InverseTransformDirection(playerRb.velocity).z;
+        print(transform.InverseTransformDirection(playerRb.velocity).z);
         HandleGroundCheck();
         HandleMovement();
         HandleRotation();
@@ -328,8 +331,8 @@ public class SideScrollController : MonoBehaviour
         //sends values to animator
         anim.SetBool("OnAir", !isGrounded);
         anim.SetBool("isSideScrolling", true);
-        anim.SetFloat("MovementX", localVelocity.x/maxSpeed);
-        anim.SetFloat("MovementZ", localVelocity.z/maxSpeed);
+        anim.SetFloat("MovementX", transform.InverseTransformDirection(playerRb.velocity).x / maxSpeed);
+        anim.SetFloat("MovementZ", transform.InverseTransformDirection(playerRb.velocity).z / maxSpeed);
         anim.SetFloat("AirMovement", playerRb.velocity.y);
     }
 
@@ -343,21 +346,53 @@ public class SideScrollController : MonoBehaviour
     //handles player rotation
     void HandleRotation()
     {
-        float dir = Mathf.Sign(localVelocity.z);
+        ////float dir = Mathf.Sign(localVelocity.z);
+        //float dir = Mathf.Sign(-transform.InverseTransformDirection(playerRb.velocity).z);
+        ////print(dir);
+        //leanAmt = Mathf.Clamp01(Mathf.Abs(playerRb.velocity.x) / maxSpeed);
 
-        leanAmt = Mathf.Clamp01(Mathf.Abs(playerRb.velocity.x) / maxSpeed);
+        //if (isSlowing||isAnchored)
+        //{
+        //    targetLean= -leanAmt*dir;
+        //}
+        //else
+        //{
+        //    targetLean = leanAmt*dir;
+        //}
 
-        if (isSlowing||isAnchored)
+        ////float curLean=0f;
+        //float curLean = Mathf.Lerp(leanVal, Mathf.Clamp(targetLean*maxLean, 0f, 45f), Time.deltaTime * leanSpeed);
+
+        float dir;
+        if(currentVelocity>.02f)
         {
-            targetLean= -leanAmt*dir;
+            dir = Mathf.Sign(transform.InverseTransformDirection(playerRb.velocity).z);
         }
         else
         {
-            targetLean = leanAmt*dir;
+            dir = 0f;
         }
 
-        float curLean=0f;
-        curLean = Mathf.Lerp(leanVal, Mathf.Clamp(targetLean*maxLean, 0f, 45f), Time.deltaTime * leanSpeed);
+        if (dir>0f)
+        {
+            targetLean = maxLean;
+
+        }
+        else if (dir==0f)
+        {
+            targetLean = 0f;
+        }
+        else
+        {
+            targetLean = -maxLean;
+        }
+
+        if(isSlowing||isAnchored)
+        {
+            targetLean = -targetLean;
+        }
+
+        curLean = Mathf.Lerp(curLean, targetLean, Time.deltaTime * leanSpeed);
 
         if (!isAnchored)
         {
@@ -375,7 +410,7 @@ public class SideScrollController : MonoBehaviour
         //the target rotation for the player rotation
         Quaternion targetRotation;
         targetRotation = Quaternion.Euler(curLean, turnRot, 0f);
-
+        
         playerRb.transform.rotation = targetRotation;
     }
 
