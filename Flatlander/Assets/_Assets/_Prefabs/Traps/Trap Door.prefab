@@ -24,10 +24,10 @@ GameObject:
   - component: {fileID: 54505733576041180}
   - component: {fileID: 59377980716958922}
   - component: {fileID: 114332991566030764}
-  - component: {fileID: 136047386540271982}
-  m_Layer: 0
+  - component: {fileID: 65185703689979362}
+  m_Layer: 14
   m_Name: Trap Door
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929375082579224}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.037, y: 0, z: 0}
-  m_LocalScale: {x: 3.3, y: 1, z: 1}
+  m_LocalPosition: {x: -33.08, y: -48.17, z: -0.029296875}
+  m_LocalScale: {x: 6.1258783, y: 0.6741348, z: 3.6301124}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b711cd0af52064a4fa8967ef058558b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,7 +111,7 @@ HingeJoint:
   m_Anchor: {x: 0.4, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 33.663177, y: 4.1399994, z: 0}
+  m_ConnectedAnchor: {x: -35.171974, y: 16.121464, z: -0.9711914}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -135,6 +135,18 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!65 &65185703689979362
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1929375082579224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_Center: {x: 0, y: -0.0000019073486, z: -0.00000011920929}
 --- !u!114 &114332991566030764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,16 +158,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a49e4e02ec14ac4cb000e01d302f811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &136047386540271982
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1929375082579224}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  particleEffect: {fileID: 0}
+  destroyTime: 0

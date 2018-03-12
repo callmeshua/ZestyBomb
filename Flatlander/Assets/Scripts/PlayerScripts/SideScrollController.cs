@@ -277,20 +277,23 @@ public class SideScrollController : MonoBehaviour
         }
 
         //find tangent of ground normal for force direction
-        float angle = Vector3.Angle(transform.forward, groundHitMid.normal);
-        
-        //makes movement on slopes easier through directional forces
-        //if (tangent.magnitude == 0)
-        //{
-        //    tangent = Vector3.Cross(groundNormal, transform.forward);
-        //}
 
-        xForceDirection = new Vector3(horizontal, 0f, 0f);
+        Vector3 tangent = Vector3.Cross(transform.right, groundHitMid.normal);
+        if (inputCtrl.horizontal<0&&!facingLeft)
+        {
+            tangent = Vector3.Cross(-transform.right, groundHitMid.normal);
+        }
+        else if (inputCtrl.horizontal>0&&facingLeft)
+        {
+            tangent = Vector3.Cross(-transform.right, groundHitMid.normal);
+        }
+
+        xForceDirection = new Vector3(horizontal, tangent.y, 0f);
 
 
         //checks if the player is on the ground
-        if (Physics.Raycast(transform.position+offset + (transform.forward * .3f), Vector3.down, out groundHitFront, groundCheckDistance, groundMask) ||
-            Physics.Raycast(transform.position+offset + (-transform.forward * .3f), Vector3.down, out groundHitBack, groundCheckDistance, groundMask))
+        if (Physics.Raycast(transform.position+offset + (transform.forward * playerCollider.radius), Vector3.down, out groundHitFront, groundCheckDistance, groundMask) ||
+            Physics.Raycast(transform.position+offset + (-transform.forward * playerCollider.radius), Vector3.down, out groundHitBack, groundCheckDistance, groundMask))
         {
             isGrounded = true;
         }
@@ -302,9 +305,10 @@ public class SideScrollController : MonoBehaviour
         //draws rays for debugging
         if (drawDebug)
         {
+            Debug.Log(tangent.y);
             Debug.DrawRay(transform.position, xForceDirection);
-            Debug.DrawRay(transform.position + offset + (transform.forward * .3f), Vector3.down * groundCheckDistance, Color.blue);
-            Debug.DrawRay(transform.position + offset + (-transform.forward * .3f), Vector3.down * groundCheckDistance, Color.blue);
+            Debug.DrawRay(transform.position + offset + (transform.forward * playerCollider.radius), Vector3.down * groundCheckDistance, Color.blue);
+            Debug.DrawRay(transform.position + offset + (-transform.forward * playerCollider.radius), Vector3.down * groundCheckDistance, Color.blue);
             Debug.DrawRay(groundHitMid.point, groundNormal, Color.red);
         }
     }
@@ -401,10 +405,12 @@ public class SideScrollController : MonoBehaviour
             if (lookPos.x < transform.position.x)
             {
                 look = -90f;
+                facingLeft = true;
             }
             else
             {
                 look = 90f;
+                facingLeft = false;
             }
         }
 
