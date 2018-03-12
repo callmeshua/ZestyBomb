@@ -340,6 +340,7 @@ public class SideScrollController : MonoBehaviour
         anim.SetFloat("MovementX", transform.InverseTransformDirection(playerRb.velocity).x / maxSpeed);
         anim.SetFloat("MovementZ", transform.InverseTransformDirection(playerRb.velocity).z / maxSpeed);
         anim.SetFloat("AirMovement", playerRb.velocity.y);
+        anim.SetBool("onSwing", isAnchored);
     }
 
     //Plays footstep sounds using AnimationEvents
