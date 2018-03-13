@@ -1,26 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< HEAD
-guid: 34473cfd23b04e4408b9918351910d15
+guid: 8e72866c0b95a2840b36ec91b5540662
 folderAsset: yes
-timeCreated: 1518576623
-=======
-guid: 040b37bd6a17dad4a85eeaee125ed763
-folderAsset: yes
-timeCreated: 1518579308
->>>>>>> 27f8cf3addf7e3002b2a3964f6b534e3027477e4
-=======
-guid: 040b37bd6a17dad4a85eeaee125ed763
-folderAsset: yes
-timeCreated: 1518579308
->>>>>>> 27f8cf3addf7e3002b2a3964f6b534e3027477e4
-=======
-guid: e257a7fa1634a40c8a3233eaeee62600
-folderAsset: yes
-timeCreated: 1518578685
->>>>>>> Stashed changes
-licenseType: Free
 DefaultImporter:
   externalObjects: {}
   userData: 

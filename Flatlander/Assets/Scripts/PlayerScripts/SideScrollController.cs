@@ -85,7 +85,7 @@ public class SideScrollController : MonoBehaviour
     [Header("Leaning and Rotating")]
     public float turnSpeed = 15f;
     public float leanSpeed = 1f;
-    public float maxLean;
+    public float maxLean=10f;
     [HideInInspector]
     public float turnRot;
     public float targetLean;
@@ -113,7 +113,8 @@ public class SideScrollController : MonoBehaviour
     private float lastRotate;
 
     //USER INPUT PARAMETERS
-    public float leanAmt;
+
+    public float curLean;
     public float horizontal;
     public float vertical;
     private float topForceDir;
@@ -174,8 +175,10 @@ public class SideScrollController : MonoBehaviour
     public void FixedUpdate()
     {
         currentVelocity = playerRb.velocity.magnitude;
-        localVelocity.x= transform.InverseTransformDirection(playerRb.velocity).x;
-        localVelocity.z= transform.InverseTransformDirection(playerRb.velocity).z;
+        localVelocity.x = transform.InverseTransformDirection(playerRb.velocity).x;
+        localVelocity.x = transform.InverseTransformDirection(playerRb.velocity).y;
+        localVelocity.z = transform.InverseTransformDirection(playerRb.velocity).z;
+        //print(transform.InverseTransformDirection(playerRb.velocity).z);
         HandleGroundCheck();
         HandleMovement();
         HandleRotation();
@@ -274,19 +277,23 @@ public class SideScrollController : MonoBehaviour
         }
 
         //find tangent of ground normal for force direction
-        Vector3 tangent = Vector3.Cross(groundNormal, transform.forward);
 
-        //makes movement on slopes easier through directional forces
-        if (tangent.magnitude == 0)
+        Vector3 tangent = Vector3.Cross(transform.right, groundHitMid.normal);
+        if (inputCtrl.horizontal<0&&!facingLeft)
         {
-            tangent = Vector3.Cross(groundNormal, Vector3.up);
+            tangent = Vector3.Cross(-transform.right, groundHitMid.normal);
+        }
+        else if (inputCtrl.horizontal>0&&facingLeft)
+        {
+            tangent = Vector3.Cross(-transform.right, groundHitMid.normal);
         }
 
         xForceDirection = new Vector3(horizontal, tangent.y, 0f);
-        
+
+
         //checks if the player is on the ground
-        if (Physics.Raycast(transform.position+offset + (transform.forward * .3f), Vector3.down, out groundHitFront, groundCheckDistance, groundMask) ||
-            Physics.Raycast(transform.position+offset + (-transform.forward * .3f), Vector3.down, out groundHitBack, groundCheckDistance, groundMask))
+        if (Physics.Raycast(transform.position+offset + (transform.forward * playerCollider.radius), Vector3.down, out groundHitFront, groundCheckDistance, groundMask) ||
+            Physics.Raycast(transform.position+offset + (-transform.forward * playerCollider.radius), Vector3.down, out groundHitBack, groundCheckDistance, groundMask))
         {
             isGrounded = true;
         }
@@ -296,10 +303,12 @@ public class SideScrollController : MonoBehaviour
         }
 
         //draws rays for debugging
-        if(drawDebug)
+        if (drawDebug)
         {
-            Debug.DrawRay(transform.position + offset + (transform.forward * .3f), Vector3.down * groundCheckDistance, Color.blue);
-            Debug.DrawRay(transform.position + offset + (-transform.forward * .3f), Vector3.down * groundCheckDistance, Color.blue);
+            //Debug.Log(tangent.y);
+            Debug.DrawRay(transform.position, xForceDirection);
+            Debug.DrawRay(transform.position + offset + (transform.forward * playerCollider.radius), Vector3.down * groundCheckDistance, Color.blue);
+            Debug.DrawRay(transform.position + offset + (-transform.forward * playerCollider.radius), Vector3.down * groundCheckDistance, Color.blue);
             Debug.DrawRay(groundHitMid.point, groundNormal, Color.red);
         }
     }
@@ -328,9 +337,10 @@ public class SideScrollController : MonoBehaviour
         //sends values to animator
         anim.SetBool("OnAir", !isGrounded);
         anim.SetBool("isSideScrolling", true);
-        anim.SetFloat("MovementX", localVelocity.x/maxSpeed);
-        anim.SetFloat("MovementZ", localVelocity.z/maxSpeed);
+        anim.SetFloat("MovementX", transform.InverseTransformDirection(playerRb.velocity).x / maxSpeed);
+        anim.SetFloat("MovementZ", transform.InverseTransformDirection(playerRb.velocity).z / maxSpeed);
         anim.SetFloat("AirMovement", playerRb.velocity.y);
+        anim.SetBool("onSwing", isAnchored);
     }
 
     //Plays footstep sounds using AnimationEvents
@@ -343,31 +353,65 @@ public class SideScrollController : MonoBehaviour
     //handles player rotation
     void HandleRotation()
     {
-        float dir = Mathf.Sign(localVelocity.z);
+        ////float dir = Mathf.Sign(localVelocity.z);
+        //float dir = Mathf.Sign(-transform.InverseTransformDirection(playerRb.velocity).z);
+        ////print(dir);
+        //leanAmt = Mathf.Clamp01(Mathf.Abs(playerRb.velocity.x) / maxSpeed);
 
-        leanAmt = Mathf.Clamp01(Mathf.Abs(playerRb.velocity.x) / maxSpeed);
+        //if (isSlowing||isAnchored)
+        //{
+        //    targetLean= -leanAmt*dir;
+        //}
+        //else
+        //{
+        //    targetLean = leanAmt*dir;
+        //}
 
-        if (isSlowing||isAnchored)
+        ////float curLean=0f;
+        //float curLean = Mathf.Lerp(leanVal, Mathf.Clamp(targetLean*maxLean, 0f, 45f), Time.deltaTime * leanSpeed);
+
+        float dir;
+        if(currentVelocity>.02f)
         {
-            targetLean= -leanAmt*dir;
+            dir = Mathf.Sign(transform.InverseTransformDirection(playerRb.velocity).z);
         }
         else
         {
-            targetLean = leanAmt*dir;
+            dir = 0f;
         }
 
-        float curLean=0f;
-        curLean = Mathf.Lerp(leanVal, Mathf.Clamp(targetLean*maxLean, 0f, 45f), Time.deltaTime * leanSpeed);
+        if (dir>0f)
+        {
+            targetLean = maxLean;
+
+        }
+        else if (dir==0f)
+        {
+            targetLean = 0f;
+        }
+        else
+        {
+            targetLean = -maxLean;
+        }
+
+        if(isSlowing||isAnchored)
+        {
+            targetLean = -targetLean;
+        }
+
+        curLean = Mathf.Lerp(curLean, targetLean, Time.deltaTime * leanSpeed);
 
         if (!isAnchored)
         {
             if (lookPos.x < transform.position.x)
             {
                 look = -90f;
+                facingLeft = true;
             }
             else
             {
                 look = 90f;
+                facingLeft = false;
             }
         }
 
@@ -375,7 +419,7 @@ public class SideScrollController : MonoBehaviour
         //the target rotation for the player rotation
         Quaternion targetRotation;
         targetRotation = Quaternion.Euler(curLean, turnRot, 0f);
-
+        
         playerRb.transform.rotation = targetRotation;
     }
 
@@ -440,9 +484,9 @@ public class SideScrollController : MonoBehaviour
             headCheck = false;
         }
 
-        Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up - (Vector3.right * 0f)) * ((playerCollider.height / 2f) + .8f)), Color.red);
-        Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up - (Vector3.right * .6f)) * ((playerCollider.height / 2f) + .8f)), Color.blue);
-        Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up + (Vector3.right * .6f)) * ((playerCollider.height / 2f) + .8f)), Color.green);
+        //Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up - (Vector3.right * 0f)) * ((playerCollider.height / 2f) + .8f)), Color.red);
+        //Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up - (Vector3.right * .6f)) * ((playerCollider.height / 2f) + .8f)), Color.blue);
+        //Debug.DrawRay(transform.TransformPoint(playerRb.centerOfMass), ((transform.up + (Vector3.right * .6f)) * ((playerCollider.height / 2f) + .8f)), Color.green);
     }
 
     //checks the velocity of the player to turn the trail renderer on
@@ -483,8 +527,12 @@ public class SideScrollController : MonoBehaviour
         //checks the impact force
         impactForce = collision.impulse.magnitude;
 
-        if (collision.gameObject.tag == "Hazard" || collision.gameObject.tag == "Deathball")
+        if (collision.gameObject.tag == "Hazard" || collision.gameObject.tag == "Deathball" || collision.gameObject.tag == "Lava")
         {
+            if (collision.gameObject.tag == "Lava")
+            {
+                gm.BurnInOutShaderFX(false);
+            }
             isDead = true;
             gm.touchHazard = true;
             SoundManager.PlaySFX(deathClip, true, 1f);

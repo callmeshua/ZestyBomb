@@ -55,12 +55,15 @@ MonoBehaviour:
     type: 2}
   reticle: {fileID: 2800000, guid: 6010ec86c7635d448b1af593879d43dc, type: 3}
   cursorMode: 1
-  gm: {fileID: 114704253377574780, guid: 037cfbde270fb7f488793ebcc942a7ff, type: 2}
+  gm: {fileID: 0}
+  aimGO: {fileID: 0}
+  lookGo: {fileID: 0}
   paused: 0
   horizontal: 0
   vertical: 0
   horizontalAim: 0
   verticalAim: 0
+  use: 101
   snap: 0
   reset: 0
   isJumping: 0

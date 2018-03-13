@@ -42,26 +42,36 @@ public class FWSInput : MonoBehaviour {
     public Vector3 lookPos;
 
     //INTERNAL
-    private float lastRotate;       //store rotation for controller aiming
+    //private float lastRotate;       //store rotation for controller aiming
     public SideScrollController pCtrl;
     public GrappleController grappleCtrl;
     private Quaternion aimRotation;
-	// Use this for initialization
-	void Start ()
+    private float aimAngle;
+    private bool canShoot;
+    // Use this for initialization
+    void Start ()
     {
+        aimGO = GameObject.Find("AimObject");
+        lookGo = GameObject.Find("LookObject");
         gm = FindObjectOfType<GM>();
         pCtrl = FindObjectOfType<SideScrollController>();
         grappleCtrl=FindObjectOfType<GrappleController>();
         paused = gm.frozen;
         cursorMode = CursorMode.Auto;
         Cursor.SetCursor(reticle, new Vector2(reticle.width/2f,reticle.height/2f),CursorMode.Auto);
+        canShoot = true;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         paused = gm.frozen;
-
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            gm.isUsingController = !gm.isUsingController;
+        }
+            
+        isUsingController = gm.isUsingController;
 
         //ENABLE WITH CONTROLLER SUPPORT
 
@@ -87,7 +97,32 @@ public class FWSInput : MonoBehaviour {
                 //Cursor.visible = false;
                 //Cursor.lockState = CursorLockMode.Confined;
             }
-            isShooting = Input.GetButtonDown("Fire1");
+
+            if (gm.isUsingController)
+            {
+
+
+
+                if (Input.GetAxis("Controller Trigger") == 0f)
+                {
+                    canShoot = true;
+                }
+
+                if (Input.GetAxis("Controller Trigger") > 0f && canShoot && !isShooting)
+                {
+                    canShoot = false;
+                    isShooting = true;
+                }
+                else
+                {
+                    isShooting = false;
+                }
+            }
+            else
+            {
+                isShooting = Input.GetButtonDown("Fire1");
+            }
+            
             isJumping = Input.GetButtonDown("Jump");
         }
         else
@@ -157,42 +192,29 @@ public class FWSInput : MonoBehaviour {
     //handles the aim from the controller
     void HandleControllerAim()
     {
-        //get vector between camera and player 
-        Vector3 difference = Camera.main.transform.position - pCtrl.transform.position;
 
-        //why negative difference? idk
-        float camRotate = Mathf.Atan2(-difference.x, -difference.z);
-
-        float playerRotate = Mathf.Atan2(horizontalAim, verticalAim);
-
-        //combining the two radians
-        playerRotate = playerRotate + camRotate;
-
-        float checkRotation = (Mathf.Abs(Mathf.Atan2(horizontalAim, verticalAim)));
-
-        //store last rotation of player so it doesn't reset when there is no joystick input
-        if (checkRotation > 0.2f)
+        float x = horizontalAim;
+        float y = verticalAim;
+        if (x != 0.0f || y != 0.0f)
         {
-            lastRotate = playerRotate;
+            aimAngle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
         }
-        else if (checkRotation < 0.01f && verticalAim > 0)
+
+        Quaternion eulerRotation = Quaternion.Euler(aimAngle, 90f, 0f);
+        aimRotation = Quaternion.Slerp(aimRotation, eulerRotation, Time.deltaTime * 10);
+
+
+        if (pCtrl.isAnchored /*&& grappleCtrl.curHook != null*/)
         {
-            lastRotate = 0f;
+            aimGO.transform.rotation.SetLookRotation(grappleCtrl.curHook.transform.position, Vector3.up);
+            lookGo.transform.position = grappleCtrl.curHook.transform.position;
         }
         else
         {
-            playerRotate = lastRotate;
+            aimGO.transform.rotation = aimRotation;
+
+            lookGo.transform.localPosition = new Vector3(0f, 0f, 50f);
+            lookPos = lookGo.transform.position;
         }
-
-        //convert radian to degrees
-        Quaternion eulerRotation = Quaternion.Euler(playerRotate * Mathf.Rad2Deg, 90f, 0f);
-
-        //plugin degree conversion into transform
-        aimRotation = Quaternion.Slerp(aimRotation, eulerRotation, Time.deltaTime * 10);
-
-        aimGO.transform.rotation = aimRotation;
-
-        lookGo.transform.localPosition = new Vector3 (0f,0f, 10f);
-        lookPos = lookGo.transform.position;
     }
 }

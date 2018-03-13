@@ -51,8 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b468f85ab72414485be31698e58523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputCtrl: {fileID: 114129262573577938, guid: 596b4c7dca76a1d4681c8edf9543f753,
-    type: 2}
   pCtrl: {fileID: 114160651120588822, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
   jumpPfx: {fileID: 1469677963237704, guid: 3738dfc603e85f04087bc5f31aa2ed1b, type: 2}
   landingPfx: {fileID: 1426453787435522, guid: 068c297849ab645458689667346237f4, type: 2}

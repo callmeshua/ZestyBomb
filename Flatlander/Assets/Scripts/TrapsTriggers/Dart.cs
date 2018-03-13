@@ -19,7 +19,7 @@ public class Dart : MonoBehaviour {
         }
         else
         {
-            Physics.IgnoreCollision(gameObject.GetComponent<BoxCollider>(), collision.gameObject.GetComponent<BoxCollider>(), true);
+            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), collision.gameObject.GetComponent<Collider>(), true);
             Destroy(gameObject, 2f);
         }
         

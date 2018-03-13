@@ -31,8 +31,8 @@ public class GrappleController : MonoBehaviour
     public float swingPower;
     public float fallPower;//while swinging
     public float effectiveSwingAngle = 5f;//hanging straight down = 0 degrees
-
-
+    public float ropeBendSensitivity = .79f;
+    public float ropeThiccness = .2f;
     public float ropeJumpPower = 15f;
     public float jumpThreshold = 2f; //distance from anchor before player can jump up from rope;
 
@@ -262,7 +262,8 @@ public class GrappleController : MonoBehaviour
         Ray ropeRay = new Ray(transform.position + curDir * .1f, curDir);//ray of vector
 
         //add new anchor
-        if (Physics.Raycast(ropeRay, out ropeCollision, curDir.magnitude*.8f,ropeCollisionMask)&&anchoredRb!=null) 
+        if (/*Physics.Raycast(ropeRay, out ropeCollision, curDir.magnitude*.8f,ropeCollisionMask)&&anchoredRb!=null*/
+            Physics.SphereCast(transform.position + curDir * .1f, ropeThiccness, curDir, out ropeCollision, curDir.magnitude * .79f, ropeCollisionMask) && anchoredRb != null) 
         {
             addNewAnchor = true;
             anchors.Add(ropeCollision.point);

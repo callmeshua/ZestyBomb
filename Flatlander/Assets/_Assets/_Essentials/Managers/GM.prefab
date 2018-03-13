@@ -52,8 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd6a84fb5bbf52458309e812549b902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camTransform: {fileID: 4934442125358794, guid: b06d11b5581c5554ca80817a366be1a5,
-    type: 2}
+  camTransform: {fileID: 0}
   shakeDuration: 0
   shakeAmount: 0.15
   decreaseFactor: 1
@@ -71,7 +70,7 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
   hd: {fileID: 114425535684501144, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
   gCtrl: {fileID: 114631560739002636, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
-  relic: {fileID: 1287838384197244, guid: e4be44739e485f04e8d56f41bb2cf733, type: 2}
+  relic: {fileID: 0}
   exitArea: {fileID: 0}
   sm: {fileID: 114642725473431602, guid: fe16fc14dd79d1743a563608b38f0ee8, type: 2}
   scoreNum: {fileID: 0}
@@ -87,6 +86,7 @@ MonoBehaviour:
   shots: 0
   timer: 6000
   roundedTimer: 0
+  isUsingController: 0
   resetLevel: 0
   touchHazard: 0
   gameOver: 0

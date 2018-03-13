@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunAim : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GunAim : MonoBehaviour
     public Vector2 minMaxAim;
     private Transform rightShoulder;
     public GM gm;
-
+    //public GameObject AimReticle;
     // Use this for initialization
     void Start()
     {
@@ -18,6 +19,7 @@ public class GunAim : MonoBehaviour
         gm = FindObjectOfType<GM>();
         rightShoulderPoint = new GameObject();
         rightShoulderPoint.name = transform.root.name + "Right Shoulder IK Helper";
+        //AimReticle = GameObject.Find("Reticle");
     }
 
     // Update is called once per frame
@@ -27,8 +29,7 @@ public class GunAim : MonoBehaviour
         {
             HandleShoulder();
         }
-	}
-
+    }
 
     void HandleShoulder()
     {
@@ -40,5 +41,16 @@ public class GunAim : MonoBehaviour
         transform.LookAt(pCtrl.lookPos);
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x,0f,0f);
         transform.position = rightShoulderPoint.transform.position;
+
+        //RaycastHit aimHit;
+        //if (Physics.Raycast(pCtrl.grapple.barrel.transform.position, pCtrl.lookPos-pCtrl.grapple.barrel.transform.position, out aimHit, 1000f, pCtrl.grapple.ropeCollisionMask) && gm.isUsingController && !pCtrl.isAnchored) 
+        //{
+        //    AimReticle.SetActive(true);
+        //    AimReticle.transform.position = aimHit.point;
+        //}
+        //else
+        //{
+        //    AimReticle.SetActive(false);
+        //}
     }
 }

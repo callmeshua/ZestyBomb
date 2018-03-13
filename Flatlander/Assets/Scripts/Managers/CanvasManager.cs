@@ -21,6 +21,7 @@ public class CanvasManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        gm = FindObjectOfType<GM>();
         ws.SetActive(false);
         ds.SetActive(false);
         ps.SetActive(false);

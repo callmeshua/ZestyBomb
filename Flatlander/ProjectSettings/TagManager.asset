@@ -32,6 +32,7 @@ TagManager:
   - relicArea
   - shooter
   - CamRig
+  - Lava
   layers:
   - Default
   - TransparentFX

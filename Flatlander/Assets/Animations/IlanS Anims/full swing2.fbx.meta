@@ -1,0 +1,1622 @@
+fileFormatVersion: 2
+guid: 5fe70dc86e3bd0f45bd4022a29a20668
+timeCreated: 1520810281
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: rudy_rig:Character1_Head
+    100004: rudy_rig:Character1_Hips
+    100006: rudy_rig:Character1_LeftArm
+    100008: rudy_rig:Character1_LeftFoot
+    100010: rudy_rig:Character1_LeftForeArm
+    100012: rudy_rig:Character1_LeftHand
+    100014: rudy_rig:Character1_LeftHandIndex1
+    100016: rudy_rig:Character1_LeftHandIndex2
+    100018: rudy_rig:Character1_LeftHandIndex3
+    100020: rudy_rig:Character1_LeftHandIndex4
+    100022: rudy_rig:Character1_LeftHandMiddle1
+    100024: rudy_rig:Character1_LeftHandMiddle2
+    100026: rudy_rig:Character1_LeftHandMiddle3
+    100028: rudy_rig:Character1_LeftHandMiddle4
+    100030: rudy_rig:Character1_LeftHandPinky1
+    100032: rudy_rig:Character1_LeftHandPinky2
+    100034: rudy_rig:Character1_LeftHandPinky3
+    100036: rudy_rig:Character1_LeftHandPinky4
+    100038: rudy_rig:Character1_LeftHandRing1
+    100040: rudy_rig:Character1_LeftHandRing2
+    100042: rudy_rig:Character1_LeftHandRing3
+    100044: rudy_rig:Character1_LeftHandRing4
+    100046: rudy_rig:Character1_LeftHandThumb1
+    100048: rudy_rig:Character1_LeftHandThumb2
+    100050: rudy_rig:Character1_LeftHandThumb3
+    100052: rudy_rig:Character1_LeftHandThumb4
+    100054: rudy_rig:Character1_LeftLeg
+    100056: rudy_rig:Character1_LeftShoulder
+    100058: rudy_rig:Character1_LeftToeBase
+    100060: rudy_rig:Character1_LeftUpLeg
+    100062: rudy_rig:Character1_Neck
+    100064: rudy_rig:Character1_RightArm
+    100066: rudy_rig:Character1_RightFoot
+    100068: rudy_rig:Character1_RightForeArm
+    100070: rudy_rig:Character1_RightHand
+    100072: rudy_rig:Character1_RightHandIndex1
+    100074: rudy_rig:Character1_RightHandIndex2
+    100076: rudy_rig:Character1_RightHandIndex3
+    100078: rudy_rig:Character1_RightHandIndex4
+    100080: rudy_rig:Character1_RightHandMiddle1
+    100082: rudy_rig:Character1_RightHandMiddle2
+    100084: rudy_rig:Character1_RightHandMiddle3
+    100086: rudy_rig:Character1_RightHandMiddle4
+    100088: rudy_rig:Character1_RightHandPinky1
+    100090: rudy_rig:Character1_RightHandPinky2
+    100092: rudy_rig:Character1_RightHandPinky3
+    100094: rudy_rig:Character1_RightHandPinky4
+    100096: rudy_rig:Character1_RightHandRing1
+    100098: rudy_rig:Character1_RightHandRing2
+    100100: rudy_rig:Character1_RightHandRing3
+    100102: rudy_rig:Character1_RightHandRing4
+    100104: rudy_rig:Character1_RightHandThumb1
+    100106: rudy_rig:Character1_RightHandThumb2
+    100108: rudy_rig:Character1_RightHandThumb3
+    100110: rudy_rig:Character1_RightHandThumb4
+    100112: rudy_rig:Character1_RightLeg
+    100114: rudy_rig:Character1_RightShoulder
+    100116: rudy_rig:Character1_RightToeBase
+    100118: rudy_rig:Character1_RightUpLeg
+    100120: rudy_rig:Character1_Spine
+    100122: rudy_rig:Character1_Spine1
+    100124: rudy_rig:Character1_Spine2
+    400000: //RootNode
+    400002: rudy_rig:Character1_Head
+    400004: rudy_rig:Character1_Hips
+    400006: rudy_rig:Character1_LeftArm
+    400008: rudy_rig:Character1_LeftFoot
+    400010: rudy_rig:Character1_LeftForeArm
+    400012: rudy_rig:Character1_LeftHand
+    400014: rudy_rig:Character1_LeftHandIndex1
+    400016: rudy_rig:Character1_LeftHandIndex2
+    400018: rudy_rig:Character1_LeftHandIndex3
+    400020: rudy_rig:Character1_LeftHandIndex4
+    400022: rudy_rig:Character1_LeftHandMiddle1
+    400024: rudy_rig:Character1_LeftHandMiddle2
+    400026: rudy_rig:Character1_LeftHandMiddle3
+    400028: rudy_rig:Character1_LeftHandMiddle4
+    400030: rudy_rig:Character1_LeftHandPinky1
+    400032: rudy_rig:Character1_LeftHandPinky2
+    400034: rudy_rig:Character1_LeftHandPinky3
+    400036: rudy_rig:Character1_LeftHandPinky4
+    400038: rudy_rig:Character1_LeftHandRing1
+    400040: rudy_rig:Character1_LeftHandRing2
+    400042: rudy_rig:Character1_LeftHandRing3
+    400044: rudy_rig:Character1_LeftHandRing4
+    400046: rudy_rig:Character1_LeftHandThumb1
+    400048: rudy_rig:Character1_LeftHandThumb2
+    400050: rudy_rig:Character1_LeftHandThumb3
+    400052: rudy_rig:Character1_LeftHandThumb4
+    400054: rudy_rig:Character1_LeftLeg
+    400056: rudy_rig:Character1_LeftShoulder
+    400058: rudy_rig:Character1_LeftToeBase
+    400060: rudy_rig:Character1_LeftUpLeg
+    400062: rudy_rig:Character1_Neck
+    400064: rudy_rig:Character1_RightArm
+    400066: rudy_rig:Character1_RightFoot
+    400068: rudy_rig:Character1_RightForeArm
+    400070: rudy_rig:Character1_RightHand
+    400072: rudy_rig:Character1_RightHandIndex1
+    400074: rudy_rig:Character1_RightHandIndex2
+    400076: rudy_rig:Character1_RightHandIndex3
+    400078: rudy_rig:Character1_RightHandIndex4
+    400080: rudy_rig:Character1_RightHandMiddle1
+    400082: rudy_rig:Character1_RightHandMiddle2
+    400084: rudy_rig:Character1_RightHandMiddle3
+    400086: rudy_rig:Character1_RightHandMiddle4
+    400088: rudy_rig:Character1_RightHandPinky1
+    400090: rudy_rig:Character1_RightHandPinky2
+    400092: rudy_rig:Character1_RightHandPinky3
+    400094: rudy_rig:Character1_RightHandPinky4
+    400096: rudy_rig:Character1_RightHandRing1
+    400098: rudy_rig:Character1_RightHandRing2
+    400100: rudy_rig:Character1_RightHandRing3
+    400102: rudy_rig:Character1_RightHandRing4
+    400104: rudy_rig:Character1_RightHandThumb1
+    400106: rudy_rig:Character1_RightHandThumb2
+    400108: rudy_rig:Character1_RightHandThumb3
+    400110: rudy_rig:Character1_RightHandThumb4
+    400112: rudy_rig:Character1_RightLeg
+    400114: rudy_rig:Character1_RightShoulder
+    400116: rudy_rig:Character1_RightToeBase
+    400118: rudy_rig:Character1_RightUpLeg
+    400120: rudy_rig:Character1_Spine
+    400122: rudy_rig:Character1_Spine1
+    400124: rudy_rig:Character1_Spine2
+    7400000: Take 001
+    7400002: sForward1
+    7400004: sForward2
+    7400006: sForward3
+    7400008: sForward4
+    7400010: sForward5
+    7400012: sForward6
+    7400014: sForward7
+    7400016: sForward8
+    7400018: sForward9
+    7400020: sForward10
+    7400022: sForward11
+    7400024: sForward12
+    7400026: sBack1
+    7400028: sBack2
+    7400030: sBack3
+    7400032: sBack4
+    7400034: sBack5
+    7400036: sBack6
+    7400038: sBack7
+    7400040: sBack8
+    7400042: sBack9
+    7400044: sBack10
+    7400046: sBack11
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'rudy_rig:Character1_LeftLeg' has translation
+      animation that will be discarded.\n\t'rudy_rig:Character1_RightLeg' has translation
+      animation that will be discarded.\n"
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftLowerArm
+      average position error 1.1 mm and maximum position error 1.3 mm at time 1:20
+      (97.7%) Frame 44\n\tRightLowerArm average position error 0.2 mm and maximum
+      position error 5.8 mm at time 0:13 (27.3%) Frame 13\n\tRightFoot average orientation
+      error 0.1 deg and maximum orientation error 1.9 deg at time 0: 9 (18.2%) Frame
+      9\n"
+    animationDoRetargetingWarnings: 1
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 45
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sForward1
+      takeName: Take 001
+      firstFrame: 28
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sForward2
+      takeName: Take 001
+      firstFrame: 29
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.96
+    - serializedVersion: 16
+      name: sForward3
+      takeName: Take 001
+      firstFrame: 30
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sForward4
+      takeName: Take 001
+      firstFrame: 31
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sForward5
+      takeName: Take 001
+      firstFrame: 32
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sForward6
+      takeName: Take 001
+      firstFrame: 36
+      lastFrame: 37
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sForward7
+      takeName: Take 001
+      firstFrame: 23
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sForward8
+      takeName: Take 001
+      firstFrame: 24
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sForward9
+      takeName: Take 001
+      firstFrame: 25
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sForward10
+      takeName: Take 001
+      firstFrame: 26
+      lastFrame: 27
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sForward11
+      takeName: Take 001
+      firstFrame: 27
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sBack1
+      takeName: Take 001
+      firstFrame: 10
+      lastFrame: 11
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sBack2
+      takeName: Take 001
+      firstFrame: 11
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sBack3
+      takeName: Take 001
+      firstFrame: 12
+      lastFrame: 13
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sBack4
+      takeName: Take 001
+      firstFrame: 13
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sBack5
+      takeName: Take 001
+      firstFrame: 14
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sBack6
+      takeName: Take 001
+      firstFrame: 15
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sBack7
+      takeName: Take 001
+      firstFrame: 32
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sBack8
+      takeName: Take 001
+      firstFrame: 31
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sBack9
+      takeName: Take 001
+      firstFrame: 30
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sBack10
+      takeName: Take 001
+      firstFrame: 29
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sBack11
+      takeName: Take 001
+      firstFrame: 28
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: rudy_rig:Character1_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandRing3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandPinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandPinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_LeftHandPinky3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandRing3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_RightHandPinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: rudy_rig:Character1_Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: full swing2(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rudy_rig:Character1_Hips
+      parentName: full swing2(Clone)
+      position: {x: -0.0012231339, y: 1.1058801, z: -0.071989946}
+      rotation: {x: -0.0394916, y: -0.00056935655, z: 0.007493465, w: 0.99919164}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: rudy_rig:Character1_LeftUpLeg
+      parentName: rudy_rig:Character1_Hips
+      position: {x: -0.10174266, y: -0.08192782, z: 0.0000000020916595}
+      rotation: {x: -0.08155592, y: 0.005067868, z: -0.039589904, w: 0.9958693}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: rudy_rig:Character1_LeftLeg
+      parentName: rudy_rig:Character1_LeftUpLeg
+      position: {x: 0.00000032777126, y: -0.42186278, z: 0.000004404515}
+      rotation: {x: 0.072886914, y: 0.006361003, z: 0.00091646565, w: 0.9973195}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: rudy_rig:Character1_LeftFoot
+      parentName: rudy_rig:Character1_LeftLeg
+      position: {x: 0.00000007366426, y: -0.45399088, z: -0.03183931}
+      rotation: {x: 0.293311, y: 0.0017993632, z: 0.03285919, w: 0.95545053}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rudy_rig:Character1_LeftToeBase
+      parentName: rudy_rig:Character1_LeftFoot
+      position: {x: -0.000000073640614, y: -0.042565994, z: 0.18794483}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rudy_rig:Character1_RightUpLeg
+      parentName: rudy_rig:Character1_Hips
+      position: {x: 0.10174259, y: -0.08192779, z: 0.0000000035834964}
+      rotation: {x: -0.012612069, y: -0.0029883015, z: 0.069309324, w: 0.997511}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
+    - name: rudy_rig:Character1_RightLeg
+      parentName: rudy_rig:Character1_RightUpLeg
+      position: {x: 0.00000013486975, y: -0.42186332, z: -0.0000015549384}
+      rotation: {x: 0.15583287, y: -0.024067711, z: -0.005546011, w: 0.9874746}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: rudy_rig:Character1_RightFoot
+      parentName: rudy_rig:Character1_RightLeg
+      position: {x: 0.000000053218667, y: -0.45399043, z: -0.0318395}
+      rotation: {x: 0.22416797, y: -0.010986819, z: -0.072116315, w: 0.9718165}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rudy_rig:Character1_RightToeBase
+      parentName: rudy_rig:Character1_RightFoot
+      position: {x: 0.00000008001138, y: -0.042565923, z: 0.18794471}
+      rotation: {x: 0, y: -0.000083782536, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rudy_rig:Character1_Spine
+      parentName: rudy_rig:Character1_Hips
+      position: {x: -0.0000000068375385, y: 0.12787004, z: 0.000000018723199}
+      rotation: {x: 0.0384228, y: 0.009573866, z: -0.0089339, w: 0.9991758}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: rudy_rig:Character1_Spine1
+      parentName: rudy_rig:Character1_Spine
+      position: {x: -4.3028556e-10, y: 0.18438895, z: -0.009005395}
+      rotation: {x: 0.07664453, y: 0.01916362, z: -0.0028376826, w: 0.9968703}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000004}
+    - name: rudy_rig:Character1_Spine2
+      parentName: rudy_rig:Character1_Spine1
+      position: {x: 0.0000000016971078, y: 0.18438871, z: -0.01047495}
+      rotation: {x: 0.07664455, y: 0.01916363, z: -0.0028376852, w: 0.9968703}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: rudy_rig:Character1_LeftShoulder
+      parentName: rudy_rig:Character1_Spine2
+      position: {x: -0.07, y: 0.118953586, z: -0.028285732}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: rudy_rig:Character1_LeftArm
+      parentName: rudy_rig:Character1_LeftShoulder
+      position: {x: -0.1070725, y: 0.0000013441341, z: 0.0000000062322014}
+      rotation: {x: -0.6997787, y: -0.01888818, z: -0.012608375, w: 0.71399873}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: rudy_rig:Character1_LeftForeArm
+      parentName: rudy_rig:Character1_LeftArm
+      position: {x: -0.36299545, y: 0.000009480225, z: 0.00000016984556}
+      rotation: {x: 0.000009902413, y: -0.0082457885, z: -0.00008332493, w: 0.999966}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: rudy_rig:Character1_LeftHand
+      parentName: rudy_rig:Character1_LeftForeArm
+      position: {x: -0.31795564, y: -0.00004469354, z: 0.005655206}
+      rotation: {x: 0.2621243, y: -0.026723308, z: 0.11589973, w: 0.95767635}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: rudy_rig:Character1_LeftHandIndex1
+      parentName: rudy_rig:Character1_LeftHand
+      position: {x: -0.16255215, y: 0.0020494703, z: 0.03556161}
+      rotation: {x: -0.0057603414, y: -0.009515031, z: 0.041535117, w: 0.9990752}
+      scale: {x: 0.9999998, y: 0.99999976, z: 0.9999998}
+    - name: rudy_rig:Character1_LeftHandIndex2
+      parentName: rudy_rig:Character1_LeftHandIndex1
+      position: {x: -0.05296685, y: -0.000020687177, z: 0.0014719735}
+      rotation: {x: 0.004097661, y: -0.039488636, z: 0.014277602, w: 0.9991097}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: rudy_rig:Character1_LeftHandIndex3
+      parentName: rudy_rig:Character1_LeftHandIndex2
+      position: {x: -0.032294873, y: 0.000007847781, z: 0.0034684117}
+      rotation: {x: -0.0019762458, y: 0.19191313, z: 0.013947662, w: 0.98131084}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: rudy_rig:Character1_LeftHandIndex4
+      parentName: rudy_rig:Character1_LeftHandIndex3
+      position: {x: -0.018823285, y: -0.0000007826478, z: -0.005398765}
+      rotation: {x: 0.000008854602, y: -0.42261827, z: -0.000012448811, w: 0.9063078}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: rudy_rig:Character1_LeftHandMiddle1
+      parentName: rudy_rig:Character1_LeftHand
+      position: {x: -0.16497383, y: 0.005061976, z: 0.0023046513}
+      rotation: {x: -0.0065804557, y: 0.0059943334, z: 0.04156069, w: 0.99909633}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: rudy_rig:Character1_LeftHandMiddle2
+      parentName: rudy_rig:Character1_LeftHandMiddle1
+      position: {x: -0.064176194, y: -0.000024673558, z: 0.0000030145486}
+      rotation: {x: 0.0031117753, y: -0.0045190277, z: 0.0145024285, w: 0.99987984}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: rudy_rig:Character1_LeftHandMiddle3
+      parentName: rudy_rig:Character1_LeftHandMiddle2
+      position: {x: -0.03104373, y: 0.000007962757, z: 0.00028819471}
+      rotation: {x: -0.0029698105, y: 0.004793116, z: 0.014037591, w: 0.9998856}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000002}
+    - name: rudy_rig:Character1_LeftHandMiddle4
+      parentName: rudy_rig:Character1_LeftHandMiddle3
+      position: {x: -0.0200564, y: -0.0000017824668, z: -0.000009969589}
+      rotation: {x: 0.000000011133321, y: -0.00077661406, z: 0.000051332376, w: 0.9999997}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rudy_rig:Character1_LeftHandPinky1
+      parentName: rudy_rig:Character1_LeftHand
+      position: {x: -0.15920022, y: -0.0030791233, z: -0.05712437}
+      rotation: {x: 0.005292266, y: 0.057601854, z: 0.050172757, w: 0.9970641}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000002}
+    - name: rudy_rig:Character1_LeftHandPinky2
+      parentName: rudy_rig:Character1_LeftHandPinky1
+      position: {x: -0.030353053, y: -0.000011376126, z: -0.002312622}
+      rotation: {x: -0.0018574691, y: 0.0000015310936, z: 0.024738519, w: 0.9996922}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: rudy_rig:Character1_LeftHandPinky3
+      parentName: rudy_rig:Character1_LeftHandPinky2
+      position: {x: -0.019687917, y: 0.0000058485207, z: -0.0015000275}
+      rotation: {x: -0.0018564308, y: 0.000001225722, z: 0.0241575, w: 0.99970645}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rudy_rig:Character1_LeftHandPinky4
+      parentName: rudy_rig:Character1_LeftHandPinky3
+      position: {x: -0.016617931, y: -0.0000031483894, z: -0.0012661383}
+      rotation: {x: 0, y: 0, z: 0.00021779882, w: 1}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+    - name: rudy_rig:Character1_LeftHandRing1
+      parentName: rudy_rig:Character1_LeftHand
+      position: {x: -0.16468252, y: 0.0038521506, z: -0.028}
+      rotation: {x: -0.006600199, y: 0.013180307, z: 0.041475154, w: 0.99903077}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: rudy_rig:Character1_LeftHandRing2
+      parentName: rudy_rig:Character1_LeftHandRing1
+      position: {x: -0.058941662, y: -0.00002264937, z: -0.00091725483}
+      rotation: {x: 0.009968201, y: -0.014680012, z: 0.014512441, w: 0.99973726}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: rudy_rig:Character1_LeftHandRing3
+      parentName: rudy_rig:Character1_LeftHandRing2
+      position: {x: -0.027001007, y: 0.0000068804743, z: 0.00038980495}
+      rotation: {x: -0.0073211044, y: 0.011140822, z: 0.014044499, w: 0.9998125}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: rudy_rig:Character1_LeftHandRing4
+      parentName: rudy_rig:Character1_LeftHandRing3
+      position: {x: -0.019232834, y: -0.0000016459817, z: -0.00015997277}
+      rotation: {x: 0.000000011174214, y: -0.0007774413, z: 0.000051332376, w: 0.9999997}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: rudy_rig:Character1_LeftHandThumb1
+      parentName: rudy_rig:Character1_LeftHand
+      position: {x: -0.06290219, y: -0.026459021, z: 0.046735562}
+      rotation: {x: 0.32153496, y: 0.05549214, z: -0.036990363, w: 0.9445462}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000004}
+    - name: rudy_rig:Character1_LeftHandThumb2
+      parentName: rudy_rig:Character1_LeftHandThumb1
+      position: {x: -0.030668799, y: -0.009897663, z: 0.024096949}
+      rotation: {x: -0.04780059, y: 0.059253618, z: -0.04552739, w: 0.996058}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rudy_rig:Character1_LeftHandThumb3
+      parentName: rudy_rig:Character1_LeftHandThumb2
+      position: {x: -0.034005616, y: -0.016613904, z: 0.017335942}
+      rotation: {x: 0.011003888, y: -0.040778864, z: -0.030686544, w: 0.9986363}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: rudy_rig:Character1_LeftHandThumb4
+      parentName: rudy_rig:Character1_LeftHandThumb3
+      position: {x: -0.02315853, y: -0.015525555, z: 0.013643771}
+      rotation: {x: -0.0000009889613, y: -0.0000012407046, z: 0.00008512374, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: rudy_rig:Character1_Neck
+      parentName: rudy_rig:Character1_Spine2
+      position: {x: -0.0000000100360875, y: 0.18438877, z: 0.0015546919}
+      rotation: {x: -0.07609294, y: -0.023447387, z: 0.004433856, w: 0.99681515}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: rudy_rig:Character1_Head
+      parentName: rudy_rig:Character1_Neck
+      position: {x: -0.0000000031317238, y: 0.17891744, z: 0.011691831}
+      rotation: {x: -0.07609286, y: -0.023447389, z: 0.004433887, w: 0.99681515}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rudy_rig:Character1_RightShoulder
+      parentName: rudy_rig:Character1_Spine2
+      position: {x: 0.06999999, y: 0.11895364, z: -0.028285732}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: rudy_rig:Character1_RightArm
+      parentName: rudy_rig:Character1_RightShoulder
+      position: {x: 0.107072495, y: 0.0000013760473, z: -0.0000000042534096}
+      rotation: {x: 0.72347385, y: 0.022166306, z: 0.009986932, w: -0.6899235}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: rudy_rig:Character1_RightForeArm
+      parentName: rudy_rig:Character1_RightArm
+      position: {x: 0.3629956, y: 0.000029344805, z: -0.000000092814815}
+      rotation: {x: 0.005069515, y: 0.008434778, z: 0.0003093935, w: 0.99995154}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: rudy_rig:Character1_RightHand
+      parentName: rudy_rig:Character1_RightForeArm
+      position: {x: 0.31795567, y: -0.00014150013, z: 0.0056553273}
+      rotation: {x: -0.57629776, y: -0.020989366, z: 0.22340882, w: 0.7858301}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: rudy_rig:Character1_RightHandIndex1
+      parentName: rudy_rig:Character1_RightHand
+      position: {x: 0.16255075, y: 0.0021618875, z: 0.035561584}
+      rotation: {x: -0.054532222, y: -0.017073717, z: -0.05329839, w: 0.99694234}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: rudy_rig:Character1_RightHandIndex2
+      parentName: rudy_rig:Character1_RightHandIndex1
+      position: {x: 0.052966833, y: -0.000064584325, z: 0.0014719879}
+      rotation: {x: 0.0005413143, y: -0.031398784, z: -0.037548453, w: 0.99880123}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rudy_rig:Character1_RightHandIndex3
+      parentName: rudy_rig:Character1_RightHandIndex2
+      position: {x: 0.032463208, y: 0.000026091686, z: -0.0010599807}
+      rotation: {x: 0.005605332, y: 0.18990822, z: -0.03561725, w: 0.9811396}
+      scale: {x: 1, y: 0.9999998, z: 1}
+    - name: rudy_rig:Character1_RightHandIndex4
+      parentName: rudy_rig:Character1_RightHandIndex3
+      position: {x: 0.018401604, y: -0.000005502841, z: 0.006696551}
+      rotation: {x: -0.000026718277, y: -0.42263106, z: -0.00015861446, w: 0.9063018}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
+    - name: rudy_rig:Character1_RightHandMiddle1
+      parentName: rudy_rig:Character1_RightHand
+      position: {x: 0.16497028, y: 0.0051759593, z: 0.002304633}
+      rotation: {x: -0.067338005, y: 0.0011933106, z: -0.052863304, w: 0.99632806}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: rudy_rig:Character1_RightHandMiddle2
+      parentName: rudy_rig:Character1_RightHandMiddle1
+      position: {x: 0.06417615, y: -0.00007789288, z: 0.0000030522024}
+      rotation: {x: 0.003388128, y: -0.030399546, z: -0.010597481, w: 0.99947596}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: rudy_rig:Character1_RightHandMiddle3
+      parentName: rudy_rig:Character1_RightHandMiddle2
+      position: {x: 0.030987913, y: 0.000025078021, z: -0.0018819524}
+      rotation: {x: 0.0031925845, y: 0.18630819, z: -0.032534126, w: 0.98194736}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: rudy_rig:Character1_RightHandMiddle4
+      parentName: rudy_rig:Character1_RightHandMiddle3
+      position: {x: 0.019074326, y: -0.000005668061, z: 0.0061990856}
+      rotation: {x: -0.00002767552, y: -0.4226315, z: -0.00015818626, w: 0.9063016}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: rudy_rig:Character1_RightHandPinky1
+      parentName: rudy_rig:Character1_RightHand
+      position: {x: 0.15920231, y: -0.002969046, z: -0.05712438}
+      rotation: {x: 0.14700352, y: -0.035438113, z: -0.04122803, w: 0.98764086}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: rudy_rig:Character1_RightHandPinky2
+      parentName: rudy_rig:Character1_RightHandPinky1
+      position: {x: 0.030353, y: -0.000036486897, z: -0.0023125887}
+      rotation: {x: -0.003623038, y: -0.034883194, z: -0.033204887, w: 0.9988331}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: rudy_rig:Character1_RightHandPinky3
+      parentName: rudy_rig:Character1_RightHandPinky2
+      position: {x: 0.019535353, y: 0.000015413465, z: -0.0028697662}
+      rotation: {x: 0.0015840845, y: 0.19069263, z: -0.03500238, w: 0.98102427}
+      scale: {x: 1, y: 1.0000005, z: 1}
+    - name: rudy_rig:Character1_RightHandPinky4
+      parentName: rudy_rig:Character1_RightHandPinky3
+      position: {x: 0.016195847, y: -0.0000011262223, z: 0.0039311983}
+      rotation: {x: -0.000032550888, y: -0.42263106, z: 0.00010470492, w: 0.90630186}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rudy_rig:Character1_RightHandRing1
+      parentName: rudy_rig:Character1_RightHand
+      position: {x: 0.16467975, y: 0.0039659906, z: -0.028000036}
+      rotation: {x: 0.07836493, y: -0.010608186, z: -0.031979285, w: 0.9963553}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: rudy_rig:Character1_RightHandRing2
+      parentName: rudy_rig:Character1_RightHandRing1
+      position: {x: 0.05894161, y: -0.00007150502, z: -0.0009172392}
+      rotation: {x: 0.0039176564, y: -0.02121014, z: -0.028798101, w: 0.9993526}
+      scale: {x: 1, y: 1.0000004, z: 1}
+    - name: rudy_rig:Character1_RightHandRing3
+      parentName: rudy_rig:Character1_RightHandRing2
+      position: {x: 0.026962265, y: 0.000021938435, z: -0.0014980823}
+      rotation: {x: 0.005010534, y: 0.18247972, z: -0.03194505, w: 0.98267776}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: rudy_rig:Character1_RightHandRing4
+      parentName: rudy_rig:Character1_RightHandRing3
+      position: {x: 0.01833762, y: -0.000005443365, z: 0.0058015385}
+      rotation: {x: -0.000027340388, y: -0.42263058, z: -0.00015890462, w: 0.90630203}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: rudy_rig:Character1_RightHandThumb1
+      parentName: rudy_rig:Character1_RightHand
+      position: {x: 0.06292048, y: -0.026415523, z: 0.046735566}
+      rotation: {x: 0.63642794, y: 0.24052346, z: -0.055572227, w: 0.73076653}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rudy_rig:Character1_RightHandThumb2
+      parentName: rudy_rig:Character1_RightHandThumb1
+      position: {x: 0.03066071, y: -0.009923111, z: 0.024096915}
+      rotation: {x: -0.04745708, y: -0.06007702, z: 0.048008796, w: 0.9959085}
+      scale: {x: 1, y: 1, z: 1}
+    - name: rudy_rig:Character1_RightHandThumb3
+      parentName: rudy_rig:Character1_RightHandThumb2
+      position: {x: 0.034014683, y: -0.016595071, z: 0.01733595}
+      rotation: {x: 0.007866206, y: 0.04952414, z: 0.05393685, w: 0.9972845}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: rudy_rig:Character1_RightHandThumb4
+      parentName: rudy_rig:Character1_RightHandThumb3
+      position: {x: 0.023156097, y: -0.015529322, z: 0.01364377}
+      rotation: {x: 0, y: -0, z: -0.000100380494, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
