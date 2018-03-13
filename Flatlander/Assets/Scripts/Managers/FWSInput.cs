@@ -66,7 +66,12 @@ public class FWSInput : MonoBehaviour {
 	void Update ()
     {
         paused = gm.frozen;
-
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            gm.isUsingController = !gm.isUsingController;
+        }
+            
+        isUsingController = gm.isUsingController;
 
         //ENABLE WITH CONTROLLER SUPPORT
 
@@ -187,38 +192,6 @@ public class FWSInput : MonoBehaviour {
     //handles the aim from the controller
     void HandleControllerAim()
     {
-        ////get vector between camera and player 
-        //Vector3 difference = Camera.main.transform.position - pCtrl.transform.position;
-
-        ////why negative difference? idk
-        //float camRotate = Mathf.Atan2(-difference.x, -difference.z);
-
-        //float playerRotate = Mathf.Atan2(horizontalAim, verticalAim);
-
-        ////combining the two radians
-        //playerRotate = playerRotate + camRotate;
-
-        //float checkRotation = (Mathf.Abs(Mathf.Atan2(verticalAim , horizontalAim)));
-
-        ////store last rotation of player so it doesn't reset when there is no joystick input
-        //if (checkRotation > 0.2f)
-        //{
-        //    lastRotate = playerRotate;
-        //}
-        //else if (checkRotation < 0.01f && verticalAim > 0)
-        //{
-        //    lastRotate = 0f;
-        //}
-        //else
-        //{
-        //    playerRotate = lastRotate;
-        //}
-
-        ////convert radian to degrees
-        //Quaternion eulerRotation = Quaternion.Euler(playerRotate * Mathf.Rad2Deg, 90f, 0f);
-
-        ////plugin degree conversion into transform
-        //aimRotation = Quaternion.Slerp(aimRotation, eulerRotation, Time.deltaTime * 10);
 
         float x = horizontalAim;
         float y = verticalAim;
@@ -230,7 +203,8 @@ public class FWSInput : MonoBehaviour {
         Quaternion eulerRotation = Quaternion.Euler(aimAngle, 90f, 0f);
         aimRotation = Quaternion.Slerp(aimRotation, eulerRotation, Time.deltaTime * 10);
 
-        if (pCtrl.isAnchored && grappleCtrl.curHook != null)
+
+        if (pCtrl.isAnchored /*&& grappleCtrl.curHook != null*/)
         {
             aimGO.transform.rotation.SetLookRotation(grappleCtrl.curHook.transform.position, Vector3.up);
             lookGo.transform.position = grappleCtrl.curHook.transform.position;
