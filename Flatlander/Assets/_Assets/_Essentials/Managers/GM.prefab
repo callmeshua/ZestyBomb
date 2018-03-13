@@ -86,7 +86,7 @@ MonoBehaviour:
   shots: 0
   timer: 6000
   roundedTimer: 0
-  isUsingController: 1
+  isUsingController: 0
   resetLevel: 0
   touchHazard: 0
   gameOver: 0
