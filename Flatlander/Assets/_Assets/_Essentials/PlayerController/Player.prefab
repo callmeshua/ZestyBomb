@@ -3337,7 +3337,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMaxAim: {x: 0, y: 0}
   gm: {fileID: 0}
-  AimReticle: {fileID: 0}
 --- !u!114 &114748279216665686
 MonoBehaviour:
   m_ObjectHideFlags: 1

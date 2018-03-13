@@ -305,7 +305,7 @@ public class SideScrollController : MonoBehaviour
         //draws rays for debugging
         if (drawDebug)
         {
-            Debug.Log(tangent.y);
+            //Debug.Log(tangent.y);
             Debug.DrawRay(transform.position, xForceDirection);
             Debug.DrawRay(transform.position + offset + (transform.forward * playerCollider.radius), Vector3.down * groundCheckDistance, Color.blue);
             Debug.DrawRay(transform.position + offset + (-transform.forward * playerCollider.radius), Vector3.down * groundCheckDistance, Color.blue);
