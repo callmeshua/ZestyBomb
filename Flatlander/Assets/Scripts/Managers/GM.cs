@@ -127,6 +127,7 @@ public class GM : MonoBehaviour
         
         relic.SetActive(true);
 
+        gCtrl = FindObjectOfType<GrappleController>();
         hd = FindObjectOfType<HealthDepletion>();
         inputCtrl = FindObjectOfType<FWSInput>();
         pCtrl = FindObjectOfType<SideScrollController>();

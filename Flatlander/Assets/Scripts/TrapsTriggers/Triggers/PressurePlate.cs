@@ -11,7 +11,7 @@ public class PressurePlate : Toggle {
         if (other.gameObject.name == "Player")
         {
             trigger();
-            transform.position = new Vector3(pos.x, pos.y - .2f, pos.z);
+            buttonModel.transform.position = new Vector3(pos.x, pos.y - .2f, pos.z);
         }
     }
 }
