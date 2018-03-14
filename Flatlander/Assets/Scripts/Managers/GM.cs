@@ -451,7 +451,9 @@ public class GM : MonoBehaviour
         }*/
         for (int i = 0; i < objects.Length; i++)
         {
-			objects [i].transform.parent = null;
+			if (objects[i].transform.parent != null)
+				objects [i].transform.parent = null;
+			
             GameObject clone = Instantiate(objects[i], new Vector3(positions[i * 3], positions[i * 3 + 1], positions[i * 3 + 2]), Quaternion.Euler(new Vector3(rotations[i * 3], rotations[i * 3 + 1], rotations[i * 3 + 2])));
 			//clone.transform.localScale = new Vector3 (scales [i * 3], scales [i * 3 + 1], scales [i * 3 + 2]);
 			if (clone.GetComponent<Rigidbody>() != null)
