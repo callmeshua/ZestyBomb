@@ -204,7 +204,7 @@ public class FWSInput : MonoBehaviour {
         aimRotation = Quaternion.Slerp(aimRotation, eulerRotation, Time.deltaTime * 10);
 
 
-        if (pCtrl.isAnchored /*&& grappleCtrl.curHook != null*/)
+        if (pCtrl.isAnchored && grappleCtrl.curHook != null)
         {
             aimGO.transform.rotation.SetLookRotation(grappleCtrl.curHook.transform.position, Vector3.up);
             lookGo.transform.position = grappleCtrl.curHook.transform.position;
