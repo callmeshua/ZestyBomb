@@ -12,6 +12,7 @@ public class Dart : MonoBehaviour {
         if (collision.gameObject.tag != "Dart")
         {
             GetComponent<Rigidbody>().isKinematic = true;
+            Destroy(gameObject, 2f);
         }
         if (collision.gameObject.tag == "Player")
         {

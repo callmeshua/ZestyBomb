@@ -492,7 +492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1617064043934948
 GameObject:
   m_ObjectHideFlags: 1
@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
-  gCtrl: {fileID: 114631560739002636, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
+  gCtrl: {fileID: 0}
   resetButton: {fileID: 114892651281726468}
   menuButton: {fileID: 114187383406311084}
   nextButton: {fileID: 114891730493586278}
@@ -1341,10 +1341,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
+  gCtrl: {fileID: 0}
   ws: {fileID: 1266735941143248}
   ds: {fileID: 1321250620976592}
   ps: {fileID: 1579854271040056}
   phaseText: {fileID: 114056192702562210}
+  shotsText: {fileID: 114452256707477270}
 --- !u!114 &114264236095440422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1751,7 +1753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
-  gCtrl: {fileID: 114631560739002636, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
+  gCtrl: {fileID: 0}
   reset: {fileID: 114323402115428050}
   menu: {fileID: 114728843359087674}
   scoreText: {fileID: 114331753585690770}
