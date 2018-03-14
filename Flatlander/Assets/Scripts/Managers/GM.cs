@@ -28,7 +28,6 @@ public class GM : MonoBehaviour
     public GameObject relic;
     public WinArea exitArea;
     public SoundManager sm;
-    public CanvasManager cm;
     
     [Header("HUD Texts")]
     //the score nuber in the HUD
@@ -128,8 +127,6 @@ public class GM : MonoBehaviour
         
         relic.SetActive(true);
 
-        cm = FindObjectOfType<CanvasManager>();
-        shots = cm.shots;
         hd = FindObjectOfType<HealthDepletion>();
         inputCtrl = FindObjectOfType<FWSInput>();
         pCtrl = FindObjectOfType<SideScrollController>();
@@ -186,7 +183,7 @@ public class GM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shots = cm.shots;
+        shots = gCtrl.shots;
         healthVal = hd.healthVal;
        // mode = SoundManager.mode;
         updateScore();
@@ -276,23 +273,18 @@ public class GM : MonoBehaviour
 
         if (mode == Modes.CLASSIC || mode == Modes.ENDLESS || mode == Modes.SOULLESS)
         {
-            cm.shots = 0;
-            shots = 0;
+            gCtrl.shots = 0;
         }
         else if (mode == Modes.LIMSWINGS)
         {
             gCtrl.shots = 15;
-            shots = 15;
         }
-
         hd.healthVal = 100;
         goldColCount = 0;
         colCount = 0;
         totalScore = 0;
-        scoreRank = 0;
         timer = startTime;
         touchHazard = false;
-        cm.shots = 0;
 
         if (frozen)
         {
