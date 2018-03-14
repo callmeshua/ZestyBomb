@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 124075979403501396}
   - component: {fileID: 81189819346466770}
   - component: {fileID: 114849276542593242}
-  - component: {fileID: 114554698475075106}
   - component: {fileID: 114697570679908640}
   - component: {fileID: 114616654049787666}
   m_Layer: 0
@@ -168,18 +167,6 @@ MonoBehaviour:
   target1Snap: 0
   target2Snap: 0
   onTarget1: 1
---- !u!114 &114554698475075106
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1606207766069600}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 1417b195db301204d87667b9a2d742a4, type: 2}
 --- !u!114 &114616654049787666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,6 +260,7 @@ MonoBehaviour:
   startZoomed: 0
   orthoSize: 0
   initOrthosize: 0
+  gameOverOffset: {x: 0, y: 3, z: -1}
   gm: {fileID: 0}
 --- !u!124 &124075979403501396
 Behaviour:

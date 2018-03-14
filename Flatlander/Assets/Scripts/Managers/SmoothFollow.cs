@@ -42,15 +42,30 @@ public class SmoothFollow : MonoBehaviour
         {
             target1 = FindObjectOfType<GunSight>().transform;
         }
+
+        if (target2==null)
+        {
+            target2 = GameObject.Find("Character1_Hips").transform;
+        }
     }
 
     //INCOMPLETE
     void Update()
     {
-        target2Snap = false;
+        
 
         //distance between the two points
         vectDist = Vector3.Distance(transform.position, target1.position);
+
+        if(pCtrl.gm.gameOver)
+        {
+            onTarget1 = false;
+            //target2Snap = true;
+        }
+        else
+        {
+            onTarget1 = true;
+        }
 
         //checks if the distance is within the threshold and lerps towards target
         if (onTarget1)

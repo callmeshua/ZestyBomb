@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
     private PostProcessingProfile postProfile;
     private float targetOtho;
     private Vector3 positionOffset = new Vector3(0f, 0f, -1f);   //position of camera relative to player (should be normalized)
-
+    public Vector3 gameOverOffset;
     public GM gm;
 
     //initializes values
@@ -59,16 +59,27 @@ public class CameraController : MonoBehaviour
     {
         //HandlePostDOF();
         //dist multiplier based on player speed
-        if (pCtrl.isDead)
+
+        float targetMultiplier;
+        float zoom;
+
+        Vector3 curPositionOffset;
+        if (gm.gameOver)
         {
-            zTarget = Mathf.Lerp(zTarget, minDistance * .8f, Time.deltaTime * zoomDamp * 2f);
+            targetMultiplier = minDistance * .2f;
+            zoom = zoomDamp * 2f;
+            curPositionOffset = new Vector3(gameOverOffset.x, gameOverOffset.y, gameOverOffset.z * zTarget);
+            
         }
         else
         {
-            float targetMultiplier = Mathf.Clamp((pCtrl.currentVelocity / pCtrl.maxSpeed) * maxDistance, minDistance, maxDistance);
-
-            zTarget = Mathf.Lerp(zTarget, targetMultiplier, Time.deltaTime * zoomDamp);
+            targetMultiplier = Mathf.Clamp((pCtrl.currentVelocity / pCtrl.maxSpeed) * maxDistance, minDistance, maxDistance);
+            zoom = zoomDamp;
+            curPositionOffset = new Vector3(positionOffset.x, positionOffset.y, positionOffset.z * zTarget);
+            positionOffset = positionOffset.normalized;
         }
+
+        zTarget = Mathf.Lerp(zTarget, targetMultiplier, Time.deltaTime * zoom);
 
 
 
@@ -76,7 +87,7 @@ public class CameraController : MonoBehaviour
 
         positionOffset = positionOffset.normalized; //pos offset must be normalized
 
-        Vector3 curPositionOffset = new Vector3(positionOffset.x, positionOffset.y, positionOffset.z * zTarget);
+        //curPositionOffset = new Vector3(positionOffset.x, positionOffset.y, positionOffset.z * zTarget);
 
         transform.position = Vector3.Lerp(transform.position, target.position + curPositionOffset, Time.deltaTime * movementDamp);
 
