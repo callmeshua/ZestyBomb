@@ -78,14 +78,19 @@ public class GM : MonoBehaviour
    // private GameObject clone;
     private List<float> i_positions = new List<float>();
     private List<float> i_rotations = new List<float>();
+	private List<float> i_scales = new List<float> ();
     private List<float> h_positions = new List<float>();
     private List<float> h_rotations = new List<float>();
+	private List<float> h_scales = new List<float> ();
 	private List<float> nc_positions = new List<float> ();
 	private List<float> nc_rotations = new List<float> ();
+	private List<float> nc_scales = new List<float> ();
 	private List<float> hc_positions = new List<float> ();
 	private List<float> hc_rotations = new List<float> ();
+	private List<float> hc_scales = new List<float> ();
 	private List<float> gc_positions = new List<float> ();
 	private List<float> gc_rotations = new List<float> ();
+	private List<float> gc_scales = new List<float> ();
 
     private BurnInOut[] burnShader;
 
@@ -115,11 +120,11 @@ public class GM : MonoBehaviour
         relic = GameObject.FindGameObjectWithTag("relicArea");
         exitArea = GameObject.FindGameObjectWithTag("exitArea").GetComponent<WinArea>();
 
-        GenerateObjectArrays(interactables, i_positions, i_rotations);
-        GenerateObjectArrays(hazards, h_positions, h_rotations);
-		GenerateObjectArrays (normCollectibles, nc_positions, nc_rotations);
-		GenerateObjectArrays (healCollectibles, hc_positions, hc_rotations);
-		GenerateObjectArrays (golCollectables, gc_positions, gc_rotations);
+		GenerateObjectArrays(interactables, i_positions, i_rotations, i_scales);
+		GenerateObjectArrays(hazards, h_positions, h_rotations, h_scales);
+		GenerateObjectArrays (normCollectibles, nc_positions, nc_rotations, nc_scales);
+		GenerateObjectArrays (healCollectibles, hc_positions, hc_rotations, hc_scales);
+		GenerateObjectArrays (golCollectables, gc_positions, gc_rotations, gc_scales);
 
         resetLevel = false;
         gameOver = false;
@@ -298,12 +303,12 @@ public class GM : MonoBehaviour
 
         relic.SetActive(true);
 
-		ResetObjects (interactables, i_positions, i_rotations);
+		ResetObjects (interactables, i_positions, i_rotations, i_scales);
 		//Debug.Log (interactables.Length);
-		ResetObjects (hazards, h_positions, h_rotations);
-		ResetObjects (normCollectibles, nc_positions, nc_rotations);
-		ResetObjects (healCollectibles, hc_positions, hc_rotations);
-		ResetObjects (golCollectables, gc_positions, gc_rotations);
+		ResetObjects (hazards, h_positions, h_rotations, i_scales);
+		ResetObjects (normCollectibles, nc_positions, nc_rotations, nc_scales);
+		ResetObjects (healCollectibles, hc_positions, hc_rotations, hc_scales);
+		ResetObjects (golCollectables, gc_positions, gc_rotations, gc_scales);
         BurnInOutShaderFX(true);
 
     }
@@ -418,7 +423,7 @@ public class GM : MonoBehaviour
         timer = startTime;
     }
 
-	public void GenerateObjectArrays(GameObject[] objects, List<float> positions, List<float> rotations)
+	public void GenerateObjectArrays(GameObject[] objects, List<float> positions, List<float> rotations, List<float> scales)
 	{
 		for (int i = 0; i < objects.Length; i++)
 		{
@@ -429,10 +434,14 @@ public class GM : MonoBehaviour
 			rotations.Add(objects[i].transform.eulerAngles.x);
 			rotations.Add(objects[i].transform.eulerAngles.y);
 			rotations.Add(objects[i].transform.eulerAngles.z);
+
+			scales.Add (objects [i].transform.lossyScale.x);
+			scales.Add (objects[i].transform.lossyScale.y);
+			scales.Add (objects [i].transform.lossyScale.z);
 		}
 	}
 
-    public void ResetObjects(GameObject[] objects, List<float> positions, List<float> rotations)
+	public void ResetObjects(GameObject[] objects, List<float> positions, List<float> rotations, List<float> scales)
     {
         /*
         if (objects[0].gameObject.CompareTag("normieCollectible") || objects[0].gameObject.CompareTag("healCollectible") || objects[0].gameObject.CompareTag("scoreCollectible"))
@@ -442,8 +451,10 @@ public class GM : MonoBehaviour
         }*/
         for (int i = 0; i < objects.Length; i++)
         {
+			objects [i].transform.parent = null;
             GameObject clone = Instantiate(objects[i], new Vector3(positions[i * 3], positions[i * 3 + 1], positions[i * 3 + 2]), Quaternion.Euler(new Vector3(rotations[i * 3], rotations[i * 3 + 1], rotations[i * 3 + 2])));
-            if (clone.GetComponent<Rigidbody>() != null)
+			//clone.transform.localScale = new Vector3 (scales [i * 3], scales [i * 3 + 1], scales [i * 3 + 2]);
+			if (clone.GetComponent<Rigidbody>() != null)
             {
                 clone.GetComponent<Rigidbody>().isKinematic = true;
             }
