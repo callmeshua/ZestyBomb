@@ -24,7 +24,7 @@
 		_DispMult("Displacement Multiplier",Range(0,2))=1
 		_DispV("Displacement Velocity",Vector)=(1,0,0,0)
 		_HighMap("Highlight Texture",2D)="white"{}
-		_HighStr("Highlight Strength",Range(0,1))=1
+		_HighStr("Highlight Strength",Float)=1
 		_HighV("Highlight Velocity",Vector)=(0.5,0,0,0)
 
 		[NoScaleOffset] _NoiseTex("Noise Texture",2D)="grey"{}
