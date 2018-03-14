@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33007558372060222}
   - component: {fileID: 23324115784625338}
   - component: {fileID: 64511440579321108}
+  - component: {fileID: 114879543239140434}
   m_Layer: 0
   m_Name: Floor 1x1 Tri Mesh
   m_TagString: Untagged
@@ -97,3 +98,14 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 82c9670fd0837e04085e3a96756df15c, type: 3}
+--- !u!114 &114879543239140434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296036105173730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8358808a3b690426f941a3c5dbdab88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

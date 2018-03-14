@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33133209463578860}
   - component: {fileID: 23278395742332656}
   - component: {fileID: 64309529189815844}
+  - component: {fileID: 114849928233240970}
   m_Layer: 0
   m_Name: Ceiling 3x3 Tri Mesh
   m_TagString: Untagged
@@ -97,3 +98,14 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: e34b1233e79c0074d9e053af24852b10, type: 3}
+--- !u!114 &114849928233240970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1056255141349782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8358808a3b690426f941a3c5dbdab88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
