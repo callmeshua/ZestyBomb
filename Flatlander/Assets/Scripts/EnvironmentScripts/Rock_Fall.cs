@@ -20,9 +20,12 @@ public class Rock_Fall : MonoBehaviour {
     public bool hookToFall;
     //tick this in inspector if you want relic pickup to trigger fall
     public bool relicTriggerFall;
+	//tick this in inspector if 
+	public bool destroyOnFall = true;
     public float delaySeconds;
     public string collideWithTag = "Interactable";
     public bool playerColCanActivate=true;
+	public float boomTime = 2f;
     private Rigidbody rb;
     
 
@@ -47,46 +50,47 @@ public class Rock_Fall : MonoBehaviour {
 	{
         Vector3 velocity = col.relativeVelocity;
 
-        if ((col.gameObject.CompareTag("Hook") || col.gameObject.CompareTag(collideWithTag)) && hookToFall)
-        {
-            if(delaySeconds == 0f)
-            {
-                rb.isKinematic = false;
-            }
-            else
-            {
-                StartCoroutine(Fall());
-            }  
-        }
-        else if (col.gameObject.name == "Player" && playerColCanActivate)
-        {
-            if (delaySeconds == 0f)
-            {
-                rb.isKinematic = false;
-            }
-            else
-            {
-                StartCoroutine(Fall());
-            }
-        }
-        else if(col.gameObject.tag == "Hazard")
-        {
-            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), col.gameObject.GetComponent<Collider>(), true);
-        }
+		if ((col.gameObject.CompareTag ("Hook") || col.gameObject.CompareTag (collideWithTag)) && hookToFall) {
+			if (delaySeconds == 0f) {
+				rb.isKinematic = false;
+			} else {
+				StartCoroutine (Fall ());
+			}  
+		} else if (col.gameObject.name == "Player" && playerColCanActivate) {
+			if (delaySeconds == 0f) {
+				rb.isKinematic = false;
+			} else {
+				StartCoroutine (Fall ());
+			}
+		} else if (col.gameObject.tag == "Hazard") {
+			Physics.IgnoreCollision (gameObject.GetComponent<Collider> (), col.gameObject.GetComponent<Collider> (), true);
+		} 
         else
         {
             SoundManager.PlaySFX(impactClip, true, Mathf.Clamp01(col.impulse.magnitude/80f));
             //SoundManager.PlaySFX(boulderSoundClip, true, 1f);
         }
+		/*
+		if (rb.isKinematic == true && !col.gameObject.CompareTag("Hook"))
+			KillYourself ();
+		*/
 
     } 
 
     // sets kinematic to be true after alloted seconds
+	//destroys object after boomTime
 	IEnumerator Fall()
 	{
 		yield return new WaitForSeconds (delaySeconds);
 		rb.isKinematic = false;
+		//KillYourself ();
+		///yield return null;
 		//rb.AddTorque (Vector3.forward * 2, ForceMode.Impulse);
+	}
+
+	private void KillYourself()
+	{
+		Destroy (gameObject, boomTime);
 	}
 
     // if phase is ESCAPE, let the bodies hits the floor.
