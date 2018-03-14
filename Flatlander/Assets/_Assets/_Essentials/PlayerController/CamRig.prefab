@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1606207766069600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 42.7, y: -5.2, z: -52.9}
+  m_LocalPosition: {x: 0.8, y: -0.6, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4934442125358794}
@@ -197,7 +197,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 4870349597100892}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294926299
   stopNaNPropagation: 1
   antialiasingMode: 1
   temporalAntialiasing:
@@ -250,17 +250,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4029395102914648}
+  positionOffset: {x: 0, y: 0, z: -1}
+  gameOverOffset: {x: 0, y: 3, z: -1}
   maxDistance: 25
   minDistance: 18
   lookOffset: {x: 0, y: 0, z: -1}
   movementDamp: 10
   zoomDamp: 0.3
-  isZoomedOut: 1
   zoomOutDist: 0
-  startZoomed: 0
-  orthoSize: 0
-  initOrthosize: 0
-  gameOverOffset: {x: 0, y: 3, z: -1}
   gm: {fileID: 0}
 --- !u!124 &124075979403501396
 Behaviour:

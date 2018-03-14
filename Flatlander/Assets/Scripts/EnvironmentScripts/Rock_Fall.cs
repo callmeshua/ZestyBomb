@@ -65,6 +65,10 @@ public class Rock_Fall : MonoBehaviour {
 		} else if (col.gameObject.tag == "Hazard") {
 			Physics.IgnoreCollision (gameObject.GetComponent<Collider> (), col.gameObject.GetComponent<Collider> (), true);
 		} 
+        else if(col.gameObject.tag=="Lava")
+        {
+            Destroy(gameObject);
+        }
         else
         {
             SoundManager.PlaySFX(impactClip, true, Mathf.Clamp01(col.impulse.magnitude/80f));
