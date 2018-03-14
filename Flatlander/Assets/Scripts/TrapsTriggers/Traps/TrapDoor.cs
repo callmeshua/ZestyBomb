@@ -33,15 +33,7 @@ public class TrapDoor : Trap {
             {
                 GameObject deathParticle = Instantiate(particleEffect, transform.position, transform.rotation);
                 Destroy(deathParticle);
-                if(transform.parent != null)
-                {
-                    Debug.Log("Detected a parent!");
-                    Destroy(transform.parent.gameObject);
-                }
-                else
-                {
-                    Destroy(gameObject);
-                }
+                Destroy(gameObject);
             }
             else
             {

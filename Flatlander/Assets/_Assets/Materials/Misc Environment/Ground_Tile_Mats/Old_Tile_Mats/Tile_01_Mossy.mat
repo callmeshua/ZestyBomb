@@ -51,7 +51,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f7a14110d9a5b234287f01eebf0ae8af, type: 3}
+        m_Texture: {fileID: 2800000, guid: b597a7d74102a5b4bae1b667965ff2d9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex2:
@@ -80,9 +80,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BlendBright: 1
-    - _BlendSoft: 0.174
+    - _BlendSoft: 0.599
     - _BlendTexNoise: 0
-    - _BlendVal: 0.148
+    - _BlendVal: 0.201
     - _BlendVar: 0.181
     - _BumpScale: 2
     - _Cutoff: 0.5
@@ -92,7 +92,7 @@ Material:
     - _DispMult: 0
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.2
+    - _Glossiness: 0.067
     - _GlossyReflections: 1
     - _HighStr: 0
     - _MainTex2Noise: 0
