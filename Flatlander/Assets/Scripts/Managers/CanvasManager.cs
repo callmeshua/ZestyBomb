@@ -7,12 +7,14 @@ public class CanvasManager : MonoBehaviour {
 
     //PUBLIC SCRIPT REFERENCES
     public GM gm;
+    public GrappleController gCtrl;
 
     //Objects in engine
     public GameObject ws;   //win screen
     public GameObject ds;   //death screen
     public GameObject ps;   //pause screen
     public Text phaseText;
+    public Text shotsText;
 
     //PRIVATE BOOLEANS
     private bool pauseScreen;
@@ -22,6 +24,7 @@ public class CanvasManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         gm = FindObjectOfType<GM>();
+        gCtrl = FindObjectOfType<GrappleController>();
         ws.SetActive(false);
         ds.SetActive(false);
         ps.SetActive(false);
@@ -32,6 +35,8 @@ public class CanvasManager : MonoBehaviour {
         checkPause();
         checkDead();
         checkWin();
+        updatePhaseText();
+        updateShotsText();
 	}
 
     //checks if game is paused for pause screen
@@ -78,4 +83,10 @@ public class CanvasManager : MonoBehaviour {
     {
         phaseText.text = "Phase: " + gm.getPhase();
     }
+
+    public void updateShotsText()
+    {
+        shotsText.text = gCtrl.shots.ToString();
+    }
+
 }

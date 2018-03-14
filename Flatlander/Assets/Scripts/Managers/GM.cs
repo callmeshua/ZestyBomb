@@ -464,7 +464,6 @@ public class GM : MonoBehaviour
     {
         scoreNum.text = colCount.ToString();
         goldNum.text = goldColCount.ToString();
-        shotText.text = shots.ToString();
     }
 
     //triggers escape phase
