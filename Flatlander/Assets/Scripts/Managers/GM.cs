@@ -28,6 +28,7 @@ public class GM : MonoBehaviour
     public GameObject relic;
     public WinArea exitArea;
     public SoundManager sm;
+    public GunAim gunAim;
     
     [Header("HUD Texts")]
     //the score nuber in the HUD
@@ -116,7 +117,7 @@ public class GM : MonoBehaviour
 		normCollectibles = GameObject.FindGameObjectsWithTag ("normieCollectible");
 		healCollectibles = GameObject.FindGameObjectsWithTag ("healCollectible");
 		golCollectables = GameObject.FindGameObjectsWithTag ("scoreCollectible");
-
+        gunAim = FindObjectOfType<GunAim>();
         relic = GameObject.FindGameObjectWithTag("relicArea");
         exitArea = GameObject.FindGameObjectWithTag("exitArea").GetComponent<WinArea>();
 
@@ -197,6 +198,15 @@ public class GM : MonoBehaviour
         checkDead();
         updateClock();
         resetLevel = false;
+
+        if(gameOver)
+        {
+            gunAim.enabled = false;
+        }
+        else
+        {
+            gunAim.enabled=true;
+        }
     }
 
     //increments amount of normal collectibles
@@ -415,6 +425,7 @@ public class GM : MonoBehaviour
     public void kill()
     {
         gameOver = true;
+        
     }
 
     //resets the timer to startTime

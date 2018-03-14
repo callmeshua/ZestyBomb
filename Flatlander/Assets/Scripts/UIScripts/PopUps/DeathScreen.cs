@@ -38,7 +38,11 @@ public class DeathScreen : MonoBehaviour {
     {
         if (gameObject.activeSelf)
         {
-            gm.LerpUI(gameObject, targetPos.transform.position, 5f, true);
+            gm.LerpUI(gameObject, targetPos.transform.position, 2f, true);
+        }
+        else if(gm.resetLevel)
+        {
+            gameObject.transform.position = initPos;
         }
 
         if (gm.timer <= 0)

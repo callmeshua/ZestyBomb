@@ -14,6 +14,14 @@ public class DoubleTrapDoor : Trap {
         trapDoor2 = transform.GetChild(1).gameObject;
 	}
 
+    void Update()
+    {
+        if(transform.childCount == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
