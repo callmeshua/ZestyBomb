@@ -15,6 +15,7 @@ public class CanvasManager : MonoBehaviour {
     public GameObject ps;   //pause screen
     public Text phaseText;
     public Text shotsText;
+    public float shots;
 
     //PRIVATE BOOLEANS
     private bool pauseScreen;
@@ -86,7 +87,8 @@ public class CanvasManager : MonoBehaviour {
 
     public void updateShotsText()
     {
-        shotsText.text = gCtrl.shots.ToString();
+        shots = gCtrl.shots;
+        shotsText.text = shots.ToString();
     }
 
 }
