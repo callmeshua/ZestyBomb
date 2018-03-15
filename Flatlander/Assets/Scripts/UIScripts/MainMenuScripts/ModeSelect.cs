@@ -42,7 +42,7 @@ public class ModeSelect : MonoBehaviour {
         //gm.resetTimer();
         //gm.mode = GM.Modes.CLASSIC;
         SoundManager.mode = GM.Modes.CLASSIC;
-        LoadMuertoLevel();
+        //LoadMuertoLevel();
         levelSel.SetActive (true);
 		gameObject.SetActive (false);
 	}
@@ -53,7 +53,7 @@ public class ModeSelect : MonoBehaviour {
         //gm.resetTimer();
         //gm.mode = GM.Modes.SOULLESS;
         SoundManager.mode = GM.Modes.SOULLESS;
-        LoadMuertoLevel();
+        //LoadMuertoLevel();
         levelSel.SetActive (true);
 		gameObject.SetActive (false);
 	}
@@ -64,7 +64,7 @@ public class ModeSelect : MonoBehaviour {
         //SceneManager.LoadScene("Level_3");
         //gm.mode = GM.Modes.ENDLESS;
         SoundManager.mode = GM.Modes.ENDLESS;
-        LoadMuertoLevel();
+        //LoadMuertoLevel();
         levelSel.SetActive (true);
 		gameObject.SetActive (false);
 	}
@@ -73,7 +73,7 @@ public class ModeSelect : MonoBehaviour {
 	{
         //gm.mode = GM.Modes.LIMSWINGS;
         SoundManager.mode = GM.Modes.LIMSWINGS;
-        LoadMuertoLevel();
+        //LoadMuertoLevel();
         levelSel.SetActive (true);
 		gameObject.SetActive (false);
 	}
@@ -87,6 +87,6 @@ public class ModeSelect : MonoBehaviour {
 
     void LoadMuertoLevel()
     {
-        SceneManager.LoadScene("Muerto_Level 1");
+        SceneManager.LoadScene("Tutorial_Pass1");
     }
 }

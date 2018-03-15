@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * USED
@@ -111,6 +112,11 @@ public class GrappleController : MonoBehaviour
         if ((pInput.isShooting || pInput.reset && curHook != null) && (!pCtrl.isDead || !gm.frozen || !gm.paused))
         {
             Shoot(); //shoot if input, retracts if dead/hook exists
+        }
+
+        if (SceneManager.GetActiveScene().name == "3D Main Menu" && pCtrl.isAnchored)
+        {
+            Retract();
         }
 
         HandleLine();
@@ -385,12 +391,12 @@ public class GrappleController : MonoBehaviour
             //plays shoot sound ~~JK&HA
             SoundManager.PlaySFX(shootSound, true, 1f);
 
-            
+
 
             curHook = Instantiate(HookPrefab, barrel.transform.position, barrel.transform.rotation);
             anchoredRb = curHook.GetComponent<Rigidbody>();
 
-            Vector3 dir = (pInput.lookPos-curHook.transform.position).normalized;
+            Vector3 dir = (pInput.lookPos - curHook.transform.position).normalized;
 
             pCtrl.playerRb.AddForce(-dir * recoilForce, ForceMode.Impulse);//knock back player
             anchoredRb.AddForce(dir * power, ForceMode.Impulse);//shoot projectile
@@ -419,15 +425,13 @@ public class GrappleController : MonoBehaviour
         {
             SoundManager.PlaySFX(retractSound, true, .1f);
             Retract();
-            
+
         }
-        
-        
+
     }
 
     public void Retract()
     {
-        
         anchors.Clear();
         Destroy(curParticle);
         staticHook.SetActive(true);

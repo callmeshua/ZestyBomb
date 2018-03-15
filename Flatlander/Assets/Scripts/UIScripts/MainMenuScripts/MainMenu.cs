@@ -22,6 +22,7 @@ public class MainMenu : MonoBehaviour {
 	public Canvas menu;
 	public GameObject mode;
 	public GameObject optionsScreen;
+
 	// Use this for initialization
 	// adding listeners to buttons
 	void Start () {
