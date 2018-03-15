@@ -80,9 +80,7 @@ public class CameraController : MonoBehaviour
         }
 
         zTarget = Mathf.Lerp(zTarget, targetMultiplier, Time.deltaTime * zoom);
-
-
-
+        
         //move and look
 
         positionOffset = positionOffset.normalized; //pos offset must be normalized

@@ -514,4 +514,9 @@ public class GM : MonoBehaviour
     {
         GetComponent<CameraShake>().setDuration(dur);
     }
+    
+    public string getLevelName()
+    {
+        return levelName;
+    }
 }
