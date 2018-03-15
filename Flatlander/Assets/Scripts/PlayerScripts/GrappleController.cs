@@ -271,10 +271,14 @@ public class GrappleController : MonoBehaviour
         if (/*Physics.Raycast(ropeRay, out ropeCollision, curDir.magnitude*.8f,ropeCollisionMask)&&anchoredRb!=null*/
             Physics.SphereCast(transform.position + curDir * .1f, ropeThiccness, curDir, out ropeCollision, curDir.magnitude * .79f, ropeCollisionMask) && anchoredRb != null) 
         {
-            addNewAnchor = true;
-            anchors.Add(ropeCollision.point);
+            if(Vector3.Distance(transform.position + curDir * .1f,ropeCollision.point)>.79f)
+            {
+                addNewAnchor = true;
+                anchors.Add(ropeCollision.point);
                 curHook.transform.position = anchors[anchors.Count - 1];
-            ResetRopeLength();
+                ResetRopeLength();
+            }
+            
         }
         else
         {
@@ -282,7 +286,7 @@ public class GrappleController : MonoBehaviour
         }
 
         //unwrap
-        if (anchors.Count > 1)
+        if (anchors.Count > 1|| Vector3.Distance(transform.position + curDir * .1f, ropeCollision.point) < .79f)
         {
             Vector3 currentDir = anchors[anchors.Count - 1] - pCtrl.transform.position;
             Vector3 previousDir = anchors[anchors.Count - 1] - anchors[anchors.Count - 2];  //vect between player and last hook
@@ -305,7 +309,7 @@ public class GrappleController : MonoBehaviour
         }
             if (collisionDebug)
         {
-            Debug.DrawRay(pCtrl.transform.position, curDir, Color.green);
+            Debug.DrawRay(transform.position + curDir * .1f, curDir*.79f, Color.green);
         }
 
 
