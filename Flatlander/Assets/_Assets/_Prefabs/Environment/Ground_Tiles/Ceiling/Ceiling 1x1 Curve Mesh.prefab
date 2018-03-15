@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33331620347541304}
   - component: {fileID: 23579588364830072}
   - component: {fileID: 64362643718560678}
+  - component: {fileID: 114342735002325434}
   m_Layer: 0
   m_Name: Ceiling 1x1 Curve Mesh
   m_TagString: Untagged
@@ -97,3 +98,14 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 8ecbe0259bdc1314cbb93bec9abfa64f, type: 3}
+--- !u!114 &114342735002325434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1076286679584816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8358808a3b690426f941a3c5dbdab88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * USED
@@ -113,7 +114,10 @@ public class GrappleController : MonoBehaviour
             Shoot(); //shoot if input, retracts if dead/hook exists
         }
 
-        maxRopeRange = transform.localScale.x * relativeRange;
+        if (SceneManager.GetActiveScene().name == "3D Main Menu" && pCtrl.isAnchored)
+        {
+            Retract();
+        }
 
         HandleLine();
     }
@@ -127,7 +131,8 @@ public class GrappleController : MonoBehaviour
         if (pCtrl.isAnchored && (!pCtrl.isDead || !gm.frozen || !gm.paused))
         {
             RopeLength();
-
+            pCtrl.playerPhys.dynamicFriction = .1f;
+            pCtrl.playerPhys.staticFriction = .1f;
             if (!pCtrl.isGrounded)
             {
                 HandleRopeCollision();
@@ -144,7 +149,7 @@ public class GrappleController : MonoBehaviour
             }
         }
 
-        
+        maxRopeRange = transform.localScale.x * relativeRange;
     }
 
     public void ResetRopeLength()
@@ -177,10 +182,10 @@ public class GrappleController : MonoBehaviour
             }
         }
 
-        if (dist < joint.linearLimit.limit && Mathf.Abs(pInput.vertical)==0 && !hookIsSetinRb)
-        {
-            ropeLengthLimit.limit = dist;
-        }
+        //if (dist < joint.linearLimit.limit && Mathf.Abs(pInput.vertical)==0 && !hookIsSetinRb)
+        //{
+        //    ropeLengthLimit.limit = dist;
+        //}
 
         curRopeLength = joint.linearLimit.limit;
         joint.linearLimit = ropeLengthLimit;
@@ -189,26 +194,33 @@ public class GrappleController : MonoBehaviour
     void HandleSwingingPhysics(float horizontal)
     {
         //find angle perpendicular to raduis of swing by swapping x and y of direction vector
-        Vector3 dir = curHook.transform.position - pCtrl.transform.position;
+        Vector3 dir = curHook.transform.position - (pCtrl.transform.position);
 
         Vector3 perpendicularDir = new Vector3(-dir.y, dir.x, 0f).normalized;
         perpendicularDir = -perpendicularDir;
 
-        float curSwingAngle = Mathf.Abs(Vector2.SignedAngle(dir, Vector3.up));
+        //float curSwingAngle = Mathf.Abs(Vector2.SignedAngle(dir, Vector3.up));
+
+
+        float curSwingAngle = Vector3.Angle(dir, Vector3.up);
+        Vector3 cross = Vector3.Cross(dir, Vector3.up);
+        if (cross.y < 0) curSwingAngle = -curSwingAngle;
+
+
         float normalizedPower = (effectiveSwingAngle - curSwingAngle) / effectiveSwingAngle;
 
-        
+
         if (SwingDebug)
         {
             Debug.DrawRay(pCtrl.transform.position, perpendicularDir, Color.red);
             //Debug.Log("Angle: " + Mathf.Abs(curSwingAngle));
             Debug.Log("Power: " + normalizedPower);
+            Debug.DrawRay(pCtrl.transform.position, dir, Color.red);
 
             Vector3 rotatedVector1 = Quaternion.AngleAxis(effectiveSwingAngle, Vector3.forward) * -Vector3.up;
             Vector3 rotatedVector2 = Quaternion.AngleAxis(-effectiveSwingAngle, Vector3.forward) * -Vector3.up;
-            Debug.DrawRay(pCtrl.transform.position, dir, Color.red);
-            Debug.DrawRay(curHook.transform.position, rotatedVector1.normalized * dir.magnitude, Color.yellow);
-            Debug.DrawRay(curHook.transform.position, rotatedVector2.normalized * dir.magnitude, Color.yellow);
+            Debug.DrawRay(anchors[anchors.Count - 1], rotatedVector1.normalized * dir.magnitude, Color.yellow);
+            Debug.DrawRay(anchors[anchors.Count - 1], rotatedVector2.normalized * dir.magnitude, Color.yellow);
         }
 
         
@@ -257,7 +269,7 @@ public class GrappleController : MonoBehaviour
 
     void HandleRopeCollision()
     {
-        Vector3 curDir = anchors[anchors.Count-1] - transform.position;//vect between player and current hook
+        Vector3 curDir = anchors[anchors.Count-1] - (transform.position);//vect between player and current hook
 
         Ray ropeRay = new Ray(transform.position + curDir * .1f, curDir);//ray of vector
 
@@ -265,10 +277,14 @@ public class GrappleController : MonoBehaviour
         if (/*Physics.Raycast(ropeRay, out ropeCollision, curDir.magnitude*.8f,ropeCollisionMask)&&anchoredRb!=null*/
             Physics.SphereCast(transform.position + curDir * .1f, ropeThiccness, curDir, out ropeCollision, curDir.magnitude * .79f, ropeCollisionMask) && anchoredRb != null) 
         {
-            addNewAnchor = true;
-            anchors.Add(ropeCollision.point);
-            curHook.transform.position = ropeCollision.point;
-            ResetRopeLength();
+            if(Vector3.Distance(transform.position + curDir * .1f,ropeCollision.point)>.79f)
+            {
+                addNewAnchor = true;
+                anchors.Add(ropeCollision.point);
+                curHook.transform.position = anchors[anchors.Count - 1];
+                ResetRopeLength();
+            }
+            
         }
         else
         {
@@ -276,7 +292,7 @@ public class GrappleController : MonoBehaviour
         }
 
         //unwrap
-        if (anchors.Count > 1)
+        if (anchors.Count > 1|| Vector3.Distance(transform.position + curDir * .1f, ropeCollision.point) < .79f)
         {
             Vector3 currentDir = anchors[anchors.Count - 1] - pCtrl.transform.position;
             Vector3 previousDir = anchors[anchors.Count - 1] - anchors[anchors.Count - 2];  //vect between player and last hook
@@ -299,7 +315,7 @@ public class GrappleController : MonoBehaviour
         }
             if (collisionDebug)
         {
-            Debug.DrawRay(pCtrl.transform.position, curDir, Color.green);
+            Debug.DrawRay(transform.position + curDir * .1f, curDir*.79f, Color.green);
         }
 
 
@@ -379,12 +395,12 @@ public class GrappleController : MonoBehaviour
             //plays shoot sound ~~JK&HA
             SoundManager.PlaySFX(shootSound, true, 1f);
 
-            
+
 
             curHook = Instantiate(HookPrefab, barrel.transform.position, barrel.transform.rotation);
             anchoredRb = curHook.GetComponent<Rigidbody>();
 
-            Vector3 dir = (pInput.lookPos-curHook.transform.position).normalized;
+            Vector3 dir = (pInput.lookPos - curHook.transform.position).normalized;
 
             pCtrl.playerRb.AddForce(-dir * recoilForce, ForceMode.Impulse);//knock back player
             anchoredRb.AddForce(dir * power, ForceMode.Impulse);//shoot projectile
@@ -413,15 +429,13 @@ public class GrappleController : MonoBehaviour
         {
             SoundManager.PlaySFX(retractSound, true, .1f);
             Retract();
-            
+
         }
-        
-        
+
     }
 
     public void Retract()
     {
-        
         anchors.Clear();
         Destroy(curParticle);
         staticHook.SetActive(true);

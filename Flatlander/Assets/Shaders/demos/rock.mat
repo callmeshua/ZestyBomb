@@ -48,11 +48,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BlendBright: 1
-    - _BlendSoft: 0.05
-    - _BlendVal: 0.478
+    - _BlendSoft: 0.45
+    - _BlendTexNoise: 2.02
+    - _BlendVal: 0.62
+    - _DispMapNoise: 0
+    - _DispMapOffNoise: 0
     - _DispMult: 0.25
     - _Glossiness: 0.5
     - _HighStr: 0
+    - _MainTex2Noise: 0
+    - _MainTexNoise: 0
     - _Metallic: 0
     - _NoiseStr: 0
     m_Colors:

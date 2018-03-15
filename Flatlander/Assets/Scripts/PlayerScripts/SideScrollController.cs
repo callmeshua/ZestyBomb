@@ -180,7 +180,10 @@ public class SideScrollController : MonoBehaviour
         localVelocity.z = transform.InverseTransformDirection(playerRb.velocity).z;
         //print(transform.InverseTransformDirection(playerRb.velocity).z);
         HandleGroundCheck();
-        HandleMovement();
+        if (SceneManager.GetActiveScene().name != "3D Main Menu")
+        {
+            HandleMovement();
+        }
         HandleRotation();
         HandleFriction();
         HeadCheck();

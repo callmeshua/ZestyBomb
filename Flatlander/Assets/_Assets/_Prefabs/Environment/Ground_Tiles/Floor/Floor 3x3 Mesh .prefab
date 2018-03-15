@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33532955693649740}
   - component: {fileID: 23107468818009964}
   - component: {fileID: 64527869821485416}
+  - component: {fileID: 114735068946535580}
   m_Layer: 0
   m_Name: 'Floor 3x3 Mesh '
   m_TagString: Untagged
@@ -97,3 +98,14 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 641d057e26106634daa16eabe3f479a6, type: 3}
+--- !u!114 &114735068946535580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1237608446897310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8358808a3b690426f941a3c5dbdab88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

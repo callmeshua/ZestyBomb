@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33075657859633996}
   - component: {fileID: 23082253504781264}
   - component: {fileID: 64457017618424100}
+  - component: {fileID: 114845174841792072}
   m_Layer: 0
   m_Name: Ceiling 5x5 Round Mesh
   m_TagString: Untagged
@@ -97,3 +98,14 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 67703baa5f8d2b74683afb94557b232b, type: 3}
+--- !u!114 &114845174841792072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549536014041824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8358808a3b690426f941a3c5dbdab88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
