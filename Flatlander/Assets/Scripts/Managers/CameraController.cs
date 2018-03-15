@@ -17,26 +17,20 @@ public class CameraController : MonoBehaviour
     public Transform target;
 
     [Header ("Modifiers")]
+    public Vector3 positionOffset = new Vector3(0f, 0f, -1f);   //position of camera relative to player (should be normalized)
+    public Vector3 gameOverOffset;
     public float maxDistance;                                          //max z distance
     public float minDistance;                                          //min z distance
     public Vector3 lookOffset;                                  //the direction the camera is looking relative to the target
     public float movementDamp = 7f;                             //speed of movement
-    public float zoomDamp = .5f;                                //speed of zoom
-
-    public bool isZoomedOut;                                    //for cinematic effects
-    public float zoomOutDist;
-    public bool startZoomed;                                    //start camera on player
-    public float orthoSize;
-    public float initOrthosize;
+    public float zoomDamp = .5f;                                //speed of zoom                                   //for cinematic effects
+    public float zoomOutDist;                                  
 
     //PRIVATES
-    private float zTarget;                  //target z position for dynamic dolly
+    private float zTarget;
+    private Vector3 initPos;//target z position for dynamic dolly
     private Vector2 curZMinMax;             //vector of zMax and zMins
     private SideScrollController pCtrl;     //gets reference to player controller
-    private PostProcessingProfile postProfile;
-    private float targetOtho;
-    private Vector3 positionOffset = new Vector3(0f, 0f, -1f);   //position of camera relative to player (should be normalized)
-    public Vector3 gameOverOffset;
     public GM gm;
 
     //initializes values
@@ -44,14 +38,6 @@ public class CameraController : MonoBehaviour
     {
         pCtrl = FindObjectOfType<SideScrollController>();
         gm = FindObjectOfType<GM>();
-
-        //(good for staging starting shots)
-        if (startZoomed)
-        {
-            transform.position = target.position + positionOffset * maxDistance;
-        }
-        initOrthosize = Camera.main.orthographicSize;
-        postProfile = Camera.main.GetComponent<PostProcessingBehaviour>().profile;
     }
 
     // Late Uptate called after all for no render artifacts/stuttering
@@ -59,7 +45,6 @@ public class CameraController : MonoBehaviour
     {
         //HandlePostDOF();
         //dist multiplier based on player speed
-
         float targetMultiplier;
         float zoom;
 
@@ -76,29 +61,18 @@ public class CameraController : MonoBehaviour
             targetMultiplier = Mathf.Clamp((pCtrl.currentVelocity / pCtrl.maxSpeed) * maxDistance, minDistance, maxDistance);
             zoom = zoomDamp;
             curPositionOffset = new Vector3(positionOffset.x, positionOffset.y, positionOffset.z * zTarget);
-            positionOffset = positionOffset.normalized;
         }
 
         zTarget = Mathf.Lerp(zTarget, targetMultiplier, Time.deltaTime * zoom);
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> e5dbd0ae1140ee7ca7902c63646e8cbe137216ec
         //move and look
 
-        positionOffset = positionOffset.normalized; //pos offset must be normalized
-
-        //curPositionOffset = new Vector3(positionOffset.x, positionOffset.y, positionOffset.z * zTarget);
-
-        transform.position = Vector3.Lerp(transform.position, target.position + curPositionOffset, Time.deltaTime * movementDamp);
-
-        targetOtho = Mathf.Lerp(Camera.main.orthographicSize, zTarget, Time.deltaTime * zoomDamp);
-
-        if (targetOtho <= 1) {
-            Camera.main.orthographicSize = targetOtho;
-        }
-        else
-        {
-            Camera.main.orthographicSize = 20;
-        }
-
+        //positionOffset = positionOffset.normalized;
         transform.LookAt((target.position + lookOffset));
+        transform.position = Vector3.Lerp(transform.position, target.position + curPositionOffset, Time.deltaTime * movementDamp);
     }
 }

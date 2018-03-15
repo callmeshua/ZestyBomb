@@ -39,6 +39,11 @@ public class GunAim : MonoBehaviour
 
         ///procedural animation for aiming
         transform.LookAt(pCtrl.lookPos);
+
+        if (pCtrl.isAnchored)
+        {
+            transform.LookAt(pCtrl.grapple.anchors[pCtrl.grapple.anchors.Count - 1]);
+        }
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x,0f,0f);
         transform.position = rightShoulderPoint.transform.position;
 

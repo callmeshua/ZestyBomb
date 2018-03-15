@@ -113,8 +113,6 @@ public class GrappleController : MonoBehaviour
             Shoot(); //shoot if input, retracts if dead/hook exists
         }
 
-        maxRopeRange = transform.localScale.x * relativeRange;
-
         HandleLine();
     }
 
@@ -127,7 +125,8 @@ public class GrappleController : MonoBehaviour
         if (pCtrl.isAnchored && (!pCtrl.isDead || !gm.frozen || !gm.paused))
         {
             RopeLength();
-
+            pCtrl.playerPhys.dynamicFriction = .1f;
+            pCtrl.playerPhys.staticFriction = .1f;
             if (!pCtrl.isGrounded)
             {
                 HandleRopeCollision();
@@ -144,7 +143,7 @@ public class GrappleController : MonoBehaviour
             }
         }
 
-        
+        maxRopeRange = transform.localScale.x * relativeRange;
     }
 
     public void ResetRopeLength()
@@ -177,10 +176,10 @@ public class GrappleController : MonoBehaviour
             }
         }
 
-        if (dist < joint.linearLimit.limit && Mathf.Abs(pInput.vertical)==0 && !hookIsSetinRb)
-        {
-            ropeLengthLimit.limit = dist;
-        }
+        //if (dist < joint.linearLimit.limit && Mathf.Abs(pInput.vertical)==0 && !hookIsSetinRb)
+        //{
+        //    ropeLengthLimit.limit = dist;
+        //}
 
         curRopeLength = joint.linearLimit.limit;
         joint.linearLimit = ropeLengthLimit;
@@ -189,26 +188,33 @@ public class GrappleController : MonoBehaviour
     void HandleSwingingPhysics(float horizontal)
     {
         //find angle perpendicular to raduis of swing by swapping x and y of direction vector
-        Vector3 dir = curHook.transform.position - pCtrl.transform.position;
+        Vector3 dir = curHook.transform.position - (pCtrl.transform.position);
 
         Vector3 perpendicularDir = new Vector3(-dir.y, dir.x, 0f).normalized;
         perpendicularDir = -perpendicularDir;
 
-        float curSwingAngle = Mathf.Abs(Vector2.SignedAngle(dir, Vector3.up));
+        //float curSwingAngle = Mathf.Abs(Vector2.SignedAngle(dir, Vector3.up));
+
+
+        float curSwingAngle = Vector3.Angle(dir, Vector3.up);
+        Vector3 cross = Vector3.Cross(dir, Vector3.up);
+        if (cross.y < 0) curSwingAngle = -curSwingAngle;
+
+
         float normalizedPower = (effectiveSwingAngle - curSwingAngle) / effectiveSwingAngle;
 
-        
+
         if (SwingDebug)
         {
             Debug.DrawRay(pCtrl.transform.position, perpendicularDir, Color.red);
             //Debug.Log("Angle: " + Mathf.Abs(curSwingAngle));
             Debug.Log("Power: " + normalizedPower);
+            Debug.DrawRay(pCtrl.transform.position, dir, Color.red);
 
             Vector3 rotatedVector1 = Quaternion.AngleAxis(effectiveSwingAngle, Vector3.forward) * -Vector3.up;
             Vector3 rotatedVector2 = Quaternion.AngleAxis(-effectiveSwingAngle, Vector3.forward) * -Vector3.up;
-            Debug.DrawRay(pCtrl.transform.position, dir, Color.red);
-            Debug.DrawRay(curHook.transform.position, rotatedVector1.normalized * dir.magnitude, Color.yellow);
-            Debug.DrawRay(curHook.transform.position, rotatedVector2.normalized * dir.magnitude, Color.yellow);
+            Debug.DrawRay(anchors[anchors.Count - 1], rotatedVector1.normalized * dir.magnitude, Color.yellow);
+            Debug.DrawRay(anchors[anchors.Count - 1], rotatedVector2.normalized * dir.magnitude, Color.yellow);
         }
 
         
@@ -257,7 +263,7 @@ public class GrappleController : MonoBehaviour
 
     void HandleRopeCollision()
     {
-        Vector3 curDir = anchors[anchors.Count-1] - transform.position;//vect between player and current hook
+        Vector3 curDir = anchors[anchors.Count-1] - (transform.position);//vect between player and current hook
 
         Ray ropeRay = new Ray(transform.position + curDir * .1f, curDir);//ray of vector
 
@@ -267,7 +273,7 @@ public class GrappleController : MonoBehaviour
         {
             addNewAnchor = true;
             anchors.Add(ropeCollision.point);
-            curHook.transform.position = ropeCollision.point;
+                curHook.transform.position = anchors[anchors.Count - 1];
             ResetRopeLength();
         }
         else
