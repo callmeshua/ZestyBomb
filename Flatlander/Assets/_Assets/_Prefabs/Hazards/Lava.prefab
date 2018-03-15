@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114376875993922134}
   m_Layer: 17
   m_Name: Lava
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,7 +353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
-  speed: 1
+  speed: 0.8
+  yStopValue: 30
 --- !u!136 &136275431502216018
 CapsuleCollider:
   m_ObjectHideFlags: 1

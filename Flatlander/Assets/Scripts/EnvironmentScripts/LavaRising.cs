@@ -5,19 +5,43 @@ using UnityEngine;
 public class LavaRising : MonoBehaviour {
 
     public GM gm;
-    private MeshRenderer mesh;
 	public float speed = 1f;
+	public float yStopValue;
 
-    private void Start()
+	private float yStartingPosition;
+	private bool move;
+
+	private void Start()
     {
+		//get starting position
+		yStartingPosition = transform.position.y; 	
         gm = FindObjectOfType<GM>();
     }
 
     // Update is called once per frame
     void Update () {
-		if (gm.phase == GM.Phases.ESCAPE && !gm.gameOver)
-        {
+		//get the position between the starting
+		float yPosition = transform.position.y - yStartingPosition;
+		yPosition = Mathf.Abs (yPosition);
+
+		// if the position of lava is greater than the stop value then set move bool to false.
+		if (yPosition >= yStopValue)
+			move = false;
+		// else if phases.escape, and game is not over then set move bool to true;
+		else if (gm.phase == GM.Phases.ESCAPE && !gm.gameOver)
+			move = true;
+		//Call Move() every frame
+		Move ();
+		/*
+		if (transform.position >= stopPoint.transform.position) {
+			transform.position == new Vector3
+		}*/
+			
+	}
+	//Checks if bool move is to true, then moves;
+	void Move()
+	{
+		if (move)
 			transform.position += transform.up * Time.deltaTime * speed;
-        }
 	}
 }
