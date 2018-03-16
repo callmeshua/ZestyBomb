@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class Duplicate : MonoBehaviour {
 	private float x;
 	private float y;
@@ -38,12 +39,15 @@ public class Duplicate : MonoBehaviour {
 
 		for (int i = 1; i < y_blocks; i ++)
 			Instantiate (duplicant, new Vector3 (transform.position.x, transform.position.y + (y * i), transform.position.z), transform.rotation);
-
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Start ();
+		//Start ();
+	}
+
+	void Create()
+	{
+
 	}
 }

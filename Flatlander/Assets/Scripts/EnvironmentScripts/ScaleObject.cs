@@ -2,33 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class ScaleObject : MonoBehaviour {
 	private MeshRenderer mesh;
 	public Material mat;
 	private float x;
 	private float y;
-	private float z;
+	private Vector3 ogRot;
 	public int xi;
 	public int yi;
-	public int zi;
 	// Use this for initialization
 	void Start () {
+		ogRot = transform.rotation.eulerAngles;
 		mesh = GetComponentInChildren<MeshRenderer>();
-		mat = mesh.material;
-		x = transform.localScale.x;
-		y = transform.localScale.y;
-		z = transform.localScale.z;
-		xi = Mathf.RoundToInt (x);
-		yi = Mathf.RoundToInt (y);
-		zi = Mathf.RoundToInt (z);
-		//clone.Resize (clone.width * zi, clone.height * yi);
-		///TextureScale.Bilinear (clone, tex.width * zi, tex.height * yi);
-		mat.mainTextureScale = new Vector2 (xi, yi);
+		mat = mesh.sharedMaterial;
+
+		//
 
 	}
 
 	void Update()
 	{
-		Start ();
+		ScaleTiling ();
+	}
+
+	void ScaleTiling()
+	{
+		x = transform.localScale.x;
+		y = transform.localScale.y;
+
+		xi = Mathf.RoundToInt (x);
+		yi = Mathf.RoundToInt (y);
+
+		mat.mainTextureScale = new Vector2 (xi, yi);
 	}
 }
