@@ -29,7 +29,7 @@ public class Rock_Fall : MonoBehaviour {
     private Rigidbody rb;
     
 
-    //JK~
+    //JK~~
     //SOUNDS
     public AudioClip impactClip;
 
@@ -50,19 +50,30 @@ public class Rock_Fall : MonoBehaviour {
 	{
         Vector3 velocity = col.relativeVelocity;
 
-		if ((col.gameObject.CompareTag ("Hook") || col.gameObject.CompareTag (collideWithTag)) && hookToFall) {
-			if (delaySeconds == 0f) {
+		if ((col.gameObject.transform.tag == "Hook" || col.gameObject.transform.tag == "collideWithTag" ) && hookToFall)
+        {
+			if (delaySeconds == 0f)
+            {
 				rb.isKinematic = false;
-			} else {
+			}
+            else
+            {
 				StartCoroutine (Fall ());
 			}  
-		} else if (col.gameObject.name == "Player" && playerColCanActivate) {
-			if (delaySeconds == 0f) {
+		}
+        else if (col.gameObject.name == "Player" && playerColCanActivate)
+        {
+			if (delaySeconds == 0f)
+            {
 				rb.isKinematic = false;
-			} else {
+			}
+            else
+            {
 				StartCoroutine (Fall ());
 			}
-		} else if (col.gameObject.tag == "Hazard") {
+		}
+        else if (col.gameObject.tag == "Hazard")
+        {
 			Physics.IgnoreCollision (gameObject.GetComponent<Collider> (), col.gameObject.GetComponent<Collider> (), true);
 		} 
         else if(col.gameObject.tag=="Lava")

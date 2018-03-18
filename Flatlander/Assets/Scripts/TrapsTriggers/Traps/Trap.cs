@@ -7,9 +7,11 @@ public abstract class Trap : MonoBehaviour {
 
     //status of activation
     protected bool active;
+    public GM gm;
 
 	// Use this for initialization
 	void Start () {
+        gm = FindObjectOfType<GM>();
         active = false;
 	}
 	

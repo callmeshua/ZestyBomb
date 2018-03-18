@@ -165,11 +165,11 @@ public class GM : MonoBehaviour
         }
 
         levelName = currLevel.name;
-		if (levelName.Equals("Tutorial_Pass1"))
+		if (levelName.Equals("Tutorial_Pass2"))
         {
 			level = Levels.TUTORIAL;
 		}
-        else if (levelName.Equals("Muerto_Level2_Week8"))
+        else if (levelName.Equals("Muerto_Level2_FullyDecorated_Final"))
         {
 			level = Levels.LEVEL1;
 		}
