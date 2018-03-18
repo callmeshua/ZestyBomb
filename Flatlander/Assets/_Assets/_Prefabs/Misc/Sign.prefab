@@ -205,6 +205,7 @@ MonoBehaviour:
   fInput: {fileID: 0}
   model: {fileID: 1939316703017998}
   isActive: 0
+  isSign: 1
   unit: 5
   player: {fileID: 0}
 --- !u!114 &114530156771942376
