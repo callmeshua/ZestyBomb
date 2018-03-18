@@ -1,16 +1,18 @@
 fileFormatVersion: 2
-guid: f046273c72f344dc79d9f2c498082f4a
-timeCreated: 1520728393
+guid: edfdd0bc5be1446eb84c1a715adc9045
+timeCreated: 1521390485
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Statue_Broken
+    100000: Broke_Statue_pCube1
+    100002: //RootNode
+    400000: Broke_Statue_pCube1
+    400002: //RootNode
+    2100000: Broke_Statue_pCube1Mat
+    2300000: Broke_Statue_pCube1
+    3300000: Broke_Statue_pCube1
+    4300000: Broke_Statue_pCube1
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -1,16 +1,18 @@
 fileFormatVersion: 2
-guid: 30f70ef5c71474545991b6ff9ca13f72
-timeCreated: 1520727461
+guid: 7fec1c23ab6b14fbd95d0239ef511345
+timeCreated: 1521391348
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Statue
+    100000: pCube1
+    100002: //RootNode
+    400000: pCube1
+    400002: //RootNode
+    2100000: pCube1Mat
+    2300000: pCube1
+    3300000: pCube1
+    4300000: pCube1
   externalObjects: {}
   materials:
     importMaterials: 1
