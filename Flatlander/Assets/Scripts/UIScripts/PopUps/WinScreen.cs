@@ -26,6 +26,15 @@ public class WinScreen : MonoBehaviour
     public GameObject targetPos;
     private Vector3 initPos;
 
+    //ranking star images
+    public GameObject emptyStar1;
+    public GameObject emptyStar2;
+    public GameObject emptyStar3;
+    public GameObject filledStar1;
+    public GameObject filledStar2;
+    public GameObject filledStar3;
+
+
     // Use this for initialization
     void Start()
     {
@@ -57,6 +66,25 @@ public class WinScreen : MonoBehaviour
         else
         {
             scoreText.text = "Time: " + gm.roundedTimer.ToString() + "   Shots Taken: " + gCtrl.shots + "\nTotal Score: " + gm.calculateScore();
+        }
+
+        if(gm.scoreRank == 0)
+        {
+            filledStar1.SetActive(false);
+            filledStar2.SetActive(false);
+            filledStar3.SetActive(false);
+        }
+        if(gm.scoreRank >= 1)
+        {
+            filledStar1.SetActive(true);
+        }
+        if(gm.scoreRank >= 2)
+        {
+            filledStar2.SetActive(true);
+        }
+        if(gm.scoreRank == 3)
+        {
+            filledStar3.SetActive(true);
         }
     }
 
