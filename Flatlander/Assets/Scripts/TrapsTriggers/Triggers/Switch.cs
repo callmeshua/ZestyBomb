@@ -14,8 +14,10 @@ public class Switch : Trigger {
 
     public GameObject model;
     public bool isActive;
+    public bool isSign;
     public float unit;
     public GameObject player;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -52,6 +54,11 @@ public class Switch : Trigger {
                     isActive = !isActive;
                     detrigger();
                 }
+            }
+            else if(isSign && isActive)
+            {
+                isActive = !isActive;
+                detrigger();
             }
         }      
 	}
