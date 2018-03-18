@@ -640,7 +640,7 @@ Prefab:
         type: 2}
       propertyPath: phaseText
       value: 
-      objectReference: {fileID: 1482575730}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 037cfbde270fb7f488793ebcc942a7ff, type: 2}
   m_IsPrefabParent: 0
@@ -3051,7 +3051,7 @@ Prefab:
         type: 2}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 1482575731}
+      objectReference: {fileID: 0}
     - target: {fileID: 144469052436480100, guid: 1fb16853441064f4b90190a9c375bf9b,
         type: 2}
       propertyPath: m_ConnectedAnchor.y
@@ -3250,9 +3250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff83a5d478834ee3852b5236ae11cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 0}
-  yi: 0
-  zi: 0
+  mat: {fileID: 2100000, guid: 7cf4351fa9d04fc4f9a3fc682ebff226, type: 2}
+  xi: 3
+  yi: 3
 --- !u!1 &794108587
 GameObject:
   m_ObjectHideFlags: 0
@@ -4250,6 +4250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbfd09a620d21d8478608db11faab31d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   dart: {fileID: 0}
   shootSound: {fileID: 0}
   canShoot: 0
@@ -5972,9 +5973,11 @@ MonoBehaviour:
   gm: {fileID: 336555109}
   hookToFall: 0
   relicTriggerFall: 0
+  destroyOnFall: 1
   delaySeconds: 0
   collideWithTag: Interactable
   playerColCanActivate: 1
+  boomTime: 2
   impactClip: {fileID: 0}
 --- !u!1001 &1234669217
 Prefab:
@@ -6031,6 +6034,25 @@ Transform:
   m_PrefabParentObject: {fileID: 4904948385752828, guid: 67199df5a3dced24d8c05f8b11209a27,
     type: 2}
   m_PrefabInternal: {fileID: 1234669217}
+--- !u!1 &1234669219 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1819465135953392, guid: 67199df5a3dced24d8c05f8b11209a27,
+    type: 2}
+  m_PrefabInternal: {fileID: 1234669217}
+--- !u!114 &1234669220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1234669219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2a6973eaf874a13a2166cb7b12a5fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x_blocks: 0
+  y_blocks: 0
+  duplicant: {fileID: 1819465135953392, guid: 67199df5a3dced24d8c05f8b11209a27, type: 2}
 --- !u!1001 &1240661116
 Prefab:
   m_ObjectHideFlags: 0
@@ -8249,22 +8271,20 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224691139759928536, guid: 85f17cd307653fd4cbfb15160c7805b3,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224691139759928536, guid: 85f17cd307653fd4cbfb15160c7805b3,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114489230117095578, guid: 85f17cd307653fd4cbfb15160c7805b3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 85f17cd307653fd4cbfb15160c7805b3, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1482575730 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114666868962679794, guid: 85f17cd307653fd4cbfb15160c7805b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1482575729}
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
---- !u!114 &1482575731 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114933053181660116, guid: 85f17cd307653fd4cbfb15160c7805b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1482575729}
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1482575732 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1579854271040056, guid: 85f17cd307653fd4cbfb15160c7805b3,
@@ -10628,7 +10648,7 @@ Transform:
   - {fileID: 1138444541}
   - {fileID: 1858701628}
   m_Father: {fileID: 2128588321}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &1880664570
 MonoBehaviour:
@@ -11799,7 +11819,7 @@ Transform:
   - {fileID: 1262438547}
   - {fileID: 1387951762}
   m_Father: {fileID: 2128588321}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &2041033478
 MonoBehaviour:

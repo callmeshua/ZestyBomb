@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class Duplicate : MonoBehaviour {
 	private float x;
 	private float y;
@@ -14,14 +13,17 @@ public class Duplicate : MonoBehaviour {
 	private int x_count;
 	private int y_count;
 	public GameObject duplicant;
+	private bool alive = false;
 	// Use this for initialization
 	void Start () {
 		size = transform.localScale;
 		width = size.x;
 		height = size.y;
 
-		x = duplicant.transform.localScale.x;
-		y = duplicant.transform.localScale.y;
+		if (duplicant != null) {
+			x = duplicant.transform.localScale.x;
+			y = duplicant.transform.localScale.y;
+		}
 
 		x_count = Mathf.RoundToInt (width / x);
 		y_count = Mathf.RoundToInt (height / y);
@@ -34,16 +36,21 @@ public class Duplicate : MonoBehaviour {
 		size = new Vector3 (x, y, size.z);
 		transform.localScale = size;
 
-		for (int i = 1; i < x_blocks; i ++)
-			Instantiate (duplicant, new Vector3 (transform.position.x + (x * i), transform.position.y, transform.position.z), transform.rotation);
+		if (!alive) 
+		{
+			alive = true;
 
-		for (int i = 1; i < y_blocks; i ++)
-			Instantiate (duplicant, new Vector3 (transform.position.x, transform.position.y + (y * i), transform.position.z), transform.rotation);
+			for (int i = 1; i < x_blocks; i++)
+				Instantiate (duplicant, new Vector3 (transform.position.x + (x * i), transform.position.y, transform.position.z), transform.rotation);
+
+			for (int i = 1; i < y_blocks; i++)
+				Instantiate (duplicant, new Vector3 (transform.position.x, transform.position.y + (y * i), transform.position.z), transform.rotation);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//Start ();
+		Start ();
 	}
 
 	void Create()
