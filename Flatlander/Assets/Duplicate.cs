@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//UNUSED
+//Zachary Lopez
+// Duplicate takes two public values, x and y,
+// Also takes prefab as gameobject 
+// Takes the prefab and duplicates the object x times in the x axis
+// and y times in the y axis. Doesn't show until user presses play.
+
 public class Duplicate : MonoBehaviour {
 	private float x;
 	private float y;
