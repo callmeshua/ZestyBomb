@@ -36,7 +36,6 @@ GameObject:
   - component: {fileID: 4094297529281672}
   - component: {fileID: 33513602541594880}
   - component: {fileID: 23563528145049980}
-  - component: {fileID: 114271405366886160}
   m_Layer: 0
   m_Name: Torch_Base
   m_TagString: Untagged
@@ -54,7 +53,6 @@ GameObject:
   - component: {fileID: 4697941091001240}
   - component: {fileID: 33717521507691578}
   - component: {fileID: 23200641502373822}
-  - component: {fileID: 114909537887941072}
   m_Layer: 0
   m_Name: Torch_Cloth
   m_TagString: Untagged
@@ -95,7 +93,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1080061375603616}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.481, y: 2.256, z: -0.265}
+  m_LocalPosition: {x: 19.415094, y: 28.663687, z: 23.452381}
   m_LocalScale: {x: 0.002318471, y: 0.002318471, z: 0.002318471}
   m_Children:
   - {fileID: 4094297529281672}
@@ -185,31 +183,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827927423666650}
   m_Mesh: {fileID: 4300000, guid: f9513f05c313e674da3c3067de7c9634, type: 3}
---- !u!114 &114271405366886160
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1440632182606160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff83a5d478834ee3852b5236ae11cee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: e2fb85b44050844489436ac8afcd50d3, type: 2}
-  yi: 0
-  zi: 0
---- !u!114 &114909537887941072
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1827927423666650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff83a5d478834ee3852b5236ae11cee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: c9ac02a6942efcc4fbad8133a7ee09e3, type: 2}
-  yi: 0
-  zi: 0

@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4183428327791366}
   - component: {fileID: 33502796592106200}
   - component: {fileID: 23817487997930252}
-  - component: {fileID: 114128312899534944}
   m_Layer: 0
   m_Name: Pottery_01
   m_TagString: Untagged
@@ -36,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1211242375363420}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.068, y: 2.212, z: -0.267}
+  m_LocalPosition: {x: 15.535364, y: 31.102835, z: 15.598644}
   m_LocalScale: {x: 11.696782, y: 11.696781, z: 11.696781}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,7 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 362e2073ef6125f428e572ae82528832, type: 2}
+  - {fileID: 2100000, guid: 2bb133d3ca768ae4d8418ebaaa86f7ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,17 +82,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1211242375363420}
   m_Mesh: {fileID: 4300000, guid: 3b65313e428655a44aab6babb2d6d8e0, type: 3}
---- !u!114 &114128312899534944
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1211242375363420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff83a5d478834ee3852b5236ae11cee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: 362e2073ef6125f428e572ae82528832, type: 2}
-  yi: 0
-  zi: 0
