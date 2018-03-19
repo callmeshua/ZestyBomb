@@ -98,7 +98,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _HighStr: 6.26
+    - _HighStr: 4.5
     - _MainTex2Noise: 0
     - _MainTexNoise: 0
     - _Metallic: 0
