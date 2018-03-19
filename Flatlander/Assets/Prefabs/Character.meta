@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Flatlander/Assets/Prefabs/Character.meta
 guid: 1ea9bab001e0733488e86ff32bac55a7
 folderAsset: yes
 timeCreated: 1521009158
+=======
+guid: 1af5a2c9cf86e1a4eac3a1d61e6998cd
+folderAsset: yes
+timeCreated: 1521429874
+>>>>>>> 5c16632bece550a2120fa5946551693619d33726:Flatlander/Assets/UI/OLD_UI/Amatic_SC.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

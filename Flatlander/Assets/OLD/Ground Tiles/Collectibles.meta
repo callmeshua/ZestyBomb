@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Flatlander/Assets/OLD/Ground Tiles/Collectibles.meta
 guid: 94381e30fd2a08b4e913dd2e6b4d1cf2
 folderAsset: yes
 timeCreated: 1509774396
+=======
+guid: f80cd9f0bb4abef4ea312734f23a3936
+folderAsset: yes
+timeCreated: 1521429874
+>>>>>>> 5c16632bece550a2120fa5946551693619d33726:Flatlander/Assets/UI/NEW_UI/Amatic_SC.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
