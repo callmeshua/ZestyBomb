@@ -173,7 +173,7 @@ public class GM : MonoBehaviour
         {
 			level = Levels.LEVEL1;
 		}
-        else if (levelName.Equals("Muerto Level 3_pass2"))
+        else if (levelName.Equals("Muerto Level 3_pass3"))
         {
 			level = Levels.LEVEL2;
 		}
