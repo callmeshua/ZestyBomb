@@ -78,6 +78,7 @@ public class WeponRecoil : MonoBehaviour {
         else if(isShouldered)
         {
             targetRotation = Quaternion.Euler(Vector3.zero);
+
             targetPos = aimingTrans.position;
             speed = speed * .3f;
         }
