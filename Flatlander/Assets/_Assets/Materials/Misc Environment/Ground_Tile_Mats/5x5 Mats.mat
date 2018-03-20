@@ -86,7 +86,7 @@ Material:
     - _BlendBright: 1
     - _BlendSoft: 0.71
     - _BlendTexNoise: 0
-    - _BlendVal: 0.45
+    - _BlendVal: 0.38
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
