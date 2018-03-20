@@ -1293,6 +1293,16 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224691139759928536, guid: 85f17cd307653fd4cbfb15160c7805b3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 30.410019
+      objectReference: {fileID: 0}
+    - target: {fileID: 224691139759928536, guid: 85f17cd307653fd4cbfb15160c7805b3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -53.767563
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85f17cd307653fd4cbfb15160c7805b3, type: 2}
   m_IsPrefabParent: 0
@@ -6862,13 +6872,12 @@ MonoBehaviour:
   trap: {fileID: 0}
   traps:
   - {fileID: 1449269408}
-  - {fileID: 0}
-  fInput: {fileID: 0}
+  fInput: {fileID: 520104544}
   model: {fileID: 1211776040}
   isActive: 0
-  isSign: 0
+  isSign: 1
   unit: 5.6
-  player: {fileID: 0}
+  player: {fileID: 1957381678}
 --- !u!23 &1211776042
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8392,7 +8401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce72be57224c3e43bdc7459ff9f2782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 374919637}
   visual: {fileID: 1449269407}
 --- !u!23 &1449269409
 MeshRenderer:
