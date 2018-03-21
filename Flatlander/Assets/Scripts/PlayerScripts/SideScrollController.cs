@@ -22,6 +22,12 @@ using UnityEngine.SceneManagement;
 
 public class SideScrollController : MonoBehaviour
 {
+    //CLASS REFRENCES
+    [Header("Class References")]
+    public GM gm;
+    public HealthDepletion pHealth;
+    public ParticleManager pe;
+
     //PUBLICS AND DEPENDENCIES
     [Header("Player Objects")]
     public Animator anim;
@@ -37,11 +43,6 @@ public class SideScrollController : MonoBehaviour
     [Header("RB Values")]
     public Rigidbody playerRb;
     public Vector3 localVelocity;
-
-    //CLASS REFRENCES
-    [Header("Class References")]
-    public GM gm;
-    public HealthDepletion pHealth;
 
     //SOUNDS
     [Header("Audio")]
@@ -129,6 +130,7 @@ public class SideScrollController : MonoBehaviour
     void Start ()
     {
         gm = FindObjectOfType<GM>();
+        pe = FindObjectOfType<ParticleManager>();
         pHealth = FindObjectOfType<HealthDepletion>();
         playerRb = GetComponent<Rigidbody>();
         playerCollider = GetComponent<CapsuleCollider>();
@@ -480,7 +482,6 @@ public class SideScrollController : MonoBehaviour
             isAnchored)
         {
             headCheck = true;
-            Debug.Log("hit head");
         }
         else
         {
@@ -535,6 +536,7 @@ public class SideScrollController : MonoBehaviour
             if (collision.gameObject.tag == "Lava")
             {
                 gm.BurnInOutShaderFX(false);
+                pe.handleLavaPEs();
             }
             isDead = true;
             gm.touchHazard = true;

@@ -15,7 +15,7 @@ public abstract class Trigger : MonoBehaviour {
     {
         for(int i = 0; i < traps.Capacity; i++)
         {
-            if (traps[i] != null)
+            if (traps[i] != null && traps[i].gameObject.activeSelf)
             {
                 trap = traps[i];
                 trap.activate();

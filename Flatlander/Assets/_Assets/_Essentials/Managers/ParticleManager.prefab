@@ -54,4 +54,6 @@ MonoBehaviour:
   pCtrl: {fileID: 114160651120588822, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
   jumpPfx: {fileID: 1469677963237704, guid: 3738dfc603e85f04087bc5f31aa2ed1b, type: 2}
   landingPfx: {fileID: 1426453787435522, guid: 068c297849ab645458689667346237f4, type: 2}
+  lavaDeathPfx: {fileID: 1615891750077126, guid: ddecf73330d9dd94dbbfc25b60f7b219,
+    type: 2}
   playerVel: {x: 0, y: 0, z: 0}

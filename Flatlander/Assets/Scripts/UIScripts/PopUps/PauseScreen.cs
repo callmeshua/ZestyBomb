@@ -19,6 +19,7 @@ public class PauseScreen : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        gameObject.SetActive(false);
         gm = FindObjectOfType<GM>();
         reset.onClick.AddListener(buttonReset);
         menu.onClick.AddListener(buttonMenu);
@@ -31,11 +32,12 @@ public class PauseScreen : MonoBehaviour {
         if (Input.GetKey(KeyCode.Escape))
         {
             gameObject.transform.position = initPos;
+            gameObject.SetActive(true);
         }
 
         if (gameObject.activeSelf)
         {
-            gm.LerpUI(gameObject, targetPos.transform.position, 5f, true);
+            //gm.LerpUI(gameObject, targetPos.transform.position, 5f, true);
         }
 
         switch (gm.mode)
