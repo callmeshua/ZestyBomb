@@ -19,6 +19,8 @@ public class Switch : Trigger {
     public GameObject pCtrl;
 
     public GameObject pressE;
+
+    public GameObject particleEffect;
     
 
 	// Use this for initialization
@@ -62,27 +64,31 @@ public class Switch : Trigger {
         */
 	}
 
+    private void OnTriggerEnter(Collider other)
+    {
+        pressE.SetActive(true);
+        spawnParticleEffect(pressE.transform);
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (Input.GetButtonDown("Use") && other.transform.tag == "Player")
         {
             if (!isActive)
             {
-                Debug.Log("yes");
-                Debug.Log(traps[0]);
                 traps[0].gameObject.SetActive(true);
                 traps[0].activate();
                 isActive = true;
+                spawnParticleEffect(traps[0].transform);
             }
             else
             {
                 traps[0].gameObject.SetActive(false);
                 traps[0].deactivate();
                 isActive = false;
+                spawnParticleEffect(traps[0].transform);
             }
         }
-
-        pressE.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
@@ -94,5 +100,13 @@ public class Switch : Trigger {
             isActive = false;
         }
         pressE.SetActive(false);
+        spawnParticleEffect(pressE.transform);
+    }
+
+    public void spawnParticleEffect(Transform t)
+    {
+        Transform clone = Instantiate(particleEffect.transform, t.position, Quaternion.identity);
+        particleEffect.SetActive(true);
+        Destroy(clone.gameObject, 0.75f);
     }
 }
