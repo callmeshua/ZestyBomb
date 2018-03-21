@@ -16,6 +16,7 @@ public class ParticleManager : MonoBehaviour {
     //Particle References
     public GameObject jumpPfx;
     public GameObject landingPfx;
+    public GameObject lavaDeathPfx;
     public Vector3 playerVel;
 
 	// Use this for initialization
@@ -33,6 +34,8 @@ public class ParticleManager : MonoBehaviour {
         }
 
         handleLandingPEs();
+
+        lavaDeathPfx.transform.position = pCtrl.transform.position;
     }
 
     //instantiates the jump particle effects
@@ -68,6 +71,12 @@ public class ParticleManager : MonoBehaviour {
             Destroy(clone.gameObject, 0.75f);
             playerVel.z = 0;
         }
+    }
+
+    public void handleLavaPEs()
+    {
+        Transform clone = Instantiate(lavaDeathPfx.transform, pCtrl.transform.position, Quaternion.identity);
+        lavaDeathPfx.SetActive(true);
     }
     
     

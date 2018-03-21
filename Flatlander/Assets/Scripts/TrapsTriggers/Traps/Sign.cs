@@ -13,14 +13,5 @@ public class Sign : Trap {
 
     public override void checkActive()
     {
-        /*
-        if (active)
-        {
-            visual.SetActive(true);
-        }
-        else
-        {
-            visual.SetActive(false);
-        }*/
     }
 }
