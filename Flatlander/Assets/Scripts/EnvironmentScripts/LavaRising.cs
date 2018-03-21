@@ -19,25 +19,34 @@ public class LavaRising : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update ()
+    {
 		//get the position between the starting
 		float yPosition = transform.position.y - yStartingPosition;
 		yPosition = Mathf.Abs (yPosition);
 
-		// if the position of lava is greater than the stop value then set move bool to false.
-		if (yPosition >= yStopValue)
-			move = false;
-		// else if phases.escape, and game is not over then set move bool to true;
-		else if (gm.phase == GM.Phases.ESCAPE && !gm.gameOver)
-			move = true;
+        // if the position of lava is greater than the stop value then set move bool to false.
+        if (yPosition >= yStopValue)
+        {
+            move = false;
+        }
+
+        // else if phases.escape, and game is not over then set move bool to true;
+        else if (gm.phase == GM.Phases.ESCAPE && !gm.gameOver)
+        {
+            move = true;
+        }
+
 		//Call Move() every frame
 		Move ();
+
 		/*
 		if (transform.position >= stopPoint.transform.position) {
 			transform.position == new Vector3
 		}*/
 			
 	}
+
 	//Checks if bool move is to true, then moves;
 	void Move()
 	{

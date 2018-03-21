@@ -8,7 +8,7 @@ public class DestroyHazard : MonoBehaviour {
 	void OnCollisionEnter(Collision col)
 	{
 		if (col.gameObject.CompareTag ("Hazard")) {
-		//	Destroy (col.gameObject);
+			Destroy (col.gameObject);
 		}
 		if (col.gameObject.CompareTag ("Deathball")) {
 			Destroy (col.gameObject);

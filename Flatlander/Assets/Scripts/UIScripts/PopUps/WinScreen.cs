@@ -55,18 +55,7 @@ public class WinScreen : MonoBehaviour
             gm.LerpUI(gameObject, targetPos.transform.position, 5f, true);
         }
 
-        if (gm.timer <= 0)
-        {
-            scoreText.text = "Ran out of time!\nTime: " + gm.roundedTimer.ToString() + "   Shots Taken: " + gCtrl.shots + "\nTotal Score: " + gm.calculateScore();
-        }
-        else if (gm.mode == GM.Modes.LIMSWINGS)
-        {
-            scoreText.text = "Ran out of shots!\nTime: " + gm.roundedTimer.ToString() + "   Shots Left: " + gCtrl.shots + "\nTotal Score: " + gm.calculateScore();
-        }
-        else
-        {
-            scoreText.text = "Time: " + gm.roundedTimer.ToString() + "   Shots Taken: " + gCtrl.shots + "\nTotal Score: " + gm.calculateScore();
-        }
+        scoreText.text = "Time: " + gm.roundedTimer.ToString() + "   Shots Taken: " + gCtrl.shots + "\nTotal Score: " + gm.calculateScore();
 
         if(gm.scoreRank == 0)
         {

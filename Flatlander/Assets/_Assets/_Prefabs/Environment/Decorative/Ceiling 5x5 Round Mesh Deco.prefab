@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 64457017618424100}
   - component: {fileID: 114845174841792072}
   m_Layer: 0
-  m_Name: Ceiling 5x5 Round Mesh
+  m_Name: Ceiling 5x5 Round Mesh Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
