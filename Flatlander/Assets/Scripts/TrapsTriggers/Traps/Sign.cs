@@ -8,18 +8,19 @@ public class Sign : Trap {
 
     // Use this for initialization
     void Start () {
-        active = false;
+        gm = FindObjectOfType<GM>();
 	}
 
     public override void checkActive()
     {
-        if (active != false)
+        /*
+        if (active)
         {
             visual.SetActive(true);
         }
         else
         {
             visual.SetActive(false);
-        }
+        }*/
     }
 }

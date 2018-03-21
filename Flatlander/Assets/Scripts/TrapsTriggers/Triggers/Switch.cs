@@ -12,54 +12,87 @@ public class Switch : Trigger {
 
     protected KeyCode key;
 
-    public GameObject model;
     public bool isActive;
     public bool isSign;
     public float unit;
-    public GameObject player;
+
+    public GameObject pCtrl;
+
+    public GameObject pressE;
     
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
+        fInput = FindObjectOfType<FWSInput>();
+        pCtrl = GameObject.FindGameObjectWithTag("Player");
 
-        pos = model.transform.position;
+        isActive = false;
+
+        pos = transform.position;
 
         key = fInput.use;
-    }
-	
-	// Update is called once per frame
-	void Update () {
 
-        int i = 0;
-        if (Input.GetButtonDown("Use"))
+        pressE.SetActive(false);
+    }
+    
+    //activates the attached traps
+    protected void trigger()
+    {
+        for (int i = 0; i < traps.Capacity; i++)
         {
-            playerPos = player.transform.position;
-            if (Vector3.Distance(playerPos, pos) < unit)
+            if (traps[i] != null && !traps[i].gameObject.activeSelf)
             {
-                if (!isActive)
-                {
-                    for (i = 0; i < traps.Count; i++)
-                    {
-                        if (traps[i].gameObject.activeSelf == false)
-                        {
-                            traps[i].gameObject.SetActive(true);
-                        }
-                        
-                    }
-                    isActive = !isActive;
-                    trigger();
-                }
-                else
-                {
-                    isActive = !isActive;
-                    detrigger();
-                }
+                trap = traps[i];
+                trap.gameObject.SetActive(true);
+                trap.activate();
             }
-            else if(isSign && isActive)
-            {
-                isActive = !isActive;
-                detrigger();
-            }
-        }      
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate ()
+    {
+        /*
+        if (Input.GetButtonDown("Jump") && isActive)
+        {
+            traps[0].gameObject.SetActive(false);
+            isActive = false;
+        }
+        */
 	}
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (Input.GetButtonDown("Use") && other.transform.tag == "Player")
+        {
+            if (!isActive)
+            {
+                Debug.Log("yes");
+                Debug.Log(traps[0]);
+                traps[0].gameObject.SetActive(true);
+                traps[0].activate();
+                isActive = true;
+            }
+            else
+            {
+                traps[0].gameObject.SetActive(false);
+                traps[0].deactivate();
+                isActive = false;
+            }
+        }
+
+        pressE.SetActive(true);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.tag == "Player" && isActive)
+        {
+            traps[0].gameObject.SetActive(false);
+            traps[0].deactivate();
+            isActive = false;
+        }
+        pressE.SetActive(false);
+    }
 }
