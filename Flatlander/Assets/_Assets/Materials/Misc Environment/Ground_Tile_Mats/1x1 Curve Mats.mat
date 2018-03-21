@@ -95,7 +95,7 @@ Material:
     - _DispMult: 0
     - _DstBlend: 0
     - _GlossMapScale: 0.3
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _HighStr: 0
     - _MainTex2Noise: 0.23
