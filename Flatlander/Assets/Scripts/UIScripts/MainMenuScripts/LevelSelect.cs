@@ -48,7 +48,7 @@ public class LevelSelect : MonoBehaviour {
 	void LevelTutorial()
 	{
 		SceneManager.LoadScene (SceneUtility.GetScenePathByBuildIndex(1), LoadSceneMode.Single);
-		gm.level = GM.Levels.TUTORIAL;
+		gm.level = GM.Levels.LEVEL1;
 	}
 	void Level1()
 	{

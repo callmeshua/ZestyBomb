@@ -16,7 +16,7 @@ public class GM : MonoBehaviour
     
     //Enumerator
     public enum Modes { CLASSIC, ENDLESS, LIMSWINGS, SOULLESS };
-    public enum Levels { TUTORIAL, LEVEL1, LEVEL2, LEVEL3 };
+    public enum Levels { LEVEL1, LEVEL2, LEVEL3, LEVEL4, LEVEL5 };
     public enum Phases { EXPLORE, ESCAPE };
 
     [Header("Script References")]
@@ -167,26 +167,24 @@ public class GM : MonoBehaviour
         levelName = currLevel.name;
 		if (levelName.Equals("Level1_Final"))
         {
-			level = Levels.TUTORIAL;
+			level = Levels.LEVEL1;
 		}
         else if (levelName.Equals("Level2_Final"))
         {
-			level = Levels.LEVEL1;
+			level = Levels.LEVEL2;
 		}
         else if (levelName.Equals("Level3_Final"))
         {
-			level = Levels.LEVEL2;
+			level = Levels.LEVEL3;
 		}
         else if (levelName.Equals("Level4_Final"))
         {
-            level = Levels.LEVEL3;
+            level = Levels.LEVEL4;
         }
-        /*
-        else if (levelName.Equals("Level_3_pass2"))
+        else if (levelName.Equals("Level4_Final"))
         {
-			level = Levels.LEVEL3;
+			level = Levels.LEVEL5;
 		}
-		*/
 
         BurnInOutShaderFX(true);
     }
@@ -318,7 +316,7 @@ public class GM : MonoBehaviour
         relic.SetActive(true);
 
 		ResetObjects (interactables, i_positions, i_rotations, i_scales);
-		//Debug.Log (interactables.Length);
+		//// (interactables.Length);
 		ResetObjects (hazards, h_positions, h_rotations, i_scales);
 		ResetObjects (normCollectibles, nc_positions, nc_rotations, nc_scales);
 		ResetObjects (healCollectibles, hc_positions, hc_rotations, hc_scales);
