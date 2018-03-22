@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 65615835964520852}
   m_Layer: 0
   m_Name: DartShooter
-  m_TagString: Untagged
+  m_TagString: shooter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,15 +266,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1437399380143264}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -222.3, y: 48.2, z: -0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalRotation: {x: 0.5, y: 0.50000006, z: -0.50000006, w: 0.5}
+  m_LocalPosition: {x: 84.17, y: 57.999992, z: 54.757374}
+  m_LocalScale: {x: 0.25000012, y: 0.25000012, z: 0.25000012}
   m_Children:
   - {fileID: 4457994231242702}
   - {fileID: 4677395526204514}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 90.00001, z: 0}
 --- !u!4 &4511273915373256
 Transform:
   m_ObjectHideFlags: 1
@@ -583,6 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbfd09a620d21d8478608db11faab31d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   dart: {fileID: 1596357841950962, guid: b956210c5513b194e96757477a71426a, type: 2}
   shootSound: {fileID: 8300000, guid: f0d6174a7298c4a4db920557d515c4fa, type: 3}
   canShoot: 1

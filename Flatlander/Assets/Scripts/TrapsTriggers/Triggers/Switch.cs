@@ -47,7 +47,14 @@ public class Switch : Trigger {
             {
                 trap = traps[i];
                 trap.gameObject.SetActive(true);
-                trap.activate();
+                if(traps[i].transform.tag == "shooter")
+                {
+                    traps[i].gameObject.GetComponent<Shooter>().shooterType = Shooter.ShooterType.STANDARD;
+                }
+                else
+                {
+                    trap.activate();
+                }
             }
         }
     }
