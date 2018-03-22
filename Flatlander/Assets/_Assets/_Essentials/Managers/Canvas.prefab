@@ -3461,9 +3461,9 @@ MonoBehaviour:
 
     <b>D</b> - Move Right
 
-    <b>W</b> - Lengthen Rope
+    <b>W</b> - Shorten Rope
 
-    <b>S</b> - Shorten Rope
+    <b>S</b> - Lengthen Rope
 
     <b>Space</b> - Jump
 
