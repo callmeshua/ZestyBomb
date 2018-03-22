@@ -44,6 +44,7 @@ public class OptionsScreen : MonoBehaviour {
         updateSliders();
 	}
 
+    //sends value of using controller to gm
     public void updateController()
     {
         if(controlDropdown.value == 0)
@@ -56,6 +57,7 @@ public class OptionsScreen : MonoBehaviour {
         }
     }
 
+    //button function for applying the values set
     public void Apply()
     {
         updateController();
@@ -67,6 +69,7 @@ public class OptionsScreen : MonoBehaviour {
         SoundManager.SetGlobalVolume(masterSlider.value *10);
     }
 
+    //updates the slider numbers
     public void updateSliders()
     {
         int x = (int)(mouseSens.value * 10);
@@ -83,6 +86,7 @@ public class OptionsScreen : MonoBehaviour {
 
     }
 
+    //button function; goes back to the title screen
     public void back()
     {
         mainMenu.SetActive(true);
