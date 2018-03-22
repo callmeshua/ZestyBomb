@@ -4109,8 +4109,8 @@ MonoBehaviour:
   title: {fileID: 1679539429}
   description: {fileID: 627065272}
   titleName: Classic
-  descName: Classic Falling with Style gameplay. Swing and collect as many as collectibles
-    you can to get the best score!
+  descName: Classic Falling with Style gameplay. Find the Relic and escape in the
+    fastest time and least swings to get the best score!
 --- !u!1 &722658185
 GameObject:
   m_ObjectHideFlags: 0
