@@ -14,7 +14,6 @@ public class WinArea : MonoBehaviour {
     //PUBLIC REFERENCED SCRIPTS
     public GM gm;
     public AudioClip winSound;
-    public AudioClip escapeMusic;
 
     public bool win;
 
@@ -33,7 +32,11 @@ public class WinArea : MonoBehaviour {
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Tab) && gm.phase == GM.Phases.EXPLORE)
             {
-                triggerWin();
+                SoundManager.PlaySFX(winSound, false, .6f);
+                gm.triggerEscape();
+                gm.camShake(1.5f);
+                gameObject.SetActive(false);
+                
             }
         }
     }
@@ -46,7 +49,10 @@ public class WinArea : MonoBehaviour {
             //transitions from exploration to escape at relic area
             if (tag == "relicArea" && gm.phase == GM.Phases.EXPLORE)
             {
-                triggerWin();
+                SoundManager.PlaySFX(winSound, false, .6f);
+                gm.triggerEscape();
+                gm.camShake(1.5f);
+                gameObject.SetActive(false);
             }
 
             //win condition for escape area
@@ -57,13 +63,5 @@ public class WinArea : MonoBehaviour {
                 gm.frozen = true;
             }
         }
-    }
-
-    public void triggerWin()
-    {
-        SoundManager.PlaySFX(winSound, false, .6f);
-        gm.triggerEscape();
-        gm.camShake(1.5f);
-        gameObject.SetActive(false);
     }
 }
