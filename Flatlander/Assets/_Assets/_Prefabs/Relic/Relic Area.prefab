@@ -414,6 +414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   winSound: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
+  escapeMusic: {fileID: 8300000, guid: 083bc1dcc12b4f342a8fe12e5f9784a6, type: 3}
   win: 0
 --- !u!136 &136845271773230552
 CapsuleCollider:
