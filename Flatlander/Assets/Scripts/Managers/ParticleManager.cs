@@ -23,6 +23,7 @@ public class ParticleManager : MonoBehaviour {
 	void Start ()
     {
         pCtrl = FindObjectOfType<SideScrollController>();
+        lavaDeathPfx.SetActive(false);
     }
 	
 	// Update is called once per frame
