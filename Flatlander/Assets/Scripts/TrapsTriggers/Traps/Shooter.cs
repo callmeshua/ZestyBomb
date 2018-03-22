@@ -17,7 +17,7 @@ public class Shooter : Trap {
     public bool LimitLifetime;
     public float dartLifetime;      //seconds
     public float timer;
-    public float framesBetweenShots;
+    public float counter;
     public float fireCount;
     public ShooterType shooterType;
     public GameObject barrelTrans;
@@ -27,7 +27,7 @@ public class Shooter : Trap {
         active = false;
         canShoot = false;
         fireCount = 0;
-        framesBetweenShots = 30;
+        counter = 30;
         if (LimitLifetime)
         {
             dartLifetime = 2f;
@@ -39,15 +39,15 @@ public class Shooter : Trap {
         if(shooterType == ShooterType.TIMED)
         {
             active = true;
-            framesBetweenShots = timer;
+            counter = timer;
         }
 
         //delays the rapidfire shots
-        if(canShoot == false && fireCount <= framesBetweenShots)
+        if(canShoot == false && fireCount <= counter)
         {
             fireCount++;
         }
-        if(fireCount > framesBetweenShots)
+        if(fireCount > counter)
         {
             canShoot = true;
 
