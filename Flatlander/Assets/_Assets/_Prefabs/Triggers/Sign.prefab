@@ -110,7 +110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1923010029961664
 GameObject:
   m_ObjectHideFlags: 1
@@ -366,8 +366,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hi my name is Joshua Karmel and this is Fear Factor's Surval American Idol
-    Drive-Ins And Dives
+  m_Text: "Cauition Travler\nSacred ruins ahead \nThe only exit is back the way you
+    came\nProceed with caution !"
 --- !u!114 &114333966610228576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -506,7 +506,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 95fecdf5412c38c4dad19c03f80adc6d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c726cb57ecb0a348bb47961685f1326, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -598,7 +598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.39}
   m_SizeDelta: {x: 345.495, y: 178.777}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224541016322305154
