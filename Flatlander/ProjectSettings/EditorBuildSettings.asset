@@ -29,6 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/New Scenes/Most Recent Scenes/Muerto_Level2_FullyDecorated_Final.unity
     guid: 5aea60bc20e9d774bb519339b375a0f9
-  - enabled: 1
-    path: Assets/Scenes/New Scenes/Most Recent Scenes/Muerto Level 3_pass2.unity
-    guid: 150f3bd1fa551e0448823e423d5fd70b
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000

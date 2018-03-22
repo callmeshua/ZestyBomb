@@ -111,7 +111,10 @@ public class GrappleController : MonoBehaviour
     {
         if ((pInput.isShooting || pInput.reset && curHook != null) && (!pCtrl.isDead || !gm.frozen || !gm.paused))
         {
-            Shoot(); //shoot if input, retracts if dead/hook exists
+            if (!pCtrl.isDead)
+            {
+                Shoot(); //shoot if input, retracts if dead/hook exists
+            }
         }
 
         if (SceneManager.GetActiveScene().name == "3D Main Menu" && pCtrl.isAnchored)
