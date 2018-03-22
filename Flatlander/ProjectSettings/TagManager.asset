@@ -33,6 +33,7 @@ TagManager:
   - shooter
   - CamRig
   - Lava
+  - rudyHead
   layers:
   - Default
   - TransparentFX
@@ -52,7 +53,7 @@ TagManager:
   - Hook
   - Dart
   - Lava
-  - 
+  - Grapple
   - 
   - 
   - 

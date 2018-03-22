@@ -10,6 +10,7 @@ public class GunAim : MonoBehaviour
     public Vector2 minMaxAim;
     private Transform rightShoulder;
     public GM gm;
+
     //public GameObject AimReticle;
     // Use this for initialization
     void Start()
@@ -27,7 +28,10 @@ public class GunAim : MonoBehaviour
     {
         if (!gm.frozen && !gm.paused)
         {
-            HandleShoulder();
+            if (!gm.gameOver && !pCtrl.isDead)
+            {
+                HandleShoulder();
+            }
         }
     }
 
