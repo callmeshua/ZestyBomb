@@ -19,54 +19,64 @@ public class LevelSelect : MonoBehaviour {
 	public GM gm;
 
     //PUBLIC ATTRIBUTES
-	public Button tutorial;
 	public Button level1;
     public Button level2;
     public Button level3;
-	public Button back;
+    public Button level4;
+    public Button level5;
+    public Button back;
 
 	public GameObject mode;
 	// Use this for initialization
 	void Start () {
         gm = FindObjectOfType<GM>();
-		Button btn = tutorial.GetComponent<Button> ();
-		btn.onClick.AddListener(LevelTutorial);
-
-		btn = level1.GetComponent<Button> ();
-		btn.onClick.AddListener (Level1);
+		Button btn = level1.GetComponent<Button> ();
+		btn.onClick.AddListener (loadLevel1);
 
 		btn = level2.GetComponent<Button>();
-		btn.onClick.AddListener(Level2);
+		btn.onClick.AddListener(loadLevel2);
 
         btn = level3.GetComponent<Button>();
-		btn.onClick.AddListener(Level3);
+		btn.onClick.AddListener(loadLevel3);
 
-		btn = back.GetComponent<Button> ();
+        btn = level4.GetComponent<Button>();
+        btn.onClick.AddListener(loadLevel4);
+
+        btn = level5.GetComponent<Button>();
+        btn.onClick.AddListener(loadLevel5);
+
+        btn = back.GetComponent<Button> ();
 		btn.onClick.AddListener (GoBack);
 	}
 
-	void LevelTutorial()
+	void loadLevel1()
 	{
 		SceneManager.LoadScene (SceneUtility.GetScenePathByBuildIndex(1), LoadSceneMode.Single);
 		gm.level = GM.Levels.LEVEL1;
 	}
-	void Level1()
+	void loadLevel2()
 	{
 		SceneManager.LoadScene (SceneUtility.GetScenePathByBuildIndex(2), LoadSceneMode.Single);
-		gm.level = GM.Levels.LEVEL1;
-	}
-	void Level2()
-	{
-		SceneManager.LoadScene (SceneUtility.GetScenePathByBuildIndex(3), LoadSceneMode.Single);
 		gm.level = GM.Levels.LEVEL2;
 	}
-	void Level3()
+	void loadLevel3()
 	{
-		SceneManager.LoadScene (SceneUtility.GetScenePathByBuildIndex(4), LoadSceneMode.Single);
+		SceneManager.LoadScene (SceneUtility.GetScenePathByBuildIndex(3), LoadSceneMode.Single);
 		gm.level = GM.Levels.LEVEL3;
 	}
-	//go back to main menu screen
-	void GoBack()
+	void loadLevel4()
+	{
+		SceneManager.LoadScene (SceneUtility.GetScenePathByBuildIndex(4), LoadSceneMode.Single);
+		gm.level = GM.Levels.LEVEL4;
+	}
+    void loadLevel5()
+    {
+        SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(5), LoadSceneMode.Single);
+        gm.level = GM.Levels.LEVEL5;
+    }
+
+    //go back to main menu screen
+    void GoBack()
 	{
 		mode.SetActive(true);
 		gameObject.SetActive(false);
