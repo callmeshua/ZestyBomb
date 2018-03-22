@@ -527,7 +527,11 @@ public class SideScrollController : MonoBehaviour
     //checks collision entering
     private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.tag == "Lava")
+        {
+            pe.handleLavaPEs();
+        }
+
         //checks the impact force
         impactForce = collision.impulse.magnitude;
 
@@ -536,7 +540,6 @@ public class SideScrollController : MonoBehaviour
             if (collision.gameObject.tag == "Lava")
             {
                 gm.BurnInOutShaderFX(false);
-                pe.handleLavaPEs();
             }
             isDead = true;
             gm.touchHazard = true;

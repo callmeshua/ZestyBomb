@@ -34,6 +34,7 @@ TagManager:
   - CamRig
   - Lava
   - rudyHead
+  - HiddenSpikes
   layers:
   - Default
   - TransparentFX
