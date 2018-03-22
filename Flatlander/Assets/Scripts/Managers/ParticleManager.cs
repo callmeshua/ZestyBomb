@@ -37,6 +37,7 @@ public class ParticleManager : MonoBehaviour {
         handleLandingPEs();
 
         lavaDeathPfx.transform.position = pCtrl.transform.position;
+        lavaDeathPfx.SetActive(false);
     }
 
     //instantiates the jump particle effects
