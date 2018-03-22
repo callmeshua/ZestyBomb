@@ -531,7 +531,7 @@ public class SideScrollController : MonoBehaviour
         //checks the impact force
         impactForce = collision.impulse.magnitude;
 
-        if (collision.gameObject.tag == "Hazard" || collision.gameObject.tag == "Deathball" || collision.gameObject.tag == "Lava")
+        if (collision.gameObject.tag == "Hazard" || collision.gameObject.tag == "Deathball" || collision.gameObject.tag == "Lava" || collision.gameObject.tag == "HiddenSpikes")
         {
             if (collision.gameObject.tag == "Lava")
             {
