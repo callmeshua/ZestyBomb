@@ -1292,4 +1292,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   activationDelay: 0.5
+  activeTime: 2
   moveSpeed: 10
+  spikeGroup: {fileID: 4207197971879016}

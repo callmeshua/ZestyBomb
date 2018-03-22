@@ -5,18 +5,20 @@ using UnityEngine;
 public class HiddenSpikes : Trap {
 
     public float activationDelay;
+    public float activeTime;
     public float moveSpeed;
+    public Transform spikeGroup;
 
-    private Transform spikeGroup;
     private Vector3 inactivePos;
     private Vector3 activePos;
     private float delayTimer;
+    private float activeTimer;
 
     // Use this for initialization
     void Start () {
-        active = false;
+        deactivate();
         delayTimer = activationDelay;
-        spikeGroup = transform.GetChild(0);
+        activeTimer = activeTime;
 
         // The spikes' inactive (default) position will be where it's placed in the world initially.
         // When deactivated, it will move towards this initial position. When activated, they will rise enough
@@ -29,7 +31,7 @@ public class HiddenSpikes : Trap {
     {
         if (other.tag == "Player")
         {
-            active = true;
+            activate();
         }
     }
 
@@ -43,6 +45,19 @@ public class HiddenSpikes : Trap {
                 {
                     float speed = moveSpeed * Time.deltaTime;
                     spikeGroup.position = Vector3.MoveTowards(spikeGroup.position, activePos, speed);
+                }
+                else
+                {
+                    // If activated, tick down the activeTimer until it reaches 0, then deactivate the spikes
+                    if (activeTimer <= 0f || gm.resetLevel)
+                    {
+                        deactivate();
+                        activeTimer = activeTime;
+                    }
+                    else
+                    {
+                        activeTimer = activeTimer - Time.deltaTime;
+                    }
                 }
             }
             else

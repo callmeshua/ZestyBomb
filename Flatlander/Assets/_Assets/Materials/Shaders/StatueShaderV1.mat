@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BlendTex:
-        m_Texture: {fileID: 2800000, guid: f7a14110d9a5b234287f01eebf0ae8af, type: 3}
+        m_Texture: {fileID: 2800000, guid: b8205dfb7e8e64f92a9b58aaa7735183, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -55,7 +55,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex2:
-        m_Texture: {fileID: 2800000, guid: b8855afa17e274af2b65fa559ee0a358, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8b35229734317d14dbcc3fcd40cd38a1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -80,9 +80,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BlendBright: 1
-    - _BlendSoft: 0.18
+    - _BlendSoft: 0.84
     - _BlendTexNoise: 0
-    - _BlendVal: 0.16
+    - _BlendVal: 0.84
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -93,7 +93,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _HighStr: -0.1
+    - _HighStr: -0.16
     - _MainTex2Noise: 0
     - _MainTexNoise: 0
     - _Metallic: 0
@@ -107,7 +107,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BlendEdge: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.6185345, g: 0.6198656, b: 0.625, a: 1}
     - _Color2: {r: 1, g: 1, b: 1, a: 1}
     - _DispV: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
