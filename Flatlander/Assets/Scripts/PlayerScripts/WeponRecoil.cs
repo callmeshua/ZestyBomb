@@ -38,8 +38,11 @@ public class WeponRecoil : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        HandleRecoil();
-        HandleGunSway();
+        if (!pCtrl.isDead && !gm.frozen && !gm.paused)
+        {
+            HandleRecoil();
+            HandleGunSway();
+        }
 
         if (pCtrl.yVelocity > 0f && !pCtrl.isGrounded && !pCtrl.isAnchored)
         {
@@ -49,6 +52,19 @@ public class WeponRecoil : MonoBehaviour {
         {
             isShouldered = false;
         }
+
+        if (pCtrl.isDead)
+        {
+            GetComponent<BoxCollider>().isTrigger = false;
+            GetComponent<Rigidbody>().isKinematic = false;
+            isShouldered = false;
+        }
+        else
+        {
+            GetComponent<BoxCollider>().isTrigger = true;
+            GetComponent<Rigidbody>().isKinematic = true;
+        }
+
     }
 
     void HandleRecoil()
