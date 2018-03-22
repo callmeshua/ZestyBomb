@@ -25,12 +25,17 @@ public class OptionsScreen : MonoBehaviour {
     public Slider masterSlider;
     public Text masterNum;
 
+    public Button backButton;
+    public GameObject mainMenu;
+
 	// Use this for initialization
 	void Start ()
     {
 		gm = FindObjectOfType<GM>();
         fInput = FindObjectOfType<FWSInput>();
         sm = FindObjectOfType<SoundManager>();
+
+        backButton.onClick.AddListener(back);
 	}
 	
 	// Update is called once per frame
@@ -76,5 +81,11 @@ public class OptionsScreen : MonoBehaviour {
         x = (int)(masterSlider.value * 10);
         masterNum.text = x.ToString();
 
+    }
+
+    public void back()
+    {
+        mainMenu.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

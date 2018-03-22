@@ -110,7 +110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1923010029961664
 GameObject:
   m_ObjectHideFlags: 1
@@ -199,8 +199,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1996954305207016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22, y: 45.81, z: 3.14}
-  m_LocalScale: {x: 0.8689586, y: 0.8689586, z: 0.8689586}
+  m_LocalPosition: {x: -24.14, y: 14.17, z: 3.14}
+  m_LocalScale: {x: 0.8689583, y: 0.8689583, z: 0.8689583}
   m_Children:
   - {fileID: 4021050195306362}
   - {fileID: 224934078604111956}
@@ -366,8 +366,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Cauition Travler\nSacred ruins ahead \nThe only exit is back the way you
-    came\nProceed with caution !"
+  m_Text: 'Tread with caution traveler
+
+    You still have to make it out alive.'
 --- !u!114 &114333966610228576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,6 +391,7 @@ MonoBehaviour:
   pressE: {fileID: 1639521864786106}
   particleEffect: {fileID: 1469677963237704, guid: 3738dfc603e85f04087bc5f31aa2ed1b,
     type: 2}
+  lever: {fileID: 0}
 --- !u!114 &114392965568140346
 MonoBehaviour:
   m_ObjectHideFlags: 1

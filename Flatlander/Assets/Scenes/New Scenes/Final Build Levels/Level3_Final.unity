@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: cede08c9fc471e64884909cd4bbeaf59, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -40161,31 +40161,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4666064684041604, guid: e4be44739e485f04e8d56f41bb2cf733, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -16.46
+      value: -15.53
       objectReference: {fileID: 0}
     - target: {fileID: 4666064684041604, guid: e4be44739e485f04e8d56f41bb2cf733, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 58.13
+      value: 58.15
       objectReference: {fileID: 0}
     - target: {fileID: 4666064684041604, guid: e4be44739e485f04e8d56f41bb2cf733, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.78
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 4666064684041604, guid: e4be44739e485f04e8d56f41bb2cf733, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.0031700435
+      value: -0.09979291
       objectReference: {fileID: 0}
     - target: {fileID: 4666064684041604, guid: e4be44739e485f04e8d56f41bb2cf733, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.35744274
+      value: -0.0013911101
       objectReference: {fileID: 0}
     - target: {fileID: 4666064684041604, guid: e4be44739e485f04e8d56f41bb2cf733, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.019890033
+      value: 0.017388094
       objectReference: {fileID: 0}
     - target: {fileID: 4666064684041604, guid: e4be44739e485f04e8d56f41bb2cf733, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9337179
+      value: 0.99485534
       objectReference: {fileID: 0}
     - target: {fileID: 4666064684041604, guid: e4be44739e485f04e8d56f41bb2cf733, type: 2}
       propertyPath: m_RootOrder
@@ -40193,15 +40193,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4666064684041604, guid: e4be44739e485f04e8d56f41bb2cf733, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -1.154
+      value: -11.450001
       objectReference: {fileID: 0}
     - target: {fileID: 4666064684041604, guid: e4be44739e485f04e8d56f41bb2cf733, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.9990001
+      value: 2.039
       objectReference: {fileID: 0}
     - target: {fileID: 4666064684041604, guid: e4be44739e485f04e8d56f41bb2cf733, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 41.875004
+      value: -0.365
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4be44739e485f04e8d56f41bb2cf733, type: 2}

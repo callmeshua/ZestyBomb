@@ -21,11 +21,15 @@ public class Switch : Trigger {
     public GameObject pressE;
 
     public GameObject particleEffect;
+
+    public Transform lever;
+    private Transform leverInit;
     
 
 	// Use this for initialization
 	void Start ()
     {
+        gameObject.SetActive(true);
         fInput = FindObjectOfType<FWSInput>();
         pCtrl = GameObject.FindGameObjectWithTag("Player");
 
@@ -36,6 +40,8 @@ public class Switch : Trigger {
         key = fInput.use;
 
         pressE.SetActive(false);
+
+        leverInit = lever;
     }
     
     //activates the attached traps
@@ -45,15 +51,14 @@ public class Switch : Trigger {
         {
             if (traps[i] != null && !traps[i].gameObject.activeSelf)
             {
-                trap = traps[i];
                 if(traps[i].transform.tag == "shooter")
                 {
                     traps[i].gameObject.GetComponent<Shooter>().shooterType = Shooter.ShooterType.STANDARD;
                 }
                 else
                 {
-                    trap.gameObject.SetActive(true);
-                    trap.activate();
+                    traps[i].gameObject.SetActive(true);
+                    traps[i].activate();
                 }
             }
         }
@@ -83,10 +88,41 @@ public class Switch : Trigger {
         {
             if (!isActive)
             {
-                traps[0].gameObject.SetActive(true);
-                traps[0].activate();
-                isActive = true;
-                spawnParticleEffect(traps[0].transform);
+                for (int i = 0; i < traps.Capacity; i++)
+                {
+                    if (traps[i] != null)
+                    {
+                        if (traps[i].transform.tag == "shooter")
+                        {
+                            if (traps[i].gameObject.GetComponent<Shooter>().shooterType == Shooter.ShooterType.TIMED)
+                            {
+                                traps[i].gameObject.GetComponent<Shooter>().shooterType = Shooter.ShooterType.STANDARD;
+                                if (gameObject.name == "Switch")
+                                {
+                                    lever.rotation = Quaternion.Euler(new Vector3(45, -90, 0));
+                                }
+                            }
+                            else
+                            {
+                                traps[i].gameObject.GetComponent<Shooter>().shooterType = Shooter.ShooterType.TIMED;
+                                if (gameObject.name == "Switch")
+                                {
+                                    lever.rotation = Quaternion.Euler(new Vector3(-45, -90, 0));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Debug.Log(traps[i]);
+                            if (!traps[i].gameObject.activeSelf)
+                            {
+                                traps[i].gameObject.SetActive(true);
+                                spawnParticleEffect(traps[0].transform);
+                                isActive = true;
+                            }
+                        }
+                    }
+                }
             }
             else
             {

@@ -177,6 +177,10 @@ public class GM : MonoBehaviour
         {
 			level = Levels.LEVEL2;
 		}
+        else if (levelName.Equals("Level4_Final"))
+        {
+            level = Levels.LEVEL3;
+        }
         /*
         else if (levelName.Equals("Level_3_pass2"))
         {
