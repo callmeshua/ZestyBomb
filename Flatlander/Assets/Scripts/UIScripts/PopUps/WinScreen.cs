@@ -87,6 +87,7 @@ public class WinScreen : MonoBehaviour
     {
 		SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(0), LoadSceneMode.Single);
     }
+
 	//
 	public void buttonNext()
 	{
@@ -94,27 +95,30 @@ public class WinScreen : MonoBehaviour
 		if (gm.level == GM.Levels.LEVEL1) 
 		{
 			SceneManager.LoadScene (SceneUtility.GetScenePathByBuildIndex (2), LoadSceneMode.Single);
-
-		} 
+            gm.level = GM.Levels.LEVEL2;
+        } 
 		//2
-		else if (gm.level == GM.Levels.LEVEL1) 
-		{
-			SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(3), LoadSceneMode.Single);
-		} 
-		//3
 		else if (gm.level == GM.Levels.LEVEL2) 
 		{
-			SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(0), LoadSceneMode.Single);
-		} 
-		/*
+			SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(3), LoadSceneMode.Single);
+            gm.level = GM.Levels.LEVEL3;
+        } 
+		//3
 		else if (gm.level == GM.Levels.LEVEL3) 
 		{
-			SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(0), LoadSceneMode.Single);
-		}*/
+			SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(4), LoadSceneMode.Single);
+            gm.level = GM.Levels.LEVEL4;
+        }
+		else if (gm.level == GM.Levels.LEVEL4) 
+		{
+			SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(5), LoadSceneMode.Single);
+            gm.level = GM.Levels.LEVEL5;
+        }
 
-		//0 Main Menu
-		//1 Tutorial
-		//2 Level1
-		//3 Level2
-	}
+        SoundManager.StopBGM();
+        //0 Main Menu
+        //1 Tutorial
+        //2 Level1
+        //3 Level2
+    }
 }
