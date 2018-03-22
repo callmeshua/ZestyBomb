@@ -14,6 +14,7 @@ public class WinArea : MonoBehaviour {
     //PUBLIC REFERENCED SCRIPTS
     public GM gm;
     public AudioClip winSound;
+    public AudioClip escapeMusic;
 
     public bool win;
 
@@ -36,7 +37,8 @@ public class WinArea : MonoBehaviour {
                 gm.triggerEscape();
                 gm.camShake(1.5f);
                 gameObject.SetActive(false);
-                
+                SoundManager.StopBGM();
+                SoundManager.PlayBGM(escapeMusic);
             }
         }
     }
@@ -53,6 +55,8 @@ public class WinArea : MonoBehaviour {
                 gm.triggerEscape();
                 gm.camShake(1.5f);
                 gameObject.SetActive(false);
+                SoundManager.StopBGM();
+                SoundManager.PlayBGM(escapeMusic);
             }
 
             //win condition for escape area
