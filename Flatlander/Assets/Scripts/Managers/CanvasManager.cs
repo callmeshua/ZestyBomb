@@ -81,7 +81,7 @@ public class CanvasManager : MonoBehaviour {
 
     public void updatePhaseText()
     {
-        phaseText.text = "Phase: " + gm.getPhase();
+        phaseText.text = gm.getPhase();
     }
 
     public void updateShotsText()

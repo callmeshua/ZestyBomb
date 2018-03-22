@@ -31,6 +31,7 @@ public class FWSInput : MonoBehaviour {
     public float vertical;
     public float horizontalAim;
     public float verticalAim;
+    public float mouseSens = 1;
     public KeyCode use = KeyCode.E;
 
     [Header ("Conditionals")]
@@ -48,6 +49,7 @@ public class FWSInput : MonoBehaviour {
     private Quaternion aimRotation;
     private float aimAngle;
     private bool canShoot;
+    
     // Use this for initialization
     void Start ()
     {
@@ -86,8 +88,8 @@ public class FWSInput : MonoBehaviour {
         }
         else
         {
-            horizontal = Input.GetAxisRaw("Horizontal");
-            vertical = Input.GetAxisRaw("Vertical");
+            horizontal = Input.GetAxisRaw("Horizontal") * mouseSens;
+            vertical = Input.GetAxisRaw("Vertical") * mouseSens;
         }
 
         if (!paused)

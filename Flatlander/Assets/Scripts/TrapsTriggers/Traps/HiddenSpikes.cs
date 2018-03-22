@@ -16,6 +16,8 @@ public class HiddenSpikes : Trap {
 
     // Use this for initialization
     void Start () {
+
+        gm = FindObjectOfType<GM>();
         deactivate();
         delayTimer = activationDelay;
         activeTimer = activeTime;
