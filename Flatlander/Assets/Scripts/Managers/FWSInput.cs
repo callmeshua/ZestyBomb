@@ -152,13 +152,14 @@ public class FWSInput : MonoBehaviour {
             gm.handlePause();
         }
 
-        if (gm.isUsingController)
+		if (gm.isUsingController)
         {
             HandleControllerAim();
         }
         else
         {
-            HandleMouseAim();
+			if(!gm.gameOver)
+            	HandleMouseAim();
         }
     }
 

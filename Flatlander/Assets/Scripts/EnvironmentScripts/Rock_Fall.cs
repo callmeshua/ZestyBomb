@@ -50,7 +50,7 @@ public class Rock_Fall : MonoBehaviour {
 	{
         Vector3 velocity = col.relativeVelocity;
 
-		if ((col.gameObject.transform.tag == "Hook" || col.gameObject.transform.tag == "collideWithTag" ) && hookToFall)
+		if (col.gameObject.transform.tag == "Hook" || col.gameObject.transform.tag == "collideWithTag" )
         {
 			if (delaySeconds == 0f)
             {

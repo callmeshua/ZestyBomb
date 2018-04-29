@@ -26,12 +26,9 @@ public class GunAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gm.frozen && !gm.paused)
+		if (!gm.frozen || !gm.paused || !gm.gameOver)
         {
-            if (!gm.gameOver && !pCtrl.isDead)
-            {
                 HandleShoulder();
-            }
         }
     }
 

@@ -207,6 +207,11 @@ public class GM : MonoBehaviour
         {
             gunAim.enabled=true;
         }
+
+		if(Input.GetKey(KeyCode.N))
+		{
+			SceneManager.LoadScene (SceneManager.GetActiveScene().name);	
+		}
     }
 
     //increments amount of normal collectibles

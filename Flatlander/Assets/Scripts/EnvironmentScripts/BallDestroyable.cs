@@ -7,6 +7,7 @@ public class BallDestroyable : MonoBehaviour {
     public Vector3 velocity;
     public Rigidbody ballRB;
     public bool hascollided;
+	int frames;
 
     private void Start()
     {
@@ -15,20 +16,25 @@ public class BallDestroyable : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void FixedUpdate () {
-        if(hascollided == false)
-        {
-            velocity = ballRB.velocity;
-        }
+    void FixedUpdate () 
+	{
+		
+		if(frames>3){
+			velocity = ballRB.velocity;
+			frames=0;
+		}else{
+			frames++;
+		}
+            
 	}
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (checkParentTag(collision.gameObject, "Hazard") || checkParentTag(collision.gameObject, "Interactable") || checkParentTag(collision.gameObject,"Dart"))
+        if (checkParentTag(collision.gameObject, "Hazard") || checkParentTag(collision.gameObject, "Interactable") || checkParentTag(collision.gameObject, "Dart"))
         {
             Debug.Log("ball collide");
             hascollided = true;
-            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), collision.gameObject.GetComponent<Collider>(), true);
+            //Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), collision.gameObject.GetComponent<Collider>(), true);
             collision.gameObject.SetActive(false);
             ballRB.velocity = velocity;
             hascollided = false;

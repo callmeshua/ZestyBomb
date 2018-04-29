@@ -32,39 +32,48 @@ public class CameraController : MonoBehaviour
     private Vector2 curZMinMax;             //vector of zMax and zMins
     private SideScrollController pCtrl;     //gets reference to player controller
     public GM gm;
+	private Vector3 curPositionOffset;
 
     //initializes values
     void Start()
     {
         pCtrl = FindObjectOfType<SideScrollController>();
         gm = FindObjectOfType<GM>();
+		zTarget = minDistance;
+		curPositionOffset = new Vector3(positionOffset.x, positionOffset.y, positionOffset.z * zTarget);
     }
 
     // Late Uptate called after all for no render artifacts/stuttering
-    void LateUpdate()
+	void LateUpdate()
+	{
+		HandleCamMovement ();
+	}
+
+
+
+	void HandleCamMovement()
     {
         //HandlePostDOF();
         //dist multiplier based on player speed
-        float targetMultiplier;
-        float zoom;
+		float targetMultiplier;
+		float zoom;
 
-        Vector3 curPositionOffset;
-        if (gm.gameOver)
-        {
-            targetMultiplier = minDistance * .2f;
-            zoom = zoomDamp * 2f;
-            curPositionOffset = new Vector3(gameOverOffset.x, gameOverOffset.y, gameOverOffset.z * zTarget);
-            
-        }
-        else
-        {
-            targetMultiplier = Mathf.Clamp((pCtrl.currentVelocity / pCtrl.maxSpeed) * maxDistance, minDistance, maxDistance);
-            zoom = zoomDamp;
-            curPositionOffset = new Vector3(positionOffset.x, positionOffset.y, positionOffset.z * zTarget);
-        }
 
-        zTarget = Mathf.Lerp(zTarget, targetMultiplier, Time.deltaTime * zoom);
-        //move and look
+		if (gm.gameOver)
+		{
+			targetMultiplier = minDistance * .2f;
+			zoom = zoomDamp * 2f;
+			curPositionOffset = new Vector3(gameOverOffset.x, gameOverOffset.y, gameOverOffset.z * zTarget);
+
+		}
+		else
+		{
+			targetMultiplier = Mathf.Clamp((pCtrl.currentVelocity / pCtrl.maxSpeed) * maxDistance, minDistance, maxDistance);
+			zoom = zoomDamp;
+			curPositionOffset = new Vector3(positionOffset.x, positionOffset.y, positionOffset.z * zTarget);
+		}
+
+		zTarget = Mathf.Lerp(zTarget, targetMultiplier, Time.deltaTime * zoom);
 
         //positionOffset = positionOffset.normalized;
         transform.LookAt((target.position + lookOffset));
