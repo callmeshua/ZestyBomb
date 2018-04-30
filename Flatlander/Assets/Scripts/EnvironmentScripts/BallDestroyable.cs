@@ -35,7 +35,7 @@ public class BallDestroyable : MonoBehaviour {
             Debug.Log("ball collide");
             hascollided = true;
             //Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), collision.gameObject.GetComponent<Collider>(), true);
-            collision.gameObject.SetActive(false);
+			collision.gameObject.SetActive(false);
             ballRB.velocity = velocity;
             hascollided = false;
         }
