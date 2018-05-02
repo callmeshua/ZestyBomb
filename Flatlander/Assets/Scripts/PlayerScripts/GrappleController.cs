@@ -128,17 +128,18 @@ public class GrappleController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        
         //Mathf.Clamp(massInfluence, 0f, 3f);
         lineCoef = ropeDroop / 10f;
 
         if (pCtrl.isAnchored && (!pCtrl.isDead || !gm.frozen || !gm.paused))
         {
-            RopeLength();
+            
             pCtrl.playerPhys.dynamicFriction = .1f;
             pCtrl.playerPhys.staticFriction = .1f;
             if (!pCtrl.isGrounded)
             {
-                HandleRopeCollision();
+                
                 HandleSwingingPhysics(pCtrl.horizontal);
             }
 
@@ -150,6 +151,9 @@ public class GrappleController : MonoBehaviour
                     pCtrl.SpecialJump(ropeJumpPower, Vector3.up, true);
                 }
             }
+            HandleRopeCollision();
+            RopeLength();
+
         }
 
         maxRopeRange = transform.localScale.x * relativeRange;
@@ -277,8 +281,8 @@ public class GrappleController : MonoBehaviour
         Ray ropeRay = new Ray(transform.position + curDir * .1f, curDir);//ray of vector
 
         //add new anchor
-        if (/*Physics.Raycast(ropeRay, out ropeCollision, curDir.magnitude*.8f,ropeCollisionMask)&&anchoredRb!=null*/
-            Physics.SphereCast(transform.position + curDir * .1f, ropeThiccness, curDir, out ropeCollision, curDir.magnitude * .79f, ropeCollisionMask) && anchoredRb != null) 
+        if (Physics.Raycast(ropeRay, out ropeCollision, curDir.magnitude * .8f, ropeCollisionMask) && anchoredRb != null
+            /*Physics.SphereCast(transform.position + curDir * .1f, ropeThiccness, curDir, out ropeCollision, curDir.magnitude * .79f, ropeCollisionMask) && anchoredRb != null*/) 
         {
             if(Vector3.Distance(transform.position + curDir * .1f,ropeCollision.point)>.79f)
             {
@@ -295,7 +299,7 @@ public class GrappleController : MonoBehaviour
         }
 
         //unwrap
-        if (anchors.Count > 1|| Vector3.Distance(transform.position + curDir * .1f, ropeCollision.point) < .79f)
+        if (anchors.Count > 1)
         {
             Vector3 currentDir = anchors[anchors.Count - 1] - pCtrl.transform.position;
             Vector3 previousDir = anchors[anchors.Count - 1] - anchors[anchors.Count - 2];  //vect between player and last hook
@@ -304,10 +308,11 @@ public class GrappleController : MonoBehaviour
             //checking if the angle vector is pointing the same way as the surface normal
             float curRopeAngle =Mathf.Atan2(Vector3.Dot(ropeCollision.normal.normalized, Vector3.Cross(previousDir, curDir)),Vector3.Dot(previousDir, curDir)) * Mathf.Rad2Deg;
 
-            if (curRopeAngle<0||curRopeLength<=minRopeRange)
+            if (curRopeAngle<0||curRopeLength<=minRopeRange+.2f)
             {
                 curHook.transform.position = anchors[anchors.Count - 2];
                 anchors.Remove(anchors[anchors.Count - 1]);
+                anchors.RemoveAll(GameObject => GameObject == null);
                 ResetRopeLength();
             }
             if (collisionDebug & anchors[anchors.Count - 2] != null) 

@@ -54,10 +54,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4293445954146868}
   - component: {fileID: 65208292190944110}
-  - component: {fileID: 65123436022552724}
-  - component: {fileID: 65404217081171896}
   - component: {fileID: 54003848155678500}
   - component: {fileID: 114530161185688476}
+  - component: {fileID: 114748455686565672}
   m_Layer: 14
   m_Name: Pillar
   m_TagString: Interactable
@@ -170,8 +169,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142052688284014}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.31, y: 20.97, z: -1.04}
-  m_LocalScale: {x: 3.1189723, y: 3.1189723, z: 3.1189723}
+  m_LocalPosition: {x: -31.12, y: 17.26, z: -1.04}
+  m_LocalScale: {x: 4.9602633, y: 4.960263, z: 4.960263}
   m_Children:
   - {fileID: 4765807012272136}
   - {fileID: 4026604995814004}
@@ -563,18 +562,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
---- !u!65 &65123436022552724
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1142052688284014}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.2338613, y: 0.65454507, z: 1.4560143}
-  m_Center: {x: 0.005468255, y: 3.067729, z: 0.0008120797}
 --- !u!65 &65208292190944110
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -585,20 +572,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8299999, y: 2.9066958, z: 0.7722664}
-  m_Center: {x: 0, y: 1.2983478, z: -0.021362731}
---- !u!65 &65404217081171896
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1142052688284014}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.8869748, y: 0.39698753, z: 1.0532274}
-  m_Center: {x: -0.001434499, y: 0.014480693, z: -0.00551731}
+  m_Size: {x: 1.0391146, y: 3.5292597, z: 0.7722664}
+  m_Center: {x: 0.014516998, y: 1.6096299, z: -0.02136271}
 --- !u!114 &114530161185688476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -619,3 +594,19 @@ MonoBehaviour:
   playerColCanActivate: 1
   boomTime: 2
   impactClip: {fileID: 8300000, guid: c6800d980a3ccbe4280817ba291a8537, type: 3}
+--- !u!114 &114748455686565672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1142052688284014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d2a0504519ace42ab3fbae0d26734f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objRb: {fileID: 0}
+  massRange: {x: 10, y: 15}
+  scaleRange: {x: 3, y: 5}
+  setScale: 1
+  setMass: 1

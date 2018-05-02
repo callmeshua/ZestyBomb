@@ -27,7 +27,9 @@ public class Rock_Fall : MonoBehaviour {
     public bool playerColCanActivate=true;
 	public float boomTime = 2f;
     private Rigidbody rb;
-    
+    private Vector3 initPos;
+    private Quaternion initRot;
+    private bool initKinematicState;
 
     //JK~~
     //SOUNDS
@@ -37,14 +39,31 @@ public class Rock_Fall : MonoBehaviour {
     void Start () {
 		rb = gameObject.GetComponent<Rigidbody>();
         gm = FindObjectOfType<GM>();
+        initPos = transform.position;
+        initRot = transform.rotation;
+        initKinematicState = rb.isKinematic;
 	}
 
     //JK~~
     public void Update()
     {
         checkPhase();
+
+        //if (Input.GetButtonDown("Reset") || gm.resetLevel)
+        //{
+        //    ResetObj();
+        //}
     }
 
+    public void ResetObj()
+    {
+        print("resetObj " + transform.gameObject.name);
+        rb.isKinematic = initKinematicState;
+        rb.angularVelocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
+        transform.position = initPos;
+        rb.MoveRotation(initRot);
+    }
     // checks for collision with hook/grapple
     void OnCollisionEnter(Collision col)
 	{

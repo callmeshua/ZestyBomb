@@ -17,7 +17,7 @@ public class VaryObjects : MonoBehaviour {
 		{
 			child = transform.GetChild (i);
 			int rand = Random.Range (0, 99);
-			Debug.Log (rand);
+			//Debug.Log (rand);
 			if (rand < 50)
 				child.gameObject.SetActive (false);
 			else

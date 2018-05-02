@@ -71,6 +71,7 @@ public class GM : MonoBehaviour
     //PRIVATE ATTRIBUTES
     private string levelName;
 	private Scene currLevel;
+    private int resetFrame;
     private GameObject[] interactables;
     private GameObject[] hazards;
 	private GameObject[] normCollectibles;
@@ -92,12 +93,18 @@ public class GM : MonoBehaviour
 	private List<float> gc_positions = new List<float> ();
 	private List<float> gc_rotations = new List<float> ();
 	private List<float> gc_scales = new List<float> ();
+    private Rock_Fall[] dynamicObjs;
+    private DynamicObjectVariation[] varyObj;
+    private PathVariation[] paths;
 
     private BurnInOut[] burnShader;
 
     void Awake()
     {
         SoundManager.PlaySFX(sound, true, 0f);
+        dynamicObjs = FindObjectsOfType<Rock_Fall>();
+        varyObj = FindObjectsOfType<DynamicObjectVariation>();
+        paths = FindObjectsOfType<PathVariation>();
     }
 
     // Use this for initialization
@@ -107,7 +114,7 @@ public class GM : MonoBehaviour
         phase = Phases.EXPLORE;
 
         frozen = false;
-
+        
         //init GO's
         currLevel = SceneManager.GetActiveScene();
 
@@ -197,7 +204,17 @@ public class GM : MonoBehaviour
         checkFreeze();
         checkDead();
         updateClock();
-        resetLevel = false;
+
+        if(resetLevel)
+        {
+            resetFrame++;
+            if(resetFrame>0)
+            {
+
+                resetLevel = false;
+                resetFrame = 0;
+            }
+        }
 
         if(gameOver)
         {
@@ -212,6 +229,7 @@ public class GM : MonoBehaviour
 		{
 			SceneManager.LoadScene (SceneManager.GetActiveScene().name);	
 		}
+
     }
 
     //increments amount of normal collectibles
@@ -284,7 +302,7 @@ public class GM : MonoBehaviour
     public void ResetScene()
     {
         phase = Phases.EXPLORE;
-        resetLevel = true;
+        
         pCtrl.isDead = false;
         pCtrl.DisableRagdoll();
         gameOver = false;
@@ -318,14 +336,29 @@ public class GM : MonoBehaviour
 
         relic.SetActive(true);
 
-		ResetObjects (interactables, i_positions, i_rotations, i_scales);
-		//Debug.Log (interactables.Length);
-		ResetObjects (hazards, h_positions, h_rotations, i_scales);
-		ResetObjects (normCollectibles, nc_positions, nc_rotations, nc_scales);
-		ResetObjects (healCollectibles, hc_positions, hc_rotations, hc_scales);
-		ResetObjects (golCollectables, gc_positions, gc_rotations, gc_scales);
-        BurnInOutShaderFX(true);
+        foreach (Rock_Fall obj in dynamicObjs)
+        {
+            if (obj != null)
+                obj.ResetObj();
+        }
 
+        foreach(DynamicObjectVariation obj in varyObj)
+        {
+            obj.Randomize();
+        }
+
+        foreach(PathVariation path in paths)
+        {
+            path.RandomizePath();
+        }
+        //ResetObjects (interactables, i_positions, i_rotations, i_scales);
+        //Debug.Log (interactables.Length);
+        ResetObjects(hazards, h_positions, h_rotations, i_scales);
+        ResetObjects(normCollectibles, nc_positions, nc_rotations, nc_scales);
+        ResetObjects(healCollectibles, hc_positions, hc_rotations, hc_scales);
+        ResetObjects(golCollectables, gc_positions, gc_rotations, gc_scales);
+        BurnInOutShaderFX(true);
+        resetLevel=true;
     }
     //updates the clock depending on the mode
     public void updateClock()
