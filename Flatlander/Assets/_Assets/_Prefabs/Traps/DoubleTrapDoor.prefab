@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 23638818269981932}
   - component: {fileID: 54462448007196728}
   - component: {fileID: 59663876179907624}
-  - component: {fileID: 114209394843278598}
-  - component: {fileID: 136436881232270602}
-  m_Layer: 0
+  - component: {fileID: 65662330538790656}
+  - component: {fileID: 114904234924327426}
+  m_Layer: 19
   m_Name: LDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,9 +40,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4896714719051168}
-  - component: {fileID: 65075572401781266}
-  - component: {fileID: 114469981034822390}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: DoubleTrapDoor
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -61,9 +59,9 @@ GameObject:
   - component: {fileID: 23743318218774248}
   - component: {fileID: 54295610505379610}
   - component: {fileID: 59306682901074936}
-  - component: {fileID: 114394434827058986}
-  - component: {fileID: 136479241474472292}
-  m_Layer: 0
+  - component: {fileID: 65528297979062770}
+  - component: {fileID: 114869395762716912}
+  m_Layer: 19
   m_Name: RDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +76,7 @@ Transform:
   m_GameObject: {fileID: 1673940183750670}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.01, y: 0, z: 0}
-  m_LocalScale: {x: 3.3, y: 1, z: 3.5296664}
+  m_LocalScale: {x: 3.3, y: 1, z: 4.6414905}
   m_Children: []
   m_Father: {fileID: 4896714719051168}
   m_RootOrder: 0
@@ -91,7 +89,7 @@ Transform:
   m_GameObject: {fileID: 1170919170739010}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -1.49, y: 0, z: 0}
-  m_LocalScale: {x: 3.3, y: 1, z: 3.5296664}
+  m_LocalScale: {x: 3.3, y: 1, z: 4.6414905}
   m_Children: []
   m_Father: {fileID: 4896714719051168}
   m_RootOrder: 1
@@ -103,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399874572831492}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.502123, y: 3.482729, z: 2.5}
+  m_LocalPosition: {x: 31.502123, y: 3.482729, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4519016859639706}
@@ -207,7 +205,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &54462448007196728
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -222,7 +220,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!59 &59306682901074936
 HingeJoint:
   m_ObjectHideFlags: 1
@@ -291,59 +289,20 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!65 &65075572401781266
+--- !u!65 &65528297979062770
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399874572831492}
+  m_GameObject: {fileID: 1673940183750670}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.953539, y: 1, z: 3.4662235}
-  m_Center: {x: 0.2553301, y: 0, z: 0}
---- !u!114 &114209394843278598
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1170919170739010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a49e4e02ec14ac4cb000e01d302f811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particleEffect: {fileID: 1469677963237704, guid: 3738dfc603e85f04087bc5f31aa2ed1b,
-    type: 2}
-  destroyTime: 2
---- !u!114 &114394434827058986
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1673940183750670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a49e4e02ec14ac4cb000e01d302f811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particleEffect: {fileID: 1469677963237704, guid: 3738dfc603e85f04087bc5f31aa2ed1b,
-    type: 2}
-  destroyTime: 2
---- !u!114 &114469981034822390
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399874572831492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d82fc969ed8e1d64dbbf5e83a56792aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!136 &136436881232270602
-CapsuleCollider:
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.0000009536743, y: 0, z: 0}
+--- !u!65 &65662330538790656
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -351,20 +310,46 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.102259494
-  m_Height: 0.9974087
-  m_Direction: 0
-  m_Center: {x: 0.002897725, y: -0.009562492, z: 0}
---- !u!136 &136479241474472292
-CapsuleCollider:
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114869395762716912
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1673940183750670}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.10563333
-  m_Height: 0.9934229
-  m_Direction: 0
-  m_Center: {x: -0.008425568, y: 0.0044567585, z: 0.09299244}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
+  hookToFall: 1
+  relicTriggerFall: 0
+  destroyOnFall: 1
+  delaySeconds: 0
+  collideWithTag: Interactable
+  playerColCanActivate: 1
+  boomTime: 2
+  impactClip: {fileID: 8300000, guid: c6800d980a3ccbe4280817ba291a8537, type: 3}
+--- !u!114 &114904234924327426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170919170739010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d87489ab5cb4f00aba37a809710cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
+  hookToFall: 1
+  relicTriggerFall: 0
+  destroyOnFall: 1
+  delaySeconds: 0
+  collideWithTag: Interactable
+  playerColCanActivate: 1
+  boomTime: 2
+  impactClip: {fileID: 8300000, guid: c6800d980a3ccbe4280817ba291a8537, type: 3}

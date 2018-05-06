@@ -336,20 +336,24 @@ public class GM : MonoBehaviour
 
         relic.SetActive(true);
 
+
+
+
+
+        foreach(PathVariation path in paths)
+        {
+            path.RandomizePath();
+        }
+
         foreach (Rock_Fall obj in dynamicObjs)
         {
             if (obj != null)
                 obj.ResetObj();
         }
 
-        foreach(DynamicObjectVariation obj in varyObj)
+        foreach (DynamicObjectVariation obj in varyObj)
         {
             obj.Randomize();
-        }
-
-        foreach(PathVariation path in paths)
-        {
-            path.RandomizePath();
         }
         //ResetObjects (interactables, i_positions, i_rotations, i_scales);
         //Debug.Log (interactables.Length);

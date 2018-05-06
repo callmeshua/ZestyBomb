@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PathVariation : MonoBehaviour {
     GM gm;
-    public GameObject elementsToDisable;
-    public GameObject elementsToEnable;
     public List<GameObject> elements;
 
     public int pathNum;

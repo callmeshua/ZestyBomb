@@ -148,7 +148,7 @@ public class GrappleController : MonoBehaviour
                 Retract();
                 if (curRopeLength - minRopeRange < jumpThreshold && !pCtrl.isGrounded)//jump higher if close enough to anchor
                 {
-                    pCtrl.SpecialJump(ropeJumpPower, Vector3.up, true);
+                    pCtrl.SpecialJump(ropeJumpPower, Vector3.up, false);
                 }
             }
             HandleRopeCollision();
@@ -226,8 +226,8 @@ public class GrappleController : MonoBehaviour
 
             Vector3 rotatedVector1 = Quaternion.AngleAxis(effectiveSwingAngle, Vector3.forward) * -Vector3.up;
             Vector3 rotatedVector2 = Quaternion.AngleAxis(-effectiveSwingAngle, Vector3.forward) * -Vector3.up;
-            Debug.DrawRay(anchors[anchors.Count - 1], rotatedVector1.normalized * dir.magnitude, Color.yellow);
-            Debug.DrawRay(anchors[anchors.Count - 1], rotatedVector2.normalized * dir.magnitude, Color.yellow);
+            Debug.DrawRay(curHook.transform.position, rotatedVector1.normalized * dir.magnitude, Color.yellow);
+            Debug.DrawRay(curHook.transform.position, rotatedVector2.normalized * dir.magnitude, Color.yellow);
         }
 
         
@@ -281,7 +281,7 @@ public class GrappleController : MonoBehaviour
         Ray ropeRay = new Ray(transform.position + curDir * .1f, curDir);//ray of vector
 
         //add new anchor
-        if (Physics.Raycast(ropeRay, out ropeCollision, curDir.magnitude * .8f, ropeCollisionMask) && anchoredRb != null
+        if (Physics.Raycast(ropeRay, out ropeCollision, curDir.magnitude * .8f, ropeCollisionMask) && !hookIsSetinRb
             /*Physics.SphereCast(transform.position + curDir * .1f, ropeThiccness, curDir, out ropeCollision, curDir.magnitude * .79f, ropeCollisionMask) && anchoredRb != null*/) 
         {
             if(Vector3.Distance(transform.position + curDir * .1f,ropeCollision.point)>.79f)
@@ -361,8 +361,11 @@ public class GrappleController : MonoBehaviour
                 {
                     Vector3 iStart = line.GetPosition(i - 1);
                     Vector3 iEnd = line.GetPosition(i + 1);
+
                     float distRatio = Mathf.Clamp01(maxRopeRange - Vector3.Distance(barrel.transform.position, lineEnd));//normalizes based on dist
                     Vector3 iMid = Vector3.Lerp(iStart, iEnd, 0.5f) + new Vector3(0f, (lineCoef * distRatio) * Mathf.Sqrt(Vector3.Distance(barrel.transform.position, Vector3.Lerp(iStart, iEnd, 0.5f))), 0f);//parabolas! highschool did pay off!
+                    
+                    
                     line.SetPosition(i, iMid);
                 }
             }

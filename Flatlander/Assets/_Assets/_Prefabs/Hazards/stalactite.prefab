@@ -41,8 +41,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1385137515271234}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 141.6, y: 141.8, z: 0}
-  m_LocalScale: {x: 2.3217216, y: 2.3217232, z: 2.3217232}
+  m_LocalPosition: {x: -1.1018906, y: 16.035877, z: -32.6}
+  m_LocalScale: {x: 2.0211487, y: 1.587144, z: 2.021148}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -101,8 +101,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 122
-  m_CollisionDetection: 1
+  m_Constraints: 58
+  m_CollisionDetection: 2
 --- !u!64 &64332572787564896
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -172,7 +172,9 @@ MonoBehaviour:
   gm: {fileID: 0}
   hookToFall: 0
   relicTriggerFall: 0
+  destroyOnFall: 1
   delaySeconds: 0
   collideWithTag: Interactable
   playerColCanActivate: 0
+  boomTime: 2
   impactClip: {fileID: 8300000, guid: fa7e275faa6719347a6bec5d38bfdcdf, type: 3}
