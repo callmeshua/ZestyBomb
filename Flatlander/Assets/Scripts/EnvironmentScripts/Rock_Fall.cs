@@ -101,7 +101,8 @@ public class Rock_Fall : MonoBehaviour {
         }
         else
         {
-            SoundManager.PlaySFX(impactClip, true, Mathf.Clamp01(col.impulse.magnitude/150f)*.4f);
+            if (col.gameObject.tag!="Dart")
+                SoundManager.PlaySFX(impactClip, true, Mathf.Clamp01(col.impulse.magnitude/150f)*.4f);
             //SoundManager.PlaySFX(boulderSoundClip, true, 1f);
         }
 		/*

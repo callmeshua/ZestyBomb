@@ -9,7 +9,7 @@ public class LavaRising : MonoBehaviour {
 	public float yStopValue;
 
 	private float yStartingPosition;
-	private bool move;
+	public bool move;
 
 	private void Start()
     {
@@ -32,10 +32,10 @@ public class LavaRising : MonoBehaviour {
         }
 
         // else if phases.escape, and game is not over then set move bool to true;
-        else if (gm.phase == GM.Phases.ESCAPE && !gm.gameOver)
-        {
-            move = true;
-        }
+        //else if (gm.phase == GM.Phases.ESCAPE && !gm.gameOver)
+        //{
+        //    move = true;
+        //}
 
 		//Call Move() every frame
 		Move ();
@@ -44,13 +44,21 @@ public class LavaRising : MonoBehaviour {
 		if (transform.position >= stopPoint.transform.position) {
 			transform.position == new Vector3
 		}*/
-			
+		
+        if (gm.phase == GM.Phases.ESCAPE && !gm.gameOver)
+        {
+            move = true;
+        }
+
 	}
 
 	//Checks if bool move is to true, then moves;
 	void Move()
 	{
-		if (move)
-			transform.position += transform.up * Time.deltaTime * speed;
+        if (move)
+            //transform.position += Time.deltaTime * speed;
+            transform.position += new Vector3(0f,Time.deltaTime*speed,0f);
 	}
+
+    
 }
