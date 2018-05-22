@@ -60,15 +60,26 @@ public class Switch : Trigger {
     }
 
     // Update is called once per frame
-    void FixedUpdate ()
+    void Update ()
     {
-        /*
-        if (Input.GetButtonDown("Jump") && isActive)
-        {
-            traps[0].gameObject.SetActive(false);
-            isActive = false;
-        }
-        */
+		if (pressE.activeSelf && Input.GetButtonDown ("Use")) 
+		{
+			isActive = !isActive;
+		}
+			
+
+		if (isActive) 
+		{
+			for (int i = 0; i < traps.Count; i++) {
+				traps [i].gameObject.SetActive (false);
+			}
+		} 
+		else 
+		{
+			for (int i = 0; i < traps.Count; i++) {
+				traps [i].gameObject.SetActive (true);
+			}
+		}
 	}
 
     private void OnTriggerEnter(Collider other)
@@ -77,13 +88,17 @@ public class Switch : Trigger {
         spawnParticleEffect(pressE.transform);
     }
 
-    private void OnTriggerStay(Collider other)
+    /*private void OnTriggerStay(Collider other)
     {
         if (Input.GetButtonDown("Use") && other.transform.tag == "Player")
         {
+			isActive = !isActive;
+
+
+
             if (!isActive)
             {
-                traps[0].gameObject.SetActive(true);
+				traps[0].gameObject.SetActive(isActive);
                 traps[0].activate();
                 isActive = true;
                 spawnParticleEffect(traps[0].transform);
@@ -96,15 +111,17 @@ public class Switch : Trigger {
                 spawnParticleEffect(traps[0].transform);
             }
         }
+
     }
+	*/
 
     private void OnTriggerExit(Collider other)
     {
         if (other.transform.tag == "Player" && isActive)
         {
-            traps[0].gameObject.SetActive(false);
-            traps[0].deactivate();
-            isActive = false;
+            //traps[0].gameObject.SetActive(false);
+            //traps[0].deactivate();
+            //isActive = false;
         }
         pressE.SetActive(false);
         spawnParticleEffect(pressE.transform);

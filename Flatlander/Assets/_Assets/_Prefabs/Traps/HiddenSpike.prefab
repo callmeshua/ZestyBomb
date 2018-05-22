@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114067021888134512}
   m_Layer: 0
   m_Name: HiddenSpike
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,9 +381,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1036754416668466}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 21.196535, z: 1.16}
-  m_LocalScale: {x: 2, y: 1.5259702, z: 2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 89.324, y: 46.519997, z: 56.47}
+  m_LocalScale: {x: 2, y: 1.52597, z: 2}
   m_Children:
   - {fileID: 4207197971879016}
   m_Father: {fileID: 0}
@@ -1291,5 +1291,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
-  activationDelay: 0.5
+  activationDelay: 1
   moveSpeed: 10

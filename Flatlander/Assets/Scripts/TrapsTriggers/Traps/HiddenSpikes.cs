@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HiddenSpikes : Trap {
+public class HiddenSpikes : MonoBehaviour {
 
     public float activationDelay;
     public float moveSpeed;
-
+	private bool active;
+	private GM gm;
     private Transform spikeGroup;
     private Vector3 inactivePos;
     private Vector3 activePos;
@@ -14,6 +15,7 @@ public class HiddenSpikes : Trap {
 
     // Use this for initialization
     void Start () {
+		gm = FindObjectOfType<GM>();
         active = false;
         delayTimer = activationDelay;
         spikeGroup = transform.GetChild(0);
@@ -33,34 +35,37 @@ public class HiddenSpikes : Trap {
         }
     }
 
-    public override void checkActive()
+	void Update()
+	{
+		if (gm.resetLevel) 
+		{
+			active = false;
+		}
+		checkActive ();
+	}
+
+    public void checkActive()
     {
-        if (active)
-        {
-            if (delayTimer <= 0f)
-            {
-                if (!(spikeGroup.position == activePos))
-                {
-                    float speed = moveSpeed * Time.deltaTime;
-                    spikeGroup.position = Vector3.MoveTowards(spikeGroup.position, activePos, speed);
-                }
-            }
-            else
-            {
-                delayTimer = delayTimer - Time.deltaTime;
-            }
-        }
-        else
-        {
-            if (!(spikeGroup.position == inactivePos))
-            {
-                float speed = moveSpeed * Time.deltaTime;
-                spikeGroup.position = Vector3.MoveTowards(spikeGroup.position, inactivePos, speed);
-            }
-            else
-            {
-                delayTimer = activationDelay;
-            }
-        }
+		if (active&&!gm.resetLevel) {
+			if (delayTimer <= 0f) {
+				if (!(spikeGroup.position == activePos)) {
+					float speed = moveSpeed * Time.deltaTime;
+					spikeGroup.position = Vector3.MoveTowards (spikeGroup.position, activePos, speed);
+				}
+			} else {
+				delayTimer = delayTimer - Time.deltaTime;
+			}
+		} else {
+			active = false;
+			spikeGroup.position = inactivePos;
+			delayTimer = activationDelay;
+		}
+
     }
+
+	public void ResetSpikes()
+	{
+		spikeGroup.position = inactivePos;
+		delayTimer = activationDelay;
+	}
 }

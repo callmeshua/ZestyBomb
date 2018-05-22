@@ -96,6 +96,7 @@ public class GM : MonoBehaviour
     private Rock_Fall[] dynamicObjs;
     private DynamicObjectVariation[] varyObj;
     private PathVariation[] paths;
+	private HiddenSpikes[] hiddenSpikes;
 
     private BurnInOut[] burnShader;
 
@@ -105,6 +106,7 @@ public class GM : MonoBehaviour
         dynamicObjs = FindObjectsOfType<Rock_Fall>();
         varyObj = FindObjectsOfType<DynamicObjectVariation>();
         paths = FindObjectsOfType<PathVariation>();
+		hiddenSpikes = FindObjectsOfType<HiddenSpikes> ();
     }
 
     // Use this for initialization
@@ -355,6 +357,11 @@ public class GM : MonoBehaviour
         {
             obj.Randomize();
         }
+
+		foreach (HiddenSpikes spikes in hiddenSpikes)
+		{
+			spikes.ResetSpikes();
+		}
         //ResetObjects (interactables, i_positions, i_rotations, i_scales);
         //Debug.Log (interactables.Length);
         ResetObjects(hazards, h_positions, h_rotations, i_scales);
