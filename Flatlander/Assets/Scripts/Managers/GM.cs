@@ -207,18 +207,19 @@ public class GM : MonoBehaviour
         checkDead();
         updateClock();
 
-        if(resetLevel)
+        if (resetLevel)
         {
             resetFrame++;
-            if(resetFrame>0)
+            if (resetFrame > 1)
             {
-
                 resetLevel = false;
                 resetFrame = 0;
             }
         }
 
-        if(gameOver)
+        
+
+        if (gameOver)
         {
             gunAim.enabled = false;
         }
@@ -304,7 +305,7 @@ public class GM : MonoBehaviour
     public void ResetScene()
     {
         phase = Phases.EXPLORE;
-        
+        resetLevel = true;
         pCtrl.isDead = false;
         pCtrl.DisableRagdoll();
         gameOver = false;
@@ -342,15 +343,15 @@ public class GM : MonoBehaviour
 
 
 
-        foreach(PathVariation path in paths)
+        for(int i=0; i<paths.Length;i++)
         {
-            path.RandomizePath();
+            paths[i].RandomizePath();
         }
 
-        foreach (Rock_Fall obj in dynamicObjs)
+        for (int i = 0; i < dynamicObjs.Length; i++)
         {
-            if (obj != null)
-                obj.ResetObj();
+            if (dynamicObjs[i] != null)
+                dynamicObjs[i].ResetObj();
         }
 
         foreach (DynamicObjectVariation obj in varyObj)
@@ -369,7 +370,7 @@ public class GM : MonoBehaviour
         ResetObjects(healCollectibles, hc_positions, hc_rotations, hc_scales);
         ResetObjects(golCollectables, gc_positions, gc_rotations, gc_scales);
         BurnInOutShaderFX(true);
-        resetLevel=true;
+        
     }
     //updates the clock depending on the mode
     public void updateClock()

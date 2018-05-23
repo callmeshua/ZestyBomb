@@ -18,6 +18,7 @@ public abstract class Trap : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         checkActive();
+
 	}
 
     //sets active to true

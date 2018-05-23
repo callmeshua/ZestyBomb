@@ -50,6 +50,13 @@ public class LavaRising : MonoBehaviour {
             move = true;
         }
 
+        if(gm.resetLevel)
+        {
+            print("reset");
+            move = false;
+            transform.position = new Vector3(transform.position.x, yStartingPosition, transform.position.z);
+        }
+
 	}
 
 	//Checks if bool move is to true, then moves;
