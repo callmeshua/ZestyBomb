@@ -15,6 +15,7 @@ public class WeponRecoil : MonoBehaviour {
     public Vector3 rotationalRecoil;
     public bool moveToInitPosition;
     public bool isShouldered;
+    public bool noAnim;
     public float dist;
 
     public Vector3 targetPos;
@@ -41,7 +42,8 @@ public class WeponRecoil : MonoBehaviour {
         if (!pCtrl.isDead && !gm.frozen && !gm.paused)
         {
             HandleRecoil();
-            HandleGunSway();
+            if(!noAnim)
+                HandleGunSway();
         }
 
         if (pCtrl.yVelocity > 0f && !pCtrl.isGrounded && !pCtrl.isAnchored)

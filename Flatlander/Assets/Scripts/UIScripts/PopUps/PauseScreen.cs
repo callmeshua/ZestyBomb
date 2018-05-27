@@ -65,6 +65,6 @@ public class PauseScreen : MonoBehaviour {
 
     public void buttonMenu()
     {
-		SceneManager.LoadScene(SceneUtility.GetScenePathByBuildIndex(0), LoadSceneMode.Single);
+        SceneManager.LoadScene(0);
     }
 }

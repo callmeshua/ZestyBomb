@@ -1039,7 +1039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &189994228
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2514,7 +2514,7 @@ Prefab:
         type: 3}
     - target: {fileID: 1429886703579670, guid: 3f3563837a7a14798ab9e68a0fc611c9, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f3563837a7a14798ab9e68a0fc611c9, type: 2}
@@ -3164,7 +3164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -110.188385}
+  m_AnchoredPosition: {x: -141.3, y: -154.1}
   m_SizeDelta: {x: 104.2, y: 35.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &637452545
@@ -5066,7 +5066,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
       propertyPath: m_LocalRotation.z
@@ -5074,7 +5074,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
       propertyPath: m_RootOrder
@@ -5094,6 +5094,30 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810295044110050, guid: 1fb16853441064f4b90190a9c375bf9b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810295044110050, guid: 1fb16853441064f4b90190a9c375bf9b,
+        type: 2}
+      propertyPath: isShouldered
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810295044110050, guid: 1fb16853441064f4b90190a9c375bf9b,
+        type: 2}
+      propertyPath: moveToInitPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810295044110050, guid: 1fb16853441064f4b90190a9c375bf9b,
+        type: 2}
+      propertyPath: noAnim
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556959934852804, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1fb16853441064f4b90190a9c375bf9b, type: 2}
